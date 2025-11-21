@@ -1,14 +1,10 @@
-# Overview
+# ![APIstry Logo](images/AArrow-logo.png) APIstry
 
-Contract-as-a-Service (CaaS) is a **runtime engine that reads an OpenAPI contract and turns it into a fully functional CRUD API**.
-Instead of generating code from the contract ("contract-first") or documenting code after the fact ("code-first"), the
-contract itself becomes the product: a single source of truth that the platform executes.
-
-You provide a well designed openapi contract. The CaaS runtime reads that contract and provides a functional API. 
-Your development team spends less time implementing endpoints and more time designing clear, consistent contracts and 
-focusing on business logic.
+Imagine implementing an API without writing any code! Start server by just pointing to a contract and a Mongo DB 
+(connection string). The framework does the rest. You could even say it's RESTful, definately beautiful in its 
+simplicity!
 
 <br/>
 <br/>
 <br/>
-**More details coming soon!**
+**Public offering coming soon!**

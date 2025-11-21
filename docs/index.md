@@ -3,14 +3,14 @@ class: landing-bg
 ---
 
 <div id="homepage-hero"></div>
-# **CONTRACT AS A SERVICE**
+# **APIstry**
 <br>
 <br>
 <br>
 
-## The Next Evolution in API Service Development
+## The Next Evolution in API Service Delivery
 
 <br><br><br><br>
 <footer>  
-© 2025 Contract-as-a-Service. All rights reserved.  
+© 2025 APIstry. All rights reserved.  
 </footer>
