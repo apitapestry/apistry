@@ -1,0 +1,36 @@
+site_name: Contract as a Service
+site_url: https://docs.contract-as-a-service.net
+use_directory_urls: true
+
+theme:
+  name: material
+  features:
+    - navigation.expand
+#    - navigation.sections
+    - navigation.tracking
+#    - navigation.top
+#    - navigation.tabs
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+    - scheme: slate
+      primary: custom
+      accent: custom
+  font:
+    text: Inter
+    code: Roboto Mono
+
+extra_css:
+  - css/custom.css
+  - css/home.css
+
+extra_javascript:
+  - js/custom.js
+
+extra:
+  generator: false
+
+nav:
+  - Home: index.md
+  - Overview: overview.md

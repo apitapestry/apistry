@@ -1,0 +1,61 @@
+/* Apply background ONLY to the homepage (index.html) */
+/* Background fills only top 2/3rds of the screen */
+/* Uses #homepage-hero as the identifier so heading text can be changed freely */
+
+/* Only apply background image on homepage - check for the homepage-hero div */
+.md-content article:has(#homepage-hero)::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 66.67vh; /* Top 2/3rds of viewport height */
+    background: url("../images/girl-computer-focus.jpg") no-repeat center top;
+    background-size: cover;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Add gradient fade at the bottom of the image for smooth transition */
+.md-content article:has(#homepage-hero)::after {
+    content: "";
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    width: 100%;
+    height: 16.67vh; /* Fade zone */
+    background: linear-gradient(to bottom, transparent, var(--md-default-bg-color));
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Improve readability of text on top of bright backgrounds - only for homepage */
+.md-content article:has(#homepage-hero) {
+    background: rgba(255, 255, 255, 0.85); /* subtle white layer */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Style the first two headings in white with larger text */
+.md-content article:has(#homepage-hero) h1:first-of-type {
+    color: white !important;
+    font-size: 2rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+    text-align: center !important;
+}
+
+.md-content article:has(#homepage-hero) h2:first-of-type {
+    color: white !important;
+    font-size: 2.5rem !important;
+    font-family: 'Georgia', 'Garamond', 'Palatino', serif !important;
+    font-style: italic;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+    text-align: center !important;
+}
+
