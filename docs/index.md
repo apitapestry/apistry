@@ -12,5 +12,5 @@ class: landing-bg
 
 <br><br><br><br>
 <footer>  
-© 2025 APIstry. All rights reserved.  
+© 2025 API Tapestry. All rights reserved.  
 </footer>
