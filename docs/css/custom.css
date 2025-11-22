@@ -26,3 +26,99 @@
 .md-nav__title {
     display: none;
 }
+
+/* Full-width layout overrides */
+.md-grid,
+.md-main__inner,
+.md-main__inner > .md-content,
+.md-content,
+.md-content__inner,
+.md-typeset {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Ensure container spans full browser width */
+.md-container {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Remove default side padding Material adds to content area */
+.md-content .md-content__inner {
+  margin: 0 !important;
+  padding: 0 2rem !important; /* keep some readable horizontal padding */
+  width: 100% !important;
+}
+
+/* Stretch tables horizontally (optional) */
+.md-typeset table {
+  width: 100%;
+}
+
+/* Allow code blocks to use full width */
+.md-typeset pre,
+.md-typeset .highlight {
+  max-width: none !important;
+}
+
+/* Remove header/search row completely */
+.md-header { display: none !important; }
+/* Remove top offset reserved for header so sidebar starts at very top */
+.md-sidebar { top: 0 !important; }
+/* Adjust sticky positioning when header would have lifted */
+.md-header--lifted ~ .md-container .md-sidebar { top: 0 !important; }
+
+/* Layout: keep sidebars their current size but expand middle content */
+:root {
+  --apistry-sidebar-width: 12.1rem; /* matches built theme sidebar */
+  --apistry-secondary-width: 12.1rem; /* right page nav width */
+}
+
+/* Scope to main grid used for content */
+html body .md-main__inner.md-grid {
+  display: flex !important;
+  gap: 1rem !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Fix sidebars widths and prevent them from shrinking */
+html body .md-sidebar--primary {
+  width: var(--apistry-sidebar-width) !important;
+  flex: 0 0 var(--apistry-sidebar-width) !important;
+}
+html body .md-sidebar--secondary {
+  width: var(--apistry-secondary-width) !important;
+  flex: 0 0 var(--apistry-secondary-width) !important;
+}
+
+/* Option B: force main content to take ~95% of the space between sidebars */
+html body .md-content {
+  /* Calculate the available viewport width minus sidebar widths and take 95% of that */
+  flex: 0 0 calc((100vw - var(--apistry-sidebar-width) - var(--apistry-secondary-width)) * 0.95) !important;
+  width: calc((100vw - var(--apistry-sidebar-width) - var(--apistry-secondary-width)) * 0.95) !important;
+  max-width: calc((100vw - var(--apistry-sidebar-width) - var(--apistry-secondary-width)) * 0.95) !important;
+  box-sizing: border-box !important;
+}
+
+/* Responsive: fall back to natural flex behavior on narrower screens so nothing overflows */
+@media (max-width: 1200px) {
+  html body .md-content {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* Ensure inner content uses full width available inside the content column */
+html body .md-content > .md-content__inner {
+  margin: 0 !important;
+  padding: 0 2rem !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* If the top-level md-grid still centers via margins, remove it */
+html body .md-grid { margin-left: 0 !important; margin-right: 0 !important; }

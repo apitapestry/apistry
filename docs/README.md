@@ -186,4 +186,4 @@ If you have a bug or feature request, [create an issue for it](https://github.co
 
 ## 📜 License
 
-APIstry is 100% free and open-source, under [Apache License 2.0](LICENSE).
+APIstry is 100% free and open-source, under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
