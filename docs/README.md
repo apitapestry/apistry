@@ -24,7 +24,7 @@ querying, and request/response validation based on contract schemas.
 - **Response Arrays**: Optional metadata in responses including total count and pagination information
   [//]: # (- **AWS Lambda Ready**: Can be deployed as a Lambda function or run locally)
 
-# Overview
+## Overview
 
 - [🧰 Installation](#-installation)
 - [💻 Usage](#-usage)
