@@ -1,0 +1,956 @@
+openapi: 3.0.3
+info:
+  title: Car Lot Management API
+  description: >
+    API for managing cars in a car lot inventory system.
+
+    Supports CRUD operations for car inventory with filtering, sorting, and
+    pagination.
+
+      ### Query Operators
+
+      The API supports the following operators for filtering:
+
+      | Operator      | Description                                                                 | Example                                      |
+      |---------------|-----------------------------------------------------------------------------|----------------------------------------------|
+      | `eq.<value>`  | Equals the specified value.                                                  | `"make": "eq.Toyota"` → cars with make Toyota |
+      | `neq.<value>` | Not equal to the specified value.                                           | `"status": "neq.sold"`                       |
+      | `gt.<number>` | Greater than (for numeric values).                                          | `"price": "gt.20000"`                        |
+      | `lt.<number>` | Less than (for numeric values).                                             | `"year": "lt.2020"`                          |
+      | `gte.<number>`| Greater than or equal to.                                                   | `"mileage": "gte.50000"`                     |
+      | `lte.<number>`| Less than or equal to.                                                      | `"price": "lte.30000"`                       |
+      | `isNull`      | Returns items where the field is missing, empty, or null.                   | `"vin": "isNull"` → cars without VIN         |
+      | `*` (wildcard)| Matches partial values (supports leading/trailing wildcards).                | `"model": "*Camry*"` → models containing "Camry" |
+
+      ### Examples
+
+      - **Cars priced under $25,000**
+        ```
+        GET /cars?price=lt.25000
+        ```
+
+      - **Available cars by make**
+        ```
+        GET /cars?make=eq.Honda&status=eq.available
+        ```
+
+      - **Cars without VIN**
+        ```
+        GET /cars?vin=isNull
+        ```
+  termsOfService: https://developer.acme.com/terms/
+  contact:
+    name: acme API Gov Team
+    email: API-Gov-Team@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: v1
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com
+servers:
+  - url: https://api.carlot.example.com/v1
+security:
+  - bearerAuth: []
+paths:
+  /v1/cars/{id}:
+    get:
+      tags:
+        - Cars
+      summary: Get car by ID
+      description: Retrieve a single car by its unique identifier.
+      operationId: getCar
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the car
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Car found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Cars
+      summary: Delete car by ID
+      description: Remove a car from the inventory.
+      operationId: deleteCar
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the car
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Car deleted successfully
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Cars
+      summary: Update car by ID
+      description: Update an existing car's information.
+      operationId: updateCar
+      parameters:
+        - name: id
+          in: path
+          description: Unique identifier of the car
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarUpdate'
+        required: true
+      responses:
+        '200':
+          description: Car updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/cars:
+    get:
+      tags:
+        - Cars
+      summary: Get Cars
+      description: >
+        Search for cars in the inventory with optional filtering, sorting, and
+        pagination.
+
+        Supports query operators for flexible filtering.
+      operationId: getCars
+      parameters:
+        - name: make
+          in: query
+          description: Filter by car manufacturer (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 50
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: eq.Toyota
+        - name: model
+          in: query
+          description: Filter by car model (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 50
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: '*Camry*'
+        - name: year
+          in: query
+          description: Filter by year (supports numeric operators)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]{4}$|^isNull$
+            type: string
+          example: gte.2020
+        - name: color
+          in: query
+          description: Filter by color (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 30
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: eq.Black
+        - name: status
+          in: query
+          description: Filter by availability status
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.)?(available|sold|reserved|pending|maintenance)$
+            type: string
+            enum:
+              - available
+              - sold
+              - reserved
+              - pending
+              - maintenance
+          example: eq.available
+        - name: price
+          in: query
+          description: Filter by price (supports numeric operators)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: >-
+              ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]+(\.[0-9]{1,2})?$|^isNull$
+            type: string
+          example: lt.25000
+        - name: mileage
+          in: query
+          description: Filter by mileage (supports numeric operators)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]+$|^isNull$
+            type: string
+          example: lte.50000
+        - name: vin
+          in: query
+          description: Filter by VIN (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 17
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: eq.1HGBH41JXMN109186
+        - name: bodyType
+          in: query
+          description: Filter by body type
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: >-
+              ^(eq\.|neq\.)?(sedan|suv|truck|coupe|convertible|wagon|van|hatchback)$|^isNull$
+            type: string
+          example: eq.suv
+        - name: transmission
+          in: query
+          description: Filter by transmission type
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.)?(automatic|manual|cvt)$|^isNull$
+            type: string
+          example: eq.automatic
+        - name: fuelType
+          in: query
+          description: Filter by fuel type
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: >-
+              ^(eq\.|neq\.)?(gasoline|diesel|electric|hybrid|plug-in-hybrid)$|^isNull$
+            type: string
+          example: eq.hybrid
+        - name: limit
+          in: query
+          description: Maximum number of items to return
+          required: false
+          style: form
+          explode: true
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 25
+        - name: offset
+          in: query
+          description: Number of items to skip before starting to collect the result set
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: order
+          in: query
+          description: >-
+            Sort order for the results (e.g., order=price.asc or
+            order=year.desc)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(make|model|year|price|mileage|createdAt)\.(asc|desc)$
+            type: string
+          example: price.asc
+      responses:
+        '200':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              description: The range of items returned and total count
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: items 0-24/100
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    type: string
+                    description: The content range of the response
+                    example: items 0-24/100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Cars
+      summary: Create a new car
+      description: Add a new car to the inventory.
+      operationId: createCar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Car'
+        required: true
+      responses:
+        '201':
+          description: Cars created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    type: string
+                    description: The content range of the response
+                    example: items 0-24/100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Cars
+      summary: Get Cars
+      description: Delete Cars
+      operationId: deleteCars
+      parameters:
+        - name: make
+          in: query
+          description: Filter by car manufacturer (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 50
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: eq.Toyota
+        - name: model
+          in: query
+          description: Filter by car model (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 50
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: '*Camry*'
+        - name: year
+          in: query
+          description: Filter by year (supports numeric operators)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]{4}$|^isNull$
+            type: string
+          example: gte.2020
+        - name: color
+          in: query
+          description: Filter by color (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 30
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: eq.Black
+        - name: status
+          in: query
+          description: Filter by availability status
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.)?(available|sold|reserved|pending|maintenance)$
+            type: string
+            enum:
+              - available
+              - sold
+              - reserved
+              - pending
+              - maintenance
+          example: eq.available
+        - name: price
+          in: query
+          description: Filter by price (supports numeric operators)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: >-
+              ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]+(\.[0-9]{1,2})?$|^isNull$
+            type: string
+          example: lt.25000
+        - name: mileage
+          in: query
+          description: Filter by mileage (supports numeric operators)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]+$|^isNull$
+            type: string
+          example: lte.50000
+        - name: vin
+          in: query
+          description: Filter by VIN (supports operators and wildcards)
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 17
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+          example: eq.1HGBH41JXMN109186
+        - name: bodyType
+          in: query
+          description: Filter by body type
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: >-
+              ^(eq\.|neq\.)?(sedan|suv|truck|coupe|convertible|wagon|van|hatchback)$|^isNull$
+            type: string
+          example: eq.suv
+        - name: transmission
+          in: query
+          description: Filter by transmission type
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(eq\.|neq\.)?(automatic|manual|cvt)$|^isNull$
+            type: string
+          example: eq.automatic
+        - name: fuelType
+          in: query
+          description: Filter by fuel type
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: >-
+              ^(eq\.|neq\.)?(gasoline|diesel|electric|hybrid|plug-in-hybrid)$|^isNull$
+            type: string
+          example: eq.hybrid
+        - name: limit
+          in: query
+          description: Maximum number of items to return
+          required: false
+          style: form
+          explode: true
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            default: 25
+        - name: offset
+          in: query
+          description: Number of items to skip before starting to collect the result set
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            default: 0
+        - name: order
+          in: query
+          description: >-
+            Sort order for the results (e.g., order=price.asc or
+            order=year.desc)
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^(make|model|year|price|mileage|createdAt)\.(asc|desc)$
+            type: string
+          example: price.asc
+      responses:
+        '204':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              description: The range of items returned and total count
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: items 0-24/100
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    type: string
+                    description: The content range of the response
+                    example: items 0-24/100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Car:
+      required:
+        - make
+        - model
+        - price
+        - status
+        - vin
+        - year
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the car
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+        vin:
+          maxLength: 17
+          minLength: 17
+          pattern: ^[A-HJ-NPR-Z0-9]{17}$
+          type: string
+          description: Vehicle Identification Number (17 characters)
+          example: 1HGBH41JXMN109186
+        make:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Car manufacturer
+          example: Toyota
+        model:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Car model name
+          example: Camry
+        year:
+          maximum: 2100
+          minimum: 1900
+          type: integer
+          description: Model year
+          example: 2023
+        color:
+          maxLength: 30
+          minLength: 1
+          type: string
+          description: Exterior color
+          example: Silver
+        mileage:
+          minimum: 0
+          type: integer
+          description: Current odometer reading in miles
+          example: 15234
+        price:
+          minimum: 0
+          type: number
+          description: List price in USD
+          example: 28500
+        status:
+          type: string
+          description: Current availability status
+          example: available
+          enum:
+            - available
+            - sold
+            - reserved
+            - pending
+            - maintenance
+        bodyType:
+          type: string
+          description: Type of vehicle body
+          example: sedan
+          enum:
+            - sedan
+            - suv
+            - truck
+            - coupe
+            - convertible
+            - wagon
+            - van
+            - hatchback
+        transmission:
+          type: string
+          description: Type of transmission
+          example: automatic
+          enum:
+            - automatic
+            - manual
+            - cvt
+        fuelType:
+          type: string
+          description: Type of fuel or power source
+          example: hybrid
+          enum:
+            - gasoline
+            - diesel
+            - electric
+            - hybrid
+            - plug-in-hybrid
+        engine:
+          maxLength: 100
+          type: string
+          description: Engine specifications
+          example: 2.5L 4-Cylinder
+        driveType:
+          type: string
+          description: Drive train configuration
+          example: fwd
+          enum:
+            - fwd
+            - rwd
+            - awd
+            - 4wd
+        doors:
+          maximum: 5
+          minimum: 2
+          type: integer
+          description: Number of doors
+          example: 4
+        seats:
+          maximum: 9
+          minimum: 2
+          type: integer
+          description: Number of seats
+          example: 5
+        features:
+          maxItems: 50
+          type: array
+          description: List of features and options
+          example:
+            - Backup Camera
+            - Bluetooth
+            - Cruise Control
+            - Leather Seats
+          items:
+            type: string
+        description:
+          maxLength: 1000
+          type: string
+          description: Additional notes or description
+          example: Well-maintained, single owner, complete service history
+        images:
+          maxItems: 20
+          type: array
+          description: URLs to car images
+          example:
+            - https://example.com/images/car1.jpg
+            - https://example.com/images/car2.jpg
+          items:
+            type: string
+        createdAt:
+          type: string
+          description: When this car was added to inventory
+          format: date-time
+          readOnly: true
+          example: '2025-01-15T10:30:00Z'
+        updatedAt:
+          type: string
+          description: When this car record was last updated
+          format: date-time
+          readOnly: true
+          example: '2025-01-20T14:45:00Z'
+      description: A car in the car lot inventory
+    CarUpdate:
+      type: object
+      properties:
+        color:
+          maxLength: 30
+          minLength: 1
+          type: string
+          description: Exterior color
+          example: Silver
+        mileage:
+          minimum: 0
+          type: integer
+          description: Current odometer reading in miles
+          example: 15234
+        price:
+          minimum: 0
+          type: number
+          description: List price in USD
+          example: 28500
+        features:
+          maxItems: 50
+          type: array
+          description: List of features and options
+          example:
+            - Backup Camera
+            - Bluetooth
+            - Cruise Control
+            - Leather Seats
+          items:
+            type: string
+        description:
+          maxLength: 1000
+          type: string
+          description: Additional notes or description
+          example: Well-maintained, single owner, complete service history
+        images:
+          maxItems: 20
+          type: array
+          description: URLs to car images
+          example:
+            - https://example.com/images/car1.jpg
+            - https://example.com/images/car2.jpg
+          items:
+            type: string
+      description: Schema for updating an existing car (all fields optional)
+    Error:
+      type: object
+      properties:
+        code:
+          maximum: 99999
+          minimum: 10000
+          type: integer
+          description: Error Code
+        message:
+          type: string
+          description: Error message from service
+    ErrorItem:
+      type: object
+      properties:
+        objectName:
+          type: string
+          description: Name of the object containing the field that is in error
+        field:
+          type: string
+          description: Name of the field in error
+        rejectedValue:
+          type: string
+          description: Value that caused the error
+        code:
+          maximum: 99999
+          minimum: 10000
+          type: integer
+          description: Error Code
+        message:
+          type: string
+          description: Error message from service
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "3019560d-9a95-4127-b250-7ca578256106",
+		"name": "Cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2749290"
+	},
+	"item": [
+		{
+			"name": "GET Cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let data = pm.response.json();",
+							"if (data && data.results && data.results[0] && data.results[0].id) {",
+							"    pm.environment.set('id', data.results[0].id);",
+							"}",
+							"if (data && data.results && data.results[1] && data.results[1].id) {",
+							"    pm.environment.set('id', data.results[1].id);",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/v1/cars",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"v1",
+						"cars"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "available",
+							"disabled": true
+						},
+						{
+							"key": "color",
+							"value": "Black",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let data = pm.response.json();",
+							"if (data && data.resources && data.resources[0] && data.resources[0].id) {",
+							"    pm.environment.set('id', data.resources[0].id);",
+							"}",
+							"if (data && data.resources && data.resources[1] && data.resources[1].id) {",
+							"    pm.environment.set('id2', data.resources[1].id);",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/v1/cars/50d3c79d-a9d6-4904-82f3-239d7a4146ab",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"v1",
+						"cars",
+						"50d3c79d-a9d6-4904-82f3-239d7a4146ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let primaryKey = 'id';",
+							"let data = pm.response.json();",
+							"if (data.resources[0][primaryKey]) {",
+							"    pm.environment.set(primaryKey, data.resources[0][primaryKey]);",
+							"}",
+							"if (data.resources[1]) {",
+							"    pm.environment.set(primaryKey + '2', data.resources[1][primaryKey])",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"vin\": \"1HGBH41JXMN109186\",\n  \"make\": \"Chevy\",\n  \"model\": \"Silverado\",\n  \"year\": 2023,\n  \"color\": \"Blue\",\n  \"mileage\": 15234,\n  \"price\": 28500.00,\n  \"status\": \"available\",\n  \"bodyType\": \"sedan\",\n  \"transmission\": \"automatic\",\n  \"fuelType\": \"hybrid\",\n  \"engine\": \"2.5L 4-Cylinder\",\n  \"driveType\": \"fwd\",\n  \"doors\": 4,\n  \"seats\": 5,\n  \"features\": [\n    \"Backup Camera\",\n    \"Bluetooth\",\n    \"Cruise Control\",\n    \"Leather Seats\"\n  ],\n  \"description\": \"Well-maintained, single owner, complete service history\",\n  \"images\": [\n    \"https://example.com/images/car1.jpg\",\n    \"https://example.com/images/car2.jpg\"\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/v1/cars",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"v1",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let primaryKey = 'id';",
+							"let data = pm.response.json();",
+							"if (data.resources[0][primaryKey]) {",
+							"    pm.environment.set(primaryKey, data.resources[0][primaryKey]);",
+							"}",
+							"if (data.resources[1]) {",
+							"    pm.environment.set(primaryKey + '2', data.resources[1][primaryKey])",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"vin\": \"1HGBH41JXMN109186\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2023,\n    \"color\": \"Silver\",\n    \"mileage\": 15234,\n    \"price\": 28500.00,\n    \"status\": \"available\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"automatic\",\n    \"fuelType\": \"hybrid\",\n    \"engine\": \"2.5L 4-Cylinder\",\n    \"driveType\": \"fwd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\"Backup Camera\", \"Bluetooth\", \"Cruise Control\", \"Leather Seats\"],\n    \"description\": \"Well-maintained, single owner, complete service history\",\n    \"images\": [\n      \"https://example.com/images/car1.jpg\",\n      \"https://example.com/images/car2.jpg\"\n    ]\n  },\n  {\n    \"vin\": \"2HGCM82633A004352\",\n    \"make\": \"Honda\",\n    \"model\": \"Accord\",\n    \"year\": 2022,\n    \"color\": \"Black\",\n    \"mileage\": 9800,\n    \"price\": 26500.00,\n    \"status\": \"sold\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"automatic\",\n    \"fuelType\": \"gasoline\",\n    \"engine\": \"2.0L Turbo\",\n    \"driveType\": \"fwd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\"Bluetooth\", \"Heated Seats\"],\n    \"description\": \"Low mileage, certified pre-owned\",\n    \"images\": [\n      \"https://example.com/images/car3.jpg\"\n    ]\n  },\n  {\n    \"vin\": \"3FA6P0K98HR123456\",\n    \"make\": \"Ford\",\n    \"model\": \"Fusion\",\n    \"year\": 2021,\n    \"color\": \"White\",\n    \"mileage\": 23000,\n    \"price\": 21000.00,\n    \"status\": \"available\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"manual\",\n    \"fuelType\": \"gasoline\",\n    \"engine\": \"1.5L EcoBoost\",\n    \"driveType\": \"awd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\"Navigation\", \"Remote Start\"],\n    \"description\": \"Clean title, recent service\",\n    \"images\": [\n      \"https://example.com/images/car4.jpg\"\n    ]\n  }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/v1/cars",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"v1",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Health",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Assume response is an array of preferences",
+							"let data = pm.response.json();",
+							"if (Array.isArray(data) && data.length > 0 && data[0].preferenceId) {",
+							"    pm.environment.set(\"preferenceId\", data[0].preferenceId);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/v1/health",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Resources",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"resources\": [\n    {\n      \"id\": \"{{id}}\",\n      \"resourceType\": \"Preference\",\n      \"value\": \"batch update 1\"\n    },\n    {\n      \"id\": \"{{id2}}\",\n      \"resourceType\": \"Preference\",\n      \"value\": \"batch update 2\"\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/v1/resources",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"v1",
+						"resources"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

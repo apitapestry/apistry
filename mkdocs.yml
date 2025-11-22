@@ -33,4 +33,18 @@ extra:
 
 nav:
   - Home: index.md
-  - Overview: overview.md
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Problem & Motivation: getting-started/problem.md
+    - Core Concepts: getting-started/core-concept.md
+  - Design Guide:
+    - Contract Design: design-guide/contract-design.md
+    - Business Logic: design-guide/business-logic.md
+    - Patterns: design-guide/patterns.md
+    - Reference & Examples: design-guide/reference-examples.md
+  - Architecture & Operations:
+    - Architecture & Runtime: architecture-operations/architecture.md
+    - Adoption: architecture-operations/adoption.md
+  - Implementation:
+    - Getting Started: implementation/README.md
+    - Collection Auto-Creation: implementation/collection-auto-creation.md

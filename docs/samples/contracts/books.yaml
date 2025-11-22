@@ -1,0 +1,535 @@
+openapi: 3.0.3
+info:
+  title: Books
+  description: Books
+  termsOfService: https://developer.acme.com/terms/
+  contact:
+    name: acme API Gov Team
+    email: API-Gov-Team@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: v1
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com
+servers:
+  - url: https://localhost:3000
+security:
+  - bearerAuth: []
+paths:
+  /v1/books:
+    get:
+      tags:
+        - Books
+      summary: List books
+      description: List books
+      operationId: getBooks
+      parameters:
+        - name: ids
+          in: query
+          description: Unique identifier for the book.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+              format: uuid
+        - name: limit
+          in: query
+          description: Maximum number of items to return.
+          required: false
+          style: form
+          explode: true
+          schema:
+            maximum: 2000
+            minimum: 1
+            type: integer
+        - name: offset
+          in: query
+          description: Number of items to skip before starting to collect the result set.
+          required: false
+          style: form
+          explode: true
+          schema:
+            maximum: 1000000
+            minimum: 0
+            type: integer
+        - name: order
+          in: query
+          description: Sort order for the results (e.g., order=title.asc).
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^[A-Za-z0-9_]+\.(asc|desc)$
+            type: string
+      responses:
+        '200':
+          description: >-
+            A list of books The response also includes a Content-Range header in
+            the format 'items start-end/total', which provides the total record
+            count.
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Books'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Books
+      summary: Create books in bulk
+      description: Create multiple book records
+      operationId: createBooks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              maxItems: 1000
+              minItems: 1
+              type: array
+              items:
+                $ref: '#/components/schemas/Book'
+        required: true
+      responses:
+        '201':
+          description: Books created successfully in bulk
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Books'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Books
+      summary: Delete books
+      description: Remove a book
+      operationId: deleteBooks
+      parameters:
+        - name: category
+          in: query
+          description: Filter by category (supports wildcard and partial matches).
+          required: false
+          style: form
+          explode: true
+          schema:
+            maxLength: 40
+            minLength: 1
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+        - name: ids
+          in: query
+          description: Unique identifier for the book.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+              format: uuid
+        - name: id
+          in: query
+          description: Unique identifier for the book.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            format: uuid
+        - name: dueDateTime
+          in: query
+          description: >-
+            Due date for the book (ISO 8601 format). Only applicable for tasks
+            book.
+          required: false
+          style: form
+          explode: true
+          schema:
+            pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+            type: string
+      responses:
+        '200':
+          description: >-
+            A list of books The response also includes a Content-Range header in
+            the format 'items start-end/total', which provides the total record
+            count.
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Books'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Books
+      summary: Update books
+      description: >-
+        Update multiple books in your personal library. Only need to provide
+        those fields that need to be updated.
+      operationId: updateBooks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              maxItems: 1000
+              minItems: 1
+              type: array
+              items:
+                $ref: '#/components/schemas/Book'
+        required: true
+      responses:
+        '200':
+          description: Updated successfully
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Books'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ErrorItem'
+        '429':
+          description: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Book:
+      required:
+        - resourceType
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+        resourceType:
+          type: string
+          enum:
+            - Book
+          x-query: required
+        providerId:
+          maxLength: 64
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          type: string
+          description: Unique identifier from the content provider
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        providerSource:
+          type: string
+          description: The service or platform where this book was obtained
+          enum:
+            - audible
+            - kindle
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.)(audible|kindle)$|^isNull$
+        addedAtDateTime:
+          type: string
+          description: When this book was added to your library
+          format: date-time
+          readOnly: true
+          x-query: optional
+          x-query-pattern: >-
+            ^(gt\.|lt\.|gte\.|lte\.|eq\.|neq\.)[0-9T:\-Z]+$|^[0-9T:\-Z]+$|^isNull$
+        lastPlayedAtDateTime:
+          type: string
+          description: When you last listened to this book
+          format: date-time
+          x-query: optional
+          x-query-pattern: >-
+            ^(gt\.|lt\.|gte\.|lte\.|eq\.|neq\.)[0-9T:\-Z]+$|^[0-9T:\-Z]+$|^isNull$
+        lastPositionMins:
+          minimum: 0
+          type: integer
+          description: Your current listening position in minutes
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$
+        userRating:
+          maximum: 10
+          minimum: 0
+          type: integer
+          description: Your personal rating of this book (0-10 scale)
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$
+        mediaType:
+          type: string
+          description: The type of content (book or podcast)
+          enum:
+            - audiobook
+            - ebook
+            - book
+            - podcast
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.)(audiobook|ebook|book|podcast)$|^isNull$
+        isbnId:
+          maxLength: 17
+          minLength: 10
+          pattern: ^[0-9\-]+$
+          type: string
+          description: International Standard Book Number for the book
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.)[0-9\-]+$|^[0-9\-*]+$|^isNull$
+        title:
+          maxLength: 255
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?/-]+$
+          type: string
+          description: The title of the book
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        genres:
+          maxLength: 255
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          type: string
+          description: Comma-separated list of genres
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        author:
+          maxLength: 255
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          type: string
+          description: The person who wrote the book
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        narrator:
+          maxLength: 255
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          type: string
+          description: The person who narrated the book
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        seriesName:
+          maxLength: 150
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          type: string
+          description: Name of the book series this book belongs to
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        numBooksInSeries:
+          minimum: 0
+          type: integer
+          description: Total number of books in the series
+        bookNumInSeries:
+          minimum: 0
+          type: integer
+          description: The position of this book within its series
+        usageStatus:
+          $ref: '#/components/schemas/UsageStatusEnum'
+      description: An book in your personal library
+      x-context:
+        required:
+          post:
+            - resourceType
+            - title
+            - author
+            - mediaType
+          put:
+            - resourceType
+            - title
+            - author
+            - mediaType
+          delete:
+            - id
+          patch:
+            - id
+        prohibited:
+          post:
+            - id
+          put:
+            - id
+    Books:
+      type: object
+      properties:
+        contentRange:
+          $ref: '#/components/schemas/ContentRange'
+        results:
+          maxItems: 1000
+          minItems: 0
+          type: array
+          description: The list of books
+          items:
+            $ref: '#/components/schemas/Book'
+      readOnly: true
+    ContentRange:
+      type: string
+      description: The content range of the response
+      example: items 0-24/100
+    Error:
+      type: object
+      properties:
+        code:
+          maximum: 99999
+          minimum: 10000
+          type: integer
+          description: Error Code
+        message:
+          type: string
+          description: Error message from service
+    ErrorItem:
+      type: object
+      properties:
+        objectName:
+          type: string
+          description: Name of the object containing the field that is in error
+        field:
+          type: string
+          description: Name of the field in error
+        rejectedValue:
+          type: string
+          description: Value that caused the error
+        code:
+          maximum: 99999
+          minimum: 10000
+          type: integer
+          description: Error Code
+        message:
+          type: string
+          description: Error message from service
+    Id:
+      type: string
+      description: Unique identifier for this resource
+      format: uuid
+      x-query: optional
+      x-primary-key: true
+      x-query-pattern: >-
+        ^(eq\.|neq\.)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^isNull$
+    UsageStatusEnum:
+      type: string
+      description: Your viewing or listening progress status
+      enum:
+        - UNKNOWN
+        - UNSEEN
+        - IN_PROGRESS
+        - COMPLETED
+        - ABANDONED
+      x-query: optional
+      x-query-pattern: ^(eq\.|neq\.)(UNKNOWN|UNSEEN|IN_PROGRESS|COMPLETED|ABANDONED)$|^isNull$
+  headers:
+    ContentRange:
+      description: Total count of items matching the filter criteria
+      schema:
+        type: string
+        example: 0-700/*
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

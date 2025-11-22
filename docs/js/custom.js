@@ -1,17 +1,17 @@
-// Custom JavaScript to change the site name link to point to overview.md
+// Custom JavaScript to change the site name link to point to intro.md
 document.addEventListener("DOMContentLoaded", function() {
     // Find the site name/logo link in the header (the icon)
     const logoLink = document.querySelector('.md-header__button.md-logo');
 
     if (logoLink) {
-        // Hardcode to overview page - find the site root
+        // Hardcode to intro page - find the site root
         const pathParts = window.location.pathname.split('/').filter(p => p);
         // Remove the last part if it's a page name
         if (pathParts.length > 0 && !pathParts[pathParts.length - 1].endsWith('/')) {
             pathParts.pop();
         }
         const siteRoot = '/' + pathParts.join('/');
-        logoLink.href = siteRoot + (siteRoot.endsWith('/') ? '' : '/') + 'overview/';
+        logoLink.href = siteRoot + (siteRoot.endsWith('/') ? '' : '/') + 'intro/';
     }
 
     // Also make the site title text clickable
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     pathParts.pop();
                 }
                 const siteRoot = '/' + pathParts.join('/');
-                window.location.href = siteRoot + (siteRoot.endsWith('/') ? '' : '/') + 'overview/';
+                window.location.href = siteRoot + (siteRoot.endsWith('/') ? '' : '/') + 'intro/';
             });
         }
     });
