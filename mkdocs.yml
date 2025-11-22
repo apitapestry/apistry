@@ -1,15 +1,30 @@
 site_name: APIstry
-site_url: https://docs.contract-as-a-service.net
+site_url: https://www.apistry.net
 use_directory_urls: true
+
+nav:
+  - "<- Home": https://www.apitapestry.net
+  - APIstry: apistry.md
+  - Overview: README.md
+  - GETTING STARTED:
+      - Getting Started: implementation
+      - Collection Auto-Creation: implementation/collection-auto-creation.md
+      - Concepts: concepts.md
+      - Installation: installation.md
+      - Server Start: quickstart.md
+      - Features: features.md
+  - GUIDES:
+      - APIstry CLI: apistrycli.md
+  - REFERENCE:
+      - Placeholder: placeholder.md
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.expand
-#    - navigation.sections
     - navigation.tracking
-#    - navigation.top
-#    - navigation.tabs
+#    - navigation.sections
   palette:
     - scheme: default
       primary: custom
@@ -24,27 +39,4 @@ theme:
 extra_css:
   - css/custom.css
   - css/home.css
-
-extra_javascript:
-  - js/custom.js
-
-extra:
-  generator: false
-
-nav:
-  - Home: index.md
-  - Getting Started:
-    - Overview: getting-started/overview.md
-    - Problem & Motivation: getting-started/problem.md
-    - Core Concepts: getting-started/core-concept.md
-  - Design Guide:
-    - Contract Design: design-guide/contract-design.md
-    - Business Logic: design-guide/business-logic.md
-    - Patterns: design-guide/patterns.md
-    - Reference & Examples: design-guide/reference-examples.md
-  - Architecture & Operations:
-    - Architecture & Runtime: architecture-operations/architecture.md
-    - Adoption: architecture-operations/adoption.md
-  - Implementation:
-    - Getting Started: implementation/README.md
-    - Collection Auto-Creation: implementation/collection-auto-creation.md
+  - css/layout.css

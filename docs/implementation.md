@@ -27,12 +27,12 @@ easy to create and maintain consistent, well-documented APIs.
 APIstry includes sample OpenAPI contracts that demonstrate various features and use cases. These contracts are located
 in the [`docs/samples/contracts/`](../samples/contracts/) directory:
 
-- **[Books API](../samples/contracts/books.yaml)** (`books.yaml`) - Book collection management
-- **[Cars](../samples/contracts/cars.v1.yaml)** (`cars.v1.yaml`) - Comprehensive vehicle inventory management with
+- **[Books API](samples/contracts/books.yaml)** (`books.yaml`) - Book collection management
+- **[Cars](samples/contracts/cars.v1.yaml)** (`cars.v1.yaml`) - Comprehensive vehicle inventory management with
   advanced filtering, sorting, and pagination capabilities
-- **[Utils](../samples/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
+- **[Utils](samples/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
   status
-- **[Videos API](../samples/contracts/videos.yaml)** (`videos.yaml`) - Video collection management
+- **[Videos API](samples/contracts/videos.yaml)** (`videos.yaml`) - Video collection management
 
 These sample contracts serve as reference implementations and can be used as templates for creating your own APIs.
 
@@ -140,7 +140,7 @@ curl -X POST http://localhost:3000/v1/cars \
 #### Postman Collection
 
 A Postman collection is available for testing the Cars API. Import the [
-`Cars.postman_collection.json`](../samples/Cars.postman_collection.json) file into Postman to access pre-configured
+`Cars.postman_collection.json`](samples/Cars.postman_collection.json) file into Postman to access pre-configured
 requests for all car management endpoints including:
 
 - GET requests with various filter examples
@@ -197,7 +197,7 @@ Creating collections...
 ✅ All collections created successfully
 ```
 
-For detailed documentation, see [Collection Auto-Creation Guide](./collection-auto-creation.md).
+For detailed documentation, see [Collection Auto-Creation Guide](collection-auto-creation.md).
 
 ## Query Operators
 
