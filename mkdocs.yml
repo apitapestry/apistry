@@ -24,7 +24,6 @@ nav:
 
 theme:
   name: material
-  custom_dir: overrides
   features:
     - navigation.expand
     - navigation.tracking
