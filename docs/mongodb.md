@@ -12,7 +12,7 @@ environment variable. Apistry supports `.env` files for local development enviro
 **_Note:_** Be sure to provide the database name in your connection string. When started, database and collection
 will be created if they do not already exist.
 
-## MongoDB Connection String
+## Connection String
 Hosted MongoDB Example:
 ```bash
 export DB_CONNECTION="mongodb+srv://myserver:****@myserver-db.ojsguxa.mongodb.net/mydb?appName=myserver-db"
@@ -29,7 +29,7 @@ Or create an `.env` file containing:
 DB_CONNECTION=mongodb+srv://myserver:****@myserver-db.ojsguxa.mongodb.net/mydb?appName=myserver-db
 ```
 
-## Confirm Database Connection
+## Test Connection
 Before starting the server, it's a good idea to test the database connection to your DB_CONNECTION is correct.
 
 ```bash
@@ -51,3 +51,5 @@ The path is optional; if not provided, the current directory is used.
 📂 Database name: apistry
 🔌 Connection closed.
 ```
+
+<br><br>

@@ -26,6 +26,7 @@ theme:
   features:
     - navigation.expand
     - navigation.tracking
+    - navigation.footer
 #    - navigation.sections
   palette:
     - scheme: default
