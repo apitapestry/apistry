@@ -271,8 +271,3 @@ The feature is controlled by the `enableAutoCollectionCreate` option:
 - **Default**: `'n'` (no auto-creation, prompt user)
 - **Type**: String
 - **Valid values**: `'y'`, `'yes'`, `'n'`, `'no'` (case-insensitive)
-
----
-
-© 2025 API Tapestry. All rights reserved.
-

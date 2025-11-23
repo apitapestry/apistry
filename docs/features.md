@@ -240,7 +240,3 @@ Apistry provides automatic validation at multiple levels:
 ## Fastify-Based
 
 Built on the high-performance Fastify web framework.
-
----
-
-© 2025 API Tapestry. All rights reserved.

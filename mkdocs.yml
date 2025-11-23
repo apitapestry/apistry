@@ -2,6 +2,8 @@ site_name: APIstry
 site_url: https://www.apistry.net
 use_directory_urls: true
 
+copyright: '©2025 API Tapestry. All rights reserved.'
+
 nav:
   - "<- Home": https://www.apitapestry.net
   - APIstry: apistry.md
