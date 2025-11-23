@@ -110,7 +110,7 @@ curl -X DELETE http://localhost:3000/v1/products/{id}
 - **Explore [Features](features.md)** - Learn about filtering, pagination, bulk operations
 - **Check out [Sample Contracts](samples/contracts/)** - See more complex examples
 - **Read [Implementation Guide](testing.md)** - Detailed documentation
-- **Learn about [CaaS](../../caas/caas/docs/index.md)** - Understand the architecture pattern
+- **Learn about [CaaS](../../caas/docs/caas/index.md)** - Understand the architecture pattern
 
 ## Common Options
 

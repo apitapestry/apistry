@@ -1,9 +1,0 @@
-{% if config.extra.topnav %}
-<nav class="md-topnav" aria-label="Top navigation">
-  <ul class="md-topnav__list">
-    {% for item in config.extra.topnav %}
-    <li class="md-topnav__item"><a href="{{ item.url }}" class="md-topnav__link">{{ item.label }}</a></li>
-    {% endfor %}
-  </ul>
-</nav>
-{% endif %}
