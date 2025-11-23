@@ -30,3 +30,4 @@ Apistry is ideal for:
 - **Prototyping** - Quickly validate API designs before investing in custom implementation
 - **Internal APIs** - Backend services for internal tools and dashboards
 - **Event-Driven Architectures** - Simple CRUD surface with business logic in event consumers
+<br><br>

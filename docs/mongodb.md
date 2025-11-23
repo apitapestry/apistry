@@ -12,6 +12,7 @@ environment variable. Apistry supports `.env` files for local development enviro
 **_Note:_** Be sure to provide the database name in your connection string. When started, database and collection
 will be created if they do not already exist.
 
+## MongoDB Connection String
 Hosted MongoDB Example:
 ```bash
 export DB_CONNECTION="mongodb+srv://myserver:****@myserver-db.ojsguxa.mongodb.net/mydb?appName=myserver-db"

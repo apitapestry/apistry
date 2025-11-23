@@ -219,3 +219,5 @@ apistry clearCollection --help
 
 ---
 **Next:** Explore the generated API via the Swagger UI at `/docs` after running `serve`.
+
+<br><br>

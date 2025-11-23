@@ -1,5 +1,5 @@
 :root {
-  --apistry-sidebar-width: 260px;
+  --apistry-leftnav-width: 260px;
   --apistry-header-height:56px;
   --apistry-accent:#6366f1;
   --apistry-hover-bg:#f3f4f6;
@@ -11,7 +11,7 @@
   position: fixed;
   top:0;
   left:0;
-  width: var(--apistry-sidebar-width);
+  width: var(--apistry-leftnav-width);
   height:100vh;
   overflow:auto;
   box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.06);
@@ -44,14 +44,9 @@
 }
 
 /* Main content position right of sidebar (no header) */
-.md-main { margin-left: var(--apistry-sidebar-width); padding-top: 0; }
+.md-main { margin-left: var(--apistry-leftnav-width); padding-top: 0; }
 .md-content { margin-left:0; max-width: none; }
-.md-sidebar--secondary { margin-left: var(--apistry-sidebar-width); padding-top: 0; }
-
-/* Content area - no width constraint */
-.md-main__inner { max-width: none; }
-.md-main__inner > .md-content { margin:0; padding: 0 2rem; max-width: none; }
-.md-typeset { line-height:1.58; font-size:16px; }
+.md-sidebar--secondary { padding-top: 0; width: 0; }
 
 /* Active nav styling for dark sidebar */
 .md-sidebar--primary .md-nav__item .md-nav__link {

@@ -130,7 +130,7 @@ GET /v1/cars?sort=make,-price
 
 ## Bulk Operations
 
-### Bulk Insert
+**Bulk Insert**
 Create multiple resources in a single request:
 
 ```bash
@@ -144,7 +144,7 @@ Content-Type: application/json
 ]
 ```
 
-### Bulk Update
+**Bulk Update**
 Update multiple resources matching criteria:
 
 ```bash
@@ -154,7 +154,7 @@ Content-Type: application/json
 {"status": "certified"}
 ```
 
-### Bulk Delete
+**Bulk Delete**
 Delete multiple resources matching criteria:
 
 ```bash
@@ -222,21 +222,19 @@ Useful for building paginated UIs and understanding result sets.
 
 Apistry provides automatic validation at multiple levels:
 
-### Schema Validation
+**Schema Validation**
 - All requests are validated against the schemas defined in your OpenAPI contract
 - Uses AJV (Another JSON Schema Validator) for fast, accurate validation
 - Returns clear error messages when validation fails
 
-### Request Validation
+**Request Validation**
 - Path parameters
 - Query parameters
 - Headers
 - Request body
 
-### Response Validation
+**Response Validation**
 - Ensures responses match the contract's response schemas
 - Helps catch contract/implementation mismatches early
 
-## Fastify-Based
-
-Built on the high-performance Fastify web framework.
+<br><br>
