@@ -1,4 +1,4 @@
-site_name: APIstry
+site_name: Apistry
 site_url: https://www.apistry.net
 use_directory_urls: true
 
@@ -6,7 +6,6 @@ copyright: '©2025 API Tapestry. All rights reserved.'
 
 nav:
   - "<- Home": https://www.apitapestry.net
-  - APIstry: https://www.apitapestry.net/apistry
   - Overview: README.md
   - GETTING STARTED:
       - Concepts: concepts.md
@@ -16,7 +15,7 @@ nav:
       - Start Server: start-server.md
       - Testing: testing.md
   - GUIDES:
-      - APIstry CLI: apistry-cli.md
+      - Apistry CLI: apistry-cli.md
   - REFERENCE:
       - OpenApi Design: openapi-design.md
 
@@ -41,12 +40,3 @@ theme:
 
 extra_css:
   - css/extra.css
-#
-##HIDE SEARCH BAR (desktop + mobile)
-#.md-header__option.md-search {
-#  display: none !important;
-#}
-#
-#.md-search {
-#  display: none !important;
-#}
