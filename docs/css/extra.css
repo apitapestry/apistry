@@ -1,54 +1,8 @@
-/* Minimal Apistry CSS — only branding, no layout overrides */
-
-/* Brand color for sidebar + header */
 :root {
-    --apistry-sidebar-bg: #0a1628;
+    --md-primary-fg-color: #0a1628;
 }
 
-/* Sidebar background + text color (fully colored sidebar) */
-.md-sidebar--primary,
-.md-sidebar--primary .md-sidebar__inner,
-.md-sidebar--primary .md-sidebar__scrollwrap,
-.md-sidebar--primary .md-nav,
-.md-sidebar--primary .md-nav__list,
-.md-sidebar--primary .md-nav__item,
-.md-sidebar--primary .md-nav__title {
-    background-color: var(--apistry-sidebar-bg) !important;
-    color: #ffffff !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-shadow: none !important;
-}
-
-/* Larger sitename */
-.md-sidebar--primary .md-nav__title {
-    font-size: 1.1rem !important;
-    font-weight: 600 !important;
-    text-shadow: none !important;
-}
-
-.md-sidebar--primary .md-nav__title {
-    font-size: 1.4rem !important;
-    font-weight: 600 !important;
-}
-
-/* Sidebar links */
-.md-sidebar--primary .md-nav__link {
-    color: #ffffff !important;
-}
-
-/* Header background matches sidebar */
-.md-header {
-    background-color: var(--apistry-sidebar-bg) !important;
-    box-shadow: none !important;
-}
-
-/* Hamburger icon visible on dark background */
-.md-header__button.md-icon svg {
-    fill: #ffffff !important;
-}
-
-/* Remove “Powered by MkDocs” footer */
+/* remove footer branding */
 .md-footer__inner {
     display: none !important;
 }

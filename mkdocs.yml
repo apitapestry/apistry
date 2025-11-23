@@ -4,6 +4,9 @@ use_directory_urls: true
 
 copyright: '©2025 API Tapestry. All rights reserved.'
 
+extra_css:
+  - css/extra.css
+
 nav:
   - "<- Home": https://www.apitapestry.net
   - Overview: README.md
@@ -37,6 +40,3 @@ theme:
   font:
     text: Inter
     code: Roboto Mono
-
-extra_css:
-  - css/extra.css
