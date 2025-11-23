@@ -1,0 +1,211 @@
+/* ============================================================
+   APISTRY.CSS — Unified styling for MkDocs Material
+   Includes:
+   - Color palette (light & dark mode)
+   - Desktop layout with fixed sidebar
+   - Mobile-responsive behavior (hamburger restored)
+   - Homepage hero background + typography
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   COLOR PALETTE — Light / Dark theme variables
+   ------------------------------------------------------------ */
+
+/* Light mode */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color:        #0066CC;
+    --md-primary-fg-color--light: #3385D6;
+    --md-primary-fg-color--dark:  #004C99;
+
+    --md-accent-fg-color:         #00AEEF;
+    --md-default-bg-color:        #FFFFFF;
+    --md-default-fg-color:        #222222;
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color:        #3399FF;
+    --md-primary-fg-color--light: #66B2FF;
+    --md-primary-fg-color--dark:  #1A75D1;
+
+    --md-accent-fg-color:         #33CCFF;
+    --md-default-bg-color:        #0E1A27;
+    --md-default-fg-color:        #E0E6ED;
+}
+
+/* Match Header color to left sidebar */
+.md-header {
+    background-color: var(--apistry-sidebar-bg) !important;
+    box-shadow: none !important;   /* Remove Material's drop shadow */
+}
+
+/* Remove “Material for MkDocs” label in left sidebar */
+.md-nav__title {
+    display: none;
+}
+
+/* ------------------------------------------------------------
+   LAYOUT — Desktop and Mobile behavior
+   ------------------------------------------------------------ */
+
+:root {
+    --apistry-leftnav-width: 260px;
+    --apistry-header-height: 56px;
+    --apistry-sidebar-bg: #0a1628;
+    --apistry-accent: #6366f1;
+}
+
+/* -----------------------
+   DESKTOP (>= 960px)
+   ----------------------- */
+@media (min-width: 960px) {
+
+    /* Keep header visible so mobile hamburger works */
+    .md-header {
+        height: var(--apistry-header-height);
+    }
+
+    /* Fixed sidebar on desktop only */
+    .md-sidebar--primary {
+        position: fixed;
+        top: var(--apistry-header-height);
+        left: 0;
+        width: var(--apistry-leftnav-width);
+        height: calc(100vh - var(--apistry-header-height));
+        overflow: auto;
+        background: var(--apistry-sidebar-bg);
+        color: #ffffff;
+        z-index: 50;
+    }
+
+    .md-sidebar--primary .md-nav__link {
+        color: #e5e7eb;
+    }
+
+    /* Main content area shifted right */
+    .md-main {
+        margin-left: var(--apistry-leftnav-width);
+        padding-top: var(--apistry-header-height);
+    }
+
+    .md-content {
+        max-width: none;
+    }
+
+    /* Hide right sidebar on desktop unless used */
+    .md-sidebar--secondary {
+        display: none;
+    }
+}
+
+/* -----------------------
+   MOBILE (< 960px)
+   ----------------------- */
+@media (max-width: 959px) {
+
+    .md-header {
+        display: block !important;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    .md-sidebar--primary {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        background: var(--apistry-sidebar-bg);
+    }
+
+    .md-main {
+        margin-left: 0 !important;
+        padding-top: var(--apistry-header-height) !important;
+    }
+
+    .md-sidebar--secondary {
+        display: none !important;
+    }
+}
+
+/* ------------------------------------------------------------
+   CONTENT STYLING — Safe defaults
+   ------------------------------------------------------------ */
+
+.md-typeset table {
+    width: 100%;
+}
+
+.md-typeset pre,
+.md-typeset .highlight {
+    max-width: 100%;
+}
+
+.md-content > .md-content__inner {
+    padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------
+   HOMEPAGE HERO — Background image, fade, typography
+   ------------------------------------------------------------ */
+
+/* Apply background only on pages containing #homepage-hero */
+.md-content article:has(#homepage-hero)::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 66.67vh;
+    background: url("../images/techgalaxy.jpg") no-repeat center top;
+    background-size: cover;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Gradient fade into page background */
+.md-content article:has(#homepage-hero)::after {
+    content: "";
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    width: 100%;
+    height: 16.67vh;
+    background: linear-gradient(to bottom, transparent, var(--md-default-bg-color));
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Slight white overlay under hero text */
+.md-content article:has(#homepage-hero) {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero H1 */
+.md-content article:has(#homepage-hero) h1:first-of-type {
+    color: white !important;
+    font-size: 4rem !important;
+    text-align: center !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+/* Hero H2 */
+.md-content article:has(#homepage-hero) h2:first-of-type {
+    color: white !important;
+    font-size: 2.5rem !important;
+    font-family: 'Georgia', 'Garamond', 'Palatino', serif !important;
+    font-style: italic;
+    font-weight: 300;
+    text-align: center !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+}

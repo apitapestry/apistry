@@ -6,7 +6,7 @@ copyright: '©2025 API Tapestry. All rights reserved.'
 
 nav:
   - "<- Home": https://www.apitapestry.net
-  - APIstry: apistry.md
+  - APIstry: https://www.apitapestry.net/apistry
   - Overview: README.md
   - GETTING STARTED:
       - Concepts: concepts.md
@@ -40,6 +40,13 @@ theme:
     code: Roboto Mono
 
 extra_css:
-  - css/custom.css
-  - css/home.css
-  - css/layout.css
+  - css/extra.css
+#
+##HIDE SEARCH BAR (desktop + mobile)
+#.md-header__option.md-search {
+#  display: none !important;
+#}
+#
+#.md-search {
+#  display: none !important;
+#}
