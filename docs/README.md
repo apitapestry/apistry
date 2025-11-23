@@ -1,8 +1,8 @@
-# APIstry
+# Apistry
 
 <p style="font-size: 24px;"><strong>Contract to Service Runtime</strong> with <strong>MongoDB interaction</strong></p>
 
-APIstry provides a generic runtime engine that turns OpenAPI 3.0 contracts into fully functional REST APIs without
+Apistry provides a generic runtime engine that turns OpenAPI 3.0 contracts into fully functional REST APIs without
 writing service-specific code. It includes built-in MongoDB integration for automatic CRUD operations, advanced
 querying, and request/response validation based on contract schemas.
 
@@ -10,8 +10,7 @@ querying, and request/response validation based on contract schemas.
 [![npm Downloads](https://img.shields.io/npm/dw/tapestry/apistry?color=blue)]
 (https://www.npmjs.com/package/apistry)
 
-- **Contract-ONLY Development**: Define your API using OpenAPI 3.0 specifications, and the service automatically
-  creates functional endpoints
+- **OpenAPI Contract**: Define your API using OpenAPI 3.0 specifications, and the service automatically creates functional endpoints
 - **Swagger UI Documentation**: Automatically generated interactive API documentation available at `/docs`
 - **Auto-Collection Creation**: Automatically validates and creates MongoDB database and collections based on OpenAPI
   tags during server startup
@@ -19,9 +18,9 @@ querying, and request/response validation based on contract schemas.
 - **Flexible Querying**: Support for operators like `eq`, `neq`, `gt`, `lt`, `gte`, `lte`, `isNull`, and wildcard
   matching
 - **Bulk Operations**: Support for bulk inserts, updates, and deletes
-- **Validation**: Automatic request/response validation using AJV and JSON Schema
+- **Response List Handling**: Optional metadata in responses including total count and pagination information
+- **Validation**: Automatic parameter, request/response validation using AJV and JSON Schema
 - **Fastify-Based**: Built on the high-performance Fastify web framework
-- **Response Arrays**: Optional metadata in responses including total count and pagination information
   [//]: # (- **AWS Lambda Ready**: Can be deployed as a Lambda function or run locally)
 
 ## Overview
@@ -29,12 +28,13 @@ querying, and request/response validation based on contract schemas.
 - [🧰 Installation](#-installation)
 - [💻 Usage](#-usage)
 - [📖 Documentation](#-documentation)
-- [⚙️ Integrations](#️-integrations)
+
+[//]: # (- [⚙️ Integrations]&#40;#️-integrations&#41;)
 - [👏 Contributing](#-contributing)
 
 ## 🧰 Installation
 
-- The easiest way to install APIstry is to use either [npm](https://www.npmjs.com/):
+- The easiest way to install Apistry is to use either [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/):
 
 ```bash
 npm install -g apistry
@@ -48,9 +48,9 @@ yarn global add apistry
 
 ## 💻 Usage
 
-### 1. Create an OpenApi contract
+### 1. OpenApi contract
 
-APIstry, being a contract based service, **needs a well-defined contract** to startup. 
+Apistry, being a contract based service, **needs a well-defined contract** to startup. 
 The following examples have been provided to get you started quickly:
 
 - **[Books API](samples/contracts/books.yaml)** (`books.yaml`)
@@ -63,14 +63,14 @@ Download one or all of these to get started quickly or create your own.
 
 ### 2. MongoDB Setup
 
-APIstry requires a MongoDB database for document storage and operations. Both local and cloud-hosted MongoDB instances 
+Apistry requires a MongoDB database for document storage and operations. Both local and cloud-hosted MongoDB instances 
 are supported.
 
-**Database Compatibility:** While APIstry is designed to work with any JSON document database that supports standard 
+**Database Compatibility:** While Apistry is designed to work with any JSON document database that supports standard 
 querying capabilities, the current release provides native integration exclusively with MongoDB.
 
 **Connection Configuration:** For security best practices, the MongoDB connection string must be provided as an 
-environment variable. APIstry supports `.env` files for local development environments.
+environment variable. Apistry supports `.env` files for local development environments.
 
 **Note:** Be sure to provide the database name in your connection string. When started, database and collection 
 will be created if they do not already exist.
@@ -160,23 +160,23 @@ apistry serve -e contracts/.env -c contracts/cars.v1.yaml
 ## 📖 Documentation
 
 - [Documentation](https://www.apitapestry.net/apistry/overview.md)
-    - [Getting Started](https://www.apitapestry.net/apistry/concepts.md) - The basics of APIstry.
+    - [Getting Started](https://www.apitapestry.net/apistry/concepts.md) - The basics of Apistry.
 
 Once you've had a look through the getting started material, some of these guides can help you become a power user.
 
 - [Using the command-line interface](https://www.apitapestry.net/apistry/overview.md/apistrycli.md) - Quickest way 
-  to get going with APIstry is in the CLI.
+  to get going with Apistry is in the CLI.
 
 ## ℹ️ Support
 
-If you need help using APIstry or have any questions, you can use [GitHub Discussions](https://github.com/apitapestry/apistry/discussions)
+If you need help using Apistry or have any questions, you can use [GitHub Discussions](https://github.com/apitapestry/apistry/discussions)
 
 If you have a bug or feature request, [create an issue for it](https://github.com/apitapestry/apistry/issues).
 
 [//]: # (## 👏 Contributing)
 
 [//]: # ()
-[//]: # (If you are interested in contributing to APIstry, check out [CONTRIBUTING.md]&#40;CONTRIBUTING.md&#41;.)
+[//]: # (If you are interested in contributing to Apistry, check out [CONTRIBUTING.md]&#40;CONTRIBUTING.md&#41;.)
 
 [//]: # ()
 [//]: # (## 🎉 Thanks)
@@ -186,4 +186,4 @@ If you have a bug or feature request, [create an issue for it](https://github.co
 
 ## 📜 License
 
-APIstry is 100% free and open-source, under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
+Apistry is 100% free and open-source, under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).

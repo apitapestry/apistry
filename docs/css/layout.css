@@ -24,7 +24,7 @@
 .md-sidebar--primary .md-nav__list { padding-bottom:2rem; padding-top: 0.5rem; }
 .md-sidebar--primary .md-nav__link { color:#e5e7eb; }
 
-/* Larger font for APIstry main nav item */
+/* Larger font for Apistry main nav item */
 .md-sidebar--primary > .md-sidebar__scrollwrap > .md-sidebar__inner > .md-nav--primary > .md-nav__list > .md-nav__item:nth-child(2) > .md-nav__link {
   font-size: 1.1rem;
   font-weight: 700;

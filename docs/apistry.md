@@ -1,8 +1,8 @@
-# APIstry
+# Apistry
 
-Landing page for the APIstry documentation. Provide a succinct overview, purpose, and links to key sections.
+Landing page for the Apistry documentation. Provide a succinct overview, purpose, and links to key sections.
 
-## What is APIstry?
+## What is Apistry?
 A brief description goes here.
 
 ## Next Steps

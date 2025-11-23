@@ -7,16 +7,16 @@ nav:
   - APIstry: apistry.md
   - Overview: README.md
   - GETTING STARTED:
-      - Getting Started: implementation
-      - Collection Auto-Creation: implementation/collection-auto-creation.md
       - Concepts: concepts.md
-      - Installation: installation.md
-      - Server Start: quickstart.md
       - Features: features.md
+      - Installation: installation.md
+      - MongoDB: mongodb.md
+      - Start Server: start-server.md
+      - Testing: testing.md
   - GUIDES:
-      - APIstry CLI: apistrycli.md
+      - APIstry CLI: apistry-cli.md
   - REFERENCE:
-      - Placeholder: placeholder.md
+      - OpenApi Design: openapi-design.md
 
 theme:
   name: material

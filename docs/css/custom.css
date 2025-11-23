@@ -94,13 +94,45 @@ html body .md-sidebar--secondary {
   flex: 0 0 var(--apistry-secondary-width) !important;
 }
 
-/* Option B: force main content to take ~95% of the space between sidebars */
+/* Option B (revised): let content flex but cap its max width so it doesn't overlap the secondary sidebar */
 html body .md-content {
-  /* Calculate the available viewport width minus sidebar widths and take 95% of that */
-  flex: 0 0 calc((100vw - var(--apistry-sidebar-width) - var(--apistry-secondary-width)) * 0.95) !important;
-  width: calc((100vw - var(--apistry-sidebar-width) - var(--apistry-secondary-width)) * 0.95) !important;
-  max-width: calc((100vw - var(--apistry-sidebar-width) - var(--apistry-secondary-width)) * 0.95) !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  /* subtract both sidebars and the flex gap space (2 * 1rem) from viewport */
+  max-width: calc(100vw - var(--apistry-sidebar-width) - var(--apistry-secondary-width) - 2rem) !important;
   box-sizing: border-box !important;
+}
+
+/* Ensure correct visual order: primary (left), content (center), secondary (right) */
+html body .md-sidebar--primary { order: 0 !important; }
+html body .md-content { order: 1 !important; }
+html body .md-sidebar--secondary { order: 2 !important; }
+
+/* Make sure the secondary sidebar is visible and sits above content if needed */
+html body .md-sidebar--secondary {
+  position: sticky !important;
+  top: 2.4rem !important; /* match theme's sticky offset */
+  height: calc(100vh - 2.4rem) !important;
+  overflow: auto !important;
+  align-self: flex-start !important;
+  display: block !important;
+  z-index: 40 !important;
+}
+
+/* Make sure flex children align to the top and don't stretch unexpectedly */
+html body .md-main__inner.md-grid {
+  align-items: flex-start !important;
+}
+
+/* When using absolute calc-based width, ensure no overlap by adding a small right margin to content */
+html body .md-content {
+  /* keep existing calc sizing, but ensure it doesn't push under the secondary */
+  margin-right: 0 !important;
+}
+
+/* Prevent the content from overlapping the secondary sidebar */
+html body .md-content {
+  overflow: visible !important;
 }
 
 /* Responsive: fall back to natural flex behavior on narrower screens so nothing overflows */
@@ -110,6 +142,10 @@ html body .md-content {
     width: auto !important;
     max-width: none !important;
   }
+
+  html body .md-sidebar--primary,
+  html body .md-sidebar--secondary,
+  html body .md-content { order: 0 !important; }
 }
 
 /* Ensure inner content uses full width available inside the content column */

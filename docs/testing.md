@@ -1,123 +1,8 @@
-# APIstry - a Contract as a Service API Service implementation
+# Testing
+Now that you have your Apistry running you can use it to add, query, delete and update to your new API. It is that 
+easy!  
 
-## Overview
-
-Contract as a Service is an OpenAPI-driven REST API service that provides a flexible, contract-first approach to
-building and managing APIs. The service automatically generates API endpoints from OpenAPI 3.0 specifications, making it
-easy to create and maintain consistent, well-documented APIs.
-
-### Key Features
-
-- **Contract-First Development**: Define your API using OpenAPI 3.0 specifications, and the service automatically
-  creates the endpoints
-- **Swagger UI Documentation**: Automatically generated interactive API documentation available at `/docs`
-- **MongoDB Integration**: Built-in CRUD operations with advanced query capabilities
-- **Auto-Collection Creation**: Automatically validates and creates MongoDB collections based on OpenAPI tags during
-  server startup
-- **Flexible Querying**: Support for operators like `eq`, `neq`, `gt`, `lt`, `gte`, `lte`, `isNull`, and wildcard
-  matching
-- **Bulk Operations**: Support for bulk inserts, updates, and deletes
-- **Validation**: Automatic request/response validation using AJV and JSON Schema
-- **Fastify-Based**: Built on the high-performance Fastify web framework
-- **AWS Lambda Ready**: Can be deployed as a Lambda function or run locally
-- **Response Metadata**: Optional metadata in collection responses including total count and pagination information
-
-### Sample Contracts
-
-APIstry includes sample OpenAPI contracts that demonstrate various features and use cases. These contracts are located
-in the [`docs/samples/contracts/`](../samples/contracts/) directory:
-
-- **[Books API](samples/contracts/books.yaml)** (`books.yaml`) - Book collection management
-- **[Cars](samples/contracts/cars.v1.yaml)** (`cars.v1.yaml`) - Comprehensive vehicle inventory management with
-  advanced filtering, sorting, and pagination capabilities
-- **[Utils](samples/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
-  status
-- **[Videos API](samples/contracts/videos.yaml)** (`videos.yaml`) - Video collection management
-
-These sample contracts serve as reference implementations and can be used as templates for creating your own APIs.
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher recommended)
-- MongoDB instance (local or cloud)
-- npm or yarn package manager
-
-### Installation Application
-
-```bash
-   npm install apistry
-```
-
-### Configuration
-
-The service requires a MongoDB connection string to operate. You must provide this via an environment variable.
-
-You can use:
-
-```bash
-  export DB_CONNECTION="your_mongodb_connection_string"
-```
-
-or ...
-
-Create an `.env` file with the following required variable:
-
-```env
-DB_CONNECTION=mongodb://username:password@hostname:port/database_name
-```
-
-**Important Notes:**
-
-- The connection string must include the database name at the end
-- If the specified database does not exist, MongoDB will automatically create it when the service starts and creates the
-  first collection
-
-#### Examples
-
-**Local MongoDB:**
-
-```env
-DB_CONNECTION=mongodb://localhost:27017/myDb
-```
-
-**MongoDB Atlas (Cloud):**
-
-```env
-DB_CONNECTION=mongodb+srv://username:password@cluster.mongodb.net/myDb?retryWrites=true&w=majority
-```
-
-**Local MongoDB with authentication:**
-
-```env
-DB_CONNECTION=mongodb://admin:password123@localhost:27017/myapp?authSource=admin
-```
-
-#### Optional Environment Variables
-
-```env
-LOG_LEVEL=info          # Options: debug, info, warn, error (default: info)
-```
-
-### Running the Service
-
-Start the local development server:
-
-```bash
-apistry serve -c contracts/cars/cars.v1.yaml
-or
-apistry serve --contract ../../contracts/dist-wip/cars.v1.yaml --env ../..
-```
-
-The service will start on `http://localhost:3000`. You should see:
-
-```
-🚀 Server running on http://localhost:3000
-📖 API Documentation: http://localhost:3000/docs
-```
-
-### Testing the API
+## Testing the API
 
 Once the server is running, you can test the endpoints:
 
@@ -137,7 +22,7 @@ curl -X POST http://localhost:3000/v1/cars \
   -d '{"make": "Toyota", "model": "Camry", "year": 2023, "price": 28000}'
 ```
 
-#### Postman Collection
+## Postman Collection
 
 A Postman collection is available for testing the Cars API. Import the [
 `Cars.postman_collection.json`](samples/Cars.postman_collection.json) file into Postman to access pre-configured
@@ -158,7 +43,7 @@ The service uses MongoDB tags from OpenAPI specifications to determine collectio
 - The first tag is used as the MongoDB collection name
 - Example: An operation tagged with `cars` will use the `cars` collection
 
-### Automatic Collection Creation
+## Automatic Collection Creation
 
 The server automatically validates that all required collections exist during startup.
 
@@ -216,22 +101,22 @@ The service supports advanced query operators for filtering:
 
 ## Troubleshooting
 
-### "Missing required environment variables: DB_CONNECTION"
+## "Missing required environment variables: DB_CONNECTION"
 
 Make sure you have created a `.env` file in the `service` directory with a valid `DB_CONNECTION` string.
 
-### Connection issues
+## Connection issues
 
 - Verify your MongoDB instance is running
 - Check the connection string format includes the database name
 - For MongoDB Atlas, ensure your IP is whitelisted
 - Verify username and password are correct
 
-### Port already in use
+## Port already in use
 
 If port 3000 is already in use, you have two options:
 
-**Option 1: Start APIstry on a different port**
+**Option 1: Start Apistry on a different port**
 
 Use the `--port` parameter when starting the service:
 
@@ -267,7 +152,7 @@ taskkill /PID PID /F
 
 ## Development
 
-### Debug Logging
+## Debug Logging
 
 Enable debug logging to see detailed request/response information:
 

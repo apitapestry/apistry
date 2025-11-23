@@ -1,12 +1,23 @@
-# APIstry Features
+# Features
 
-This page provides a comprehensive overview of APIstry's capabilities and how to use them.
+This page provides a comprehensive overview of Apistry's capabilities and how to use them.
 
-## Core Features
+- **OpenAPI Contract**: Define your API using OpenAPI 3.0 specifications, and the service automatically creates functional endpoints
+- **Swagger UI Documentation**: Automatically generated interactive API documentation available at `/docs`
+- **Auto-Collection Creation**: Automatically validates and creates MongoDB database and collections based on OpenAPI
+  tags during server startup
+- **MongoDB Integration**: Built-in CRUD operations with advanced query capabilities
+- **Flexible Querying**: Support for operators like `eq`, `neq`, `gt`, `lt`, `gte`, `lte`, `isNull`, and wildcard
+  matching
+- **Bulk Operations**: Support for bulk inserts, updates, and deletes
+- **Response List Handling**: Optional metadata in responses including total count and pagination information
+- **Validation**: Automatic parameter, request/response validation using AJV and JSON Schema
+- **Fastify-Based**: Built on the high-performance Fastify web framework
+  [//]: # (- **AWS Lambda Ready**: Can be deployed as a Lambda function or run locally)
 
-### Automatic Endpoint Generation
+## OpenAPI Contract
 
-APIstry automatically generates REST API endpoints based on your OpenAPI contract:
+Apistry automatically generates REST API endpoints based on your OpenAPI contract:
 
 - **GET** - Retrieve single resources or collections
 - **POST** - Create new resources
@@ -16,23 +27,36 @@ APIstry automatically generates REST API endpoints based on your OpenAPI contrac
 
 Each operation is mapped from your contract to a functional endpoint without writing any code.
 
-### MongoDB Integration
+## Swagger UI Documentation
 
-#### Collection Mapping
-- Each OpenAPI tag corresponds to a MongoDB collection
-- The first tag on an operation determines which collection to use
-- Collection names are automatically normalized (lowercased)
+Apistry automatically generates Swagger UI documentation:
 
-#### Auto-Collection Creation
-APIstry validates that required collections exist on startup and can:
+- Available at `http://localhost:3000/docs` when running
+- Interactive - test endpoints directly from the browser
+- Always in sync with your contract
+- No separate documentation maintenance needed
+
+## Auto-Collection Creation
+
+Apistry validates that required collections exist on startup and can:
 - Prompt to create missing collections
 - Automatically create collections (with `--enableAutoCollectionCreate yes` flag)
 - Exit if collections are missing and creation is declined
 
 See [Collection Auto-Creation](collection-auto-creation.md) for details.
 
-#### Query Capabilities
-APIstry supports advanced querying through URL parameters:
+## MongoDB Integration
+
+Apistry provides built-in CRUD operations with advanced query capabilities through MongoDB integration.
+
+### Collection Mapping
+- Each OpenAPI tag corresponds to a MongoDB collection
+- The first tag on an operation determines which collection to use
+- Collection names are automatically normalized (lowercased)
+
+## Flexible Querying
+
+Apistry supports advanced querying through URL parameters:
 
 **Comparison Operators:**
 ```bash
@@ -76,7 +100,7 @@ GET /v1/cars?model=*Cam*
 GET /v1/cars?make=eq.Toyota&price=lt.25000&year=gte.2020
 ```
 
-#### Pagination
+### Pagination
 Control result sets with pagination parameters:
 
 ```bash
@@ -90,7 +114,7 @@ GET /v1/cars?offset=20&limit=10
 GET /v1/cars?offset=20&limit=10
 ```
 
-#### Sorting
+### Sorting
 Sort results by one or more fields:
 
 ```bash
@@ -104,9 +128,9 @@ GET /v1/cars?sort=-price
 GET /v1/cars?sort=make,-price
 ```
 
-### Bulk Operations
+## Bulk Operations
 
-#### Bulk Insert
+### Bulk Insert
 Create multiple resources in a single request:
 
 ```bash
@@ -120,7 +144,7 @@ Content-Type: application/json
 ]
 ```
 
-#### Bulk Update
+### Bulk Update
 Update multiple resources matching criteria:
 
 ```bash
@@ -130,146 +154,93 @@ Content-Type: application/json
 {"status": "certified"}
 ```
 
-#### Bulk Delete
+### Bulk Delete
 Delete multiple resources matching criteria:
 
 ```bash
 DELETE /v1/cars?year=lt.2015
 ```
 
-### Validation
+## Response List Handling
 
-APIstry provides automatic validation at multiple levels:
+Collection responses can follow either of the following formats:
 
-#### Schema Validation
-- All requests are validated against the schemas defined in your OpenAPI contract
-- Uses AJV (Another JSON Schema Validator) for fast, accurate validation
-- Returns clear error messages when validation fails
+**ContentRange in response:**
+```yaml
+      responses:
+        '200':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              description: The range of items returned and total count
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: items 0-24/100
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    type: string
+                    description: The content range of the response
+                    example: items 0-24/100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+}
+```
 
-#### Request Validation
-- Path parameters
-- Query parameters
-- Headers
-- Request body
-
-#### Response Validation
-- Ensures responses match the contract's response schemas
-- Helps catch contract/implementation mismatches early
-
-### Interactive Documentation
-
-APIstry automatically generates Swagger UI documentation:
-
-- Available at `http://localhost:3000/docs` when running
-- Interactive - test endpoints directly from the browser
-- Always in sync with your contract
-- No separate documentation maintenance needed
-
-### Response Metadata
-
-Collection responses include optional metadata:
-
-```json
-{
-  "data": [...],
-  "metadata": {
-    "total": 150,
-    "offset": 20,
-    "limit": 10,
-    "returned": 10
-  }
+**More standard REST response - simple List<Response>:**
+```yaml
+      responses:
+        '200':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              description: The range of items returned and total count
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: items 0-24/100
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Car'
 }
 ```
 
 Useful for building paginated UIs and understanding result sets.
 
-## Configuration
+## Validation
 
-### Environment Variables
+Apistry provides automatic validation at multiple levels:
 
-#### Required
-```env
-DB_CONNECTION=mongodb://username:password@hostname:port/database_name
-```
-MongoDB connection string including the database name.
+### Schema Validation
+- All requests are validated against the schemas defined in your OpenAPI contract
+- Uses AJV (Another JSON Schema Validator) for fast, accurate validation
+- Returns clear error messages when validation fails
 
-#### Optional
-```env
-LOG_LEVEL=info  # Options: debug, info, warn, error (default: info)
-```
+### Request Validation
+- Path parameters
+- Query parameters
+- Headers
+- Request body
 
-### Command Line Options
+### Response Validation
+- Ensures responses match the contract's response schemas
+- Helps catch contract/implementation mismatches early
 
-```bash
-apistry serve [options]
+## Fastify-Based
 
-Options:
-  -c, --contract <path>                    Path to OpenAPI contract file (required)
-  --env <path>                             Path to .env file directory
-  --enableAutoCollectionCreate <yes|no>    Auto-create missing collections
-  --port <number>                          Port to run on (default: 3000)
-```
-
-### Examples
-
-```bash
-# Basic usage
-apistry serve -c contracts/api.yaml
-
-# With custom .env location
-apistry serve -c contracts/api.yaml --env /path/to/env
-
-# Auto-create collections
-apistry serve -c contracts/api.yaml --enableAutoCollectionCreate yes
-
-# Custom port
-apistry serve -c contracts/api.yaml --port 8080
-```
-
-## Deployment
-
-### Local Development
-```bash
-apistry serve -c contracts/api.yaml
-```
-
-### AWS Lambda
-APIstry is Lambda-ready and can be packaged and deployed as a serverless function. The contract can be bundled with the deployment or loaded from S3.
-
-### Docker
-```dockerfile
-FROM node:18
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-CMD ["apistry", "serve", "-c", "contracts/api.yaml"]
-```
-
-### Production Considerations
-- Use environment variables for database connections
-- Enable appropriate logging levels
-- Consider using a process manager (PM2, systemd)
-- Set up monitoring and alerting
-- Use API Gateway for additional security, rate limiting, and routing
-
-## Limitations & Considerations
-
-### What APIstry Does Well
-- CRUD operations on MongoDB collections
-- Standard REST API patterns
-- Rapid prototyping and development
-- Internal APIs and tools
-
-### What to Handle Separately
-- Complex business logic - implement in event-driven services
-- Multi-step transactions - use event handlers
-- Advanced security - implement in API Gateway
-- Custom workflows - use event consumers
-
-APIstry is designed to be simple and focused on CRUD operations. For complex business logic, follow the CaaS pattern of keeping the API surface simple and implementing workflows in separate services that react to change events.
+Built on the high-performance Fastify web framework.
 
 ---
 
 © 2025 API Tapestry. All rights reserved.
-
