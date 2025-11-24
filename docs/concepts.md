@@ -7,7 +7,7 @@ requests, perform data operations, and enforce validation.
 
 ## What is Apistry?
 
-Apistry is a **runtime engine** that reads OpenAPI contracts and turns them into working APIs without writing
+Apistry is a **runtime engine** that reads OpenAPI contracts and turns them into working APIs without writing any
 service-specific code. Built on Node.js and the Fastify framework, it provides:
 
 - **Contract-driven execution** - Deploy APIs by publishing contracts, not writing code

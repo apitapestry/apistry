@@ -1,16 +1,15 @@
 # MongoDb
 
-Apistry requires a MongoDB database for document storage and operations. Both local and cloud-hosted MongoDB instances
-are supported.
+Apistry requires a MongoDB database for document storage and operations. Database can be Local or cloud-hosted.
 
 **Database Compatibility:** While Apistry is designed to work with any JSON document database that supports standard
-querying capabilities, the current release provides native integration exclusively with MongoDB.
+querying capabilities, the current release only supports MongoDB.
 
 **Connection Configuration:** For security best practices, the MongoDB connection string must be provided as an
-environment variable. Apistry supports `.env` files for local development environments.
+environment variable. Apistry also supports the use of `.env` files for setting environment variables.
 
-**_Note:_** Be sure to provide the database name in your connection string. When started, database and collection
-will be created if they do not already exist.
+**_Note:_** Be sure to provide the database name in your connection string. When the server is started, the database name
+provided here will be created if it does not already exist.
 
 ## Connection String
 Hosted MongoDB Example:
@@ -30,7 +29,7 @@ DB_CONNECTION=mongodb+srv://myserver:****@myserver-db.ojsguxa.mongodb.net/mydb?a
 ```
 
 ## Test Connection
-Before starting the server, it's a good idea to test the database connection to your DB_CONNECTION is correct.
+Before starting the server, it's a good idea to ensure the database connection is successful.
 
 ```bash
 apistry testConnection
@@ -39,7 +38,7 @@ or
 ```bash
 apistry testConnection -e path/to/.env
 ```
-The path is optional; if not provided, the current directory is used.
+The path is optional; if not provided, the system will look for file in current directory.
 
 **Output:**
 ```bash
@@ -51,5 +50,3 @@ The path is optional; if not provided, the current directory is used.
 📂 Database name: apistry
 🔌 Connection closed.
 ```
-
-<br><br>
