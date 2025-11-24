@@ -25,12 +25,12 @@ querying, and request/response validation based on contract schemas.
 
 ## Overview
 
-- [🧰 Installation](#-installation)
-- [💻 Usage](#-usage)
-- [📖 Documentation](#-documentation)
+- [🧰 Installation](#installation)
+- [💻 Usage](#usage)
+- [📖 Documentation](#documentation)
 
 [//]: # (- [⚙️ Integrations]&#40;#️-integrations&#41;)
-- [👏 Contributing](#-contributing)
+[//]: # (- [👏 Contributing]&#40;#contributing&#41;)
 
 ## 🧰 Installation
 
@@ -53,11 +53,11 @@ yarn global add apistry
 Apistry, being a contract based service, **needs a well-defined contract** to startup. 
 The following examples have been provided to get you started quickly:
 
-- **[Books API](assets/contracts/books.yaml)** (`books.yaml`)
-- **[Cars](assets/contracts/cars.v1.yaml)** (`cars.v1.yaml`)
-- **[Utils](assets/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
+- **[Books API](assets/books.v1.yaml)** (`books.v1.yaml`)
+- **[Cars](assets/cars.v1.yaml)** (`cars.v1.yaml`)
+- **[Utils](assets/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
   status
-- **[Videos API](assets/contracts/videos.yaml)** (`videos.yaml`)
+- **[Videos API](assets/videos.v1.yaml)** (`videos.v1.yaml`)
 
 Download one or all of these to get started quickly or create your own. 
 

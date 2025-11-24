@@ -43,7 +43,7 @@ Apistry validates that required collections exist on startup and can:
 - Automatically create collections (with `--enableAutoCollectionCreate yes` flag)
 - Exit if collections are missing and creation is declined
 
-See [Collection Auto-Creation](collection-auto-creation.md) for details.
+See [Auto Collection Create](start-server.md/#auto-collection-create) for details.
 
 ## MongoDB Integration
 

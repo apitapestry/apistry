@@ -102,14 +102,63 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{hostname}}/v1/cars/50d3c79d-a9d6-4904-82f3-239d7a4146ab",
+					"raw": "{{hostname}}/v1/cars/{{id}}",
 					"host": [
 						"{{hostname}}"
 					],
 					"path": [
 						"v1",
 						"cars",
-						"50d3c79d-a9d6-4904-82f3-239d7a4146ab"
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let data = pm.response.json();",
+							"if (data && data.resources && data.resources[0] && data.resources[0].id) {",
+							"    pm.environment.set('id', data.resources[0].id);",
+							"}",
+							"if (data && data.resources && data.resources[1] && data.resources[1].id) {",
+							"    pm.environment.set('id2', data.resources[1].id);",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/v1/cars/{{id}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"v1",
+						"cars",
+						"{{id}}"
 					]
 				}
 			},
@@ -230,51 +279,27 @@
 			"response": []
 		},
 		{
-			"name": "GET Health",
+			"name": "Update Car",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// Assume response is an array of preferences",
+							"let primaryKey = 'id';",
 							"let data = pm.response.json();",
-							"if (Array.isArray(data) && data.length > 0 && data[0].preferenceId) {",
-							"    pm.environment.set(\"preferenceId\", data[0].preferenceId);",
+							"if (data.resources[0][primaryKey]) {",
+							"    pm.environment.set(primaryKey, data.resources[0][primaryKey]);",
+							"}",
+							"if (data.resources[1]) {",
+							"    pm.environment.set(primaryKey + '2', data.resources[1][primaryKey])",
 							"}"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{user_token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{hostname}}/v1/health",
-					"host": [
-						"{{hostname}}"
-					],
-					"path": [
-						"v1",
-						"health"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Resources",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -290,7 +315,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"resources\": [\n    {\n      \"id\": \"{{id}}\",\n      \"resourceType\": \"Preference\",\n      \"value\": \"batch update 1\"\n    },\n    {\n      \"id\": \"{{id2}}\",\n      \"resourceType\": \"Preference\",\n      \"value\": \"batch update 2\"\n    }\n  ]\n}\n",
+					"raw": "{\n  \"color\": \"Black\",\n  \"mileage\": 105234,\n  \"status\": \"will be ignored\"\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -298,13 +323,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{hostname}}/v1/resources",
+					"raw": "{{hostname}}/v1/cars/{{id}}",
 					"host": [
 						"{{hostname}}"
 					],
 					"path": [
 						"v1",
-						"resources"
+						"cars",
+						"{{id}}"
 					]
 				}
 			},

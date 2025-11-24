@@ -9,7 +9,7 @@ Get up and running with Apistry in minutes.
 3. Have [MongoDB connection](mongodb.md) as environment variable.
 4. Use the cars.v1.yaml contract.<br>
    When ready to craft your own, check [OpenApi Design](openapi-design.md) page for tips. Example contract
-   provided here: [Cars API](../samples/contracts/cars.v1.yaml)
+   provided here: [Cars API](assets/cars.v1.yaml)
 
 Once the above is complete. You are ready to start Apistry server for the first time!
 
@@ -47,10 +47,11 @@ Creating collections...
 
 Your service is now running! That is it, it is ready to accept requests.
 
-## Swagger UI
+## Provided Endpoints
+Use your browser or Postman to explore the following endpoints:
 
-- View Interactive Documentation - Swagger UI<br>
-  Open your browser to: `http://localhost:3000/docs`
+- `http://localhost:3000/docs` - Swagger UI<br>
+- `http://localhost:3000/health` - Health Check Endpoint
 
 ## What's Happening?
 
@@ -81,10 +82,10 @@ Your service is now running! That is it, it is ready to accept requests.
 
 Apistry includes sample OpenAPI contracts that demonstrate various features and use cases.
 
-- **[Books API](../samples/contracts/books.yaml)** (`books.yaml`) - Book collection management
-- **[Cars](../samples/contracts/cars.v1.yaml)** (`cars.v1.yaml`) - Comprehensive vehicle inventory management with advanced filtering, sorting, and pagination capabilities
-- **[Utils](../samples/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and status
-- **[Videos API](../samples/contracts/videos.yaml)** (`videos.yaml`) - Video collection management
+- **[Books API](assets/books.v1.yaml)** (`books.v1.yaml`) - Book collection management
+- **[Cars](assets/cars.v1.yaml)** (`cars.v1.yaml`) - Comprehensive vehicle inventory management with advanced filtering, sorting, and pagination capabilities
+- **[Utils](assets/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and status
+- **[Videos API](assets/videos.v1.yaml)** (`videos.v1.yaml`) - Video collection management
 
 These sample contracts serve as reference implementations and can be used as templates for creating your own APIs.
 
