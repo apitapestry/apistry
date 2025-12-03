@@ -1,0 +1,187 @@
+[
+  {
+    "noteType": "Simple",
+    "category": "general",
+    "subject": "welcomeMessage",
+    "note": "Remember to review your dashboard every morning.",
+    "noteId": "af6f2c02-37d0-4ea6-b571-1a51c5024987"
+  },
+  {
+    "noteType": "Simple",
+    "category": "health",
+    "subject": "hydration",
+    "note": "Drink more water throughout the day.",
+    "noteId": "4bb52239-94c8-4628-9f76-038f7f76916d"
+  },
+  {
+    "noteType": "Simple",
+    "category": "finance",
+    "subject": "budgetReview",
+    "note": "Check the monthly spending overview.",
+    "noteId": "ea34b391-4c39-4e5f-92c0-dd06b80d3606"
+  },
+  {
+    "noteType": "Simple",
+    "category": "ideas",
+    "subject": "projectConcept",
+    "note": "Explore the new onboarding flow concept.",
+    "noteId": "cd50c9ad-5e8a-4d47-954e-7f9a262bae00"
+  },
+  {
+    "noteType": "Simple",
+    "category": "travel",
+    "subject": "packingList",
+    "note": "Pack the camera, charger, and tripod.",
+    "noteId": "c5c24418-86ee-4164-b801-036150f0046a"
+  },
+  {
+    "noteType": "Simple",
+    "category": "learning",
+    "subject": "courseNotes",
+    "note": "Review chapter 4 before the session.",
+    "noteId": "e90ec316-6f4b-4d5c-834e-ebe998dc562b"
+  },
+  {
+    "noteType": "Simple",
+    "category": "misc",
+    "subject": "randomThought",
+    "note": "Consider automating weekly summaries.",
+    "noteId": "977a3b56-2c38-45ca-b5fb-ed4ae587f448"
+  },
+  {
+    "noteType": "Preference",
+    "category": "display",
+    "name": "theme",
+    "value": "dark",
+    "isPii": false,
+    "expiresAtDateTime": "2025-12-01T10:00:00Z",
+    "noteId": "86ad5d6e-ec5c-4d7c-b0f2-980466673d16"
+  },
+  {
+    "noteType": "Preference",
+    "category": "notifications",
+    "name": "emailAlerts",
+    "value": "enabled",
+    "isPii": false,
+    "noteId": "3d646c45-9835-4cc2-ab2d-811578d2e198"
+  },
+  {
+    "noteType": "Preference",
+    "category": "privacy",
+    "name": "shareProfile",
+    "value": "false",
+    "isPii": true,
+    "noteId": "1ba8bc46-b99e-4b14-85ac-e6cbc2a812fa"
+  },
+  {
+    "noteType": "Preference",
+    "category": "editor",
+    "name": "autosaveInterval",
+    "value": "15min",
+    "isPii": false,
+    "noteId": "14250672-2251-4cb2-aa4b-76f0b92c1f89"
+  },
+  {
+    "noteType": "Preference",
+    "category": "language",
+    "name": "preferredLocale",
+    "value": "en_US",
+    "isPii": false,
+    "noteId": "36368c1d-7bc9-4c9f-b5fe-7ebce11e0df8"
+  },
+  {
+    "noteType": "Preference",
+    "category": "search",
+    "name": "defaultScope",
+    "value": "all",
+    "isPii": false,
+    "noteId": "8536b019-18f2-47e8-91f6-e8a44a129fa4"
+  },
+  {
+    "noteType": "Preference",
+    "category": "audio",
+    "name": "volumeLevel",
+    "value": "75",
+    "isPii": false,
+    "noteId": "8855f3a7-f53d-487e-8006-48e49819095c"
+  },
+  {
+    "noteType": "Task",
+    "category": "work",
+    "providerId": "outlook",
+    "providerTaskListId": "primary",
+    "parentId": null,
+    "dueDateTime": "2025-07-01T09:00:00Z",
+    "completed": false,
+    "title": "Prepare quarterly report",
+    "course": "businessOps",
+    "calendarSource": "outlook",
+    "notes": "Include updated metrics",
+    "url": "https://example.com/report",
+    "noteId": "88266598-7658-4be7-bb77-2f26891892f9"
+  },
+  {
+    "noteType": "Task",
+    "category": "home",
+    "providerId": "google",
+    "providerTaskListId": "chores",
+    "parentId": null,
+    "dueDateTime": "2025-05-20T18:00:00Z",
+    "completed": false,
+    "title": "Mow the lawn",
+    "calendarSource": "google",
+    "notes": "Front and back yards",
+    "noteId": "33a80410-44b6-42af-87f8-1c5111a143d3"
+  },
+  {
+    "noteType": "Task",
+    "category": "fitness",
+    "providerId": "apple",
+    "providerTaskListId": "health",
+    "parentId": null,
+    "dueDateTime": "2025-05-15T07:00:00Z",
+    "completed": false,
+    "title": "Morning workout",
+    "course": "strength",
+    "calendarSource": "apple",
+    "noteId": "a0ee5d6c-de99-4460-9b7e-f5d0dda33f7c"
+  },
+  {
+    "noteType": "Task",
+    "category": "school",
+    "providerId": "canvas",
+    "providerTaskListId": "assignments",
+    "parentId": null,
+    "dueDateTime": "2025-05-14T23:00:00Z",
+    "completed": false,
+    "title": "Submit biology paper",
+    "course": "bio101",
+    "calendarSource": "canvas",
+    "noteId": "c2420a73-ddfd-44c6-9892-49b0547b7436"
+  },
+  {
+    "noteType": "Task",
+    "category": "errands",
+    "providerId": "google",
+    "providerTaskListId": "personal",
+    "parentId": null,
+    "dueDateTime": "2025-05-12T15:00:00Z",
+    "completed": false,
+    "title": "Pick up groceries",
+    "calendarSource": "google",
+    "noteId": "ff2f7c37-d0cb-4cd1-8ce8-9f587c2ecd5c"
+  },
+  {
+    "noteType": "Task",
+    "category": "projects",
+    "providerId": "jira",
+    "providerTaskListId": "dev",
+    "parentId": null,
+    "dueDateTime": "2025-06-01T12:00:00Z",
+    "completed": false,
+    "title": "Refactor authentication module",
+    "notes": "Check compatibility with new SDK",
+    "calendarSource": "jira",
+    "noteId": "72b75828-63a8-48e4-a751-8abc1b9ca446"
+  }
+]

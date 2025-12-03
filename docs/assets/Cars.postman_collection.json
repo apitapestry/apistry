@@ -7,18 +7,18 @@
 	},
 	"item": [
 		{
-			"name": "GET Cars",
+			"name": "GET Health",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
 							"let data = pm.response.json();",
-							"if (data && data.results && data.results[0] && data.results[0].id) {",
-							"    pm.environment.set('id', data.results[0].id);",
+							"if (data && data.resources && data.resources[0] && data.resources[0].id) {",
+							"    pm.environment.set('id', data.resources[0].id);",
 							"}",
-							"if (data && data.results && data.results[1] && data.results[1].id) {",
-							"    pm.environment.set('id', data.results[1].id);",
+							"if (data && data.resources && data.resources[1] && data.resources[1].id) {",
+							"    pm.environment.set('id2', data.resources[1].id);",
 							"}",
 							""
 						],
@@ -42,23 +42,243 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{hostname}}/v1/cars",
+					"raw": "http://localhost:3000/v1/health",
+					"protocol": "http",
 					"host": [
-						"{{hostname}}"
+						"localhost"
 					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let data = pm.response.json();",
+							"if (data && data.results && data.results[0] && data.results[0].carId) {",
+							"    pm.environment.set('carId', data.results[0].carId);",
+							"}",
+							"if (data && data.results && data.results[1] && data.results[0].carId) {",
+							"    pm.environment.set('carId2', data.results[1].carId);",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
 					"path": [
 						"v1",
 						"cars"
 					],
 					"query": [
 						{
+							"key": "color",
+							"value": "Black",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "sold",
+							"disabled": true
+						},
+						{
 							"key": "status",
 							"value": "available",
 							"disabled": true
 						},
 						{
+							"key": "carIds",
+							"value": "{{carId2}}",
+							"disabled": true
+						},
+						{
+							"key": "carIds",
+							"value": "{{carId}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Videos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let data = pm.response.json();",
+							"if (data && data.results && data.results[0] && data.results[0].carId) {",
+							"    pm.environment.set('carId', data.results[0].carId);",
+							"}",
+							"if (data && data.results && data.results[1] && data.results[0].carId) {",
+							"    pm.environment.set('carId2', data.results[1].carId);",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/videos?limit=25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"videos"
+					],
+					"query": [
+						{
 							"key": "color",
 							"value": "Black",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "available",
+							"disabled": true
+						},
+						{
+							"key": "carIds",
+							"value": "{{carId2}}",
+							"disabled": true
+						},
+						{
+							"key": "carIds",
+							"value": "{{carId}}",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Notes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let data = pm.response.json();",
+							"if (data && data.results && data.results[0] && data.results[0].carId) {",
+							"    pm.environment.set('carId', data.results[0].carId);",
+							"}",
+							"if (data && data.results && data.results[1] && data.results[0].carId) {",
+							"    pm.environment.set('carId2', data.results[1].carId);",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"notes"
+					],
+					"query": [
+						{
+							"key": "noteType",
+							"value": "Simple",
+							"disabled": true
+						},
+						{
+							"key": "noteType",
+							"value": "Task",
+							"disabled": true
+						},
+						{
+							"key": "noteType",
+							"value": "Preference",
+							"disabled": true
+						},
+						{
+							"key": "noteIds",
+							"value": "33a80410-44b6-42af-87f8-1c5111a143d3",
+							"disabled": true
+						},
+						{
+							"key": "noteIds",
+							"value": "33a80410-44b6-42af-87f8-1c5111a143d3",
 							"disabled": true
 						}
 					]
@@ -73,13 +293,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"let data = pm.response.json();",
-							"if (data && data.resources && data.resources[0] && data.resources[0].id) {",
-							"    pm.environment.set('id', data.resources[0].id);",
-							"}",
-							"if (data && data.resources && data.resources[1] && data.resources[1].id) {",
-							"    pm.environment.set('id2', data.resources[1].id);",
-							"}",
 							""
 						],
 						"type": "text/javascript",
@@ -102,14 +315,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{hostname}}/v1/cars/{{id}}",
+					"raw": "http://localhost:3000/v1/cars/{{carId}}",
+					"protocol": "http",
 					"host": [
-						"{{hostname}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"v1",
 						"cars",
-						"{{id}}"
+						"{{carId}}"
 					]
 				}
 			},
@@ -122,13 +337,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"let data = pm.response.json();",
-							"if (data && data.resources && data.resources[0] && data.resources[0].id) {",
-							"    pm.environment.set('id', data.resources[0].id);",
-							"}",
-							"if (data && data.resources && data.resources[1] && data.resources[1].id) {",
-							"    pm.environment.set('id2', data.resources[1].id);",
-							"}",
 							""
 						],
 						"type": "text/javascript",
@@ -148,17 +356,19 @@
 						}
 					]
 				},
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{hostname}}/v1/cars/{{id}}",
+					"raw": "http://localhost:3000/v1/cars/{{carId}}",
+					"protocol": "http",
 					"host": [
-						"{{hostname}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"v1",
 						"cars",
-						"{{id}}"
+						"{{carId}}"
 					]
 				}
 			},
@@ -209,10 +419,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{hostname}}/v1/cars",
+					"raw": "http://localhost:3000/v1/cars",
+					"protocol": "http",
 					"host": [
-						"{{hostname}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"v1",
 						"cars"
@@ -266,10 +478,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{hostname}}/v1/cars",
+					"raw": "http://localhost:3000/v1/cars",
+					"protocol": "http",
 					"host": [
-						"{{hostname}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"v1",
 						"cars"
@@ -315,7 +529,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"color\": \"Black\",\n  \"mileage\": 105234,\n  \"status\": \"will be ignored\"\n}\n",
+					"raw": "{\n  \"color\": \"Blue\",\n  \"mileage\": 105234,\n  \"status\": \"will be ignored\"\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -323,14 +537,16 @@
 					}
 				},
 				"url": {
-					"raw": "{{hostname}}/v1/cars/{{id}}",
+					"raw": "http://localhost:3000/v1/cars/{{carId}}",
+					"protocol": "http",
 					"host": [
-						"{{hostname}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"v1",
 						"cars",
-						"{{id}}"
+						"{{carId}}"
 					]
 				}
 			},

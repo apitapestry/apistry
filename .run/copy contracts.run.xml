@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="copy contracts" type="NodeJSConfigurationType" application-parameters="-c $PROJECT_DIR$/../../gitlab/apistry-dev/contracts -o ." path-to-js-file="$PROJECT_DIR$/../../gitlab/contract-store/contract-copy/contractCopy.js" working-dir="$PROJECT_DIR$/docs/assets/contracts">
+    <method v="2" />
+  </configuration>
+</component>

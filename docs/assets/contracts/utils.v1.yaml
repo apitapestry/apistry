@@ -1,0 +1,176 @@
+openapi: 3.0.3
+info:
+  title: Utility Endpoints
+  description: Utility endpoints
+  version: v1
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developer.acme.com/terms/
+servers:
+  - url: https://myserver.amazonaws.com
+security:
+  - bearerAuth: []
+paths:
+  /v1/health:
+    get:
+      tags:
+        - Health
+      summary: Health check endpoint
+      description: Returns the health status of the Personal Assistant API.
+      operationId: getHealth
+      responses:
+        '200':
+          description: Health check successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      parameters:
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    ResourceTypeQueryOptional:
+      description: Resource type
+      name: resourceType
+      in: query
+      required: false
+      schema:
+        $ref: '#/components/schemas/ResourceType'
+    MethodQueryOptional:
+      description: Resource type
+      name: method
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - query
+          - post
+          - put
+          - patch
+          - delete
+    XRequestId:
+      in: header
+      name: X-Request-Id
+      description: Represents a unique request
+      schema:
+        type: string
+        format: uuid
+      required: false
+    XCorrelationId:
+      in: header
+      name: X-Correlation-Id
+      description: Serves as a session id for multi-step workflows
+      schema:
+        type: string
+        format: uuid
+      required: false
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          description: Error Code
+          type: integer
+          minimum: 10000
+          maximum: 99999
+        message:
+          type: string
+          description: Error message from service
+    ErrorItem:
+      allOf:
+        - $ref: '#/components/schemas/Error'
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        field:
+          description: Name of the field in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+    ResourceType:
+      description: The type of resource this is
+      type: string
+      enum:
+        - Book
+        - Calendar
+        - Note
+        - Preference
+        - Task
+        - Video
+    Schema:
+      type: object
+      properties:
+        resourceType:
+          type: string
+        propertyName:
+          type: string
+        post:
+          type: string
+        put:
+          type: string
+        patch:
+          type: string
+        delete:
+          type: string
+        query:
+          type: string
+        queryPattern:
+          type: string
+        primaryKey:
+          type: string
+  responses:
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com

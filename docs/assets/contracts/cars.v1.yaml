@@ -1,0 +1,1125 @@
+openapi: 3.0.3
+info:
+  title: Car Lot Management API
+  description: |
+    API for managing cars in a car lot inventory system.
+    Supports CRUD operations for car inventory with filtering, sorting, and pagination.
+
+      ### Query Operators
+
+      The API supports the following operators for filtering:
+
+      | Operator      | Description                                                                 | Example                                      |
+      |---------------|-----------------------------------------------------------------------------|----------------------------------------------|
+      | `eq.<value>`  | Equals the specified value.                                                  | `"make": "eq.Toyota"` → cars with make Toyota |
+      | `neq.<value>` | Not equal to the specified value.                                           | `"status": "neq.sold"`                       |
+      | `gt.<number>` | Greater than (for numeric values).                                          | `"price": "gt.20000"`                        |
+      | `lt.<number>` | Less than (for numeric values).                                             | `"year": "lt.2020"`                          |
+      | `gte.<number>`| Greater than or equal to.                                                   | `"mileage": "gte.50000"`                     |
+      | `lte.<number>`| Less than or equal to.                                                      | `"price": "lte.30000"`                       |
+      | `isNull`      | Returns items where the field is missing, empty, or null.                   | `"vin": "isNull"` → cars without VIN         |
+      | `*` (wildcard)| Matches partial values (supports leading/trailing wildcards).                | `"model": "*Camry*"` → models containing "Camry" |
+
+      ### Examples
+
+      - **Cars priced under $25,000**
+        ```
+        GET /cars?price=lt.25000
+        ```
+
+      - **Available cars by make**
+        ```
+        GET /cars?make=eq.Honda&status=eq.available
+        ```
+
+      - **Cars without VIN**
+        ```
+        GET /cars?vin=isNull
+        ```
+  version: v1
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developer.acme.com/terms/
+servers:
+  - url: https://api.carlot.example.com/v1
+security:
+  - bearerAuth: []
+paths:
+  /v1/cars:
+    get:
+      tags:
+        - Cars
+      summary: Get Cars
+      description: |
+        Search for cars in the inventory with optional filtering, sorting, and pagination.
+        Supports query operators for flexible filtering.
+      operationId: getCars
+      parameters:
+        - $ref: '#/components/parameters/CarIdsOptional'
+        - $ref: '#/components/parameters/MakeQueryOptional'
+        - $ref: '#/components/parameters/ModelQueryOptional'
+        - $ref: '#/components/parameters/YearQueryOptional'
+        - $ref: '#/components/parameters/ColorQueryOptional'
+        - $ref: '#/components/parameters/CarStatusQueryOptional'
+        - $ref: '#/components/parameters/PriceQueryOptional'
+        - $ref: '#/components/parameters/MileageQueryOptional'
+        - $ref: '#/components/parameters/VinQueryOptional'
+        - $ref: '#/components/parameters/BodyTypeQueryOptional'
+        - $ref: '#/components/parameters/TransmissionQueryOptional'
+        - $ref: '#/components/parameters/FuelTypeQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              description: The range of items returned and total count
+              schema:
+                type: string
+                example: items 0-24/100
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The content range of the response
+                    type: string
+                    example: items 0-24/100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - Cars
+      summary: Get Cars
+      description: Delete Cars
+      operationId: deleteCars
+      parameters:
+        - $ref: '#/components/parameters/MakeQueryOptional'
+        - $ref: '#/components/parameters/ModelQueryOptional'
+        - $ref: '#/components/parameters/YearQueryOptional'
+        - $ref: '#/components/parameters/ColorQueryOptional'
+        - $ref: '#/components/parameters/CarStatusQueryOptional'
+        - $ref: '#/components/parameters/PriceQueryOptional'
+        - $ref: '#/components/parameters/MileageQueryOptional'
+        - $ref: '#/components/parameters/VinQueryOptional'
+        - $ref: '#/components/parameters/BodyTypeQueryOptional'
+        - $ref: '#/components/parameters/TransmissionQueryOptional'
+        - $ref: '#/components/parameters/FuelTypeQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '204':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              description: The range of items returned and total count
+              schema:
+                type: string
+                example: items 0-24/100
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The content range of the response
+                    type: string
+                    example: items 0-24/100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - Cars
+      summary: Create a new car
+      description: Add a new car to the inventory.
+      operationId: createCar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Car'
+      responses:
+        '201':
+          description: Cars created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The content range of the response
+                    type: string
+                    example: items 0-24/100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      parameters:
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+  /v1/cars/{carId}:
+    get:
+      tags:
+        - Cars
+      summary: Get car by ID
+      description: Retrieve a single car by its unique identifier.
+      operationId: getCar
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: Car found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    patch:
+      tags:
+        - Cars
+      summary: Update car by ID
+      description: Update an existing car's information.
+      operationId: updateCar
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarUpdate'
+      responses:
+        '200':
+          description: Car updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - Cars
+      summary: Delete car by ID
+      description: Remove a car from the inventory.
+      operationId: deleteCar
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: Car deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/cars/{carId}/features:
+    get:
+      tags:
+        - Cars
+      summary: Get Car Features
+      description: Get Car Features
+      operationId: getCarFeatures
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/FeatureQueryOptional'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: features found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - Cars
+      summary: Create Car Features
+      description: Create Car Features
+      operationId: createCarFeatures
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '201':
+          description: features created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/cars/{carId}/features/{feature}:
+    delete:
+      tags:
+        - Cars
+      summary: Delete Car Feature
+      description: Delete Car Features
+      operationId: deleteCarFeature
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/Feature'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    patch:
+      tags:
+        - Cars
+      summary: Update Car Feature
+      description: Update Car Features
+      operationId: updateCarFeature
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/Feature'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/cars/{carId}/events:
+    get:
+      tags:
+        - Cars
+      summary: Get Car Events
+      description: Get Car Events
+      operationId: getCarEvents
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventIdQueryOptional'
+        - $ref: '#/components/parameters/EventDescriptionQueryOptional'
+        - $ref: '#/components/parameters/EventDateQueryOptional'
+        - $ref: '#/components/parameters/EventTypeQueryOptional'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+                minItems: 0
+                maxItems: 100
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - Cars
+      summary: Create Car Event
+      description: Create Car Event
+      operationId: createCarEvent
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '201':
+          description: features created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/cars/{carId}/events/{eventId}:
+    delete:
+      tags:
+        - Cars
+      summary: Delete Car Event
+      description: Delete Car Event
+      operationId: deleteCarEvent
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventId'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car Event not found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    patch:
+      tags:
+        - Cars
+      summary: Update Car Event
+      description: Update Car Event
+      operationId: updateCarEvent
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventId'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          description: Car Event Not Found
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    CarId:
+      name: carId
+      in: path
+      required: true
+      description: Unique identifier of the car
+      schema:
+        type: string
+        format: uuid
+    EventId:
+      name: eventId
+      in: path
+      required: true
+      description: Unique identifier of the Car Event
+      schema:
+        type: string
+        format: uuid
+    EventIdQueryOptional:
+      name: eventId
+      in: query
+      required: false
+      description: Unique identifier of the Car Event
+      schema:
+        type: string
+        format: uuid
+    EventDescriptionQueryOptional:
+      name: description
+      in: query
+      required: false
+      description: Event Description
+      schema:
+        type: string
+    EventDateQueryOptional:
+      name: eventDate
+      in: query
+      required: false
+      description: Event Date
+      schema:
+        type: string
+        format: date
+    EventTypeQueryOptional:
+      name: eventType
+      in: query
+      required: false
+      description: Event Type
+      schema:
+        type: string
+    CarIdsOptional:
+      name: carIds
+      in: query
+      required: false
+      description: Unique identifiers of the car
+      schema:
+        type: array
+        items:
+          type: string
+          format: uuid
+    MakeQueryOptional:
+      name: make
+      in: query
+      description: Filter by car manufacturer (supports operators and wildcards)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        maxLength: 50
+      example: eq.Toyota
+    ModelQueryOptional:
+      name: model
+      in: query
+      description: Filter by car model (supports operators and wildcards)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        maxLength: 50
+      example: '*Camry*'
+    YearQueryOptional:
+      name: year
+      in: query
+      description: Filter by year (supports numeric operators)
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]{4}$|^isNull$
+      example: gte.2020
+    ColorQueryOptional:
+      name: color
+      in: query
+      description: Filter by color (supports operators and wildcards)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        maxLength: 30
+      example: eq.Black
+    FeatureQueryOptional:
+      name: feature
+      in: query
+      description: Filter by feature (supports operators and wildcards)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        maxLength: 30
+      example: '*Camera*'
+    Feature:
+      name: feature
+      in: path
+      description: Filter by feature
+      required: true
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        maxLength: 30
+      example: Bluetooth
+    CarStatusQueryOptional:
+      name: carStatus
+      in: query
+      description: Filter by availability status
+      required: false
+      schema:
+        $ref: '#/components/schemas/CarStatus'
+      example: eq.available
+    PriceQueryOptional:
+      name: price
+      in: query
+      description: Filter by price (supports numeric operators)
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]+(\.[0-9]{1,2})?$|^isNull$
+      example: lt.25000
+    MileageQueryOptional:
+      name: mileage
+      in: query
+      description: Filter by mileage (supports numeric operators)
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)?[0-9]+$|^isNull$
+      example: lte.50000
+    VinQueryOptional:
+      name: vin
+      in: query
+      description: Filter by VIN (supports operators and wildcards)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        maxLength: 17
+      example: eq.1HGBH41JXMN109186
+    BodyTypeQueryOptional:
+      name: bodyType
+      in: query
+      description: Filter by body type
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.)?(sedan|suv|truck|coupe|convertible|wagon|van|hatchback)$|^isNull$
+      example: eq.suv
+    TransmissionQueryOptional:
+      name: transmission
+      in: query
+      description: Filter by transmission type
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.)?(automatic|manual|cvt)$|^isNull$
+      example: eq.automatic
+    FuelTypeQueryOptional:
+      name: fuelType
+      in: query
+      description: Filter by fuel type
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.)?(gasoline|diesel|electric|hybrid|plug-in-hybrid)$|^isNull$
+      example: eq.hybrid
+    LimitQueryOptional:
+      name: limit
+      in: query
+      description: Maximum number of items to return
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 25
+    OffsetQueryOptional:
+      name: offset
+      in: query
+      description: Number of items to skip before starting to collect the result set
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+    OrderQueryOptional:
+      name: order
+      in: query
+      description: Sort order for the results (e.g., order=price.asc or order=year.desc)
+      required: false
+      schema:
+        type: string
+        pattern: ^(make|model|year|price|mileage|createdAt)\.(asc|desc)$
+      example: price.asc
+    XRequestId:
+      in: header
+      name: X-Request-Id
+      description: Represents a unique request
+      schema:
+        type: string
+        format: uuid
+      required: false
+    XCorrelationId:
+      in: header
+      name: X-Correlation-Id
+      description: Serves as a session id for multi-step workflows
+      schema:
+        type: string
+        format: uuid
+      required: false
+  schemas:
+    Car:
+      description: A car in the car lot inventory
+      type: object
+      required:
+        - vin
+        - make
+        - model
+        - year
+        - price
+        - carStatus
+      properties:
+        carId:
+          description: Unique identifier for the car
+          type: string
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+        vin:
+          description: Vehicle Identification Number (17 characters)
+          type: string
+          pattern: ^[A-HJ-NPR-Z0-9]{17}$
+          minLength: 17
+          maxLength: 17
+          example: 1HGBH41JXMN109186
+        make:
+          description: Car manufacturer
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: Toyota
+        model:
+          description: Car model name
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: Camry
+        year:
+          description: Model year
+          type: integer
+          minimum: 1900
+          maximum: 2100
+          example: 2023
+        color:
+          description: Exterior color
+          type: string
+          minLength: 1
+          maxLength: 30
+          example: Silver
+        mileage:
+          description: Current odometer reading in miles
+          type: integer
+          minimum: 0
+          example: 15234
+        price:
+          description: List price in USD
+          type: number
+          minimum: 0
+          example: 28500
+        carStatus:
+          $ref: '#/components/schemas/CarStatus'
+        bodyType:
+          description: Type of vehicle body
+          type: string
+          enum:
+            - sedan
+            - suv
+            - truck
+            - coupe
+            - convertible
+            - wagon
+            - van
+            - hatchback
+          example: sedan
+        transmission:
+          description: Type of transmission
+          type: string
+          enum:
+            - automatic
+            - manual
+            - cvt
+          example: automatic
+        fuelType:
+          description: Type of fuel or power source
+          type: string
+          enum:
+            - gasoline
+            - diesel
+            - electric
+            - hybrid
+            - plug-in-hybrid
+          example: hybrid
+        engine:
+          description: Engine specifications
+          type: string
+          maxLength: 100
+          example: 2.5L 4-Cylinder
+        driveType:
+          description: Drive train configuration
+          type: string
+          enum:
+            - fwd
+            - rwd
+            - awd
+            - 4wd
+          example: fwd
+        doors:
+          description: Number of doors
+          type: integer
+          minimum: 2
+          maximum: 5
+          example: 4
+        seats:
+          description: Number of seats
+          type: integer
+          minimum: 2
+          maximum: 9
+          example: 5
+        features:
+          description: List of features and options
+          type: array
+          items:
+            type: string
+          maxItems: 50
+          example:
+            - Backup Camera
+            - Bluetooth
+            - Cruise Control
+            - Leather Seats
+        events:
+          description: List of significant events (e.g., accidents, services)
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+          minItems: 0
+          maxItems: 100
+        description:
+          description: Additional notes or description
+          type: string
+          maxLength: 1000
+          example: Well-maintained, single owner, complete service history
+        images:
+          description: URLs to car images
+          type: array
+          items:
+            type: string
+          maxItems: 20
+          example:
+            - https://example.com/images/car1.jpg
+            - https://example.com/images/car2.jpg
+        createdAtDateTime:
+          description: When this car was added to inventory
+          type: string
+          format: date-time
+          readOnly: true
+          example: '2025-01-15T10:30:00Z'
+        updatedAtDateTime:
+          description: When this car record was last updated
+          type: string
+          format: date-time
+          readOnly: true
+          example: '2025-01-20T14:45:00Z'
+    CarStatus:
+      description: Current availability status
+      type: string
+      enum:
+        - available
+        - sold
+        - removed
+        - reserved
+        - pending
+        - maintenance
+      x-soft-delete: removed
+      example: available
+    CarUpdate:
+      description: Schema for updating an existing car (all fields optional)
+      type: object
+      properties:
+        color:
+          description: Exterior color
+          type: string
+          minLength: 1
+          maxLength: 30
+          example: Silver
+        mileage:
+          description: Current odometer reading in miles
+          type: integer
+          minimum: 0
+          example: 15234
+        price:
+          description: List price in USD
+          type: number
+          minimum: 0
+          example: 28500
+        features:
+          description: List of features and options
+          type: array
+          items:
+            type: string
+          maxItems: 50
+          example:
+            - Backup Camera
+            - Bluetooth
+            - Cruise Control
+            - Leather Seats
+        description:
+          description: Additional notes or description
+          type: string
+          maxLength: 1000
+          example: Well-maintained, single owner, complete service history
+        images:
+          description: URLs to car images
+          type: array
+          items:
+            type: string
+          maxItems: 20
+          example:
+            - https://example.com/images/car1.jpg
+            - https://example.com/images/car2.jpg
+    Error:
+      type: object
+      properties:
+        code:
+          description: Error Code
+          type: integer
+          minimum: 10000
+          maximum: 99999
+        message:
+          type: string
+          description: Error message from service
+    ErrorItem:
+      allOf:
+        - $ref: '#/components/schemas/Error'
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        field:
+          description: Name of the field in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+    Event:
+      type: object
+      properties:
+        eventId:
+          description: Unique Event ID
+          type: string
+          format: uuid
+          readOnly: true
+        eventDate:
+          description: Date of the event
+          type: string
+          format: date
+          example: '2024-05-10'
+        eventType:
+          description: Type of event
+          type: string
+          example: Accident
+        description:
+          description: Details about the event
+          type: string
+          example: Rear-ended at a stoplight, minor damage to bumper
+  responses:
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com

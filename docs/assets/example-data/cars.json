@@ -1,0 +1,331 @@
+[
+  {
+    "carId": "b7c1f9d4-6c4a-4960-8b69-e3f7ad7b1ce1",
+    "vin": "1HGCM82633A004352",
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2022,
+    "color": "Silver",
+    "mileage": 15234,
+    "price": 27850.00,
+    "status": "available",
+    "bodyType": "sedan",
+    "transmission": "automatic",
+    "fuelType": "hybrid",
+    "engine": "2.5L 4-Cylinder",
+    "driveType": "fwd",
+    "doors": 4,
+    "seats": 5,
+    "features": [
+      "Backup Camera",
+      "Bluetooth",
+      "Cruise Control",
+      "Lane Assist",
+      "Apple CarPlay"
+    ],
+    "events": [
+      {
+        "eventId": "e1f7a8d2-9f9c-41b9-a0a3-cc5315c77dd1",
+        "eventType": "maintenance",
+        "eventDate": "2024-05-10",
+        "description": "Oil change and tire rotation"
+      }
+    ],
+    "description": "Well-maintained hybrid sedan with excellent fuel economy.",
+    "images": [
+      "https://example.com/images/camry-front.jpg",
+      "https://example.com/images/camry-side.jpg"
+    ],
+    "createdAtDateTime": "2025-01-15T10:30:00Z",
+    "updatedAtDateTime": "2025-01-20T14:45:00Z"
+  },
+  {
+    "carId": "d3f23e51-2f63-47af-8407-8e2df4c3ae05",
+    "vin": "1FTFW1E50MKD12345",
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2021,
+    "color": "Blue",
+    "mileage": 40320,
+    "price": 38900.00,
+    "status": "pending",
+    "bodyType": "truck",
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "engine": "3.3L V6",
+    "driveType": "4wd",
+    "doors": 4,
+    "seats": 5,
+    "features": [
+      "Towing Package",
+      "Backup Camera",
+      "Remote Start",
+      "Bed Liner"
+    ],
+    "events": [],
+    "description": "Full-size pickup with strong towing capability.",
+    "images": [
+      "https://example.com/images/f150-front.jpg"
+    ],
+    "createdAtDateTime": "2025-02-01T09:12:00Z",
+    "updatedAtDateTime": "2025-02-10T15:45:00Z"
+  },
+  {
+    "carId": "8a9ff796-fc77-4e85-91f4-652256cbf149",
+    "vin": "WAUZZZ8V0KA106789",
+    "make": "Audi",
+    "model": "A3",
+    "year": 2019,
+    "color": "Red",
+    "mileage": 28900,
+    "price": 23450.00,
+    "status": "sold",
+    "bodyType": "hatchback",
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "engine": "2.0L Turbo",
+    "driveType": "awd",
+    "doors": 4,
+    "seats": 5,
+    "features": [
+      "Leather Seats",
+      "Sunroof",
+      "Navigation System",
+      "Heated Seats"
+    ],
+    "events": [
+      {
+        "eventId": "ab1c3237-9ea8-4dc7-9cd7-dc1ca9775555",
+        "eventType": "accident",
+        "eventDate": "2023-03-22",
+        "description": "Minor rear bumper repair"
+      },
+      {
+        "eventId": "731fcf0c-b7cb-4bd5-a34f-fcfae3c98160",
+        "eventType": "maintenance",
+        "eventDate": "2024-06-05",
+        "description": "Brake pad replacement"
+      }
+    ],
+    "description": "Sporty hatchback in excellent cosmetic and mechanical condition.",
+    "images": [
+      "https://example.com/images/a3-front.jpg",
+      "https://example.com/images/a3-interior.jpg"
+    ],
+    "createdAtDateTime": "2025-01-02T08:00:00Z",
+    "updatedAtDateTime": "2025-01-15T13:20:00Z"
+  },
+  {
+    "carId": "5b411b07-86ce-4c6e-a0b1-40dcfcb44cd3",
+    "vin": "3CZRE38579G702451",
+    "make": "Honda",
+    "model": "CR-V",
+    "year": 2020,
+    "color": "White",
+    "mileage": 31800,
+    "price": 25900,
+    "status": "available",
+    "bodyType": "suv",
+    "transmission": "cvt",
+    "fuelType": "gasoline",
+    "engine": "1.5L Turbo",
+    "driveType": "awd",
+    "doors": 4,
+    "seats": 5,
+    "features": [
+      "Backup Camera",
+      "Bluetooth",
+      "Adaptive Cruise Control",
+      "Heated Seats"
+    ],
+    "events": [],
+    "description": "Reliable compact SUV with great MPG and safety features.",
+    "images": [],
+    "createdAtDateTime": "2025-02-08T11:20:00Z",
+    "updatedAtDateTime": "2025-02-10T09:14:00Z"
+  },
+  {
+    "carId": "c7e18e76-4142-4bdb-865e-596a9cfc0aff",
+    "vin": "1FAHP3J21CL286714",
+    "make": "Ford",
+    "model": "Focus",
+    "year": 2018,
+    "color": "Gray",
+    "mileage": 58210,
+    "price": 11850,
+    "status": "available",
+    "bodyType": "hatchback",
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "engine": "2.0L 4-Cylinder",
+    "driveType": "fwd",
+    "doors": 4,
+    "seats": 5,
+    "features": ["Bluetooth", "Backup Camera"],
+    "events": [],
+    "description": "Affordable commuter with excellent ownership history.",
+    "images": [],
+    "createdAtDateTime": "2025-01-25T08:00:00Z",
+    "updatedAtDateTime": "2025-01-27T12:30:00Z"
+  },
+  {
+    "carId": "f8bcf0ca-4500-4d65-8352-30b5042382c3",
+    "vin": "5YJ3E1EA2JF071369",
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2021,
+    "color": "Black",
+    "mileage": 22100,
+    "price": 31900,
+    "status": "reserved",
+    "bodyType": "sedan",
+    "transmission": "automatic",
+    "fuelType": "electric",
+    "engine": "Electric Motor",
+    "driveType": "rwd",
+    "doors": 4,
+    "seats": 5,
+    "features": [
+      "Autopilot",
+      "Heated Seats",
+      "Navigation",
+      "Backup Camera"
+    ],
+    "events": [
+      {
+        "eventId": "e4a29f2d-48e0-4e1a-9c1e-896385d9c211",
+        "eventType": "maintenance",
+        "eventDate": "2024-10-10",
+        "description": "Battery health inspection"
+      }
+    ],
+    "description": "Long-range EV, great condition, clean interior.",
+    "images": [],
+    "createdAtDateTime": "2025-02-02T14:15:00Z",
+    "updatedAtDateTime": "2025-02-02T14:15:00Z"
+  },
+  {
+    "carId": "9d692e3e-5599-4f6a-a9d8-930d22da9069",
+    "vin": "2GCEK19T4Y1179049",
+    "make": "Chevrolet",
+    "model": "Silverado 1500",
+    "year": 2017,
+    "color": "Black",
+    "mileage": 74500,
+    "price": 24800,
+    "status": "available",
+    "bodyType": "truck",
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "engine": "5.3L V8",
+    "driveType": "4wd",
+    "doors": 4,
+    "seats": 6,
+    "features": [
+      "Towing Package",
+      "Bed Liner",
+      "Backup Camera",
+      "Remote Start"
+    ],
+    "events": [
+      {
+        "eventId": "2d390e2f-4de9-4114-bc26-aab772866517",
+        "eventType": "maintenance",
+        "eventDate": "2023-12-01",
+        "description": "Brake pads and rotors replaced"
+      }
+    ],
+    "description": "Strong V8 truck in great mechanical shape.",
+    "images": [],
+    "createdAtDateTime": "2025-01-10T09:00:00Z",
+    "updatedAtDateTime": "2025-01-15T12:00:00Z"
+  },
+  {
+    "carId": "19bf5d0d-0acd-49f2-a181-cdbb4fd0b600",
+    "vin": "JTDKBRFU3H3521123",
+    "make": "Toyota",
+    "model": "Prius",
+    "year": 2019,
+    "color": "Blue",
+    "mileage": 50120,
+    "price": 17600,
+    "status": "sold",
+    "bodyType": "hatchback",
+    "transmission": "cvt",
+    "fuelType": "hybrid",
+    "engine": "1.8L Hybrid",
+    "driveType": "fwd",
+    "doors": 4,
+    "seats": 5,
+    "features": ["Bluetooth", "Navigation", "Backup Camera"],
+    "events": [],
+    "description": "Fuel-efficient hybrid with excellent service records.",
+    "images": [],
+    "createdAtDateTime": "2025-01-14T10:00:00Z",
+    "updatedAtDateTime": "2025-01-18T15:30:00Z"
+  },
+  {
+    "carId": "7f3c6c41-7fa3-4bd1-86fd-6104e15fa778",
+    "vin": "WDDGF4HB1EA923456",
+    "make": "Mercedes-Benz",
+    "model": "C300",
+    "year": 2020,
+    "color": "Silver",
+    "mileage": 28900,
+    "price": 32900,
+    "status": "maintenance",
+    "bodyType": "sedan",
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "engine": "2.0L Turbo",
+    "driveType": "rwd",
+    "doors": 4,
+    "seats": 5,
+    "features": [
+      "Leather Seats",
+      "Sunroof",
+      "Backup Camera",
+      "Bluetooth"
+    ],
+    "events": [
+      {
+        "eventId": "c1e2f4c8-5cd9-4c8e-b1c5-df64a03def11",
+        "eventType": "maintenance",
+        "eventDate": "2025-01-20",
+        "description": "Scheduled service inspection"
+      }
+    ],
+    "description": "Luxury sedan, low miles, excellent condition.",
+    "images": [],
+    "createdAtDateTime": "2025-01-21T07:45:00Z",
+    "updatedAtDateTime": "2025-01-21T07:45:00Z"
+  },
+  {
+    "carId": "e75ea3e3-a813-4499-a341-1e092e4fe7a3",
+    "vin": "1G1ZD5ST5KF152345",
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2019,
+    "color": "Gray",
+    "mileage": 42350,
+    "price": 15400,
+    "status": "pending",
+    "bodyType": "sedan",
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "engine": "1.5L Turbo",
+    "driveType": "fwd",
+    "doors": 4,
+    "seats": 5,
+    "features": [
+      "Backup Camera",
+      "Cruise Control",
+      "Bluetooth"
+    ],
+    "events": [],
+    "description": "Clean interior and good fuel economy, perfect commuter.",
+    "images": [],
+    "createdAtDateTime": "2025-02-01T16:00:00Z",
+    "updatedAtDateTime": "2025-02-01T16:00:00Z"
+  }
+]

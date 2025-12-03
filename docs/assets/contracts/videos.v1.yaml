@@ -1,0 +1,499 @@
+openapi: 3.0.3
+info:
+  title: Videos
+  description: Videos
+  version: v1
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developer.acme.com/terms/
+servers:
+  - url: https://localhost:3000
+security:
+  - bearerAuth: []
+paths:
+  /v1/videos:
+    get:
+      tags:
+        - Videos
+      summary: List videos
+      description: List videos
+      operationId: getVideos
+      parameters:
+        - $ref: '#/components/parameters/VideoIdsQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: A list of videos The response also includes a Content-Range header in the format 'items start-end/total', which provides the total record count.
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Videos'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - Videos
+      description: Create multiple video records
+      summary: Create videos in bulk
+      operationId: createVideos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Video'
+              minItems: 1
+              maxItems: 1000
+      responses:
+        '201':
+          description: Videos created successfully in bulk
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Videos'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      parameters:
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+    patch:
+      tags:
+        - Videos
+      description: Update multiple videos in your personal library. Only need to provide those fields that need to be updated.
+      summary: Update videos
+      operationId: updateVideos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Video'
+              minItems: 1
+              maxItems: 1000
+      responses:
+        '200':
+          description: Updated successfully
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Videos'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+      parameters:
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+    delete:
+      tags:
+        - Videos
+      description: Remove a video
+      summary: Delete videos
+      operationId: deleteVideos
+      parameters:
+        - $ref: '#/components/parameters/CategoryQueryOptional'
+        - $ref: '#/components/parameters/VideoIdsQueryOptional'
+        - $ref: '#/components/parameters/VideoIdQueryOptional'
+        - $ref: '#/components/parameters/DueDateTimeQueryOptional'
+        - $ref: '#/components/parameters/XRequestId'
+        - $ref: '#/components/parameters/XCorrelationId'
+      responses:
+        '200':
+          description: A list of videos The response also includes a Content-Range header in the format 'items start-end/total', which provides the total record count.
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/ContentRange'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Videos'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    VideoIdsQueryOptional:
+      description: Unique identifier for the video.
+      name: videoIds
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+          format: uuid
+    VideoIdQueryOptional:
+      description: Unique identifier for the video.
+      name: videoId
+      in: query
+      required: false
+      schema:
+        type: string
+        format: uuid
+    DueDateTimeQueryOptional:
+      description: Due date for the video (ISO 8601 format). Only applicable for tasks video.
+      name: dueDateTime
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    LimitQueryOptional:
+      name: limit
+      in: query
+      description: Maximum number of items to return.
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 2000
+        default: 1000
+    OffsetQueryOptional:
+      name: offset
+      in: query
+      description: Number of items to skip before starting to collect the result set.
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1000000
+    OrderQueryOptional:
+      name: order
+      in: query
+      description: Sort order for the results (e.g., order=title.asc).
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9_]+\.(asc|desc)$
+    CategoryQueryOptional:
+      name: category
+      in: query
+      description: Filter by category (supports wildcard and partial matches).
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        minLength: 1
+        maxLength: 40
+    XRequestId:
+      in: header
+      name: X-Request-Id
+      description: Represents a unique request
+      schema:
+        type: string
+        format: uuid
+      required: false
+    XCorrelationId:
+      in: header
+      name: X-Correlation-Id
+      description: Serves as a session id for multi-step workflows
+      schema:
+        type: string
+        format: uuid
+      required: false
+  schemas:
+    ContentRange:
+      description: The content range of the response
+      type: string
+      example: items 0-24/100
+    Error:
+      type: object
+      properties:
+        code:
+          description: Error Code
+          type: integer
+          minimum: 10000
+          maximum: 99999
+        message:
+          type: string
+          description: Error message from service
+    ErrorItem:
+      allOf:
+        - $ref: '#/components/schemas/Error'
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        field:
+          description: Name of the field in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+    MovieRatings:
+      description: Content ratings and advisory information
+      type: string
+      enum:
+        - TV-Y7
+        - NR
+        - G
+        - TV-Y
+        - Approved
+        - PG
+        - TV-G
+        - TV-14
+        - TV-PG
+        - PG-13
+        - Not Rated
+        - R
+    Video:
+      description: A video in your personal library (movie, TV show, etc.)
+      type: object
+      x-context:
+        required:
+          post:
+            - title
+            - mediaType
+          put:
+            - title
+            - mediaType
+          delete:
+            - videoId
+          patch:
+            - videoId
+        prohibited:
+          post:
+            - videoId
+          put:
+            - videoId
+      properties:
+        videoId:
+          $ref: '#/components/schemas/VideoId'
+        providerSource:
+          description: The service or platform where this video was obtained
+          type: string
+          enum:
+            - plex
+            - netflix
+            - primevideo
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.)(plex|netflix|primevideo)$|^isNull$
+        addedAtDateTime:
+          description: When this video was added to your library from the original source
+          type: string
+          format: date-time
+          readOnly: true
+          x-query: optional
+          x-query-pattern: ^(gt\.|lt\.|gte\.|lte\.|eq\.|neq\.)[0-9T:\-Z]+$|^[0-9T:\-Z]+$|^isNull$
+        lastPlayedAtDateTime:
+          description: When you last watched this video
+          type: string
+          format: date-time
+          x-query: optional
+          x-query-pattern: ^(gt\.|lt\.|gte\.|lte\.|eq\.|neq\.)[0-9T:\-Z]+$|^[0-9T:\-Z]+$|^isNull$
+        lastPositionMins:
+          description: Your current viewing position in minutes
+          type: integer
+          minimum: 0
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$
+        userRating:
+          description: Your personal rating of this video (0-10 scale)
+          type: integer
+          minimum: 0
+          maximum: 10
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$
+        mediaType:
+          description: The type of content (movie or tv)
+          type: string
+          enum:
+            - movie
+            - tv
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.)(movie|tv)$|^isNull$
+        tmdbId:
+          description: The Movie Database identifier
+          type: string
+          pattern: ^[0-9]+$
+          minLength: 1
+          maxLength: 10
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.)[0-9]+$|^[0-9*]+$|^isNull$
+        imdbId:
+          description: Internet Movie Database identifier
+          type: string
+          pattern: ^tt[0-9]+$
+          minLength: 9
+          maxLength: 10
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.)tt[0-9]+$|^tt[0-9*]+$|^isNull$
+        title:
+          description: The title of the video
+          type: string
+          maxLength: 150
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?/-]+$
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*/-]+$
+        movieRatings:
+          $ref: '#/components/schemas/MovieRatings'
+        seriesName:
+          description: Name of the series this video belongs to (for TV shows)
+          type: string
+          maxLength: 150
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?/-]+$
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*/-]+$
+        episodeTitle:
+          description: Title of the specific episode (for TV shows)
+          type: string
+          maxLength: 150
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?/-]+$
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*/-]+$
+        season:
+          description: Season identifier (for TV shows)
+          type: string
+          maxLength: 50
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?/-]+$
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*/-]+$
+        releaseYear:
+          description: Year the video was released
+          type: integer
+          x-query: optional
+          x-query-pattern: ^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$
+        releaseDate:
+          description: Official release date of the video
+          type: string
+          format: date
+          x-query: optional
+          x-query-pattern: ^(gt\.|lt\.|gte\.|lte\.|eq\.|neq\.)[0-9]{4}-[0-9]{2}-[0-9]{2}$|^[0-9]{4}-[0-9]{2}-[0-9]{2}$|^isNull$
+        genres:
+          description: Comma-separated list of genres
+          type: string
+          maxLength: 100
+          minLength: 1
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?/-]+$
+          x-query: optional
+          x-query-pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*/-]+$
+        createdAtDateTime:
+          readOnly: true
+          description: When this video was added to your library from the original source
+          type: string
+          format: date-time
+        updatedAtDateTime:
+          readOnly: true
+          description: When this video was added to your library from the original source
+          type: string
+          format: date-time
+    VideoId:
+      description: Unique identifier for this resource
+      type: string
+      format: uuid
+      x-query: optional
+      x-primary-key: true
+      x-query-pattern: ^(eq\.|neq\.)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^isNull$
+    Videos:
+      type: object
+      readOnly: true
+      properties:
+        contentRange:
+          $ref: '#/components/schemas/ContentRange'
+        results:
+          description: The list of videos
+          type: array
+          items:
+            $ref: '#/components/schemas/Video'
+          minItems: 0
+          maxItems: 1000
+  headers:
+    ContentRange:
+      description: Total count of items matching the filter criteria
+      schema:
+        type: string
+        example: 0-700/*
+  responses:
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com

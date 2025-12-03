@@ -1,4 +1,4 @@
-# Apistry
+![3dApistry-dark.png](images/3dApistry-darkblue.png)
 
 <p style="font-size: 24px;"><strong>Contract to Service Runtime</strong> with <strong>MongoDB interaction</strong></p>
 
@@ -53,11 +53,11 @@ yarn global add apistry
 Apistry, being a contract based service, **needs a well-defined contract** to startup. 
 The following examples have been provided to get you started quickly:
 
-- **[Books API](assets/books.v1.yaml)** (`books.v1.yaml`)
-- **[Cars](assets/cars.v1.yaml)** (`cars.v1.yaml`)
-- **[Utils](assets/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
+- **[Books API](assets/contracts/books.v1.yaml)** (`books.v1.yaml`)
+- **[Cars](assets/contracts/cars.v1.yaml)** (`cars.v1.yaml`)
+- **[Utils](assets/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
   status
-- **[Videos API](assets/videos.v1.yaml)** (`videos.v1.yaml`)
+- **[Videos API](assets/contracts/videos.v1.yaml)** (`videos.v1.yaml`)
 
 Download one or all of these to get started quickly or create your own. 
 
