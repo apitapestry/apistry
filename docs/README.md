@@ -53,11 +53,12 @@ yarn global add apistry
 Apistry, being a contract based service, **needs a well-defined contract** to startup. 
 The following examples have been provided to get you started quickly:
 
-- **[Books API](assets/contracts/books.v1.yaml)** (`books.v1.yaml`)
-- **[Cars](assets/contracts/cars.v1.yaml)** (`cars.v1.yaml`)
-- **[Utils](assets/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and
-  status
-- **[Videos API](assets/contracts/videos.v1.yaml)** (`videos.v1.yaml`)
+- **[Books](assets/contracts/books.v1.yaml)** (`books.v1.yaml`)
+- **[Cars](assets/contracts/cars.v1.yaml)** (`cars.v1.yaml`) - Has most sample endpoints and features
+- **[Utils](assets/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and ???
+- **[Videos](assets/contracts/videos.v1.yaml)** (`videos.v1.yaml`)
+- **[Pets](assets/contracts/pets.v1.yaml)** (`pets.v1.yaml`)
+- **[Notes](assets/contracts/notes.v1.yaml)** (`notes.v1.yaml`) - A Polymorphic example
 
 Download one or all of these to get started quickly or create your own. 
 
@@ -105,13 +106,27 @@ apistry testConnection -e path/to/.env
 
 **Output:**
 ```bash
-🔍 Testing MongoDB connection...
-📍 Connection string: mongodb+srv://myserver:****@myserver-db.ojsguxa.mongodb.net/mydb?appName=myserver-db
-⏳ Connecting to MongoDB...
-✅ Success! You are connected to MongoDB!
-📊 Pinged your deployment successfully.
-📂 Database name: apistry
-🔌 Connection closed.
+apistry serve --env .. --contract ../contracts/dist
+
+Loading 6 contract(s): [
+  'books.v1.yaml',
+  'cars.v1.yaml',
+  'notes.yaml',
+  'pets.v1.yaml',
+  'utils.v1.yaml',
+  'videos.v1.yaml'
+]
+MongoDB connected → apistry
+✅ All required collections exist
+ContentTypeParser for 'application/xml' not found
+ContentTypeParser for 'application/x-www-form-urlencoded' not found
+ContentTypeParser for 'application/octet-stream' not found
+📚 Swagger UI available at /docs
+Loaded 41 routes successfully
+Server listening at http://[::1]:3000
+Server listening at http://127.0.0.1:3000
+🚀 Server running on http://localhost:3000
+📖 API Documentation: http://localhost:3000/docs
 ```
 
 Additional options are available:
@@ -126,14 +141,16 @@ Usage: apistry [options] [command]
 Apistry CLI
 
 Options:
--V, --version              output the version number
--h, --help                 display help for command
+  -v, --version              Output the version number
+  -h, --help                 display help for command
 
 Commands:
-serve [options]            Start the API development server
-testConnection [options]   Test the MongoDB database connection (uses DB_CONNECTION env var)
-clearCollection [options]  Clear all documents from a MongoDB collection
-help [command]             display help for command
+  serve [options]            Start the API development server
+  testConnection [options]   Test the MongoDB database connection
+  clearCollection [options]  Clear all documents from a MongoDB collection
+  import [options]           Import JSON or CSV files into collections
+  export [options]           Export collection(s) to JSON or CSV files
+  help [command]             display help for command
 ```
 
 ### 3. Start the Server

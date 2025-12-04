@@ -79,11 +79,6 @@ apistry serve -c contracts/dist-wip/cars.v1.yaml -e ../..
 - `Missing DB_CONNECTION environment variable.` – Provide `.env` or export the variable before running.
 - `Error starting server: <message>` – Contract parsing or Fastify initialization failed.
 
-**Exit Codes:**
-
-- `0` Success
-- `1` Failure (missing env, server start error)
-
 ### 2. `testConnection`
 Validate connectivity to MongoDB defined by `DB_CONNECTION`.
 
@@ -118,8 +113,6 @@ apistry testConnection
 ```
 ❌ Connection failed: authentication failed
 ```
-
-(Exit code 1)
 
 ### 3. `clearCollection`
 Delete all documents from a specified MongoDB collection (with interactive confirmation).
@@ -161,10 +154,80 @@ apistry clearCollection -cn cars
 ❌ Operation cancelled.
 ```
 
-**Exit Codes:**
+### 4. `import`
+Bulk load JSON or CSV fixtures into MongoDB collections. Useful for seeding development data or refreshing demo datasets.
 
-- `0` Success / Cancelled
-- `1` Failure (connection or operation error)
+```bash
+apistry import -i assets/example-data --replace yes
+```
+
+**Options:**
+
+- `-i, --inputPath <string>` (required) Directory or explicit file containing JSON/CSV payloads.
+- `-r, --replace <string>` Clear existing documents before loading (`y|yes|true|n|no|false`, default: `n`).
+- `-m, --maxDocs <integer>` Upper bound on documents imported per file; omit to load all rows.
+- `-e, --env <string>` Directory containing `.env`.
+
+**Behavior:**
+
+1. Resolves files from `inputPath`. Directories are traversed one level deep; each file name maps to the target collection.
+2. When `--replace` is truthy, issues a deleteMany prior to load.
+3. Parses JSON arrays or CSV headers, batching inserts to reduce memory use.
+4. Logs per-file counts and totals.
+
+**Example data:**
+
+- **[Books - books.csv](assets/example-data/books.csv)**
+- **[Cars - cars.json](assets/example-data/cars.json)**
+- **[Notes - notes.json](assets/example-data/notes.json)**
+- **[Videos - videos.csv](assets/example-data/videos.csv)**
+
+**Examples:**
+
+```bash
+# Import a single JSON document list
+apistry import -i assets/example-data/cars.json
+
+# Seed all fixtures, wiping existing data first
+apistry import -i assets/example-data --replace yes
+
+# Smoke-test a subset
+apistry import -i assets/example-data/videos.csv -m 25
+```
+
+### 5. `export`
+Dump one or many MongoDB collections to JSON or CSV to share fixtures or snapshot state.
+
+```bash
+apistry export -o exports --collection cars --format csv
+```
+
+**Options:**
+
+- `-o, --outputPath <string>` (required) Directory or file path where exports are written. Directories are created if missing.
+- `-c, --collection <string>` Name of a single collection to export. Omit to export every collection referenced in the current contract.
+- `-f, --format <string>` Output format: `json` (default) or `csv`.
+- `-e, --env <string>` Directory containing `.env`.
+
+**Behavior:**
+
+1. Establishes a Mongo connection using `DB_CONNECTION`.
+2. Determines the export scope: specified collection or contract-derived set.
+3. Streams documents to the requested format to prevent memory spikes.
+4. Writes one file per collection (e.g., `cars.json`, `cars.csv`).
+
+**Examples:**
+
+```bash
+# Capture a single collection
+apistry export -c cars -o dumps
+
+# Export all collections in CSV for spreadsheets
+apistry export -o dumps/csv --format csv
+
+# Direct export to a file path
+apistry export -c videos -o /tmp/videos.json
+```
 
 ## Logging Modes
 
@@ -215,6 +278,8 @@ Show command-specific help:
 apistry serve --help
 apistry testConnection --help
 apistry clearCollection --help
+apistry import --help
+apistry export --help
 ```
 
 ---
