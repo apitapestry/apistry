@@ -1,8 +1,7 @@
 openapi: 3.0.3
 info:
   title: Rminders
-  description: |
-    API for managing and searching personal reminders including notes, preferences and tasks.
+  description: API for managing and searching personal reminders including notes, preferences and tasks.
   version: v1
   contact:
     email: API-Gov-Team@gmail.com
