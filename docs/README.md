@@ -26,6 +26,7 @@ querying, and request/response validation based on contract schemas.
 ## Overview
 
 - [🧰 Installation](#installation)
+- [💻 Quick Start](#quick-start)
 - [💻 Usage](#usage)
 - [📖 Documentation](#documentation)
 
@@ -44,6 +45,58 @@ Or [yarn](https://yarnpkg.com/):
 
 ```
 yarn global add apistry
+```
+
+## 💻 Quick Start
+1. Install apistry globally
+2. Download example contracts, data, .env file
+3. Start Server
+4. Make API Calls
+
+Here is a sample session doing the above (on a Mac). 
+
+```
+cd ~
+```
+```
+npm install -g apistry
+
+added 191 packages in 6s
+
+63 packages are looking for funding
+  run `npm fund` for details  
+curl -o contracts.zip https://www.apitapestry.net/apistry/assets/contracts.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  995k  100  995k    0     0  3986k      0 --:--:-- --:--:-- --:--:-- 3981k
+unzip -q contracts.zip
+cd contracts
+apistry serve --contract .
+🛢 Database connected! (nedb://~/contracts/nedb)
+📄 Loaded 6 contract(s).
+   --contractsDir: . [
+  'books.v1.yaml',
+  'cars.v1.yaml',
+  'notes.yaml',
+  'pets.v1.yaml',
+  'utils.v1.yaml',
+  'videos.v1.yaml'
+]
+ContentTypeParser for 'application/xml' not found
+ContentTypeParser for 'application/x-www-form-urlencoded' not found
+ContentTypeParser for 'application/octet-stream' not found
+✅  Loaded 41 routes!
+Server listening at http://[::1]:3000
+Server listening at http://127.0.0.1:3000
+🚀 Server running on http://localhost:3000
+📖 API Documentation: http://localhost:3000/docs
+```
+
+new terminal window:
+```
+curl -X GET "http://localhost:3000/v1/cars?carStatus=sold&color=Blue" -H "accept: application/json"
+Jamess-MacBook-Pro:~/Data/Code/gitlab/apistry-dev$ curl -X GET "http://localhost:3000/v1/cars?carStatus=sold&color=Blue" -H "accept: application/json"
+{"contentRange":"items 0-0/1","results":[{"vin":"JTDKBRFU3H3521123","make":"Toyota","model":"Prius","year":2019,"price":17600,"carId":"439382a0-9317-44d8-98e4-e3252f9e8833","color":"Blue","mileage":50120,"carStatus":"sold","bodyType":"hatchback","transmission":"cvt","fuelType":"hybrid","engine":"1.8L Hybrid","driveType":"fwd","doors":4,"seats":5,"features":["Bluetooth","Navigation","Backup Camera"],"events":[],"description":"Fuel-efficient hybrid with excellent service records.","images":[],"createdAtDateTime":"2025-01-14T10:00:00Z","updatedAtDateTime":"2025-01-18T15:30:00Z"}]}
 ```
 
 ## 💻 Usage
