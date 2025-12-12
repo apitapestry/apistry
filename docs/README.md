@@ -60,55 +60,139 @@ The following examples have been provided to get you started quickly:
 - **[Pets](assets/contracts/pets.v1.yaml)** (`pets.v1.yaml`)
 - **[Notes](assets/contracts/notes.v1.yaml)** (`notes.v1.yaml`) - A Polymorphic example
 
-Download one or all of these to get started quickly or create your own. 
+Download one or all of these to get started quickly or create your own.
 
-### 2. MongoDB Setup
+For reference - let's assume you are downloading these into the **`~/contracts directory`**.
 
-Apistry requires a MongoDB database for document storage and operations. Both local and cloud-hosted MongoDB instances 
-are supported.
+**Note:** All files mentioned in this quick start can be downloaded as a **[single zip](assets/contracts.zip)** 
+including the contracts, database files, sampleData.
 
-**Database Compatibility:** While Apistry is designed to work with any JSON document database that supports standard 
-querying capabilities, the current release provides native integration exclusively with MongoDB.
+### 2. Database Setup
 
-**Connection Configuration:** For security best practices, the MongoDB connection string must be provided as an 
-environment variable. Apistry supports `.env` files for local development environments.
+Apistry comes packaged with an in memory, filesystem backed DB that is similar to MongoDB. 
 
-**Note:** Be sure to provide the database name in your connection string. When started, database and collection 
-will be created if they do not already exist.
+**Database Compatibility:** Apistry is designed to work with any JSON document database. MongoDB is already 
+supported, but building out adapters for other databases is straightforward. Please reach out if you have a need for 
+a specific database.
 
-Hosted MongoDB Example:
+A paid license is required for production use of database adapters beyond the provided in-memory database.
+
+**Connection Configuration:** For security best practices, database connection strings must be provided as an 
+environment variable. Apistry also supports `.env` files for local development environments.
+
+**Note:** If no database connection string is provided, Apistry will default to writing the database files to the
+{current working directory}/nedb. It is best to be explicit about the location of the database files via the 
+DB_CONNECTION environment variable or **`.env`** file. 
+
+Environment variable example:
 ```bash
-export DB_CONNECTION="mongodb+srv://myserver:****@myserver-db.ojsguxa.mongodb.net/mydb?appName=myserver-db"
-```
-
-Local MongoDB Example:
-```bash
-export DB_CONNECTION="mongodb://localhost:27017/mydb"
+export DB_CONNECTION="nedb:///~/contracts/nedb"
 ```
 
 Or create an `.env` file:
 ```env
-DB_CONNECTION=mongodb+srv://myserver:****@myserver-db.ojsguxa.mongodb.net/mydb?appName=myserver-db
+DB_CONNECTION=nedb:///~/contracts/nedb
 ```
 
-### 2. Confirm Database Connection
-Before starting the server, it's a good idea to test the database connection to your DB_CONNECTION is correct.
+**Notes:** 
 
-All paths are relative to the current working directory.
+1. The system will look for the `.env` file in the current working directory
+2. Providing a run option of --env with a path will override the default
+3. The paths above can be absolute or relative to the current working directory. Notice above there are 3 slashes
+`nedb:///~/contracts/nedb` - this indicates an absolute path. A relative path would look like `nedb://data/nedb` (2 slashes).
+4. If you have downloaded the zip and expanded it - your database files already exist and have been populated. 
 
+Example directory structure:
+```
+~/contracts
+│ ├── cars.v1.yaml
+│ ├── books.v1.yaml
+│ ├── pets.v1.yaml
+│ ├── utils.v1.yaml
+│ ├── videos.v1.yaml
+│ ├── notes.yaml
+│ ├── .env
+│ ├── sampleData/            ← Example data files for import
+│ │ ├── books.csv
+│ │ ├── cars.json
+│ │ ├── notes.json
+│ │ └── videos.csv
+│ └── nedb/                  ← Database files will be stored here
+```
+
+### 2. Load Data
+Before starting apistry service, you might want to load some example data into your database collections.
+
+You can skip this step if you have already downloaded the zip file above as the database files are already populated.
+
+Example Data:
+
+- **[Books - books.csv](assets/contracts/sampleData/books.csv)**
+- **[Books - books.csv](assets/contracts/books.csv)**
+- **[Cars - cars.json](assets/contracts/sampleData/cars.json)**
+- **[Notes - notes.json](assets/contracts/sampleData/notes.json)**
+- **[Videos - videos.csv](assets/contracts/sampleData/videos.csv)**
+
+Download to **`~/contracts/sampleData`** directory. 
+
+To import data into the database collections, use the `import` command:
 ```bash
-apistry testConnection
+cd ~/contracts
+apistry import -i sampleData -r true
 ```
-or
-```bash
-apistry testConnection -e path/to/.env
-```
+This will read the files, determine the collection names based on the file names, and import the data into the database.
+
+The `-r true` option indicates that existing data in the collections will be removed before importing the new data 
+(load replace).
 
 **Output:**
 ```bash
-apistry serve --env .. --contract ../contracts/dist
+apistry import -i sampleData -r true
+📁 Loading files from: /Users/myuser/contracts/sampleData
+📍 DB: nedb://data/nedb
+⏳ Connecting to database…
+📦 Processing books.csv → collection "books"
+  ✅ Inserted 308 records
+📦 Processing cars.json → collection "cars"
+  ✅ Inserted 10 records
+📦 Processing notes.json → collection "notes"
+  ✅ Inserted 20 records
+📦 Processing videos.csv → collection "videos"
+  ✅ Inserted 3890 records
+🎉 Import summary:
+ - books: deleted: 308, inserted: 308 (from books.csv)
+ - cars: deleted: 14, inserted: 10 (from cars.json)
+ - notes: deleted: 20, inserted: 20 (from notes.json)
+ - videos: deleted: 3890, inserted: 3890 (from videos.csv)
 
-Loading 6 contract(s): [
+Process finished with exit code 0
+```
+
+Additional options are available:
+```bash
+apistry --help
+apistry import --help
+apistry export --help
+apistry serve --help
+```
+
+### 3. Start the Server
+Starting the server is very fast and easy. 
+
+To start with only 1 contract specify the path to the contract file:
+
+```bash
+cd ~/contracts
+apistry serve -c ./cars.v1.yaml
+or 
+apistry serve -e ~/contracts/.env --contract ~/contracts/cars.v1.yaml
+```
+
+**Output:**
+```
+🛢 Database connected! (nedb://data/nedb)
+📄 Loaded 6 contract(s).
+   --contractsDir: contracts/dist [
   'books.v1.yaml',
   'cars.v1.yaml',
   'notes.yaml',
@@ -116,62 +200,26 @@ Loading 6 contract(s): [
   'utils.v1.yaml',
   'videos.v1.yaml'
 ]
-MongoDB connected → apistry
-✅ All required collections exist
-ContentTypeParser for 'application/xml' not found
-ContentTypeParser for 'application/x-www-form-urlencoded' not found
-ContentTypeParser for 'application/octet-stream' not found
-📚 Swagger UI available at /docs
-Loaded 41 routes successfully
+✅  Loaded 40 routes!
 Server listening at http://[::1]:3000
 Server listening at http://127.0.0.1:3000
 🚀 Server running on http://localhost:3000
 📖 API Documentation: http://localhost:3000/docs
 ```
 
-Additional options are available:
+### 4. Make API Calls
+
+Now you can make requests of your api using any REST client - including your browser for get calls. Here are some 
+example endpoints: 
+- Get all cars: `GET http://localhost:3000/v1/cars`
+- Get a car by id: `GET http://localhost:3000/v1/cars/{id}`
+- Create a new car: `POST http://localhost:3000/v1/cars`
+- Update a car: `http://localhost:3000/v1/cars`
+
+Curl examples:
 ```bash
-apistry --help
-```
-
-**Output:**
-```bash
-Usage: apistry [options] [command]
-
-Apistry CLI
-
-Options:
-  -v, --version              Output the version number
-  -h, --help                 display help for command
-
-Commands:
-  serve [options]            Start the API development server
-  testConnection [options]   Test the MongoDB database connection
-  clearCollection [options]  Clear all documents from a MongoDB collection
-  import [options]           Import JSON or CSV files into collections
-  export [options]           Export collection(s) to JSON or CSV files
-  help [command]             display help for command
-```
-
-### 3. Start the Server
-Starting the server is very fast and easy. 
-All files and paths are relative to the current working directory.
-
-Just provide the path to your OpenAPI contract file:
-
-```bash
-apistry serve -c contracts/cars.v1.yaml
-```
-
-If using an environment file, provide the path to the directory containing the `.env` file:
-```bash
-apistry serve -e contracts/.env -c contracts/cars.v1.yaml
-```
-
-**Output:**
-```
-✅ All required collections exist in database
-🚀 Server running on http://localhost:3000
+# Get all cars
+curl -X GET "http://localhost:3000/v1/cars" -H "accept: application/json"
 ```
 
 ## 📖 Documentation

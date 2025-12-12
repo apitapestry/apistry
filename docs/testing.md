@@ -130,7 +130,7 @@ curl -X DELETE http://localhost:3000/v1/cars/{id}
 
 ## Postman Collection
 
-A Postman collection is provided for testing the Cars API. Import the [`Cars.postman_collection.json`](assets/Cars.postman_collection.json) file into 
+A Postman collection is provided for testing the Cars API. Import the [`Cars.postman_collection.json`](assets/contracts/Cars.postman_collection.json) file into 
 Postman to access pre-configured requests for all car management endpoints including:
 
 - GET requests with various filter examples

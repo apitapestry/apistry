@@ -177,10 +177,10 @@ apistry import -i assets/example-data --replace yes
 
 **Example data:**
 
-- **[Books - books.csv](assets/example-data/books.csv)**
-- **[Cars - cars.json](assets/example-data/cars.json)**
-- **[Notes - notes.json](assets/example-data/notes.json)**
-- **[Videos - videos.csv](assets/example-data/videos.csv)**
+- **[Books - books.csv](assets/contracts/books.csv)**
+- **[Cars - cars.json](assets/contracts/sampleData/cars.json)**
+- **[Notes - notes.json](assets/contracts/sampleData/notes.json)**
+- **[Videos - videos.csv](assets/contracts/sampleData/videos.csv)**
 
 **Examples:**
 
