@@ -56,36 +56,40 @@ yarn global add apistry
 Here is a sample session doing the above (on a Mac). 
 
 ```
-cd ~
-```
-```
-npm install -g apistry
+$: npm install -g apistry
 
 added 191 packages in 6s
 
 63 packages are looking for funding
   run `npm fund` for details  
-curl -o contracts.zip https://www.apitapestry.net/apistry/assets/contracts.zip
+```
+
+```
+$: cd ~
+
+$: curl -o contracts.zip https://www.apitapestry.net/apistry/assets/contracts.zip
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  995k  100  995k    0     0  3986k      0 --:--:-- --:--:-- --:--:-- 3981k
-unzip -q contracts.zip
-cd contracts
-apistry serve --contract .
+```
+
+```
+$: unzip -q contracts.zip
+$: cd contracts
+```
+
+```
+$: apistry serve --contract .
 🛢 Database connected! (nedb://~/contracts/nedb)
-📄 Loaded 6 contract(s).
+📄 Loaded 5 contract(s).
    --contractsDir: . [
   'books.v1.yaml',
   'cars.v1.yaml',
   'notes.yaml',
-  'pets.v1.yaml',
   'utils.v1.yaml',
   'videos.v1.yaml'
 ]
-ContentTypeParser for 'application/xml' not found
-ContentTypeParser for 'application/x-www-form-urlencoded' not found
-ContentTypeParser for 'application/octet-stream' not found
-✅  Loaded 41 routes!
+✅  Loaded 26 routes!
 Server listening at http://[::1]:3000
 Server listening at http://127.0.0.1:3000
 🚀 Server running on http://localhost:3000
@@ -94,10 +98,14 @@ Server listening at http://127.0.0.1:3000
 
 new terminal window:
 ```
-curl -X GET "http://localhost:3000/v1/cars?carStatus=sold&color=Blue" -H "accept: application/json"
-Jamess-MacBook-Pro:~/Data/Code/gitlab/apistry-dev$ curl -X GET "http://localhost:3000/v1/cars?carStatus=sold&color=Blue" -H "accept: application/json"
+$: curl -X GET "http://localhost:3000/v1/cars?carStatus=sold&color=Blue" -H "accept: application/json"
 {"contentRange":"items 0-0/1","results":[{"vin":"JTDKBRFU3H3521123","make":"Toyota","model":"Prius","year":2019,"price":17600,"carId":"439382a0-9317-44d8-98e4-e3252f9e8833","color":"Blue","mileage":50120,"carStatus":"sold","bodyType":"hatchback","transmission":"cvt","fuelType":"hybrid","engine":"1.8L Hybrid","driveType":"fwd","doors":4,"seats":5,"features":["Bluetooth","Navigation","Backup Camera"],"events":[],"description":"Fuel-efficient hybrid with excellent service records.","images":[],"createdAtDateTime":"2025-01-14T10:00:00Z","updatedAtDateTime":"2025-01-18T15:30:00Z"}]}
 ```
+Calling the get endpoint using browser:
+![cars-api.png](images/cars-api.png)
+
+Hitting the docs endpoint in browser: 
+![swagger-ui.png](images/swagger-ui.png)
 
 ## 💻 Usage
 
@@ -110,7 +118,6 @@ The following examples have been provided to get you started quickly:
 - **[Cars](assets/contracts/cars.v1.yaml)** (`cars.v1.yaml`) - Has most sample endpoints and features
 - **[Utils](assets/contracts/utils.v1.yaml)** (`utils.v1.yaml`) - Simple utility endpoints for health checks and ???
 - **[Videos](assets/contracts/videos.v1.yaml)** (`videos.v1.yaml`)
-- **[Pets](assets/contracts/pets.v1.yaml)** (`pets.v1.yaml`)
 - **[Notes](assets/contracts/notes.v1.yaml)** (`notes.v1.yaml`) - A Polymorphic example
 
 Download one or all of these to get started quickly or create your own.
@@ -181,7 +188,6 @@ You can skip this step if you have already downloaded the zip file above as the 
 Example Data:
 
 - **[Books - books.csv](assets/contracts/sampleData/books.csv)**
-- **[Books - books.csv](assets/contracts/books.csv)**
 - **[Cars - cars.json](assets/contracts/sampleData/cars.json)**
 - **[Notes - notes.json](assets/contracts/sampleData/notes.json)**
 - **[Videos - videos.csv](assets/contracts/sampleData/videos.csv)**
@@ -195,10 +201,10 @@ apistry import -i sampleData -r true
 ```
 This will read the files, determine the collection names based on the file names, and import the data into the database.
 
-The `-r true` option indicates that existing data in the collections will be removed before importing the new data 
-(load replace).
+The `-r true` option indicates that existing data in the collections will be removed before importing the new data (load replace).
 
 **Output:**
+
 ```bash
 apistry import -i sampleData -r true
 📁 Loading files from: /Users/myuser/contracts/sampleData
@@ -217,8 +223,6 @@ apistry import -i sampleData -r true
  - cars: deleted: 14, inserted: 10 (from cars.json)
  - notes: deleted: 20, inserted: 20 (from notes.json)
  - videos: deleted: 3890, inserted: 3890 (from videos.csv)
-
-Process finished with exit code 0
 ```
 
 Additional options are available:
@@ -227,6 +231,40 @@ apistry --help
 apistry import --help
 apistry export --help
 apistry serve --help
+```
+
+### 3. Export Data
+Export one or more MongoDB collections to JSON or CSV for sharing fixtures or snapshotting state.
+
+```bash
+apistry export -o exports --collection cars --format csv
+```
+
+**Options:**
+
+- `-o, --outputPath <string>` (required) Directory or file path where exports are written. Directories are created if missing.
+- `-c, --collection <string>` Name of a single collection to export. Omit to export every collection referenced in the current contract.
+- `-f, --format <string>` Output format: `json` (default) or `csv`.
+- `-e, --env <string>` Directory containing `.env`.
+
+**Behavior:**
+
+1. Establishes a Mongo connection using `DB_CONNECTION`.
+2. Determines the export scope: specified collection or contract-derived set.
+3. Streams documents to the requested format to prevent memory spikes.
+4. Writes one file per collection (e.g., `cars.json`, `cars.csv`).
+
+**Examples:**
+
+```bash
+# Capture a single collection
+apistry export -c cars -o dumps
+
+# Export all collections in CSV for spreadsheets
+apistry export -o dumps/csv --format csv
+
+# Direct export to a file path
+apistry export -c videos -o /tmp/videos.json
 ```
 
 ### 3. Start the Server

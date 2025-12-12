@@ -1045,6 +1045,7 @@ components:
           format: uuid
           readOnly: true
           example: a3bb189e-8bf9-3888-9912-ace4e6543002
+          x-default-insert: uuid
         vin:
           description: Vehicle Identification Number (17 characters)
           type: string
@@ -1183,12 +1184,14 @@ components:
           format: date-time
           readOnly: true
           example: '2025-01-15T10:30:00Z'
+          x-default-insert: now
         updatedAtDateTime:
           description: When this car record was last updated
           type: string
           format: date-time
           readOnly: true
           example: '2025-01-20T14:45:00Z'
+          x-default-update: now
     CarStatus:
       description: Current availability status
       type: string
@@ -1201,6 +1204,7 @@ components:
         - maintenance
       example: available
       readOnly: true
+      x-default-insert: pending
     CarUpdate:
       description: Schema for updating an existing car (all fields optional)
       type: object
@@ -1239,6 +1243,7 @@ components:
         description:
           description: Additional notes or description
           type: string
+          minLength: 2
           maxLength: 1000
           example: Well-maintained, single owner, complete service history
         images:
@@ -1250,6 +1255,13 @@ components:
           example:
             - https://example.com/images/car1.jpg
             - https://example.com/images/car2.jpg
+        updatedAtDateTime:
+          description: When this car record was last updated
+          type: string
+          format: date-time
+          readOnly: true
+          example: '2025-01-20T14:45:00Z'
+          x-default-update: now
     Error:
       type: object
       properties:
@@ -1283,6 +1295,7 @@ components:
           type: string
           format: uuid
           readOnly: true
+          x-default-insert: uuid
         eventDate:
           description: Date of the event
           type: string
