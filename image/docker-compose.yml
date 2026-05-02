@@ -1,8 +1,10 @@
+name: apistry
+
 services:
   apistry:
     build:
       context: ..
-      dockerfile: Dockerfile
+      dockerfile: image/Dockerfile
     image: apistry:local
     container_name: apistry
     restart: unless-stopped
@@ -13,6 +15,7 @@ services:
       APISTRY_HOST: 0.0.0.0
       APISTRY_PORT: 3000
       CONFIG_PATH: /app/config/config.yml
+      APISTRY_DB_DIR: /app/data/sqlite.db
       API_KEY: ${API_KEY:-}
       MONGO_PASSWORD: ${MONGO_PASSWORD:-}
     volumes:

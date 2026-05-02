@@ -26,11 +26,11 @@ jobs:
       - name: Check for Dockerfile
         id: dockerfile
         run: |
-          if [ -f Dockerfile ]; then
+          if [ -f image/Dockerfile ]; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
           else
             echo "exists=false" >> "$GITHUB_OUTPUT"
-            echo "No Dockerfile found; skipping Docker image publish."
+            echo "No image/Dockerfile found; skipping Docker image publish."
           fi
 
       - name: Set up Node.js
@@ -76,7 +76,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile
+          file: ./image/Dockerfile
           push: true
           tags: |
             ${{ env.IMAGE_NAME }}:main
@@ -87,6 +87,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile
+          file: ./image/Dockerfile
           push: true
           tags: ${{ steps.release-tags.outputs.tags }}

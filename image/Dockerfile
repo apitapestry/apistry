@@ -15,6 +15,10 @@ FROM node:22-bookworm-slim AS docs-build
 
 WORKDIR /app/docs-site
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends autoconf automake g++ libtool make nasm pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY docs-site/package.json docs-site/package-lock.json ./
 RUN npm ci
 
@@ -41,7 +45,7 @@ COPY --from=docs-build /app/docs-site/build /home/ec2-user/site/docs
 COPY docs-site/static ./docs-site/static
 COPY docs-site/static/contracts /home/ec2-user/site/contracts
 COPY contracts ./contracts
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY image/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 RUN mkdir -p /app/config /app/data /home/ec2-user/site \
     && chown -R node:node /app /home/ec2-user \
