@@ -1,0 +1,23 @@
+services:
+  apistry:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: apistry:local
+    container_name: apistry
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${APISTRY_HOST_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      APISTRY_HOST: 0.0.0.0
+      APISTRY_PORT: 3000
+      CONFIG_PATH: /app/config/config.yml
+      API_KEY: ${API_KEY:-}
+      MONGO_PASSWORD: ${MONGO_PASSWORD:-}
+    volumes:
+      - ${HOME}/Data/docker/config.yml:/app/config/config.yml:ro
+      - apistry-data:/app/data
+
+volumes:
+  apistry-data:

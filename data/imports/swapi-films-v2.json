@@ -1,0 +1,628 @@
+[
+  {
+    "filmId": "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+    "id": "1",
+    "title": "A New Hope",
+    "episode": 4,
+    "openingCrawl": "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy....",
+    "director": "George Lucas",
+    "producer": "Gary Kurtz, Rick McCallum",
+    "releaseDate": "1977-05-25",
+    "species": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "speciesIds": [
+      "42f96f0f-ecc5-42b0-b2f9-839f3e83ee85",
+      "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+      "4f039600-68da-4d0d-9ca4-3f8ba421162d",
+      "f1ce0980-6671-4211-986a-a81f191fa5ec",
+      "0f15fc8c-d55a-4f77-bfb4-59964509cd3a"
+    ],
+    "starships": [
+      "2",
+      "3",
+      "5",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "starshipIds": [
+      "f45d6bf3-f9cc-4c28-9176-ab7049f85d4c",
+      "0d1aa310-d9f1-41bc-86ec-77b1496acf13",
+      "a8ecf747-2000-4b98-a734-a5d5b7e6e7de",
+      "a20039a4-07d3-42b1-9429-3e179eace3b0",
+      "dad6687e-cfd6-4f86-acad-359e25f5880c",
+      "6188abef-0370-4030-8dcf-a87b1cb46034",
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0",
+      "6f618153-0251-4e77-b147-f569fdab17d8"
+    ],
+    "vehicles": [
+      "4",
+      "6",
+      "7",
+      "8"
+    ],
+    "vehicleIds": [
+      "e85e5b03-ad72-4a60-af41-94c41c7cd80d",
+      "8940862c-3502-4c73-bcff-985a19be93f1",
+      "ed170983-02f6-4e11-8847-f354713626ad",
+      "c53c8477-ede7-4c6e-8bcb-5f817fd88e3e"
+    ],
+    "planets": [
+      "1",
+      "2",
+      "3"
+    ],
+    "planetIds": [
+      "2cb54440-0dde-484a-b975-f1354079824d",
+      "3c742194-314a-46ed-ab2c-dfb5aa9d0f65",
+      "a603330d-7530-4db1-a3b4-27c04d153a3d"
+    ],
+    "createdDateTime": "2014-12-10T14:23:31.880000Z",
+    "updatedDateTime": "2014-12-20T19:49:45.256000Z"
+  },
+  {
+    "filmId": "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+    "id": "2",
+    "title": "The Empire Strikes Back",
+    "episode": 5,
+    "openingCrawl": "It is a dark time for the\r\nRebellion. Although the Death\r\nStar has been destroyed,\r\nImperial troops have driven the\r\nRebel forces from their hidden\r\nbase and pursued them across\r\nthe galaxy.\r\n\r\nEvading the dreaded Imperial\r\nStarfleet, a group of freedom\r\nfighters led by Luke Skywalker\r\nhas established a new secret\r\nbase on the remote ice world\r\nof Hoth.\r\n\r\nThe evil lord Darth Vader,\r\nobsessed with finding young\r\nSkywalker, has dispatched\r\nthousands of remote probes into\r\nthe far reaches of space....",
+    "director": "Irvin Kershner",
+    "producer": "Gary Kurtz, Rick McCallum",
+    "releaseDate": "1980-05-17",
+    "species": [
+      "1",
+      "2",
+      "3",
+      "6",
+      "7"
+    ],
+    "speciesIds": [
+      "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+      "2a2700bd-df71-4467-b1e2-800bfd041a5e",
+      "9d7e046a-72b9-4de9-831c-4ae3b802ffd4",
+      "f1ce0980-6671-4211-986a-a81f191fa5ec",
+      "0f15fc8c-d55a-4f77-bfb4-59964509cd3a"
+    ],
+    "starships": [
+      "3",
+      "10",
+      "11",
+      "12",
+      "15",
+      "17",
+      "21",
+      "22",
+      "23"
+    ],
+    "starshipIds": [
+      "f45d6bf3-f9cc-4c28-9176-ab7049f85d4c",
+      "0cad7fa4-dfd3-4580-942e-ae08d0c3e07a",
+      "97cf4c88-a530-4581-ba35-98acea44f037",
+      "6188abef-0370-4030-8dcf-a87b1cb46034",
+      "d412e5a7-c0ff-40d4-8d99-db6249b63b54",
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0",
+      "6f618153-0251-4e77-b147-f569fdab17d8",
+      "3b584fac-570b-4d4c-a49d-ca1d0fada42d",
+      "aff23b5b-0dee-467d-acee-163b6610252a"
+    ],
+    "vehicles": [
+      "8",
+      "14",
+      "16",
+      "18",
+      "19",
+      "20"
+    ],
+    "vehicleIds": [
+      "e5f54cba-9624-4b92-b2bf-ab7f042fee26",
+      "8940862c-3502-4c73-bcff-985a19be93f1",
+      "2e299559-540f-4a15-b4bf-357039120719",
+      "953903f3-aaf5-4f02-bf6d-7147d34075dc",
+      "4140cf07-d44c-4377-a484-13d7beb3ab49",
+      "76296713-d5dc-4795-8499-a8febc83af4f"
+    ],
+    "planets": [
+      "4",
+      "5",
+      "6",
+      "27"
+    ],
+    "planetIds": [
+      "1f916166-ad5e-4731-9668-530f3b8d453e",
+      "97b673ad-ec8b-4eb3-bf0c-da01040ed2ba",
+      "0290c7fa-7197-48ed-8cb2-cdb2f4ad300e",
+      "f9a3a13c-d3fc-424b-992d-132c8b995bc3"
+    ],
+    "createdDateTime": "2014-12-12T11:26:24.656000Z",
+    "updatedDateTime": "2014-12-15T13:07:53.386000Z"
+  },
+  {
+    "filmId": "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+    "id": "3",
+    "title": "Return of the Jedi",
+    "episode": 6,
+    "openingCrawl": "Luke Skywalker has returned to\r\nhis home planet of Tatooine in\r\nan attempt to rescue his\r\nfriend Han Solo from the\r\nclutches of the vile gangster\r\nJabba the Hutt.\r\n\r\nLittle does Luke know that the\r\nGALACTIC EMPIRE has secretly\r\nbegun construction on a new\r\narmored space station even\r\nmore powerful than the first\r\ndreaded Death Star.\r\n\r\nWhen completed, this ultimate\r\nweapon will spell certain doom\r\nfor the small band of rebels\r\nstruggling to restore freedom\r\nto the galaxy...",
+    "director": "Richard Marquand",
+    "producer": "Howard G. Kazanjian, George Lucas, Rick McCallum",
+    "releaseDate": "1983-05-25",
+    "species": [
+      "1",
+      "2",
+      "3",
+      "5",
+      "6",
+      "8",
+      "9",
+      "10",
+      "15"
+    ],
+    "speciesIds": [
+      "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+      "2a2700bd-df71-4467-b1e2-800bfd041a5e",
+      "4f039600-68da-4d0d-9ca4-3f8ba421162d",
+      "bb91c831-5444-4703-901b-19aaed674945",
+      "f4f2d973-f1d0-44dc-82a8-d4c85c18f759",
+      "d4f9735a-c2a2-478a-8e5f-dc80416c7fed",
+      "d59668a0-01c4-4b8a-a761-752c80efa879",
+      "f1ce0980-6671-4211-986a-a81f191fa5ec",
+      "0f15fc8c-d55a-4f77-bfb4-59964509cd3a"
+    ],
+    "starships": [
+      "2",
+      "3",
+      "10",
+      "11",
+      "12",
+      "15",
+      "17",
+      "22",
+      "23",
+      "27",
+      "28",
+      "29"
+    ],
+    "starshipIds": [
+      "f45d6bf3-f9cc-4c28-9176-ab7049f85d4c",
+      "81f9f9fa-a4e9-41e4-95ea-08c0041c4921",
+      "f832c110-7a9b-46df-a2e9-84d61202ca7a",
+      "0cad7fa4-dfd3-4580-942e-ae08d0c3e07a",
+      "a8ecf747-2000-4b98-a734-a5d5b7e6e7de",
+      "3de8014b-5db2-4665-92d4-82abd85c5f37",
+      "6188abef-0370-4030-8dcf-a87b1cb46034",
+      "d412e5a7-c0ff-40d4-8d99-db6249b63b54",
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0",
+      "6f618153-0251-4e77-b147-f569fdab17d8",
+      "3b584fac-570b-4d4c-a49d-ca1d0fada42d",
+      "aff23b5b-0dee-467d-acee-163b6610252a"
+    ],
+    "vehicles": [
+      "8",
+      "16",
+      "18",
+      "19",
+      "24",
+      "25",
+      "26",
+      "30"
+    ],
+    "vehicleIds": [
+      "e5f54cba-9624-4b92-b2bf-ab7f042fee26",
+      "8940862c-3502-4c73-bcff-985a19be93f1",
+      "4140cf07-d44c-4377-a484-13d7beb3ab49",
+      "76296713-d5dc-4795-8499-a8febc83af4f",
+      "e0299695-d718-4776-a88a-972554e4b362",
+      "8f36fa73-3ebc-4dc9-99eb-a2b022892f4c",
+      "9e0ed26d-595b-4bc5-a420-fbfc163623d8",
+      "ff3490e8-b1ca-4d57-98fa-65fef945c87b"
+    ],
+    "planets": [
+      "1",
+      "5",
+      "7",
+      "8",
+      "9"
+    ],
+    "planetIds": [
+      "2cb54440-0dde-484a-b975-f1354079824d",
+      "97b673ad-ec8b-4eb3-bf0c-da01040ed2ba",
+      "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+      "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+      "3cf9072f-f88c-4d7a-b8a0-5c69654b3d71"
+    ],
+    "createdDateTime": "2014-12-18T10:39:33.255000Z",
+    "updatedDateTime": "2014-12-20T09:48:37.462000Z"
+  },
+  {
+    "filmId": "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+    "id": "4",
+    "title": "The Phantom Menace",
+    "episode": 1,
+    "openingCrawl": "Turmoil has engulfed the\r\nGalactic Republic. The taxation\r\nof trade routes to outlying star\r\nsystems is in dispute.\r\n\r\nHoping to resolve the matter\r\nwith a blockade of deadly\r\nbattleships, the greedy Trade\r\nFederation has stopped all\r\nshipping to the small planet\r\nof Naboo.\r\n\r\nWhile the Congress of the\r\nRepublic endlessly debates\r\nthis alarming chain of events,\r\nthe Supreme Chancellor has\r\nsecretly dispatched two Jedi\r\nKnights, the guardians of\r\npeace and justice in the\r\ngalaxy, to settle the conflict....",
+    "director": "George Lucas",
+    "producer": "Rick McCallum",
+    "releaseDate": "1999-05-19",
+    "species": [
+      "1",
+      "2",
+      "6",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "speciesIds": [
+      "079545be-73b3-4abb-b108-37df2f5b808f",
+      "2550fae8-19b4-41f8-a05b-a0ebdd0d35fc",
+      "8dcc298c-059f-47eb-b159-8493ad7cf79c",
+      "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+      "f7502062-956d-4a37-a0e9-373d24bda196",
+      "a532267d-81d1-4d93-89ad-7ce055c790ca",
+      "ead755fe-abd2-4616-ab1f-396bc75a5ffa",
+      "2a2700bd-df71-4467-b1e2-800bfd041a5e",
+      "0e378afc-07ac-442c-b368-19016650e513",
+      "8b9dd4d9-4017-4d32-b644-6a77d0894efd",
+      "5e23de9c-b395-4cd1-b184-2d46468b20e2",
+      "a67198fa-6744-45ae-ba2e-7757d604e883",
+      "bb91c831-5444-4703-901b-19aaed674945",
+      "78db6c36-b4b2-4d5c-8f1f-f04e785684e2",
+      "a3b620bb-d6c0-4594-bcfc-2c352161e8fc",
+      "50119801-8731-499a-aebb-33aebf523318",
+      "2ede9f00-187d-44ec-814c-a93e4e6ccc07",
+      "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+      "eb7dc56d-0548-4009-9a79-4be656c67694",
+      "f626af14-9ffd-4b51-87b7-d00b0c2ebad5"
+    ],
+    "starships": [
+      "31",
+      "32",
+      "39",
+      "40",
+      "41"
+    ],
+    "starshipIds": [
+      "7748ce06-31b5-4af5-9aa1-2ffde780d136",
+      "4eb62992-92d8-4409-a8b2-c06081df3102",
+      "7b72afed-60eb-4588-a44e-fee9af2391c4",
+      "719dce4b-a62b-4f49-b3cf-7395477bce86",
+      "9607978c-96c9-44b8-8fc0-fdd6b07735d1"
+    ],
+    "vehicles": [
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "42"
+    ],
+    "vehicleIds": [
+      "05d95eff-074d-4af1-85c6-efd8070080f8",
+      "c02366fa-68d0-4a05-82bf-75275c673bdd",
+      "f05056f5-fb5b-457e-b4b9-aca794e5831c",
+      "71b5be71-2953-4d16-8977-e567068bedfb",
+      "2a3f018e-3926-48ca-bae2-2dfad2738e5e",
+      "2200df26-85da-49f3-bcba-9b7299191b5e",
+      "4050f1f9-a19c-4580-b4d2-e8ba78c1344c"
+    ],
+    "planets": [
+      "1",
+      "8",
+      "9"
+    ],
+    "planetIds": [
+      "2cb54440-0dde-484a-b975-f1354079824d",
+      "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+      "46f05fca-f843-4c21-a25b-d89b4a54ede7"
+    ],
+    "createdDateTime": "2014-12-19T16:52:55.740000Z",
+    "updatedDateTime": "2014-12-20T10:54:07.216000Z"
+  },
+  {
+    "filmId": "0cbeea96-2744-47e3-af8f-f218fe964195",
+    "id": "5",
+    "title": "Attack of the Clones",
+    "episode": 2,
+    "openingCrawl": "There is unrest in the Galactic\r\nSenate. Several thousand solar\r\nsystems have declared their\r\nintentions to leave the Republic.\r\n\r\nThis separatist movement,\r\nunder the leadership of the\r\nmysterious Count Dooku, has\r\nmade it difficult for the limited\r\nnumber of Jedi Knights to maintain \r\npeace and order in the galaxy.\r\n\r\nSenator Amidala, the former\r\nQueen of Naboo, is returning\r\nto the Galactic Senate to vote\r\non the critical issue of creating\r\nan ARMY OF THE REPUBLIC\r\nto assist the overwhelmed\r\nJedi....",
+    "director": "George Lucas",
+    "producer": "Rick McCallum",
+    "releaseDate": "2002-05-16",
+    "species": [
+      "1",
+      "2",
+      "6",
+      "12",
+      "13",
+      "15",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35"
+    ],
+    "speciesIds": [
+      "2550fae8-19b4-41f8-a05b-a0ebdd0d35fc",
+      "031bdae3-5fbf-4a09-b126-ae84dafbe671",
+      "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+      "3ccd0266-c7cc-474d-ba65-aac1ce1c29ca",
+      "63cfdcb9-dc22-420a-8769-e7e01a22b8f4",
+      "2a2700bd-df71-4467-b1e2-800bfd041a5e",
+      "bb91c831-5444-4703-901b-19aaed674945",
+      "87def42b-de37-489d-9b9f-a61a60e3ba57",
+      "56b97c52-978a-4d68-826a-792b69ec07cd",
+      "a3b620bb-d6c0-4594-bcfc-2c352161e8fc",
+      "2fdef310-21fa-48bf-9f28-6b9ea501a027",
+      "aed52f91-215e-48e7-babc-9f45db8ba42f",
+      "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+      "27f5411f-5544-47a8-bcf4-17bd6099f2ee"
+    ],
+    "starships": [
+      "21",
+      "32",
+      "39",
+      "43",
+      "47",
+      "48",
+      "49",
+      "52",
+      "58"
+    ],
+    "starshipIds": [
+      "a41a246b-6691-4533-ad0a-310d6c766958",
+      "97cf4c88-a530-4581-ba35-98acea44f037",
+      "c5435721-8de8-422d-a458-57bb786343d8",
+      "433b8bdd-48a1-431c-a275-cd3eb65c7e9a",
+      "4eb62992-92d8-4409-a8b2-c06081df3102",
+      "7b72afed-60eb-4588-a44e-fee9af2391c4",
+      "501be783-307e-4356-a579-f3b8c15977e9",
+      "38686d30-04c6-46df-ba61-925e93a1b65e",
+      "b176d0b9-fee2-49d7-9c05-3ba6c4c8205b"
+    ],
+    "vehicles": [
+      "4",
+      "44",
+      "45",
+      "46",
+      "50",
+      "51",
+      "53",
+      "54",
+      "55",
+      "56",
+      "57"
+    ],
+    "vehicleIds": [
+      "e85e5b03-ad72-4a60-af41-94c41c7cd80d",
+      "ea29ea40-6256-4cc3-9495-09e986d406d9",
+      "f9d43abf-4cea-4a96-bcb1-ca59ff98da48",
+      "87b60f2c-361f-4713-a0ea-c1f45743c5fc",
+      "ca3f7218-9c5b-4a37-8034-8e8e24cba073",
+      "0426fe85-cc38-4ac0-8d2d-90f50b1ca501",
+      "8fc389f3-f3ec-4bd0-9995-e6b9f64ed7dd",
+      "a25e4e96-0998-4489-ad42-ce9204a9cfa5",
+      "b0d7d739-fc17-41ee-941d-271e1d7ed6f5",
+      "422d4993-fe3e-4dcc-b26c-732ce04f5ffc",
+      "c64cc457-dae7-4002-bce2-61881905408b"
+    ],
+    "planets": [
+      "1",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "planetIds": [
+      "2cb54440-0dde-484a-b975-f1354079824d",
+      "56f53ff1-f7f3-4aae-b38f-dfd42fb6ca44",
+      "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+      "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+      "31ece572-eac9-4d90-9da3-06a696e4702d"
+    ],
+    "createdDateTime": "2014-12-20T10:57:57.886000Z",
+    "updatedDateTime": "2014-12-20T20:18:48.516000Z"
+  },
+  {
+    "filmId": "f788594a-dfc1-4135-b854-1a0b51169070",
+    "id": "6",
+    "title": "Revenge of the Sith",
+    "episode": 3,
+    "openingCrawl": "War! The Republic is crumbling\r\nunder attacks by the ruthless\r\nSith Lord, Count Dooku.\r\nThere are heroes on both sides.\r\nEvil is everywhere.\r\n\r\nIn a stunning move, the\r\nfiendish droid leader, General\r\nGrievous, has swept into the\r\nRepublic capital and kidnapped\r\nChancellor Palpatine, leader of\r\nthe Galactic Senate.\r\n\r\nAs the Separatist Droid Army\r\nattempts to flee the besieged\r\ncapital with their valuable\r\nhostage, two Jedi Knights lead a\r\ndesperate mission to rescue the\r\ncaptive Chancellor....",
+    "director": "George Lucas",
+    "producer": "Rick McCallum",
+    "releaseDate": "2005-05-19",
+    "species": [
+      "1",
+      "2",
+      "3",
+      "6",
+      "15",
+      "19",
+      "20",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37"
+    ],
+    "speciesIds": [
+      "8dcc298c-059f-47eb-b159-8493ad7cf79c",
+      "031bdae3-5fbf-4a09-b126-ae84dafbe671",
+      "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+      "3ccd0266-c7cc-474d-ba65-aac1ce1c29ca",
+      "63cfdcb9-dc22-420a-8769-e7e01a22b8f4",
+      "ead755fe-abd2-4616-ab1f-396bc75a5ffa",
+      "2a2700bd-df71-4467-b1e2-800bfd041a5e",
+      "a67198fa-6744-45ae-ba2e-7757d604e883",
+      "bb91c831-5444-4703-901b-19aaed674945",
+      "56b97c52-978a-4d68-826a-792b69ec07cd",
+      "d0413627-6582-4c4a-a783-46d5a0da1359",
+      "9b58836a-7272-4f22-bfa7-b3f3dba5c520",
+      "50119801-8731-499a-aebb-33aebf523318",
+      "2ede9f00-187d-44ec-814c-a93e4e6ccc07",
+      "aed52f91-215e-48e7-babc-9f45db8ba42f",
+      "f1ce0980-6671-4211-986a-a81f191fa5ec",
+      "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+      "eb7dc56d-0548-4009-9a79-4be656c67694",
+      "27f5411f-5544-47a8-bcf4-17bd6099f2ee",
+      "f626af14-9ffd-4b51-87b7-d00b0c2ebad5"
+    ],
+    "starships": [
+      "2",
+      "32",
+      "48",
+      "59",
+      "61",
+      "63",
+      "64",
+      "65",
+      "66",
+      "68",
+      "74",
+      "75"
+    ],
+    "starshipIds": [
+      "507f73b4-10db-4e3f-bbe7-ed158182390f",
+      "b0810047-953b-44b8-8fa5-4612b736eb6f",
+      "7c9cc9e9-aee9-46a7-addb-1497807d82df",
+      "978649e8-a8fc-45e0-bbf3-19ef53273d38",
+      "5c0bf128-d4bb-4c1d-ae9d-9ee6fe4355b9",
+      "c5435721-8de8-422d-a458-57bb786343d8",
+      "7d8d2136-5dd8-4782-90ea-8fbd9c6a5958",
+      "f386023a-b55a-4138-ab94-4ac42bcc2fc0",
+      "4eb62992-92d8-4409-a8b2-c06081df3102",
+      "f0e44660-416a-4c32-b47c-a2f91bdb4c1c",
+      "a8ecf747-2000-4b98-a734-a5d5b7e6e7de",
+      "b7e15960-264b-4d86-a1c6-261401986472"
+    ],
+    "vehicles": [
+      "33",
+      "50",
+      "53",
+      "56",
+      "60",
+      "62",
+      "67",
+      "69",
+      "70",
+      "71",
+      "72",
+      "73",
+      "76"
+    ],
+    "vehicleIds": [
+      "f9d43abf-4cea-4a96-bcb1-ca59ff98da48",
+      "bfae598b-0394-4cff-a124-1a7e497cf41a",
+      "cf99786e-684f-4039-8135-6d0c97b6fa60",
+      "f05056f5-fb5b-457e-b4b9-aca794e5831c",
+      "3c21dfe6-692c-4411-b98b-25ccbe519b0e",
+      "8fc389f3-f3ec-4bd0-9995-e6b9f64ed7dd",
+      "61036eb7-e055-485a-a65c-c9509614736c",
+      "06cd8768-0c44-4840-af1d-266e6b629ae7",
+      "99ff9bb0-169c-4936-a17f-6f5922640619",
+      "9e6747f4-8547-46a9-ac50-34cd33384e51",
+      "69efaf94-c279-40e8-8c62-f77fedc7c8da",
+      "c9c665b0-1242-428a-a54e-e7c4601db252",
+      "422d4993-fe3e-4dcc-b26c-732ce04f5ffc"
+    ],
+    "planets": [
+      "1",
+      "2",
+      "5",
+      "8",
+      "9",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "planetIds": [
+      "2cb54440-0dde-484a-b975-f1354079824d",
+      "9c7ff1da-965e-4d09-b2d4-4f4e68d0af41",
+      "97b673ad-ec8b-4eb3-bf0c-da01040ed2ba",
+      "3c742194-314a-46ed-ab2c-dfb5aa9d0f65",
+      "95b15fc6-7ae5-476f-8d84-03d7f91bad05",
+      "802bf816-019f-4941-afef-ea18fb11844c",
+      "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+      "72e4a6f5-39c9-4f1a-87f2-f63573f0177d",
+      "f2c7981b-aeff-4d91-adf5-0b6505865e5d",
+      "af1a56a5-1342-4432-b999-015ae3e7213d",
+      "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+      "428d8b00-d821-4991-a216-9529e77d767c",
+      "78a90c3b-604a-44df-986a-04523fc3ee0d"
+    ],
+    "createdDateTime": "2014-12-20T18:49:38.403000Z",
+    "updatedDateTime": "2014-12-20T20:47:52.073000Z"
+  },
+  {
+    "filmId": "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+    "id": "7",
+    "title": "The Force Awakens",
+    "episode": 7,
+    "openingCrawl": "Luke Skywalker has vanished.\r\nIn his absence, the sinister\r\nFIRST ORDER has risen from\r\nthe ashes of the Empire\r\nand will not rest until\r\nSkywalker, the last Jedi,\r\nhas been destroyed.\r\n \r\nWith the support of the\r\nREPUBLIC, General Leia Organa\r\nleads a brave RESISTANCE.\r\nShe is desperate to find her\r\nbrother Luke and gain his\r\nhelp in restoring peace and\r\njustice to the galaxy.\r\n \r\nLeia has sent her most daring\r\npilot on a secret mission\r\nto Jakku, where an old ally\r\nhas discovered a clue to\r\nLuke's whereabouts....",
+    "director": "J. J. Abrams",
+    "producer": "Kathleen Kennedy, J. J. Abrams, Bryan Burk",
+    "releaseDate": "2015-12-11",
+    "species": [
+      "1",
+      "2",
+      "3"
+    ],
+    "speciesIds": [
+      "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+      "f1ce0980-6671-4211-986a-a81f191fa5ec",
+      "0f15fc8c-d55a-4f77-bfb4-59964509cd3a"
+    ],
+    "starships": [
+      "10",
+      "77"
+    ],
+    "starshipIds": [
+      "e364f769-07d2-4888-831b-6731108ffb4c",
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0"
+    ],
+    "vehicles": [],
+    "vehicleIds": [],
+    "planets": [
+      "61"
+    ],
+    "planetIds": [
+      "169b75f2-daab-482a-acdf-94da771fccd7"
+    ],
+    "createdDateTime": "2015-04-17T06:51:30.504780Z",
+    "updatedDateTime": "2015-12-17T14:31:47.617768Z"
+  }
+]

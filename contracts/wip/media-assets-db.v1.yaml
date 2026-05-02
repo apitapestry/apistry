@@ -1,0 +1,536 @@
+openapi: 3.0.3
+info:
+  title: Media Assets (Supabase)
+  version: v1
+  description: Read-only search API over the Supabase <code>media_assets</code> table.<BR><BR>
+
+servers:
+  - url: https://maxtoveahbpfrtkjghjz.supabase.co/rest
+
+security:
+  - apiKeyAuth: []
+#    bearerAuth: []
+
+paths:
+  /personal_media_assets:
+    get:
+      tags: [MediaAssets]
+      summary: List media assets
+      description: Returns matching media assets.
+      operationId: getPersonalMediaAssets
+
+      parameters:
+        - $ref: '#/components/parameters/AssetTypeQueryOptional'
+        - $ref: '#/components/parameters/ContentAdvisoryQueryOptional'
+        - $ref: '#/components/parameters/ContributorsQueryOptional'
+        - $ref: '#/components/parameters/GenresQueryOptional'
+        - $ref: '#/components/parameters/PlayedAtQueryOptional'
+        - $ref: '#/components/parameters/PlayCountQueryOptional'
+        - $ref: '#/components/parameters/ProviderSourceQueryOptional'
+        - $ref: '#/components/parameters/ReleaseDateQueryOptional'
+        - $ref: '#/components/parameters/ReleaseYearQueryOptional'
+        - $ref: '#/components/parameters/SummaryQueryOptional'
+        - $ref: '#/components/parameters/TitleQueryOptional'
+        - $ref: '#/components/parameters/UsageStatusQueryOptional'
+        - $ref: '#/components/parameters/UserRatingQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Range:
+              description: Total count of rows matching the filter (ignores pagination).
+              schema:
+                type: string
+                example: 0-700/*
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MediaAsset'
+                minItems: 0
+                maxItems: 95
+
+    patch:
+      tags: [MediaAssets]
+      summary: List media assets
+      description: Returns matching media assets.
+      operationId: updatePersonalMediaAssets
+
+      parameters:
+        - $ref: '#/components/parameters/IdQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Range:
+              description: Total count of rows matching the filter (ignores pagination).
+              schema:
+                type: string
+                example: 0-700/*
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MediaAssetUpdate'
+                minItems: 0
+                maxItems: 95
+
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: apikey
+#    bearerAuth:
+#      type: http
+#      in: header
+#      scheme: bearer
+#      bearerFormat: JWT
+
+  parameters:
+    IdQueryOptional:
+      in: query
+      name: id
+      required: true
+      description: Provide with "eq." prefix to match exactly.
+      schema:
+        type: string
+        pattern: '^eq\.[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+
+    AssetTypeQueryOptional:
+      in: query
+      name: asset_type
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: in.(MOVIE,TV_SHOW)
+      description: >
+        Filter expression using PostgREST syntax. Examples:
+        - `eq.AUDIO_BOOK` (equal to 'AUDIO_BOOK')
+        - `neq.MOVIE` (not equal to 'MOVIE')
+        - `in.(BOOK,AUDIO_BOOK)`
+        - `not.is.null` (not null)
+
+    ContentAdvisoryQueryOptional:
+      in: query
+      name: content_advisory
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: eq.PG-13
+      description: >
+        Filter expression using PostgREST syntax. Examples:
+        - `eq.PG-13` (equal to 'PG-13')
+        - `neq.R` (not equal to 'R')
+        - `in.(PG,PG-13)`
+        - `not.is.null` (not null)
+
+    ContributorsQueryOptional:
+      in: query
+      name: contributors
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: cs.[{"name":"Christopher Nolan"}]
+      description: >
+        Filter expression using PostgREST syntax for JSON arrays. Examples:
+        - `cs.[{"name":"Christopher Nolan"}]` (contains contributor with name 'Christopher Nolan')
+        - `not.is.null` (not null)
+
+    GenresQueryOptional:
+      in: query
+      name: genres
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: cs.{"Drama","Sci-Fi"}
+      description: >
+        Filter expression using PostgREST syntax for array columns. Examples:
+        - `cs.{"Mental Health","Psychology"}` (contains Mental Health and Psycology)
+        - `ov.{"Drama"}` (overlaps Drama)
+        - `not.is.null` (not null)
+
+    PlayedAtQueryOptional:
+      in: query
+      name: last_played_at
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: gt.2025-08-01T00:00:00Z
+      description: >
+        Filter expression using PostgREST syntax for date-time. Examples:
+        - `gt.2025-01-01T00:00:00Z` (after Jan 1, 2025)
+        - `lt.2025-09-01T00:00:00Z` (before Sep 1, 2025)
+        - `not.is.null` (not null)
+
+    PlayCountQueryOptional:
+      in: query
+      name: play_count
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: gte.5
+      description: >
+        Filter expression using PostgREST syntax for integers. Examples:
+        - `gte.2` (greater than or equal to 2)
+        - `lt.2` (less than 2)
+        - `in.(5,10,15)`
+        - `not.is.null` (not null)
+
+    ProviderSourceQueryOptional:
+      in: query
+      name: provider_source
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: eq.audible
+      description: >
+        Filter expression using PostgREST syntax. Examples:
+        - `eq.audible` (equal to 'audible')
+        - `neq.netflix` (not equal to 'netflix')
+        - `in.(audible,netflix)`
+        - `not.is.null` (not null)
+
+    ReleaseDateQueryOptional:
+      in: query
+      name: release_date
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: gte.2024-01-01
+      description: >
+        Filter expression using PostgREST syntax for calendar dates (ISO YYYY-MM-DD). Examples:
+        - `eq.2024-12-25` (equal to Dec 25, 2024)
+        - `gte.2024-01-01` (on or after Jan 1, 2024)
+        - `lte.2024-12-31` (on or before Dec 31, 2024)
+        - `not.is.null` (not null)
+
+    ReleaseYearQueryOptional:
+      in: query
+      name: release_year
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: gte.1990
+      description: >
+        Filter expression using PostgREST syntax for integer years. Examples:
+        - `eq.2024` (equal to 2024)
+        - `gte.1990` (1990 or later)
+        - `in.(1984,1999,2024)`
+        - `not.is.null` (not null)
+
+    SummaryQueryOptional:
+      in: query
+      name: summary
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: ilike.%feudal%
+      description: >
+        Filter expression using PostgREST syntax for text search. Examples:
+        - `ilike.%feudal%` (case-insensitive substring)
+        - `like.%Matrix%` (case-sensitive substring)
+        - `not.is.null` (not null)
+
+    TitleQueryOptional:
+      in: query
+      name: title
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: ilike.%dune%
+      description: >
+        Filter expression using PostgREST syntax for text search. Examples:
+        - `ilike.%dune%` (case-insensitive substring)
+        - `similar.(Dune|Matrix)%` (regex-like similar-to)
+        - `not.is.null` (not null)
+
+    UsageStatusQueryOptional:
+      in: query
+      name: usage_status
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: eq.IN_PROGRESS
+      description: >
+        Filter expression using PostgREST syntax for usage status enum. Examples:
+        - `eq.UNSEEN`
+        - `eq.IN_PROGRESS`
+        - `in.(COMPLETED,ABANDONED)`
+        - `not.is.null` (not null)
+
+    UserRatingQueryOptional:
+      in: query
+      name: user_rating
+      required: false
+      schema:
+        $ref: '#/components/schemas/PostgresStyleQueryString'
+      example: gte.4
+      description: >
+        Filter expression using PostgREST syntax for 1–5 integer ratings. Examples:
+        - `eq.5` (exactly 5)
+        - `gte.4` (4 or higher)
+        - `in.(3,4,5)`
+        - `not.is.null` (not null)
+
+    OrderQueryOptional:
+      description: Column to order results by. Use the format `column_name.asc` or `column_name.desc`.
+      in: query
+      name: order
+      required: false
+      schema:
+        type: string
+        pattern: '^[a-z_./,]+\\.(asc|desc)(,nulls(first|last))?$'
+        default: 'sort_title.asc'
+        example: 'sort_title.asc,nullsfirst'
+
+    OffsetQueryOptional:
+      description: offset
+      in: query
+      name: offset
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+
+    LimitQueryOptional:
+      description: limit
+      in: query
+      name: limit
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+        default: 50
+
+  schemas:
+    AssetTypeEnum:
+      description: The type of media asset.
+      type: string
+      enum: [AUDIO_BOOK, MOVIE, MUSIC, TV_SHOW]
+
+    Contributor:
+      description: A person or entity contributing to the asset.
+      type: object
+      properties:
+        role:
+          type: string
+          example: Director
+        name:
+          type: string
+          example: Christopher Nolan
+
+    MediaAsset:
+      description: A detailed record describing a single media asset, such as a movie, TV show, audiobook, or other content item.
+      type: object
+      properties:
+        media_asset_id:
+          description: Unique identifier for the media asset record.
+          type: string
+          format: uuid
+        asset_type:
+          $ref: '#/components/schemas/AssetTypeEnum'
+        content_advisory:
+          description: Content advisory or parental guidance notes for the asset.
+          type: string
+          nullable: true
+        title:
+          description: The title of the media asset.
+          type: string
+          minLength: 1
+          maxLength: 300
+          nullable: true
+        summary:
+          description: Short description or synopsis of the media asset.
+          type: string
+          minLength: 1
+          maxLength: 2000
+          nullable: true
+        release_date:
+          description: Official release date of the asset, if known.
+          type: string
+          format: date
+          nullable: true
+        release_year:
+          description: Release year of the asset, derived from the release date.
+          type: integer
+          nullable: true
+        provider_source:
+          description: Name of the source or provider from which the asset was obtained.
+          type: string
+          nullable: true
+          example: 'audible'
+        genres:
+          description: List of genres or categories describing the asset.
+          type: array
+          items:
+            type: string
+          nullable: true
+        ratings:
+          description: Ratings information from one or more rating systems.
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Rating'
+          nullable: true
+        usage_status:
+          $ref: '#/components/schemas/UsageStatusEnum'
+        user_rating:
+          description: Customer's personal rating of the asset on a 1–5 scale.
+          type: integer
+          minimum: 1
+          maximum: 5
+          nullable: true
+        last_played_at:
+          description: Timestamp of the last time the asset was played.
+          type: string
+          format: date-time
+          nullable: true
+        play_count:
+          description: Number of times the asset has been played.
+          type: integer
+          minimum: 0
+          nullable: true
+        progress_percentage:
+          description: Percentage of the asset completed by the customer.
+          type: integer
+          minimum: 0
+          maximum: 100
+          nullable: true
+        user_edited_at:
+          description: Timestamp of the last time the customer edited details of the asset.
+          type: string
+          format: date-time
+          nullable: true
+        added_at:
+          description: |
+            Date and time the asset was added to the customer’s library or account in the
+            source system. This value represents acquisition or import into the library,
+            and is unrelated to the asset’s release date.
+            
+            Examples by provider:
+              • Audible — Purchase date, or if unavailable, the date added to the Audible library.
+              • Plex — Date the asset was added to the Plex library (null if not provided).
+          type: string
+          format: date-time
+        contributors:
+          description: List of contributors involved in the creation or performance of the asset (e.g., actors, directors, authors).
+          type: array
+          items:
+            $ref: '#/components/schemas/Contributor'
+          nullable: true
+        narrator:
+          description: Name of the narrator (primarily for audiobooks or spoken content).
+          type: string
+          nullable: true
+        series_name:
+          description: Name of the series this asset belongs to, if applicable.
+          type: string
+          nullable: true
+        additional_properties:
+          description: Any additional metadata related to the asset not covered by standard fields.
+          type: object
+          additionalProperties: true
+
+    MediaAssetUpdate:
+      description: A detailed record describing a single media asset, such as a movie, TV show, audiobook, or other content item.
+      type: object
+      properties:
+#        content_advisory:
+#          description: Content advisory or parental guidance notes for the asset.
+#          type: string
+#          nullable: true
+#        title:
+#          description: The title of the media asset.
+#          type: string
+#          minLength: 1
+#          maxLength: 300
+#          nullable: true
+#        summary:
+#          description: Short description or synopsis of the media asset.
+#          type: string
+#          minLength: 1
+#          maxLength: 2000
+#          nullable: true
+        release_date:
+          description: Official release date of the asset, if known.
+          type: string
+          format: date
+          nullable: true
+        release_year:
+          description: Release year of the asset, derived from the release date.
+          type: integer
+          nullable: true
+        genres:
+          description: List of genres or categories describing the asset.
+          type: array
+          items:
+            type: string
+          nullable: true
+        ratings:
+          description: Ratings information from one or more rating systems.
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Rating'
+          nullable: true
+        usage_status:
+          $ref: '#/components/schemas/UsageStatusEnum'
+        user_rating:
+          description: Customer's personal rating of the asset on a 1–5 scale.
+          type: integer
+          minimum: 1
+          maximum: 5
+          nullable: true
+        play_count:
+          description: Number of times the asset has been played.
+          type: integer
+          minimum: 0
+          nullable: true
+        contributors:
+          description: List of contributors involved in the creation or performance of the asset (e.g., actors, directors, authors).
+          type: array
+          items:
+            $ref: '#/components/schemas/Contributor'
+          nullable: true
+        narrator:
+          description: Name of the narrator (primarily for audiobooks or spoken content).
+          type: string
+          nullable: true
+        series_name:
+          description: Name of the series this asset belongs to, if applicable.
+          type: string
+          nullable: true
+
+    PostgresStyleQueryString:
+      type: string
+      pattern: '^[A-Za-z0-9._,"''(){}\\[\\]:/\\-+*|&@\s]+$'
+
+    Rating:
+      description: A rating value and scale, optionally time-stamped.
+      type: object
+      properties:
+        value:
+          type: number
+          minimum: 0
+          example: 4.2
+        scale:
+          type: integer
+          minimum: 1
+          example: 5
+        as_of_date_time:
+          type: string
+          format: date-time
+          example: '2025-08-01T12:00:00Z'
+
+    UsageStatusEnum:
+      description: User usage status of the asset.
+      type: string
+      enum: [UNKNOWN, UNSEEN, IN_PROGRESS, COMPLETED, ABANDONED]

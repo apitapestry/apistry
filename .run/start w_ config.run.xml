@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="start w/ config" type="NodeJSConfigurationType" application-parameters="start --config config.yml" path-to-js-file="src/apistry.js" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

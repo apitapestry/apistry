@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: Standard Changes
+  description: These changes are applied to All API's.
+  version: v1
+  termsOfService: 'https://developer.acme.com/terms/'
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+
+externalDocs:
+  description: Find out more about acme API Products
+  url: 'https://developer.acme.com'
+
+#servers:
+#  - url: 'https://my.server.com'
+
+paths:
+  /template:
+    get:
+      tags:
+        - Template
+      description: template use only
+      summary: template use only
+      operationId: getTemplate
+      security: []
+
+#      parameters:
+#        - $ref: '../global.models.yaml#/components/parameters/XRequestId'
+#        - $ref: '../global.models.yaml#/components/parameters/XCorrelationId'
+
+      responses:
+        '400':
+          $ref: '../global.models.yaml#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '../global.models.yaml#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '../global.models.yaml#/components/responses/InternalServerError'
+
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: apiKey
+      x-ignore-merge: true
+    bearerAuth:
+      type: http
+      scheme: bearer
+      x-ignore-merge: true

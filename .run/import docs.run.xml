@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="import docs" type="NodeJSConfigurationType" application-parameters="import -i data/imports -r true -d sqlite://data/sqlite.db" path-to-js-file="src/apistry-etl.js" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

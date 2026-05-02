@@ -1,0 +1,206 @@
+openapi: 3.0.3
+info:
+  title: Utility Endpoints
+  description: Utility endpoints
+  version: v1
+
+servers:
+  - url: 'https://myserver.amazonaws.com'
+
+security:
+  - bearerAuth: []
+
+paths:
+  /orchestration-actions:
+    get:
+      tags: [Utilities]
+      summary: Orchestration endpoint
+      description: Provides list of Orchestration actions
+      operationId: getOrchestrationActions
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrchestrationAction'
+
+  /health:
+    get:
+      tags: [Utilities]
+      summary: Health check endpoint
+      description: Returns the health status of the Service.
+      operationId: getHealth
+
+      responses:
+        '200':
+          description: Health check successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+
+  /ready:
+    get:
+      tags: [Utilities]
+      summary: Readiness check endpoint
+      description: Returns the ready status of the Service
+      operationId: getReady
+
+      responses:
+        '200':
+          description: Ready check successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ready
+
+  /metrics:
+    get:
+      tags: [Utilities]
+      summary: Metrics endpoint
+      description: Returns the metrics for the Service
+      operationId: getMetrics
+
+      responses:
+        '200':
+          description: Metrics successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ready
+
+#  /schemas:
+#    get:
+#      tags: [Schemas]
+#      summary: Get resource schemas
+#      description: Returns the health status of the Personal Assistant API.
+#      operationId: getSchemas
+#
+#      parameters:
+#        - $ref: '#/components/parameters/ResourceTypeQueryOptional'
+#        - $ref: '#/components/parameters/MethodQueryOptional'
+#
+#      responses:
+#        '200':
+#          description: Success
+#          content:
+#            application/json:
+#              schema:
+#                type: array
+#                items:
+#                  $ref: '#/components/schemas/Schema'
+#                minItems: 0
+#                maxItems: 50
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    ResourceTypeQueryOptional:
+      description: Resource type
+      name: resourceType
+      in: query
+      required: false
+      schema:
+        $ref: '#/components/schemas/ResourceType'
+
+    MethodQueryOptional:
+      description: Resource type
+      name: method
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - query
+          - post
+          - put
+          - patch
+          - delete
+
+  schemas:
+    OrchestrationAction:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        params:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionParameter'
+
+    ActionParameter:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Parameter name
+        type:
+          type: string
+          description: Parameter type (e.g., "string", "object", "boolean")
+        required:
+          type: boolean
+          description: Whether the parameter is required
+        description:
+          type: string
+          description: Description of the parameter
+        enum:
+          type: array
+          items:
+            type: string
+          description: Allowed values if the parameter is an enum
+
+    ResourceType:
+      description: The type of resource this is
+      type: string
+      enum:
+        - Book
+        - Calendar
+        - Note
+        - Preference
+        - Task
+        - Video
+
+    Schema:
+      type: object
+      properties:
+        resourceType:
+          type: string
+        propertyName:
+          type: string
+        post:
+          type: string
+        put:
+          type: string
+        patch:
+          type: string
+        delete:
+          type: string
+        query:
+          type: string
+        queryPattern:
+          type: string
+        primaryKey:
+          type: string

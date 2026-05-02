@@ -1,0 +1,79 @@
+@startuml
+title Service Topology and Cost Comparison
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Inter
+skinparam defaultFontSize 14
+skinparam defaultTextAlignment center
+
+left to right direction
+
+skinparam rectangle {
+  RoundCorner 8
+  BorderColor #1F2937
+  FontColor #111827
+}
+
+skinparam arrow {
+  Color #374151
+  Thickness 1.5
+}
+
+skinparam note {
+  BackgroundColor #F9FAFB
+  BorderColor #9CA3AF
+  FontColor #374151
+}
+
+' ===============================
+' Traditional Architecture
+' ===============================
+
+rectangle #FEE2E2 "Traditional API Architecture\n\n\
+Each service is a full custom build\n\n\
+- Custom controllers\n\
+- Embedded validation logic\n\
+- Bespoke persistence\n\
+- Duplicated infrastructure code" as TRAD
+
+rectangle #E5E7EB "Service A\n(code only)" as A
+rectangle #E5E7EB "Service B\n(code only)" as B
+rectangle #E5E7EB "Service C\n(contract + code)" as C
+
+TRAD --> A
+TRAD --> B
+TRAD --> C
+
+note right of TRAD
+Cost scales with number of services.
+Architecture is reimplemented repeatedly.
+end note
+
+' ===============================
+' New Architecture
+' ===============================
+
+rectangle #DCFCE7 "Contract-Driven API Architecture\n\n\
+Single reusable runtime\n\n\
+- Standardized persistence\n\
+- Declarative validation\n\
+- Enforced boundaries\n\
+- One operational footprint" as NEW
+
+rectangle #E0E7FF "Contract 1" as C1
+rectangle #E0E7FF "Contract 2" as C2
+rectangle #E0E7FF "Contract N" as CN
+
+C1 --> NEW
+C2 --> NEW
+CN --> NEW
+
+note bottom of NEW
+Cost scales with contracts,
+not with services.
+New capability is primarily
+a new contract.
+end note
+
+@enduml

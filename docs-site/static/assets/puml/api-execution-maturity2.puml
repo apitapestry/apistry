@@ -1,0 +1,39 @@
+@startuml
+' ---------- Global styling ----------
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #555555
+
+skinparam rectangle {
+  BorderColor #333333
+  FontColor #222222
+  RoundCorner 8
+}
+
+skinparam note {
+  BackgroundColor #FFFDE7
+  BorderColor #999999
+  FontColor #222222
+}
+
+' ---------- Level 2 ----------
+rectangle "Level 2: Contract-First API" #E9F0F8 {
+  top to bottom direction
+
+  rectangle "Contract\n(OpenAPI)" as L2Contract #DCE8F4
+  rectangle "Generated + Handwritten\nAPI Service Code" as L2Code #C9DBEE
+
+  L2Contract --> L2Code
+
+  note right of L2Code
+    BEHAVIOR
+    - Validation
+    - Business Logic
+    - Persistence
+    - Errors
+    - Implemented in code
+    - Guided by contract
+  end note
+}
+@enduml

@@ -1,0 +1,1217 @@
+{
+  "info": {
+    "_postman_id": "d57e3fe0-ccf0-4f45-be5f-4c3982011650",
+    "name": "SWAPI (The Star Wars API)",
+    "description": "Postman collection for SWAPI (The Star Wars API) v1 endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2749290"
+  },
+  "item": [
+    {
+      "name": "Standard",
+      "item": [
+        {
+          "name": "Films",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/films",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "films"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "release_date",
+                  "value": "lt.1983-05-25",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "producer",
+                  "value": "Rick*",
+                  "disabled": true
+                },
+                {
+                  "key": "opening_crawl",
+                  "value": "Luke*",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "People",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/people/1",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "people",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "disabled": true
+                },
+                {
+                  "key": "offset",
+                  "value": "80",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "offset",
+                  "value": "70",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "id",
+                  "value": "in.2,3",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Planets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/planets",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "planets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Species",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/species",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "species"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Starships",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/starships",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "starships"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Vehicles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/vehicles",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "vehicles"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Films",
+      "item": [
+        {
+          "name": "List films (baseline)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('List envelope has count/contentRange/results', function () {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json).to.be.an('object');",
+                  "  pm.expect(json).to.have.property('count');",
+                  "  pm.expect(json.count).to.be.a('number');",
+                  "  pm.expect(json).to.have.property('contentRange');",
+                  "  pm.expect(json.contentRange).to.be.a('string');",
+                  "  pm.expect(json).to.have.property('results');",
+                  "  pm.expect(json.results).to.be.an('array');",
+                  "  pm.expect(json.results.length).to.be.at.least(0);",
+                  "  pm.expect(json.results.length).to.be.at.most(10);",
+                  "});",
+                  "pm.test('Count is >= results.length', function () {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json.count).to.be.at.least(json.results.length);",
+                  "});",
+                  "pm.test('contentRange matches count', function () {",
+                  "  const json = pm.response.json();",
+                  "  const m = /^items\\s+(\\d+)-(\\d+)\\/(\\d+)$/.exec(json.contentRange || '');",
+                  "  pm.expect(m, 'contentRange format items {start}-{end}/{total}').to.not.equal(null);",
+                  "  const total = Number(m[3]);",
+                  "  pm.expect(total).to.equal(json.count);",
+                  "});",
+                  "pm.test('Film items have required fields', function () {",
+                  "  const json = pm.response.json();",
+                  "  json.results.forEach(function (f) {",
+                  "    pm.expect(f).to.have.property('id');",
+                  "    pm.expect(String(f.id)).to.match(/^\\d+$/);",
+                  "    pm.expect(f).to.have.property('title');",
+                  "    pm.expect(f.title).to.be.a('string');",
+                  "    pm.expect(f).to.have.property('release_date');",
+                  "    pm.expect(f.release_date).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);",
+                  "  });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/films",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "films"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List films (limit=2)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "const json = pm.response.json();",
+                  "pm.test('results length <= limit', function () {",
+                  "  pm.expect(json.results.length).to.be.at.most(2);",
+                  "});",
+                  "pm.test('contentRange end-start+1 equals results length when results non-empty', function () {",
+                  "  const m = /^items\\s+(\\d+)-(\\d+)\\/(\\d+)$/.exec(json.contentRange || '');",
+                  "  pm.expect(m).to.not.equal(null);",
+                  "  const start = Number(m[1]);",
+                  "  const end = Number(m[2]);",
+                  "  if (json.results.length > 0) pm.expect(end - start + 1).to.equal(json.results.length);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/films?limit=2",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "films"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List films (release_date lt 1983-05-25)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', function () { pm.response.to.have.status(200); });",
+                  "const json = pm.response.json();",
+                  "pm.test('All producer = Rick McCallum', function () {",
+                  "  const producer = 'Rick McCallum';",
+                  "  json.results.forEach(f => pm.expect(f.producer).to.equal(producer));",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/films?producer=Rick*",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "films"
+              ],
+              "query": [
+                {
+                  "key": "release_date",
+                  "value": "lt.1983-05-25",
+                  "disabled": true
+                },
+                {
+                  "key": "producer",
+                  "value": "Rick*",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find film id via filter (title=A New Hope)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('Has at least one film result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                  "const film = json.results[0];",
+                  "pm.environment.set('filmId', String(film.id));",
+                  "pm.test('Stored filmId in environment', () => pm.expect(pm.environment.get('filmId')).to.match(/^\\d+$/));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/films?title=A New Hope",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "films"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "A New Hope"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get film by derived id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('filmId exists in environment', function(){ pm.expect(pm.environment.get('filmId')).to.match(/^\\d+$/); });",
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const f = pm.response.json();",
+                  "pm.test('Film id matches requested id', function(){ pm.expect(String(f.id)).to.equal(String(pm.environment.get('filmId'))); });",
+                  "pm.test('Film has title and release_date', function(){",
+                  "  pm.expect(f.title).to.be.a('string');",
+                  "  pm.expect(f.release_date).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);",
+                  "});",
+                  "pm.test('Film arrays contain numeric ids', function(){",
+                  "  ['characters','planets','species','starships','vehicles'].forEach(k => {",
+                  "    pm.expect(f).to.have.property(k);",
+                  "    pm.expect(f[k]).to.be.an('array');",
+                  "    f[k].forEach(id => pm.expect(String(id)).to.match(/^\\d+$/));",
+                  "  });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/films/{{filmId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "films",
+                "{{filmId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "People",
+      "item": [
+        {
+          "name": "People pagination sanity (offset=0 vs offset=1 differ)",
+          "item": [
+            {
+              "name": "List people (offset=0, limit=1)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                      "const json = pm.response.json();",
+                      "pm.test('Has at least 1 result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                      "pm.environment.set('people_offset0_firstId', json.results[0] ? String(json.results[0].id) : '');"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{hostname}}/v1/people?limit=1&offset=0",
+                  "host": [
+                    "{{hostname}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "people"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "List people (offset=1, limit=1)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                      "const json = pm.response.json();",
+                      "pm.test('First id differs from offset=0 first id', function(){",
+                      "  const prev = pm.environment.get('people_offset0_firstId');",
+                      "  const cur = json.results[0] ? String(json.results[0].id) : '';",
+                      "  if (prev && cur) pm.expect(cur).to.not.equal(prev);",
+                      "});"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{hostname}}/v1/people?limit=1&offset=1",
+                  "host": [
+                    "{{hostname}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "people"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "List people (limit=5)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('Envelope valid + max page size 10', function(){",
+                  "  pm.expect(json.results).to.be.an('array');",
+                  "  pm.expect(json.results.length).to.be.at.most(5);",
+                  "  pm.expect(json.count).to.be.a('number');",
+                  "  pm.expect(json.count).to.be.at.least(json.results.length);",
+                  "});",
+                  "pm.test('People items have expected fields and known SWAPI quirks', function(){",
+                  "  json.results.forEach(p => {",
+                  "    pm.expect(p).to.have.property('id');",
+                  "    pm.expect(String(p.id)).to.match(/^\\d+$/);",
+                  "    pm.expect(p).to.have.property('name');",
+                  "    pm.expect(p.name).to.be.a('string');",
+                  "    pm.expect(p).to.have.property('gender');",
+                  "    pm.expect(['male','female','n/a','none','hermaphrodite','unknown']).to.include(String(p.gender));",
+                  "    pm.expect(p).to.have.property('birth_year');",
+                  "    pm.expect(p.birth_year).to.be.a('string');",
+                  "  });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/people?limit=5",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "people"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find person id via filter (name=Luke*)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('At least one result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                  "pm.test('All names contain Luke (case-insensitive)', function(){",
+                  "  json.results.forEach(p => pm.expect(String(p.name).toLowerCase()).to.include('luke'));",
+                  "});",
+                  "const luke = json.results[0];",
+                  "pm.environment.set('personId', String(luke.id));",
+                  "pm.environment.set('planetId', String(luke.homeworld));",
+                  "pm.test('Stored personId and planetId', function(){",
+                  "  pm.expect(pm.environment.get('personId')).to.match(/^\\d+$/);",
+                  "  pm.expect(pm.environment.get('planetId')).to.match(/^\\d+$/);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/people?name=Luke*",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "people"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Luke*"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get person by derived id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('personId exists in environment', function(){ pm.expect(pm.environment.get('personId')).to.match(/^\\d+$/); });",
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const p = pm.response.json();",
+                  "pm.test('Person id matches requested id', function(){ pm.expect(String(p.id)).to.equal(String(pm.environment.get('personId'))); });",
+                  "pm.test('Has required fields + SWAPI quirks', function(){",
+                  "  pm.expect(p.name).to.be.a('string');",
+                  "  pm.expect(['male','female','n/a','none','hermaphrodite','unknown']).to.include(String(p.gender));",
+                  "  pm.expect(p.birth_year).to.be.a('string');",
+                  "});",
+                  "pm.test('Linked arrays are arrays of ids', function(){",
+                  "  ['films','species','starships','vehicles'].forEach(k => {",
+                  "    pm.expect(p[k]).to.be.an('array');",
+                  "    p[k].forEach(id => pm.expect(String(id)).to.match(/^\\d+$/));",
+                  "  });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/people/{{personId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "people",
+                "{{personId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Planets",
+      "item": [
+        {
+          "name": "List planets (baseline)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('Envelope valid', function(){",
+                  "  pm.expect(json.count).to.be.a('number');",
+                  "  pm.expect(json.results).to.be.an('array');",
+                  "  pm.expect(json.count).to.be.at.least(json.results.length);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/planets?limit=5",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "planets"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get planet by derived id (from Luke homeworld)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('planetId exists in environment', function(){ pm.expect(pm.environment.get('planetId')).to.match(/^\\d+$/); });",
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const pl = pm.response.json();",
+                  "pm.test('Planet id matches requested id', function(){ pm.expect(String(pl.id)).to.equal(String(pm.environment.get('planetId'))); });",
+                  "pm.test('Residents are ids', function(){",
+                  "  if (pl.residents) pl.residents.forEach(id => pm.expect(String(id)).to.match(/^\\d+$/));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/planets/{{planetId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "planets",
+                "{{planetId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Species",
+      "item": [
+        {
+          "name": "List species (baseline)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('Envelope valid', function(){ pm.expect(json.results).to.be.an('array'); pm.expect(json.count).to.be.at.least(json.results.length); });",
+                  "pm.environment.set('speciesId', json.results[0] ? String(json.results[0].id) : '');",
+                  "pm.test('Stored speciesId (if any)', function(){ if (json.results[0]) pm.expect(pm.environment.get('speciesId')).to.match(/^\\d+$/); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/species?limit=5",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "species"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter species (name=Human)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('At least one result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                  "pm.environment.set('speciesId', String(json.results[0].id));",
+                  "pm.test('Stored speciesId', () => pm.expect(pm.environment.get('speciesId')).to.match(/^\\d+$/));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/species?name=Human",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "species"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Human"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get species by derived id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('speciesId exists', function(){ pm.expect(pm.environment.get('speciesId')).to.match(/^\\d+$/); });",
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const s = pm.response.json();",
+                  "pm.test('Species id matches requested id', function(){ pm.expect(String(s.id)).to.equal(String(pm.environment.get('speciesId'))); });",
+                  "pm.test('Species has name/classification', function(){ pm.expect(s.name).to.be.a('string'); pm.expect(s.classification).to.be.a('string'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/species/{{speciesId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "species",
+                "{{speciesId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Starships",
+      "item": [
+        {
+          "name": "List starships (baseline)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('Envelope valid', function(){ pm.expect(json.results).to.be.an('array'); pm.expect(json.count).to.be.at.least(json.results.length); });",
+                  "pm.environment.set('starshipId', json.results[0] ? String(json.results[0].id) : '');",
+                  "pm.test('Stored starshipId (if any)', function(){ if (json.results[0]) pm.expect(pm.environment.get('starshipId')).to.match(/^\\d+$/); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/starships?limit=5",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "starships"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter starships (name contains Falcon*)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('At least one result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                  "pm.test('Names contain falcon', function(){ json.results.forEach(s => pm.expect(String(s.name).toLowerCase()).to.include('falcon')); });",
+                  "pm.environment.set('starshipId', String(json.results[0].id));",
+                  "pm.test('Stored starshipId', () => pm.expect(pm.environment.get('starshipId')).to.match(/^\\d+$/));"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/starships?name=*Falcon*",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "starships"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "*Falcon*"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get starship by derived id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('starshipId exists', function(){ pm.expect(pm.environment.get('starshipId')).to.match(/^\\d+$/); });",
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const s = pm.response.json();",
+                  "pm.test('Starship id matches requested id', function(){ pm.expect(String(s.id)).to.equal(String(pm.environment.get('starshipId'))); });",
+                  "pm.test('Starship has name/model fields', function(){ pm.expect(s.name).to.be.a('string'); pm.expect(s.model).to.be.a('string'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/starships/{{starshipId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "starships",
+                "{{starshipId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vehicles",
+      "item": [
+        {
+          "name": "List vehicles (baseline)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('Envelope valid', function(){ pm.expect(json.results).to.be.an('array'); pm.expect(json.count).to.be.at.least(json.results.length); });",
+                  "pm.environment.set('vehicleId', json.results[0] ? String(json.results[0].id) : '');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/vehicles?limit=5",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "vehicles"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter vehicles (name contains Sand*)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('At least one result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                  "pm.test('Names contain sand', function(){ json.results.forEach(v => pm.expect(String(v.name).toLowerCase()).to.include('sand')); });",
+                  "pm.environment.set('vehicleId', String(json.results[0].id));",
+                  "pm.test('Stored vehicleId', () => pm.expect(pm.environment.get('vehicleId')).to.match(/^\\d+$/));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/vehicles?name=Sand*",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "vehicles"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Sand*"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get vehicle by derived id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('vehicleId exists', function(){ pm.expect(pm.environment.get('vehicleId')).to.match(/^\\d+$/); });",
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const v = pm.response.json();",
+                  "pm.test('Vehicle id matches requested id', function(){ pm.expect(String(v.id)).to.equal(String(pm.environment.get('vehicleId'))); });",
+                  "pm.test('Vehicle has id/name/model fields', function(){",
+                  "  pm.expect(v.name).to.be.a('string');",
+                  "  pm.expect(v.model).to.be.a('string');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/vehicles/{{vehicleId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "vehicles",
+                "{{vehicleId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get vehicle 404 (id does not exist)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/vehicles/999999",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "vehicles",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Negative / validation",
+      "item": [
+        {
+          "name": "Invalid limit triggers 400 or 422",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status is 500', function(){",
+                  "  pm.expect([500]).to.include(pm.response.code);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/people?limit=-1",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "people"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "-1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid offset triggers 400 or 422",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status is 500', function(){ pm.expect([500]).to.include(pm.response.code); });"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/films?offset=-1",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "films"
+              ],
+              "query": [
+                {
+                  "key": "offset",
+                  "value": "-1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

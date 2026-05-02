@@ -1,0 +1,1135 @@
+[
+  {
+    "starshipId": "a8ecf747-2000-4b98-a734-a5d5b7e6e7de",
+    "id": "2",
+    "name": "CR90 corvette",
+    "model": "CR90 corvette",
+    "starshipClass": "corvette",
+    "manufacturer": "Corellian Engineering Corporation",
+    "creditCost": "3500000",
+    "length": "150",
+    "crew": "30-165",
+    "passengers": "600",
+    "atmosphericSpeed": "950",
+    "hyperdriveRating": "2.0",
+    "megalightSpeed": "60",
+    "cargoCapacity": "3000000",
+    "consumables": "1 year",
+    "films": [
+      "1",
+      "3",
+      "6"
+    ],
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-10T14:20:33.369000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.867000Z"
+  },
+  {
+    "starshipId": "6188abef-0370-4030-8dcf-a87b1cb46034",
+    "id": "3",
+    "name": "Star Destroyer",
+    "model": "Imperial I-class Star Destroyer",
+    "starshipClass": "Star Destroyer",
+    "manufacturer": "Kuat Drive Yards",
+    "creditCost": "150000000",
+    "length": "1,600",
+    "crew": "47,060",
+    "passengers": "n/a",
+    "atmosphericSpeed": "975",
+    "hyperdriveRating": "2.0",
+    "megalightSpeed": "60",
+    "cargoCapacity": "36000000",
+    "consumables": "2 years",
+    "films": [
+      "1",
+      "2",
+      "3"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-10T15:08:19.848000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.870000Z"
+  },
+  {
+    "starshipId": "a20039a4-07d3-42b1-9429-3e179eace3b0",
+    "id": "5",
+    "name": "Sentinel-class landing craft",
+    "model": "Sentinel-class landing craft",
+    "starshipClass": "landing craft",
+    "manufacturer": "Sienar Fleet Systems, Cyngus Spaceworks",
+    "creditCost": "240000",
+    "length": "38",
+    "crew": "5",
+    "passengers": "75",
+    "atmosphericSpeed": "1000",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "70",
+    "cargoCapacity": "180000",
+    "consumables": "1 month",
+    "films": [
+      "1"
+    ],
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-10T15:48:00.586000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.873000Z"
+  },
+  {
+    "starshipId": "0d1aa310-d9f1-41bc-86ec-77b1496acf13",
+    "id": "9",
+    "name": "Death Star",
+    "model": "DS-1 Orbital Battle Station",
+    "starshipClass": "Deep Space Mobile Battlestation",
+    "manufacturer": "Imperial Department of Military Research, Sienar Fleet Systems",
+    "creditCost": "1000000000000",
+    "length": "120000",
+    "crew": "342,953",
+    "passengers": "843,342",
+    "atmosphericSpeed": "n/a",
+    "hyperdriveRating": "4.0",
+    "megalightSpeed": "10",
+    "cargoCapacity": "1000000000000",
+    "consumables": "3 years",
+    "films": [
+      "1"
+    ],
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-10T16:36:50.509000Z",
+    "updatedDateTime": "2014-12-20T21:26:24.783000Z"
+  },
+  {
+    "starshipId": "8e6cf380-a3d3-49b2-8611-bf57790175b0",
+    "id": "10",
+    "name": "Millennium Falcon",
+    "model": "YT-1300 light freighter",
+    "starshipClass": "Light freighter",
+    "manufacturer": "Corellian Engineering Corporation",
+    "creditCost": "100000",
+    "length": "34.37",
+    "crew": "4",
+    "passengers": "6",
+    "atmosphericSpeed": "1050",
+    "hyperdriveRating": "0.5",
+    "megalightSpeed": "75",
+    "cargoCapacity": "100000",
+    "consumables": "2 months",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "7"
+    ],
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [
+      "13",
+      "14",
+      "25",
+      "31"
+    ],
+    "characterIds": [
+      "262ed871-bde9-4552-ae93-be761cebc8f5",
+      "038bbf89-1f47-43fb-bef8-23fafdfb1e1e",
+      "0f325acb-4232-4faa-b2e9-fa93dcb8e0b9",
+      "b9cdb713-fe68-4155-b70f-1fce5b497a51"
+    ],
+    "createdDateTime": "2014-12-10T16:59:45.094000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.880000Z"
+  },
+  {
+    "starshipId": "f45d6bf3-f9cc-4c28-9176-ab7049f85d4c",
+    "id": "11",
+    "name": "Y-wing",
+    "model": "BTL Y-wing",
+    "starshipClass": "assault starfighter",
+    "manufacturer": "Koensayr Manufacturing",
+    "creditCost": "134999",
+    "length": "14",
+    "crew": "2",
+    "passengers": "0",
+    "atmosphericSpeed": "1000km",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "80",
+    "cargoCapacity": "110",
+    "consumables": "1 week",
+    "films": [
+      "1",
+      "2",
+      "3"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-12T11:00:39.817000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.883000Z"
+  },
+  {
+    "starshipId": "6f618153-0251-4e77-b147-f569fdab17d8",
+    "id": "12",
+    "name": "X-wing",
+    "model": "T-65 X-wing",
+    "starshipClass": "Starfighter",
+    "manufacturer": "Incom Corporation",
+    "creditCost": "149999",
+    "length": "12.5",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1050",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "100",
+    "cargoCapacity": "110",
+    "consumables": "1 week",
+    "films": [
+      "1",
+      "2",
+      "3"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [
+      "1",
+      "9",
+      "18",
+      "19"
+    ],
+    "characterIds": [
+      "d122823a-4012-496e-91c2-a95e12099624",
+      "cf89ffdc-0e49-4f30-b4bb-1f6317e4a55e",
+      "8697f65b-7573-4943-a6b0-f7bfebe8bd04",
+      "6ed2a4d3-4336-464b-afd9-ea9c01529a0e"
+    ],
+    "createdDateTime": "2014-12-12T11:19:05.340000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.886000Z"
+  },
+  {
+    "starshipId": "dad6687e-cfd6-4f86-acad-359e25f5880c",
+    "id": "13",
+    "name": "TIE Advanced x1",
+    "model": "Twin Ion Engine Advanced x1",
+    "starshipClass": "Starfighter",
+    "manufacturer": "Sienar Fleet Systems",
+    "creditCost": "unknown",
+    "length": "9.2",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1200",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "105",
+    "cargoCapacity": "150",
+    "consumables": "5 days",
+    "films": [
+      "1"
+    ],
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "pilots": [
+      "4"
+    ],
+    "characterIds": [
+      "b1b06058-978a-4759-8162-5fc7bb580564"
+    ],
+    "createdDateTime": "2014-12-12T11:21:32.991000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.889000Z"
+  },
+  {
+    "starshipId": "aff23b5b-0dee-467d-acee-163b6610252a",
+    "id": "15",
+    "name": "Executor",
+    "model": "Executor-class star dreadnought",
+    "starshipClass": "Star dreadnought",
+    "manufacturer": "Kuat Drive Yards, Fondor Shipyards",
+    "creditCost": "1143350000",
+    "length": "19000",
+    "crew": "279,144",
+    "passengers": "38000",
+    "atmosphericSpeed": "n/a",
+    "hyperdriveRating": "2.0",
+    "megalightSpeed": "40",
+    "cargoCapacity": "250000000",
+    "consumables": "6 years",
+    "films": [
+      "2",
+      "3"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-15T12:31:42.547000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.893000Z"
+  },
+  {
+    "starshipId": "d412e5a7-c0ff-40d4-8d99-db6249b63b54",
+    "id": "17",
+    "name": "Rebel transport",
+    "model": "GR-75 medium transport",
+    "starshipClass": "Medium transport",
+    "manufacturer": "Gallofree Yards, Inc.",
+    "creditCost": "unknown",
+    "length": "90",
+    "crew": "6",
+    "passengers": "90",
+    "atmosphericSpeed": "650",
+    "hyperdriveRating": "4.0",
+    "megalightSpeed": "20",
+    "cargoCapacity": "19000000",
+    "consumables": "6 months",
+    "films": [
+      "2",
+      "3"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-15T12:34:52.264000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.895000Z"
+  },
+  {
+    "starshipId": "97cf4c88-a530-4581-ba35-98acea44f037",
+    "id": "21",
+    "name": "Slave 1",
+    "model": "Firespray-31-class patrol and attack",
+    "starshipClass": "Patrol craft",
+    "manufacturer": "Kuat Systems Engineering",
+    "creditCost": "unknown",
+    "length": "21.5",
+    "crew": "1",
+    "passengers": "6",
+    "atmosphericSpeed": "1000",
+    "hyperdriveRating": "3.0",
+    "megalightSpeed": "70",
+    "cargoCapacity": "70000",
+    "consumables": "1 month",
+    "films": [
+      "2",
+      "5"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "pilots": [
+      "22"
+    ],
+    "characterIds": [
+      "2c9e0fd4-3004-4521-a288-4c00e28a6824"
+    ],
+    "createdDateTime": "2014-12-15T13:00:56.332000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.897000Z"
+  },
+  {
+    "starshipId": "0cad7fa4-dfd3-4580-942e-ae08d0c3e07a",
+    "id": "22",
+    "name": "Imperial shuttle",
+    "model": "Lambda-class T-4a shuttle",
+    "starshipClass": "Armed government transport",
+    "manufacturer": "Sienar Fleet Systems",
+    "creditCost": "240000",
+    "length": "20",
+    "crew": "6",
+    "passengers": "20",
+    "atmosphericSpeed": "850",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "50",
+    "cargoCapacity": "80000",
+    "consumables": "2 months",
+    "films": [
+      "2",
+      "3"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [
+      "1",
+      "13",
+      "14"
+    ],
+    "characterIds": [
+      "0f325acb-4232-4faa-b2e9-fa93dcb8e0b9",
+      "cf89ffdc-0e49-4f30-b4bb-1f6317e4a55e",
+      "b9cdb713-fe68-4155-b70f-1fce5b497a51"
+    ],
+    "createdDateTime": "2014-12-15T13:04:47.235000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.900000Z"
+  },
+  {
+    "starshipId": "3b584fac-570b-4d4c-a49d-ca1d0fada42d",
+    "id": "23",
+    "name": "EF76 Nebulon-B escort frigate",
+    "model": "EF76 Nebulon-B escort frigate",
+    "starshipClass": "Escort ship",
+    "manufacturer": "Kuat Drive Yards",
+    "creditCost": "8500000",
+    "length": "300",
+    "crew": "854",
+    "passengers": "75",
+    "atmosphericSpeed": "800",
+    "hyperdriveRating": "2.0",
+    "megalightSpeed": "40",
+    "cargoCapacity": "6000000",
+    "consumables": "2 years",
+    "films": [
+      "2",
+      "3"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-15T13:06:30.813000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.902000Z"
+  },
+  {
+    "starshipId": "81f9f9fa-a4e9-41e4-95ea-08c0041c4921",
+    "id": "27",
+    "name": "Calamari Cruiser",
+    "model": "MC80 Liberty type Star Cruiser",
+    "starshipClass": "Star Cruiser",
+    "manufacturer": "Mon Calamari shipyards",
+    "creditCost": "104000000",
+    "length": "1200",
+    "crew": "5400",
+    "passengers": "1200",
+    "atmosphericSpeed": "n/a",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "60",
+    "cargoCapacity": "unknown",
+    "consumables": "2 years",
+    "films": [
+      "3"
+    ],
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-18T10:54:57.804000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.904000Z"
+  },
+  {
+    "starshipId": "3de8014b-5db2-4665-92d4-82abd85c5f37",
+    "id": "28",
+    "name": "A-wing",
+    "model": "RZ-1 A-wing Interceptor",
+    "starshipClass": "Starfighter",
+    "manufacturer": "Alliance Underground Engineering, Incom Corporation",
+    "creditCost": "175000",
+    "length": "9.6",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1300",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "120",
+    "cargoCapacity": "40",
+    "consumables": "1 week",
+    "films": [
+      "3"
+    ],
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [
+      "29"
+    ],
+    "characterIds": [
+      "24ec2b1b-cadc-459f-9f15-f08ba5d07aae"
+    ],
+    "createdDateTime": "2014-12-18T11:16:34.542000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.907000Z"
+  },
+  {
+    "starshipId": "f832c110-7a9b-46df-a2e9-84d61202ca7a",
+    "id": "29",
+    "name": "B-wing",
+    "model": "A/SF-01 B-wing starfighter",
+    "starshipClass": "Assault Starfighter",
+    "manufacturer": "Slayn & Korpil",
+    "creditCost": "220000",
+    "length": "16.9",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "950",
+    "hyperdriveRating": "2.0",
+    "megalightSpeed": "91",
+    "cargoCapacity": "45",
+    "consumables": "1 week",
+    "films": [
+      "3"
+    ],
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-18T11:18:04.763000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.909000Z"
+  },
+  {
+    "starshipId": "7748ce06-31b5-4af5-9aa1-2ffde780d136",
+    "id": "31",
+    "name": "Republic Cruiser",
+    "model": "Consular-class cruiser",
+    "starshipClass": "Space cruiser",
+    "manufacturer": "Corellian Engineering Corporation",
+    "creditCost": "unknown",
+    "length": "115",
+    "crew": "9",
+    "passengers": "16",
+    "atmosphericSpeed": "900",
+    "hyperdriveRating": "2.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "unknown",
+    "consumables": "unknown",
+    "films": [
+      "4"
+    ],
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-19T17:01:31.488000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.912000Z"
+  },
+  {
+    "starshipId": "4eb62992-92d8-4409-a8b2-c06081df3102",
+    "id": "32",
+    "name": "Droid control ship",
+    "model": "Lucrehulk-class Droid Control Ship",
+    "starshipClass": "Droid control ship",
+    "manufacturer": "Hoersch-Kessel Drive, Inc.",
+    "creditCost": "unknown",
+    "length": "3170",
+    "crew": "175",
+    "passengers": "139000",
+    "atmosphericSpeed": "n/a",
+    "hyperdriveRating": "2.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "4000000000",
+    "consumables": "500 days",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-19T17:04:06.323000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.915000Z"
+  },
+  {
+    "starshipId": "7b72afed-60eb-4588-a44e-fee9af2391c4",
+    "id": "39",
+    "name": "Naboo fighter",
+    "model": "N-1 starfighter",
+    "starshipClass": "Starfighter",
+    "manufacturer": "Theed Palace Space Vessel Engineering Corps",
+    "creditCost": "200000",
+    "length": "11",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1100",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "65",
+    "consumables": "7 days",
+    "films": [
+      "4",
+      "5"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "pilots": [
+      "11",
+      "35",
+      "60"
+    ],
+    "characterIds": [
+      "bb264147-3c0d-4a45-8e9b-6ea0e3e84b80",
+      "d4a416d7-77d2-4483-8480-2e7a0012a8da",
+      "e3aebed8-0828-4aee-a054-e729594e80cc"
+    ],
+    "createdDateTime": "2014-12-19T17:39:17.582000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.917000Z"
+  },
+  {
+    "starshipId": "9607978c-96c9-44b8-8fc0-fdd6b07735d1",
+    "id": "40",
+    "name": "Naboo Royal Starship",
+    "model": "J-type 327 Nubian royal starship",
+    "starshipClass": "yacht",
+    "manufacturer": "Theed Palace Space Vessel Engineering Corps, Nubia Star Drives",
+    "creditCost": "unknown",
+    "length": "76",
+    "crew": "8",
+    "passengers": "unknown",
+    "atmosphericSpeed": "920",
+    "hyperdriveRating": "1.8",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "unknown",
+    "consumables": "unknown",
+    "films": [
+      "4"
+    ],
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "pilots": [
+      "39"
+    ],
+    "characterIds": [
+      "909c997c-1094-4762-9c8a-5c64c30d28b2"
+    ],
+    "createdDateTime": "2014-12-19T17:45:03.506000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.919000Z"
+  },
+  {
+    "starshipId": "719dce4b-a62b-4f49-b3cf-7395477bce86",
+    "id": "41",
+    "name": "Scimitar",
+    "model": "Star Courier",
+    "starshipClass": "Space Transport",
+    "manufacturer": "Republic Sienar Systems",
+    "creditCost": "55000000",
+    "length": "26.5",
+    "crew": "1",
+    "passengers": "6",
+    "atmosphericSpeed": "1180",
+    "hyperdriveRating": "1.5",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "2500000",
+    "consumables": "30 days",
+    "films": [
+      "4"
+    ],
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "pilots": [
+      "44"
+    ],
+    "characterIds": [
+      "0ae1a9f4-5683-4d0f-b63e-558e3453ffb3"
+    ],
+    "createdDateTime": "2014-12-20T09:39:56.116000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.922000Z"
+  },
+  {
+    "starshipId": "433b8bdd-48a1-431c-a275-cd3eb65c7e9a",
+    "id": "43",
+    "name": "J-type diplomatic barge",
+    "model": "J-type diplomatic barge",
+    "starshipClass": "Diplomatic barge",
+    "manufacturer": "Theed Palace Space Vessel Engineering Corps, Nubia Star Drives",
+    "creditCost": "2000000",
+    "length": "39",
+    "crew": "5",
+    "passengers": "10",
+    "atmosphericSpeed": "2000",
+    "hyperdriveRating": "0.7",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "unknown",
+    "consumables": "1 year",
+    "films": [
+      "5"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T11:05:51.237000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.925000Z"
+  },
+  {
+    "starshipId": "b176d0b9-fee2-49d7-9c05-3ba6c4c8205b",
+    "id": "47",
+    "name": "AA-9 Coruscant freighter",
+    "model": "Botajef AA-9 Freighter-Liner",
+    "starshipClass": "freighter",
+    "manufacturer": "Botajef Shipyards",
+    "creditCost": "unknown",
+    "length": "390",
+    "crew": "unknown",
+    "passengers": "30000",
+    "atmosphericSpeed": "unknown",
+    "hyperdriveRating": "unknown",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "unknown",
+    "consumables": "unknown",
+    "films": [
+      "5"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T17:24:23.509000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.928000Z"
+  },
+  {
+    "starshipId": "c5435721-8de8-422d-a458-57bb786343d8",
+    "id": "48",
+    "name": "Jedi starfighter",
+    "model": "Delta-7 Aethersprite-class interceptor",
+    "starshipClass": "Starfighter",
+    "manufacturer": "Kuat Systems Engineering",
+    "creditCost": "180000",
+    "length": "8",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1150",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "60",
+    "consumables": "7 days",
+    "films": [
+      "5",
+      "6"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [
+      "10",
+      "58"
+    ],
+    "characterIds": [
+      "d69dda19-45c2-457a-8638-d72f94fa6d44",
+      "f5737245-340d-4e32-aa29-f74d41a878f2"
+    ],
+    "createdDateTime": "2014-12-20T17:35:23.906000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.930000Z"
+  },
+  {
+    "starshipId": "a41a246b-6691-4533-ad0a-310d6c766958",
+    "id": "49",
+    "name": "H-type Nubian yacht",
+    "model": "H-type Nubian yacht",
+    "starshipClass": "yacht",
+    "manufacturer": "Theed Palace Space Vessel Engineering Corps",
+    "creditCost": "unknown",
+    "length": "47.9",
+    "crew": "4",
+    "passengers": "unknown",
+    "atmosphericSpeed": "8000",
+    "hyperdriveRating": "0.9",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "unknown",
+    "consumables": "unknown",
+    "films": [
+      "5"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "pilots": [
+      "35"
+    ],
+    "characterIds": [
+      "e3aebed8-0828-4aee-a054-e729594e80cc"
+    ],
+    "createdDateTime": "2014-12-20T17:46:46.847000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.932000Z"
+  },
+  {
+    "starshipId": "501be783-307e-4356-a579-f3b8c15977e9",
+    "id": "52",
+    "name": "Republic Assault ship",
+    "model": "Acclamator I-class assault ship",
+    "starshipClass": "assault ship",
+    "manufacturer": "Rothana Heavy Engineering",
+    "creditCost": "unknown",
+    "length": "752",
+    "crew": "700",
+    "passengers": "16000",
+    "atmosphericSpeed": "unknown",
+    "hyperdriveRating": "0.6",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "11250000",
+    "consumables": "2 years",
+    "films": [
+      "5"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T18:08:42.926000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.935000Z"
+  },
+  {
+    "starshipId": "38686d30-04c6-46df-ba61-925e93a1b65e",
+    "id": "58",
+    "name": "Solar Sailer",
+    "model": "Punworcca 116-class interstellar sloop",
+    "starshipClass": "yacht",
+    "manufacturer": "Huppla Pasa Tisc Shipwrights Collective",
+    "creditCost": "35700",
+    "length": "15.2",
+    "crew": "3",
+    "passengers": "11",
+    "atmosphericSpeed": "1600",
+    "hyperdriveRating": "1.5",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "240",
+    "consumables": "7 days",
+    "films": [
+      "5"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T18:37:56.969000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.937000Z"
+  },
+  {
+    "starshipId": "978649e8-a8fc-45e0-bbf3-19ef53273d38",
+    "id": "59",
+    "name": "Trade Federation cruiser",
+    "model": "Providence-class carrier/destroyer",
+    "starshipClass": "capital ship",
+    "manufacturer": "Rendili StarDrive, Free Dac Volunteers Engineering corps.",
+    "creditCost": "125000000",
+    "length": "1088",
+    "crew": "600",
+    "passengers": "48247",
+    "atmosphericSpeed": "1050",
+    "hyperdriveRating": "1.5",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "50000000",
+    "consumables": "4 years",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [
+      "10",
+      "11"
+    ],
+    "characterIds": [
+      "bb264147-3c0d-4a45-8e9b-6ea0e3e84b80",
+      "d69dda19-45c2-457a-8638-d72f94fa6d44"
+    ],
+    "createdDateTime": "2014-12-20T19:40:21.902000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.941000Z"
+  },
+  {
+    "starshipId": "7c9cc9e9-aee9-46a7-addb-1497807d82df",
+    "id": "61",
+    "name": "Theta-class T-2c shuttle",
+    "model": "Theta-class T-2c shuttle",
+    "starshipClass": "transport",
+    "manufacturer": "Cygnus Spaceworks",
+    "creditCost": "1000000",
+    "length": "18.5",
+    "crew": "5",
+    "passengers": "16",
+    "atmosphericSpeed": "2000",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "50000",
+    "consumables": "56 days",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T19:48:40.409000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.944000Z"
+  },
+  {
+    "starshipId": "507f73b4-10db-4e3f-bbe7-ed158182390f",
+    "id": "63",
+    "name": "Republic attack cruiser",
+    "model": "Senator-class Star Destroyer",
+    "starshipClass": "star destroyer",
+    "manufacturer": "Kuat Drive Yards, Allanteen Six shipyards",
+    "creditCost": "59000000",
+    "length": "1137",
+    "crew": "7400",
+    "passengers": "2000",
+    "atmosphericSpeed": "975",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "20000000",
+    "consumables": "2 years",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T19:52:56.232000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.946000Z"
+  },
+  {
+    "starshipId": "b0810047-953b-44b8-8fa5-4612b736eb6f",
+    "id": "64",
+    "name": "Naboo star skiff",
+    "model": "J-type star skiff",
+    "starshipClass": "yacht",
+    "manufacturer": "Theed Palace Space Vessel Engineering Corps/Nubia Star Drives, Incorporated",
+    "creditCost": "unknown",
+    "length": "29.2",
+    "crew": "3",
+    "passengers": "3",
+    "atmosphericSpeed": "1050",
+    "hyperdriveRating": "0.5",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "unknown",
+    "consumables": "unknown",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [
+      "10",
+      "35"
+    ],
+    "characterIds": [
+      "d69dda19-45c2-457a-8638-d72f94fa6d44",
+      "e3aebed8-0828-4aee-a054-e729594e80cc"
+    ],
+    "createdDateTime": "2014-12-20T19:55:15.396000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.948000Z"
+  },
+  {
+    "starshipId": "5c0bf128-d4bb-4c1d-ae9d-9ee6fe4355b9",
+    "id": "65",
+    "name": "Jedi Interceptor",
+    "model": "Eta-2 Actis-class light interceptor",
+    "starshipClass": "starfighter",
+    "manufacturer": "Kuat Systems Engineering",
+    "creditCost": "320000",
+    "length": "5.47",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1500",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "60",
+    "consumables": "2 days",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [
+      "10",
+      "11"
+    ],
+    "characterIds": [
+      "bb264147-3c0d-4a45-8e9b-6ea0e3e84b80",
+      "d69dda19-45c2-457a-8638-d72f94fa6d44"
+    ],
+    "createdDateTime": "2014-12-20T19:56:57.468000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.951000Z"
+  },
+  {
+    "starshipId": "b7e15960-264b-4d86-a1c6-261401986472",
+    "id": "66",
+    "name": "arc-170",
+    "model": "Aggressive Reconnaissance-170 starfighte",
+    "starshipClass": "starfighter",
+    "manufacturer": "Incom Corporation, Subpro Corporation",
+    "creditCost": "155000",
+    "length": "14.5",
+    "crew": "3",
+    "passengers": "0",
+    "atmosphericSpeed": "1000",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "100",
+    "cargoCapacity": "110",
+    "consumables": "5 days",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T20:03:48.603000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.953000Z"
+  },
+  {
+    "starshipId": "f386023a-b55a-4138-ab94-4ac42bcc2fc0",
+    "id": "68",
+    "name": "Banking clan frigte",
+    "model": "Munificent-class star frigate",
+    "starshipClass": "cruiser",
+    "manufacturer": "Hoersch-Kessel Drive, Inc, Gwori Revolutionary Industries",
+    "creditCost": "57000000",
+    "length": "825",
+    "crew": "200",
+    "passengers": "unknown",
+    "atmosphericSpeed": "unknown",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "40000000",
+    "consumables": "2 years",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T20:07:11.538000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.956000Z"
+  },
+  {
+    "starshipId": "7d8d2136-5dd8-4782-90ea-8fbd9c6a5958",
+    "id": "74",
+    "name": "Belbullab-22 starfighter",
+    "model": "Belbullab-22 starfighter",
+    "starshipClass": "starfighter",
+    "manufacturer": "Feethan Ottraw Scalable Assemblies",
+    "creditCost": "168000",
+    "length": "6.71",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1100",
+    "hyperdriveRating": "6",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "140",
+    "consumables": "7 days",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [
+      "10",
+      "79"
+    ],
+    "characterIds": [
+      "259c4cd3-917b-4344-9700-e8deafc491fe",
+      "d69dda19-45c2-457a-8638-d72f94fa6d44"
+    ],
+    "createdDateTime": "2014-12-20T20:38:05.031000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.959000Z"
+  },
+  {
+    "starshipId": "f0e44660-416a-4c32-b47c-a2f91bdb4c1c",
+    "id": "75",
+    "name": "V-wing",
+    "model": "Alpha-3 Nimbus-class V-wing starfighter",
+    "starshipClass": "starfighter",
+    "manufacturer": "Kuat Systems Engineering",
+    "creditCost": "102500",
+    "length": "7.9",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1050",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "unknown",
+    "cargoCapacity": "60",
+    "consumables": "15 hours",
+    "films": [
+      "6"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "pilots": [],
+    "characterIds": [],
+    "createdDateTime": "2014-12-20T20:43:04.349000Z",
+    "updatedDateTime": "2014-12-20T21:23:49.961000Z"
+  },
+  {
+    "starshipId": "e364f769-07d2-4888-831b-6731108ffb4c",
+    "id": "77",
+    "name": "X-wing",
+    "model": "T-70 X-wing",
+    "starshipClass": "Starfighter",
+    "manufacturer": "Incom Corporation",
+    "creditCost": "200000",
+    "length": "12.49",
+    "crew": "1",
+    "passengers": "0",
+    "atmosphericSpeed": "1100",
+    "hyperdriveRating": "1.0",
+    "megalightSpeed": "110",
+    "cargoCapacity": "110",
+    "consumables": "1 week",
+    "films": [
+      "7"
+    ],
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f"
+    ],
+    "pilots": [
+      "86"
+    ],
+    "characterIds": [
+      "af94bae0-9106-4043-acde-90af09ef9678"
+    ],
+    "createdDateTime": "2020-11-24T11:19:05.340000Z",
+    "updatedDateTime": "2020-11-25T21:23:49.886000Z"
+  }
+]

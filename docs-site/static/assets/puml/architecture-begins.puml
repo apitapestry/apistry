@@ -1,0 +1,55 @@
+@startuml
+title Where Frameworks End and Architecture Begins
+
+' ===============================
+' Shared Style
+' ===============================
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Inter
+skinparam defaultFontSize 14
+skinparam defaultTextAlignment center
+
+top to bottom direction
+
+skinparam rectangle {
+  RoundCorner 8
+  BorderColor #1F2937
+  FontColor #111827
+}
+
+skinparam arrow {
+  Color #374151
+  Thickness 1.5
+}
+
+skinparam note {
+  BackgroundColor #F9FAFB
+  BorderColor #9CA3AF
+  FontColor #374151
+}
+
+' ===============================
+' Zones
+' ===============================
+
+rectangle #E5E7EB "Framework-Handled Concerns\n\n\
+- Security (authn / authz)\n\
+- Routing & dispatch\n\
+- Schema & structural validation\n\
+- Serialization & error mapping" as FW
+
+rectangle #DBEAFE "Architectural Decision Zone\n\n\
+- Business validation rules\n\
+- Deterministic derivations\n\
+- Persistence decisions\n\
+- Responsibility boundaries" as ADZ
+
+FW --> ADZ : responsibility handoff
+
+note top of ADZ
+Architecture begins where frameworks stop
+enforcing boundaries.
+end note
+
+@enduml

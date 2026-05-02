@@ -1,0 +1,29 @@
+# Basic container default. Mount your own config.yml and set CONFIG_PATH to use
+# deployment-specific contracts, database, security, CORS, or license settings.
+
+server:
+  host: 0.0.0.0
+  port: 3000
+  serviceName: APIstry
+  serviceDescription: >
+    APIstry provides functional APIs directly from OpenAPI specifications
+    without writing any code.
+  swaggerUiEnabled: true
+
+contracts:
+  source: filesystem
+  path: /app/contracts
+
+database:
+  connection: sqlite://IN-MEMORY-DB
+
+logging:
+  level: info
+  pretty: false
+  redact:
+    - req.headers.authorization
+    - req.headers.cookie
+
+cors:
+  enabled: true
+  origins: true

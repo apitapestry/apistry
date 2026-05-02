@@ -1,0 +1,966 @@
+[
+  {
+    "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+    "type": "book",
+    "attributes": {
+      "slug": "harry-potter-and-the-philosopher-s-stone",
+      "author": "J. K. Rowling",
+      "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg",
+      "dedication": "For Jessica, who loves stories, for Anne, who loved them too, and for Di, who heard this one first",
+      "pages": 223,
+      "release_date": "1997-06-26",
+      "summary": "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "wiki": "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Philosopher's_Stone"
+    },
+    "relationships": {
+      "chapters": {
+        "data": [
+          {
+            "id": "ad09d2a7-e76f-4aa0-b82c-424d59175133",
+            "type": "chapter"
+          },
+          {
+            "id": "3d29e1d7-77c4-4ad1-85a2-a3d0ace5566c",
+            "type": "chapter"
+          },
+          {
+            "id": "98d8e713-9cf1-46f5-9747-abb17e756073",
+            "type": "chapter"
+          },
+          {
+            "id": "a9fe85c9-2e15-4990-ba2b-4222bc7a7574",
+            "type": "chapter"
+          },
+          {
+            "id": "2ea979f9-08a5-47b4-9aae-6ec63bceed95",
+            "type": "chapter"
+          },
+          {
+            "id": "c578aee4-7d41-4031-98bb-0a68db13adbc",
+            "type": "chapter"
+          },
+          {
+            "id": "4957f6e0-3902-4635-a00c-3105432ae774",
+            "type": "chapter"
+          },
+          {
+            "id": "36276ab3-6ee5-48c0-8709-1c3d761fca38",
+            "type": "chapter"
+          },
+          {
+            "id": "bf16809f-9344-400e-8490-7cb1e35a8a7b",
+            "type": "chapter"
+          },
+          {
+            "id": "959a3537-bf68-4466-8e04-135d8c4f6ac2",
+            "type": "chapter"
+          },
+          {
+            "id": "89538b96-a290-47e2-a74d-db04a5d79a5b",
+            "type": "chapter"
+          },
+          {
+            "id": "7807740b-63c2-455a-9c47-3597f0764d94",
+            "type": "chapter"
+          },
+          {
+            "id": "c032b970-d5d4-45a5-b841-525c3e27f909",
+            "type": "chapter"
+          },
+          {
+            "id": "6894daa8-2f38-4ff3-bafa-e3157263eadc",
+            "type": "chapter"
+          },
+          {
+            "id": "17a02196-7cee-4b96-9958-df078c6d7f1b",
+            "type": "chapter"
+          },
+          {
+            "id": "9dad077a-56d2-4edf-98e5-aa30f5fa1d35",
+            "type": "chapter"
+          },
+          {
+            "id": "b8dc3e82-d0fc-4327-bec4-37c025bca580",
+            "type": "chapter"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14"
+    }
+  },
+  {
+    "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+    "type": "book",
+    "attributes": {
+      "slug": "harry-potter-and-the-chamber-of-secrets",
+      "author": "J. K. Rowling",
+      "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-2.jpg",
+      "dedication": "For Séan P. F. Harris, getaway driver and foul-weather friend",
+      "pages": 251,
+      "release_date": "1998-07-02",
+      "summary": "Harry Potter's summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car! Back at Hogwarts School of Witchcraft And Wizardry for his second year, Harry hears strange whispers echo through empty corridors – and then the attacks start. Students are found as though turned to stone... Dobby's sinister predictions seem to be coming true.",
+      "title": "Harry Potter and the Chamber of Secrets",
+      "wiki": "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Chamber_of_Secrets"
+    },
+    "relationships": {
+      "chapters": {
+        "data": [
+          {
+            "id": "79bdfb43-cce7-41df-bf89-d3e0c8d16f71",
+            "type": "chapter"
+          },
+          {
+            "id": "060d715b-32da-4a87-a6fd-9cfe2ea0a841",
+            "type": "chapter"
+          },
+          {
+            "id": "ea96dfc3-b241-487c-9654-87cc240f099a",
+            "type": "chapter"
+          },
+          {
+            "id": "6f741f6f-2ab2-4ba5-9de4-d3d4b774c340",
+            "type": "chapter"
+          },
+          {
+            "id": "4df302d5-e7b6-4b74-8dc9-31ed6b7f9873",
+            "type": "chapter"
+          },
+          {
+            "id": "ebafa783-8cc6-4c2c-8ddc-23c4bf158999",
+            "type": "chapter"
+          },
+          {
+            "id": "3baaae6d-24e9-4c33-8105-e8dcb283eb77",
+            "type": "chapter"
+          },
+          {
+            "id": "9ced52ff-5cac-4eeb-9d0c-a59a4905a437",
+            "type": "chapter"
+          },
+          {
+            "id": "94bbe9ec-5f28-4e56-8796-bd7745a5a9b7",
+            "type": "chapter"
+          },
+          {
+            "id": "8baf63a8-a866-4725-a023-eff77299e258",
+            "type": "chapter"
+          },
+          {
+            "id": "cce75136-67a8-4b5a-9c69-f73379a551ba",
+            "type": "chapter"
+          },
+          {
+            "id": "215b08b5-31ae-4ff8-b8d0-3f13ceff5326",
+            "type": "chapter"
+          },
+          {
+            "id": "07ab054b-5cec-4169-8701-09472b0e1c00",
+            "type": "chapter"
+          },
+          {
+            "id": "1a68741f-30ec-494c-b0f7-d8c11ec27a8f",
+            "type": "chapter"
+          },
+          {
+            "id": "56268015-88fc-4ebe-b2a1-4a95f8e603be",
+            "type": "chapter"
+          },
+          {
+            "id": "741764a0-4e80-4802-b993-d58dacb9a51d",
+            "type": "chapter"
+          },
+          {
+            "id": "461a7795-8bd6-4479-910a-3e091429dae8",
+            "type": "chapter"
+          },
+          {
+            "id": "6b36ebde-3f63-45c8-8715-fe472f87a15b",
+            "type": "chapter"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f"
+    }
+  },
+  {
+    "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+    "type": "book",
+    "attributes": {
+      "slug": "harry-potter-and-the-prisoner-of-azkaban",
+      "author": "J. K. Rowling",
+      "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-3.jpg",
+      "dedication": "To Jill Prewett and Aine Kiely, the Godmothers of Swing",
+      "pages": 317,
+      "release_date": "1999-07-08",
+      "summary": "When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run – and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves... But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss.",
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "wiki": "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Prisoner_of_Azkaban"
+    },
+    "relationships": {
+      "chapters": {
+        "data": [
+          {
+            "id": "542fdf94-d96c-41e7-b0ff-c7bfce446a50",
+            "type": "chapter"
+          },
+          {
+            "id": "e441988f-0d9d-48cc-b968-fc6c3748813f",
+            "type": "chapter"
+          },
+          {
+            "id": "e20ea0fc-35c8-433a-818e-39d81a298a01",
+            "type": "chapter"
+          },
+          {
+            "id": "9dd0fc5f-7eeb-4e99-9b09-101e33124555",
+            "type": "chapter"
+          },
+          {
+            "id": "f756a187-44e8-4caa-9076-57207ed80291",
+            "type": "chapter"
+          },
+          {
+            "id": "83b2acc3-e1aa-4878-be03-f024322c0637",
+            "type": "chapter"
+          },
+          {
+            "id": "8a27ade1-81b7-45a5-80e3-11844f5336bd",
+            "type": "chapter"
+          },
+          {
+            "id": "5abdc168-2f46-41a2-8e74-fddc0067d408",
+            "type": "chapter"
+          },
+          {
+            "id": "8b8d517d-a89c-4e7c-bc9a-8c31423ae718",
+            "type": "chapter"
+          },
+          {
+            "id": "dcf4f6d0-8a6d-4cb3-92a2-a2146e5c2fc8",
+            "type": "chapter"
+          },
+          {
+            "id": "50902854-84bd-4df8-b226-6f285f281907",
+            "type": "chapter"
+          },
+          {
+            "id": "8ef249a3-8dd1-4354-b0cb-e19a71419a6f",
+            "type": "chapter"
+          },
+          {
+            "id": "a45ebf95-07ae-4147-95d9-5fffc78f250b",
+            "type": "chapter"
+          },
+          {
+            "id": "edf54897-5d12-4c4d-af3e-cd5f53f56802",
+            "type": "chapter"
+          },
+          {
+            "id": "165f7b63-09f0-4e93-85a1-81f2a4d7769e",
+            "type": "chapter"
+          },
+          {
+            "id": "bf4f1e0e-7eac-467e-9dba-1b8891d17aca",
+            "type": "chapter"
+          },
+          {
+            "id": "871c5c26-f410-4461-ba4c-a54efee48c1f",
+            "type": "chapter"
+          },
+          {
+            "id": "081cc319-28ae-41c8-9875-f4f21be1f6e5",
+            "type": "chapter"
+          },
+          {
+            "id": "c94381bd-b5dd-4ce4-98f1-bd5b3fdeb38e",
+            "type": "chapter"
+          },
+          {
+            "id": "4e9773d4-c47c-4983-8826-a9d88da0654e",
+            "type": "chapter"
+          },
+          {
+            "id": "79555e55-1498-4a54-9aa3-1dee804732ad",
+            "type": "chapter"
+          },
+          {
+            "id": "f9657309-905a-49c7-afa3-142eb94a9eff",
+            "type": "chapter"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0"
+    }
+  },
+  {
+    "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+    "type": "book",
+    "attributes": {
+      "slug": "harry-potter-and-the-goblet-of-fire",
+      "author": "J. K. Rowling",
+      "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-4.jpg",
+      "dedication": "To Peter Rowling, in memory of Mr Ridley and to Susan Sladden, who helped Harry out of his cupboard",
+      "pages": 636,
+      "release_date": "2000-07-08",
+      "summary": "The Triwizard Tournament is to be held at Hogwarts. Only wizards who are over seventeen are allowed to enter – but that doesn't stop Harry dreaming that he will win the competition. Then at Hallowe'en, when the Goblet of Fire makes its selection, Harry is amazed to find his name is one of those that the magical cup picks out. He will face death-defying tasks, dragons and Dark wizards, but with the help of his best friends, Ron and Hermione, he might just make it through – alive!",
+      "title": "Harry Potter and the Goblet of Fire",
+      "wiki": "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Goblet_of_Fire"
+    },
+    "relationships": {
+      "chapters": {
+        "data": [
+          {
+            "id": "d188527c-ecdf-44c5-9406-8ba9c2915881",
+            "type": "chapter"
+          },
+          {
+            "id": "3370b8ee-be27-4fa6-b24e-bf9fbfe93502",
+            "type": "chapter"
+          },
+          {
+            "id": "c0f1fb25-99e9-4e97-9ec1-143196a145e1",
+            "type": "chapter"
+          },
+          {
+            "id": "c6d80238-0744-41be-b7be-1d3a282103d0",
+            "type": "chapter"
+          },
+          {
+            "id": "d2310724-af55-4202-8bc3-bfe8af727471",
+            "type": "chapter"
+          },
+          {
+            "id": "def89767-ab29-4054-a49d-a28c460ad686",
+            "type": "chapter"
+          },
+          {
+            "id": "387e3f7d-b4da-4950-a6c5-c274554371db",
+            "type": "chapter"
+          },
+          {
+            "id": "f20f2050-2ca3-4deb-8a42-fa27425ed237",
+            "type": "chapter"
+          },
+          {
+            "id": "ea6b31e0-bad7-4105-bf02-fb1b9f5aa014",
+            "type": "chapter"
+          },
+          {
+            "id": "418b0295-b1bb-426f-9405-72cddc08cc41",
+            "type": "chapter"
+          },
+          {
+            "id": "6572bb90-7d22-49f2-85fe-1dd948db36fa",
+            "type": "chapter"
+          },
+          {
+            "id": "3c5f57e4-3a1f-4780-9770-02f59673a8ad",
+            "type": "chapter"
+          },
+          {
+            "id": "eb205401-4429-41cd-b00c-1c0befe4a006",
+            "type": "chapter"
+          },
+          {
+            "id": "9871a443-8879-4f68-b9eb-464b3ef2e37c",
+            "type": "chapter"
+          },
+          {
+            "id": "cbded50d-9bb3-4041-8ad4-fc815ea79ea6",
+            "type": "chapter"
+          },
+          {
+            "id": "8ca43272-27be-4473-baa2-624c2dec8d43",
+            "type": "chapter"
+          },
+          {
+            "id": "78b17c40-f5a3-42ec-9090-c4d67e5122f5",
+            "type": "chapter"
+          },
+          {
+            "id": "855c9fc9-c692-41dd-86b4-6e0311477183",
+            "type": "chapter"
+          },
+          {
+            "id": "1611c847-b2a0-47bf-a2e5-4eca3761642f",
+            "type": "chapter"
+          },
+          {
+            "id": "2eb2a40a-2bab-44d9-be46-5947a55e881b",
+            "type": "chapter"
+          },
+          {
+            "id": "50ce41bd-c738-4e4d-be2e-37abcafc74db",
+            "type": "chapter"
+          },
+          {
+            "id": "62d78747-9cc1-4865-abbf-b1b74955953d",
+            "type": "chapter"
+          },
+          {
+            "id": "e04b6081-6cee-474d-a847-1c648cde9ec7",
+            "type": "chapter"
+          },
+          {
+            "id": "7c5e2487-ea53-4f42-91e9-1d6ea704fc1a",
+            "type": "chapter"
+          },
+          {
+            "id": "56829c2c-99ff-40ad-8918-843540315b57",
+            "type": "chapter"
+          },
+          {
+            "id": "10f8d709-a3fd-4f62-b5c6-37329ee2f880",
+            "type": "chapter"
+          },
+          {
+            "id": "53809dad-6fe4-461f-95f8-cb81e26e1e7d",
+            "type": "chapter"
+          },
+          {
+            "id": "c2ec359a-dc55-417c-af44-3d89da9ec5cb",
+            "type": "chapter"
+          },
+          {
+            "id": "d88a9edb-4132-4d09-add7-ee23441087ce",
+            "type": "chapter"
+          },
+          {
+            "id": "5b85dd93-f9f5-4700-a932-c5990bc2ca05",
+            "type": "chapter"
+          },
+          {
+            "id": "bbc84686-aa69-411f-a449-bcfc6bd01bb9",
+            "type": "chapter"
+          },
+          {
+            "id": "1b9549fd-1b81-4dc5-b588-17d95732e396",
+            "type": "chapter"
+          },
+          {
+            "id": "1e716d89-081a-4a08-aef9-8937ecea2a01",
+            "type": "chapter"
+          },
+          {
+            "id": "60976b75-d9b3-455a-9461-350421f3c8ae",
+            "type": "chapter"
+          },
+          {
+            "id": "ea669911-ad23-4f97-b567-9a0194944743",
+            "type": "chapter"
+          },
+          {
+            "id": "59864f20-e892-42b7-9839-74e7ac4a03e4",
+            "type": "chapter"
+          },
+          {
+            "id": "703ef992-1e4a-4807-998c-a6a035bfcc19",
+            "type": "chapter"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342"
+    }
+  },
+  {
+    "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+    "type": "book",
+    "attributes": {
+      "slug": "harry-potter-and-the-order-of-the-phoenix",
+      "author": "J. K. Rowling",
+      "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-5.jpg",
+      "dedication": "To Neil, Jessica and David, who make my world magical",
+      "pages": 766,
+      "release_date": "2003-06-21",
+      "summary": "Dark times have come to Hogwarts. After the Dementors' attack on his cousin Dudley, Harry Potter knows that Voldemort will stop at nothing to find him. There are many who deny the Dark Lord's return, but Harry is not alone: a secret Order gathers at Grimmauld Place to fight against the Dark forces. Harry must allow Professor Snape to teach him how to protect himself from Voldemort's savage assaults on his mind. But they are growing stronger by the day and Harry is running out of time.",
+      "title": "Harry Potter and the Order of the Phoenix",
+      "wiki": "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Order_of_the_Phoenix"
+    },
+    "relationships": {
+      "chapters": {
+        "data": [
+          {
+            "id": "52f94bcd-8aaf-446a-8695-d124d64a5d49",
+            "type": "chapter"
+          },
+          {
+            "id": "4c75a35d-0142-43a1-aa86-b33846e58d3c",
+            "type": "chapter"
+          },
+          {
+            "id": "9fbcf825-c532-478b-9996-f9c13c6587f2",
+            "type": "chapter"
+          },
+          {
+            "id": "fb7dbc24-cf78-4eb0-8e2b-afddfcd818a1",
+            "type": "chapter"
+          },
+          {
+            "id": "cf2903f2-b4a1-448c-931f-8453905cce43",
+            "type": "chapter"
+          },
+          {
+            "id": "05671770-87a3-439a-af07-0eb92f3e4d74",
+            "type": "chapter"
+          },
+          {
+            "id": "1dc6ef9e-ca14-4482-9319-0c1ce64fb979",
+            "type": "chapter"
+          },
+          {
+            "id": "817aa12f-4162-4b7a-a823-caf52349bdb1",
+            "type": "chapter"
+          },
+          {
+            "id": "fbd8cf76-4b44-490b-b153-fdbeb80bbe59",
+            "type": "chapter"
+          },
+          {
+            "id": "b98c3603-fd1b-43c5-be31-71262d40c885",
+            "type": "chapter"
+          },
+          {
+            "id": "21ebce56-5c69-4e90-a200-5dd29016057f",
+            "type": "chapter"
+          },
+          {
+            "id": "8967a0eb-a0fe-4960-94ed-9726dd60c3d6",
+            "type": "chapter"
+          },
+          {
+            "id": "0d79b845-f233-4a6b-86b8-357f769e2e67",
+            "type": "chapter"
+          },
+          {
+            "id": "4fa924e6-94ef-4a91-90cd-b8d083a0c00a",
+            "type": "chapter"
+          },
+          {
+            "id": "33a5fd58-b509-44a1-807d-aa5e5fbc1382",
+            "type": "chapter"
+          },
+          {
+            "id": "4896e6d8-1e14-4502-875a-ed37bf7df775",
+            "type": "chapter"
+          },
+          {
+            "id": "1bec5d46-bd2f-4765-85d8-40165102e7fa",
+            "type": "chapter"
+          },
+          {
+            "id": "dcdf99b2-f7d8-488d-9026-6f99f3d4a3dc",
+            "type": "chapter"
+          },
+          {
+            "id": "a2012d50-b661-42ea-b955-98f9c7a52561",
+            "type": "chapter"
+          },
+          {
+            "id": "de78e82b-c870-4774-9fd3-c0427b5668a9",
+            "type": "chapter"
+          },
+          {
+            "id": "25bce0e2-ec60-4517-9bef-7d8126fd02ba",
+            "type": "chapter"
+          },
+          {
+            "id": "79d32acf-2e65-437b-9803-8691d0a17196",
+            "type": "chapter"
+          },
+          {
+            "id": "ab8c01e1-4cad-4cc6-a3f5-f95606f4ecbf",
+            "type": "chapter"
+          },
+          {
+            "id": "a9168d69-7abb-4bfe-88df-11e8efbd7e8c",
+            "type": "chapter"
+          },
+          {
+            "id": "2bc52b76-9f38-49c9-9863-9df89c0f742c",
+            "type": "chapter"
+          },
+          {
+            "id": "32f7e9a0-36a0-464e-9073-b6c253c37e21",
+            "type": "chapter"
+          },
+          {
+            "id": "db91991c-d2b7-44d6-b9a9-198a75dd3182",
+            "type": "chapter"
+          },
+          {
+            "id": "2464e249-d6f5-40ef-b528-49c2bb3b3118",
+            "type": "chapter"
+          },
+          {
+            "id": "25816d83-de41-476b-b124-9e89086a1e2a",
+            "type": "chapter"
+          },
+          {
+            "id": "9bb7e1f1-28ce-4d53-815a-9366df2428a7",
+            "type": "chapter"
+          },
+          {
+            "id": "86533ed7-9c93-4957-93fd-5fa2ffbef33d",
+            "type": "chapter"
+          },
+          {
+            "id": "d5ab64d8-fb8e-4f80-a77d-573e2e5ee399",
+            "type": "chapter"
+          },
+          {
+            "id": "ecec4232-6254-4cdf-954d-de2ee8c3637c",
+            "type": "chapter"
+          },
+          {
+            "id": "57387950-fe77-4a8c-a8dc-c5af8a26b64d",
+            "type": "chapter"
+          },
+          {
+            "id": "01684a61-7c9c-4edb-bc85-60d1e18693c0",
+            "type": "chapter"
+          },
+          {
+            "id": "e2a0ec8c-28f4-468e-bb3d-a9da715361f6",
+            "type": "chapter"
+          },
+          {
+            "id": "2c47cf46-13bd-49bf-ad18-1a1a9f3a8bd6",
+            "type": "chapter"
+          },
+          {
+            "id": "a855f295-93da-4f04-b826-0620040f1e4b",
+            "type": "chapter"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9"
+    }
+  },
+  {
+    "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+    "type": "book",
+    "attributes": {
+      "slug": "harry-potter-and-the-half-blood-prince",
+      "author": "J. K. Rowling",
+      "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-6.jpg",
+      "dedication": "To Mackenzie, My beautiful daughter, I dedicate Her ink-and-paper twin.",
+      "pages": 607,
+      "release_date": "2005-07-16",
+      "summary": "When Dumbledore arrives at Privet Drive one summer night to collect Harry Potter, his wand hand is blackened and shrivelled, but he does not reveal why. Secrets and suspicion are spreading through the wizarding world, and Hogwarts itself is not safe. Harry is convinced that Malfoy bears the Dark Mark: there is a Death Eater amongst them. Harry will need powerful magic and true friends as he explores Voldemort's darkest secrets, and Dumbledore prepares him to face his destiny.",
+      "title": "Harry Potter and the Half-Blood Prince",
+      "wiki": "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Half-Blood_Prince"
+    },
+    "relationships": {
+      "chapters": {
+        "data": [
+          {
+            "id": "fd932c85-cdcf-4429-93aa-78be3cc4083e",
+            "type": "chapter"
+          },
+          {
+            "id": "deeba66b-1ed3-4c53-a223-e4a7f787df49",
+            "type": "chapter"
+          },
+          {
+            "id": "ab8fae13-4732-420d-81fc-21d9d6021c52",
+            "type": "chapter"
+          },
+          {
+            "id": "c5e6be4b-ce6b-4dd7-8ed7-0683af9cef4d",
+            "type": "chapter"
+          },
+          {
+            "id": "b48eb093-8b35-466c-bf6c-87482b2663c9",
+            "type": "chapter"
+          },
+          {
+            "id": "a3e031b1-738d-4973-8f13-080e278a3113",
+            "type": "chapter"
+          },
+          {
+            "id": "03831667-34d6-4f2b-ac50-30c38ce0f57f",
+            "type": "chapter"
+          },
+          {
+            "id": "2c324cca-0b8b-4b4b-b25a-8b35a414251f",
+            "type": "chapter"
+          },
+          {
+            "id": "4aa147a2-0cd4-4257-b2d7-eb14f18bf738",
+            "type": "chapter"
+          },
+          {
+            "id": "0097e9af-dd94-4b10-854b-8d61f5ce580a",
+            "type": "chapter"
+          },
+          {
+            "id": "bc30847b-705f-47de-9db6-c52266801403",
+            "type": "chapter"
+          },
+          {
+            "id": "e006ca91-834d-4424-bca4-75035e245c92",
+            "type": "chapter"
+          },
+          {
+            "id": "b2f56401-cda8-42f2-8138-dcf24fc1d5a0",
+            "type": "chapter"
+          },
+          {
+            "id": "7c15ffa6-e617-44d3-8791-7c6e76f3db0c",
+            "type": "chapter"
+          },
+          {
+            "id": "8e1e4b0b-e9e8-430f-9504-deae1640fc89",
+            "type": "chapter"
+          },
+          {
+            "id": "82a631aa-7a9b-43ea-aab3-a9abfffbd807",
+            "type": "chapter"
+          },
+          {
+            "id": "c43699b4-489a-4816-a8a6-aa9dd9863f49",
+            "type": "chapter"
+          },
+          {
+            "id": "2a947daf-2078-4848-ba7d-61eb421e8905",
+            "type": "chapter"
+          },
+          {
+            "id": "c96ec8c9-c74b-4783-a903-abbd6f8ecda8",
+            "type": "chapter"
+          },
+          {
+            "id": "ba344898-682d-40b9-83dc-116ba2e1e36f",
+            "type": "chapter"
+          },
+          {
+            "id": "0623e4a7-fb86-4195-a6e8-842da9646f5d",
+            "type": "chapter"
+          },
+          {
+            "id": "364d6de0-c9eb-4bf5-a1af-e76d835e6c96",
+            "type": "chapter"
+          },
+          {
+            "id": "8076bd57-fc81-4da6-904c-5fcf40190a71",
+            "type": "chapter"
+          },
+          {
+            "id": "52df2824-3d8b-4c54-881c-d269febd5bb2",
+            "type": "chapter"
+          },
+          {
+            "id": "22ae559e-5753-4a12-9ecf-a63abaa8fe05",
+            "type": "chapter"
+          },
+          {
+            "id": "6a965596-de16-45b7-9b57-9ad477058c58",
+            "type": "chapter"
+          },
+          {
+            "id": "21aabe50-d5d5-47aa-8d25-8b5dec010330",
+            "type": "chapter"
+          },
+          {
+            "id": "f301518f-0061-4960-9d1a-848f9dda2a84",
+            "type": "chapter"
+          },
+          {
+            "id": "bef7e1b5-150b-4a0d-81a7-c071a3e51e39",
+            "type": "chapter"
+          },
+          {
+            "id": "4688fae5-6446-4fcf-8eca-5ed354edf739",
+            "type": "chapter"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d"
+    }
+  },
+  {
+    "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+    "type": "book",
+    "attributes": {
+      "slug": "harry-potter-and-the-deathly-hallows",
+      "author": "J. K. Rowling",
+      "cover": "https://www.wizardingworld.com/images/products/books/UK/rectangle-7.jpg",
+      "dedication": "To Neil, To Jessica, To David, To Kenzie, To Di, To Anne, And to You If you have stuck with Harry until the very end.",
+      "pages": 610,
+      "release_date": "2007-07-21",
+      "summary": "As he climbs into the sidecar of Hagrid's motorbike and takes to the skies, leaving Privet Drive for the last time, Harry Potter knows that Lord Voldemort and the Death Eaters are not far behind. The protective charm that has kept Harry safe until now is broken, but he cannot keep hiding. The Dark Lord is breathing fear into everything Harry loves, and to stop him Harry will have to find and destroy the remaining Horcruxes. The final battle must begin – Harry must stand and face his enemy.",
+      "title": "Harry Potter and the Deathly Hallows",
+      "wiki": "https://harrypotter.fandom.com/wiki/Harry_Potter_and_the_Deathly_Hallows"
+    },
+    "relationships": {
+      "chapters": {
+        "data": [
+          {
+            "id": "81b3a329-6bfb-4e03-9153-1b57b9a51bfb",
+            "type": "chapter"
+          },
+          {
+            "id": "a173d26f-0e98-42c9-87c7-1b6c7d8d607d",
+            "type": "chapter"
+          },
+          {
+            "id": "f33c59e7-4980-4437-a90e-3a806e1323af",
+            "type": "chapter"
+          },
+          {
+            "id": "43d25c55-a675-4623-99c8-076fe894bfc1",
+            "type": "chapter"
+          },
+          {
+            "id": "67782241-b50c-4f34-bed7-24bfff96df37",
+            "type": "chapter"
+          },
+          {
+            "id": "63e98678-0474-4a69-883f-e7c61cf2720b",
+            "type": "chapter"
+          },
+          {
+            "id": "e3fe3c96-9f84-4b20-a601-7616ffeae002",
+            "type": "chapter"
+          },
+          {
+            "id": "dc5a25a9-b699-4747-9ec6-a4978331452a",
+            "type": "chapter"
+          },
+          {
+            "id": "e6f4b3c8-5aa0-4280-bbec-e40fc722ef1f",
+            "type": "chapter"
+          },
+          {
+            "id": "f3986719-f257-4d9c-aecc-f9b488e7ac0e",
+            "type": "chapter"
+          },
+          {
+            "id": "ecddef43-f21c-4ab8-b321-f11fafd83133",
+            "type": "chapter"
+          },
+          {
+            "id": "842cca5b-dbab-44b2-b8c3-dd23ebb546dd",
+            "type": "chapter"
+          },
+          {
+            "id": "dd77ad6b-ee55-4e38-9db2-9d628667f6bb",
+            "type": "chapter"
+          },
+          {
+            "id": "5d6b7a75-fb04-46b6-b76f-9f6b18d8e961",
+            "type": "chapter"
+          },
+          {
+            "id": "ebbb8cb1-4960-4acb-a0f0-9e6615b14a95",
+            "type": "chapter"
+          },
+          {
+            "id": "98acf2c5-bef1-48e0-b942-0cf9c42a02ed",
+            "type": "chapter"
+          },
+          {
+            "id": "5c7f9616-8686-4d12-aa26-bd65720e0b1f",
+            "type": "chapter"
+          },
+          {
+            "id": "09225008-ff81-4116-a4d4-3c1c45ea22ec",
+            "type": "chapter"
+          },
+          {
+            "id": "bcdb1633-dfd5-4376-833a-6335d4f4bc22",
+            "type": "chapter"
+          },
+          {
+            "id": "2a45680b-7334-48fc-9e19-43531a62b7f5",
+            "type": "chapter"
+          },
+          {
+            "id": "94e31830-6612-44c5-b753-f75f970e1291",
+            "type": "chapter"
+          },
+          {
+            "id": "28bb6696-b391-4d20-8298-47bd2c9ccc78",
+            "type": "chapter"
+          },
+          {
+            "id": "cfe52267-f941-4998-9c52-8912a4d1f01d",
+            "type": "chapter"
+          },
+          {
+            "id": "f0630ccf-d7b9-43b7-b1c2-4b54d8c44a25",
+            "type": "chapter"
+          },
+          {
+            "id": "fbe59801-de9a-455d-ab45-4695a558b321",
+            "type": "chapter"
+          },
+          {
+            "id": "0216a6b8-9b6c-4116-9076-c779e135ae3f",
+            "type": "chapter"
+          },
+          {
+            "id": "1dbab344-9fc8-4074-b84e-390aa6e5ea30",
+            "type": "chapter"
+          },
+          {
+            "id": "bf5b499d-071e-41df-8560-0a08ce8b3214",
+            "type": "chapter"
+          },
+          {
+            "id": "67b0eefe-89a7-4870-8bbc-a57449194d8e",
+            "type": "chapter"
+          },
+          {
+            "id": "aa6c60e7-2c1a-42f7-97e0-209cd05c4355",
+            "type": "chapter"
+          },
+          {
+            "id": "6ccbaf18-b68e-4498-9412-73e54ae5c290",
+            "type": "chapter"
+          },
+          {
+            "id": "73fd9ec5-d0ad-4df0-8126-45616c38de71",
+            "type": "chapter"
+          },
+          {
+            "id": "89ab3cb7-32b4-4bd8-82da-d7fc93799473",
+            "type": "chapter"
+          },
+          {
+            "id": "bb4fc7e4-b939-4d6a-853f-ff40ed8be694",
+            "type": "chapter"
+          },
+          {
+            "id": "08bc005c-2b09-485c-9bca-f3524a40fd47",
+            "type": "chapter"
+          },
+          {
+            "id": "8b429751-f24e-4814-9849-52692783303d",
+            "type": "chapter"
+          },
+          {
+            "id": "1c967094-85d6-4671-8f2c-fa386160bfe4",
+            "type": "chapter"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8"
+    }
+  }
+]

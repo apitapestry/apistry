@@ -1,0 +1,14 @@
+.git
+.github
+.idea
+.run
+node_modules
+dist
+docs-site/node_modules
+coverage
+data
+*.log
+.env
+.DS_Store
+docs-site/.docusaurus
+docs-site/build

@@ -1,0 +1,4181 @@
+[
+  {
+    "id": "ad09d2a7-e76f-4aa0-b82c-424d59175133",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-boy-who-lived",
+      "order": 1,
+      "summary": "In the first chapter, we are introduced the Dursley family: Mr. and Mrs. Dursley and his son Dudley. They live on Privet Drive number four and are proud of being completely normal. One day, Mr. Dursley notices many strange things: people wearing odd-looking colorful robes and talking about 'You-Know-Who', a peculiar cat, as well as strangers who hug him and tell him to celebrate. That night, Professor Dumbledore, Professor McGonagall and Rubeus Hagrid meet in Privet Drive. They discuss the tragic deaths of James and Lily Potter and the survival of their son Harry. The chapter ends with them leaving the baby on the Dursleys' doorstep with a letter explaining the circumstances.",
+      "title": "The Boy Who Lived"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/ad09d2a7-e76f-4aa0-b82c-424d59175133"
+    }
+  },
+  {
+    "id": "3d29e1d7-77c4-4ad1-85a2-a3d0ace5566c",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-vanishing-glass",
+      "order": 2,
+      "summary": "Many years later, Harry Potter is already 10 years old and still living with the Dursley family. They give a roof over his head, but overall they treat him more like a help than a family member. On the day of Dudley's birthday, the Dursleys want to visit the zoo and due to an unfortunate coincidence, they have to bring along Harry. The boy gets drawn into a conversation with a boa constrictor. When Dudley starts teasing Harry, the glass in front of the boa disappears. The snake escapes its terrarium, thanking Harry for the help, and spreads panic across visitors, Dursleys included.",
+      "title": "The Vanishing Glass"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/3d29e1d7-77c4-4ad1-85a2-a3d0ace5566c"
+    }
+  },
+  {
+    "id": "98d8e713-9cf1-46f5-9747-abb17e756073",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-letter-from-no-one",
+      "order": 3,
+      "summary": "It's the summer holiday before Harry and Dudley go to different schools - Harry's local school and Dudley's expensive private school. One morning during breakfast, the mail arrives at Dursley's home. Unexpectedly, there is a first-ever, strange looking letter to Harry. However the Dursleys don't allow Harry to read his letter and the next day more letters get into the house by all means, no matter how hard Dursleys try to get rid of them. Uncle Vernon decides to run away from the problem and takes the whole family to a hotel, but the letters are still following them. Finally, they end up in an old cabin on an island which can only be accessed by a boat, hoping to no longer get any letters. In the night, while Harry is counting the seconds till his 11th birthday, suddenly someone is hammering on the cabin's door.",
+      "title": "The Letter from No One"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/98d8e713-9cf1-46f5-9747-abb17e756073"
+    }
+  },
+  {
+    "id": "a9fe85c9-2e15-4990-ba2b-4222bc7a7574",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-keeper-of-the-keys",
+      "order": 4,
+      "summary": "The person hammering on the door enters the cabin and introduces himself as Hagrid, the Keeper of the Keys in Hogwarts School of Witchcraft and Wizardry. He is a half-giant and a friend of Harry's parents, Lily and James. Hagrid informs Harry about his magical heritage, reveals his true identity as a wizard, and explains that he is to attend Hogwarts. Hagrid's arrival marks the beginning of Harry's journey into the wizarding world, his introduction to the magical community and his newfound destiny.",
+      "title": "The Keeper of the Keys"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/a9fe85c9-2e15-4990-ba2b-4222bc7a7574"
+    }
+  },
+  {
+    "id": "2ea979f9-08a5-47b4-9aae-6ec63bceed95",
+    "type": "chapter",
+    "attributes": {
+      "slug": "diagon-alley",
+      "order": 5,
+      "summary": "Hagrid takes Harry to the Leaky Cauldron, a wizarding inn, and then through a secret entrance in Leaky Cauldron's back wall to Diagon Alley. There Harry experiences a whole new world, visiting Gringotts to access his family vault, purchasing his school supplies and receiving his very own wand from Ollivanders. Additionally, Harry acquires Hedwig, a beautiful snowy owl, as a gift from Hagrid. It's a captivating introduction to the magical realm he's destined to be a part of.",
+      "title": "Diagon Alley"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/2ea979f9-08a5-47b4-9aae-6ec63bceed95"
+    }
+  },
+  {
+    "id": "c578aee4-7d41-4031-98bb-0a68db13adbc",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-journey-from-platform-nine-and-three-quarters",
+      "order": 6,
+      "summary": "Harry is at King's Cross Station with the Dursleys, preparing to catch the train to Hogwarts. However, as he and the Dursleys are unable to find Platform Nine and Three-Quarters, where the train should leave, he get abandon from the Dursleys. Fortunately, Harry overhears a woman talking about Muggles and asks her for help in finding the hidden platform. Mrs. Weasley tells him to run into the barrier between platform nine and ten, and he miraculously passes through it, finally finding the train to Hogwarts. This unexpected encounter with Mrs. Weasley and her family marks the beginning of Harry's magical journey. He spends the trip to Hogwarts with the youngest Weasley, Ron. Additionally, Harry meets Draco Malfoy, a fellow student on the Hogwarts Express, who leaves a distinct impression with his aloof and arrogant demeanor.",
+      "title": "The Journey from Platform Nine and Three-Quarters"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/c578aee4-7d41-4031-98bb-0a68db13adbc"
+    }
+  },
+  {
+    "id": "4957f6e0-3902-4635-a00c-3105432ae774",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-sorting-hat",
+      "order": 7,
+      "summary": "Harry arrives at Hogwarts School of Witchcraft and Wizardry and is sorted into his house during the Sorting Hat ceremony. The hat briefly considers placing him in Slytherin, but ultimately chooses Gryffindor after Harry expresses a strong desire not to be in Slytherin. Throughout the ceremony, Harry becomes friends with Ron Weasley, who is also sorted into Gryffindor. Together they have their first encounters with several of the Hogwarts teachers, including Professor Dumbledore, Professor Snape, Professor McGonagall, and the quirky Professor Quirrell",
+      "title": "The Sorting Hat"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/4957f6e0-3902-4635-a00c-3105432ae774"
+    }
+  },
+  {
+    "id": "36276ab3-6ee5-48c0-8709-1c3d761fca38",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-potions-master",
+      "order": 8,
+      "summary": "Harry attends his first Potions class at Hogwarts, taught by the enigmatic Professor Severus Snape. He quickly discovers that Snape has a strong dislike for him, leading to a tense and challenging class experience. Harry also attends to other classes, such as Transfiguration taught by Professor McGonagall and Charms with Professor Flitwick.",
+      "title": "The Potions Master"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/36276ab3-6ee5-48c0-8709-1c3d761fca38"
+    }
+  },
+  {
+    "id": "bf16809f-9344-400e-8490-7cb1e35a8a7b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-midnight-duel",
+      "order": 9,
+      "summary": "During his first flying lessons, hold by Madam Hooch, Harry's remarkable talent on a broomstick is noticed by Professor McGonagall, who recommends him for the Gryffindor Quidditch team. The tension between him and Draco Malfoy, who is clearly jealous of Harry's recognition, steadily escalates. Harry, Ron, and Hermione sneak out of their dormitories at night to challenge Malfoy to a duel. Harry and his friends do not encounter Malfoy, but instead, they stumble upon a massive three-headed dog guarding a mysterious trapdoor.",
+      "title": "The Midnight Duel"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/bf16809f-9344-400e-8490-7cb1e35a8a7b"
+    }
+  },
+  {
+    "id": "959a3537-bf68-4466-8e04-135d8c4f6ac2",
+    "type": "chapter",
+    "attributes": {
+      "slug": "hallowe-en",
+      "order": 10,
+      "summary": "Hermione Granger impresses her peers with her mastery of making a feather float with the Levitation Charm, 'Wingardium Leviosa'. However, her approach leads to a conflict with Ron, who finds her bossy. Later, during the Halloween feast, a troll is accidentally let into the castle. The troll makes its way into the girls' bathroom, where it threatens Hermione, who is alone and unaware of the danger. Harry and Ron, wondering where Hermione is, come to her rescue, successfully defeating the troll and solidifying their friendship.",
+      "title": "Hallowe'en"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/959a3537-bf68-4466-8e04-135d8c4f6ac2"
+    }
+  },
+  {
+    "id": "89538b96-a290-47e2-a74d-db04a5d79a5b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "quidditch",
+      "order": 11,
+      "summary": "Harry joins the Gryffindor Quidditch team as the youngest Seeker in a century. During his first Quidditch match against Slytherin, Harry experiences a series of ups and downs, including Professor Snape's alleged attempt to jinx his broomstick, making it go haywire. Harry's determination prevails and he manages to catch the Golden Snitch, securing the victory for Gryffindor. After the match, Harry, Ron, and Hermione pay a visit to Hagrid to discuss Snape's role in the broomstick incident. Hagrid accidentally reveals information that it is his three-headed dog and it actually protects a big secret.",
+      "title": "Quidditch"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/89538b96-a290-47e2-a74d-db04a5d79a5b"
+    }
+  },
+  {
+    "id": "7807740b-63c2-455a-9c47-3597f0764d94",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-mirror-of-erised",
+      "order": 12,
+      "summary": "Harry discovers a mysterious mirror in an abandoned classroom at Hogwarts. When he looks into the mirror, he sees himself with his deceased parents, James and Lily Potter, who he never had a chance to know. Harry quickly becomes obsessed with returning to the mirror, leading to many late-night visits to the mirror room. Professor Dumbledore eventually intervenes, explaining the mirror's powers of showing the deeperst desires of a person's heart, and the danger of becoming lost in its illusions. He mentions that he now will move the mirror to another place.",
+      "title": "The Mirror of Erised"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/7807740b-63c2-455a-9c47-3597f0764d94"
+    }
+  },
+  {
+    "id": "c032b970-d5d4-45a5-b841-525c3e27f909",
+    "type": "chapter",
+    "attributes": {
+      "slug": "nicolas-flamel",
+      "order": 13,
+      "summary": "Harry and his friends learn about Nicolas Flamel, a renowned alchemist who is believed to have created the Philosopher's Stone, an object with incredible powers. They discover that Flamel's work with the stone has contributed to his extraordinary longevity, and it's also rumored to produce the Elixir of Life, a potion that grants immortality. Harry accidentally overhears a mysterious conversation between Professor Snape and Professor Quirrell. Snape expresses his distrust of Quirrell's loyalty and his urgent need to know how to access the Philosopher's Stone, which is stored at Hogwarts.",
+      "title": "Nicolas Flamel"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/c032b970-d5d4-45a5-b841-525c3e27f909"
+    }
+  },
+  {
+    "id": "6894daa8-2f38-4ff3-bafa-e3157263eadc",
+    "type": "chapter",
+    "attributes": {
+      "slug": "norbert-the-norwegian-ridgeback",
+      "order": 14,
+      "summary": "During a visit at Hagrid's hut, he reveals that he won a dragon egg in a card game. He becomes obsessed with hatching it - even though it's illegal - and invites Harry, Ron and Hermione to witness it. Unfortunately, they are being followed by Malfoy. To protect both Hagrid and dragon, Harry has an idea to smuggle the dragon, named Norbert, out of the castle to Charlie Weasley, who works with dragons in Romania. As Ron gets bitten by Norbert, Harry and Hermione  have to set out on the expedition on their own. The late-night excursion to the tower where Norbert is kept leads to a dangerous encounter with Draco Malfoy. They successfully pass Norbert to Charlie's friends, but they get caught by Mr Filch.",
+      "title": "Norbert the Norwegian Ridgeback"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/6894daa8-2f38-4ff3-bafa-e3157263eadc"
+    }
+  },
+  {
+    "id": "17a02196-7cee-4b96-9958-df078c6d7f1b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-forbidden-forest",
+      "order": 15,
+      "summary": "Harry and Hermione serve detention in the Forbidden Forest as punishment for being out of their common room after hours. They are accompanied by Hagrid and encounter dangerous creatures, including a wounded unicorn and a mysterious centaur named Firenze. During their time in the forest, they witness a hooded figure drinking the blood of the unicorn. Firenze explains that drinking unicorn blood allows a person to prolong their life, but at a terrible cost - the drinker becomes cursed. Harry begins to suspect that Snape wants to obtain the Philosopher's Stone to help Voldemort regain his strength.",
+      "title": "The Forbidden Forest"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/17a02196-7cee-4b96-9958-df078c6d7f1b"
+    }
+  },
+  {
+    "id": "9dad077a-56d2-4edf-98e5-aa30f5fa1d35",
+    "type": "chapter",
+    "attributes": {
+      "slug": "through-the-trapdoor",
+      "order": 16,
+      "summary": "Harry, Ron, and Hermione, armed with the knowledge of Fluffy guarding the trapdoor, embark on a perilous journey to reach the Philosopher's Stone before it falls into the wrong hands. These include Devil's Snare, a plant that tries to strangle them, a life-sized wizard's chess match, a game of flying keys, and potions that must be consumed in the correct order to proceed. In the last puzzle it turns out that only Harry can proceed further, and Hermione decides to turn back to Ron, who got knocked out earlier in game of chess. Harry encounters an unexpected figure waiting for him.",
+      "title": "Through the Trapdoor"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/9dad077a-56d2-4edf-98e5-aa30f5fa1d35"
+    }
+  },
+  {
+    "id": "b8dc3e82-d0fc-4327-bec4-37c025bca580",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-man-with-two-faces",
+      "order": 17,
+      "summary": "Harry confronts Professor Quirrell, who is attempting to steal the Stone. Harry faces Voldemort, who is attached to the back of Quirrell's head. Voldemort demands that Harry give him the Philosopher's Stone, but Harry's courage and selflessness protect the Stone from falling into Voldemort's grasp. The Philosopher's Stone is destroyed to prevent it from falling into the wrong hands. Dumbledore explains to Harry that his mother's love and the protection it provided played a crucial role in safeguarding the Stone.",
+      "title": "The Man with Two Faces"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "3e161309-4c3c-4094-9db9-a8dfe911de14",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/3e161309-4c3c-4094-9db9-a8dfe911de14/chapters/b8dc3e82-d0fc-4327-bec4-37c025bca580"
+    }
+  },
+  {
+    "id": "79bdfb43-cce7-41df-bf89-d3e0c8d16f71",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-worst-birthday",
+      "order": 1,
+      "summary": "",
+      "title": "The Worst Birthday"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/79bdfb43-cce7-41df-bf89-d3e0c8d16f71"
+    }
+  },
+  {
+    "id": "060d715b-32da-4a87-a6fd-9cfe2ea0a841",
+    "type": "chapter",
+    "attributes": {
+      "slug": "dobby-s-warning",
+      "order": 2,
+      "summary": "",
+      "title": "Dobby's Warning"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/060d715b-32da-4a87-a6fd-9cfe2ea0a841"
+    }
+  },
+  {
+    "id": "ea96dfc3-b241-487c-9654-87cc240f099a",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-burrow",
+      "order": 3,
+      "summary": "",
+      "title": "The Burrow"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/ea96dfc3-b241-487c-9654-87cc240f099a"
+    }
+  },
+  {
+    "id": "6f741f6f-2ab2-4ba5-9de4-d3d4b774c340",
+    "type": "chapter",
+    "attributes": {
+      "slug": "at-flourish-and-blotts",
+      "order": 4,
+      "summary": "",
+      "title": "At Flourish and Blotts"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/6f741f6f-2ab2-4ba5-9de4-d3d4b774c340"
+    }
+  },
+  {
+    "id": "4df302d5-e7b6-4b74-8dc9-31ed6b7f9873",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-whomping-willow",
+      "order": 5,
+      "summary": "",
+      "title": "The Whomping Willow"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/4df302d5-e7b6-4b74-8dc9-31ed6b7f9873"
+    }
+  },
+  {
+    "id": "ebafa783-8cc6-4c2c-8ddc-23c4bf158999",
+    "type": "chapter",
+    "attributes": {
+      "slug": "gilderoy-lockhart",
+      "order": 6,
+      "summary": "",
+      "title": "Gilderoy Lockhart"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/ebafa783-8cc6-4c2c-8ddc-23c4bf158999"
+    }
+  },
+  {
+    "id": "3baaae6d-24e9-4c33-8105-e8dcb283eb77",
+    "type": "chapter",
+    "attributes": {
+      "slug": "mudbloods-and-murmurs",
+      "order": 7,
+      "summary": "",
+      "title": "Mudbloods And Murmurs"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/3baaae6d-24e9-4c33-8105-e8dcb283eb77"
+    }
+  },
+  {
+    "id": "9ced52ff-5cac-4eeb-9d0c-a59a4905a437",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-deathday-party",
+      "order": 8,
+      "summary": "",
+      "title": "The Deathday Party"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/9ced52ff-5cac-4eeb-9d0c-a59a4905a437"
+    }
+  },
+  {
+    "id": "94bbe9ec-5f28-4e56-8796-bd7745a5a9b7",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-writing-on-the-wall",
+      "order": 9,
+      "summary": "",
+      "title": "The Writing on the Wall"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/94bbe9ec-5f28-4e56-8796-bd7745a5a9b7"
+    }
+  },
+  {
+    "id": "8baf63a8-a866-4725-a023-eff77299e258",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-rogue-bludger",
+      "order": 10,
+      "summary": null,
+      "title": "The Rogue Bludger"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/8baf63a8-a866-4725-a023-eff77299e258"
+    }
+  },
+  {
+    "id": "cce75136-67a8-4b5a-9c69-f73379a551ba",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-duelling-club",
+      "order": 11,
+      "summary": null,
+      "title": "The Duelling Club"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/cce75136-67a8-4b5a-9c69-f73379a551ba"
+    }
+  },
+  {
+    "id": "215b08b5-31ae-4ff8-b8d0-3f13ceff5326",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-polyjuice-potion",
+      "order": 12,
+      "summary": null,
+      "title": "The Polyjuice Potion"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/215b08b5-31ae-4ff8-b8d0-3f13ceff5326"
+    }
+  },
+  {
+    "id": "07ab054b-5cec-4169-8701-09472b0e1c00",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-very-secret-diary",
+      "order": 13,
+      "summary": null,
+      "title": "The Very Secret Diary"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/07ab054b-5cec-4169-8701-09472b0e1c00"
+    }
+  },
+  {
+    "id": "1a68741f-30ec-494c-b0f7-d8c11ec27a8f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "cornelius-fudge",
+      "order": 14,
+      "summary": null,
+      "title": "Cornelius Fudge"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/1a68741f-30ec-494c-b0f7-d8c11ec27a8f"
+    }
+  },
+  {
+    "id": "56268015-88fc-4ebe-b2a1-4a95f8e603be",
+    "type": "chapter",
+    "attributes": {
+      "slug": "aragog",
+      "order": 15,
+      "summary": null,
+      "title": "Aragog"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/56268015-88fc-4ebe-b2a1-4a95f8e603be"
+    }
+  },
+  {
+    "id": "741764a0-4e80-4802-b993-d58dacb9a51d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-chamber-of-secrets",
+      "order": 16,
+      "summary": null,
+      "title": "The Chamber of Secrets"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/741764a0-4e80-4802-b993-d58dacb9a51d"
+    }
+  },
+  {
+    "id": "461a7795-8bd6-4479-910a-3e091429dae8",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-heir-of-slytherin",
+      "order": 17,
+      "summary": null,
+      "title": "The Heir of Slytherin"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/461a7795-8bd6-4479-910a-3e091429dae8"
+    }
+  },
+  {
+    "id": "6b36ebde-3f63-45c8-8715-fe472f87a15b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "dobby-s-reward",
+      "order": 18,
+      "summary": null,
+      "title": "Dobby's Reward"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/b0f44ea7-0c81-45b2-aa3b-e01c27afeb5f/chapters/6b36ebde-3f63-45c8-8715-fe472f87a15b"
+    }
+  },
+  {
+    "id": "542fdf94-d96c-41e7-b0ff-c7bfce446a50",
+    "type": "chapter",
+    "attributes": {
+      "slug": "owl-post",
+      "order": 1,
+      "summary": "",
+      "title": "Owl Post"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/542fdf94-d96c-41e7-b0ff-c7bfce446a50"
+    }
+  },
+  {
+    "id": "e441988f-0d9d-48cc-b968-fc6c3748813f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "aunt-marge-s-big-mistake",
+      "order": 2,
+      "summary": "",
+      "title": "Aunt Marge's Big Mistake"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/e441988f-0d9d-48cc-b968-fc6c3748813f"
+    }
+  },
+  {
+    "id": "e20ea0fc-35c8-433a-818e-39d81a298a01",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-knight-bus",
+      "order": 3,
+      "summary": "",
+      "title": "The Knight Bus"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/e20ea0fc-35c8-433a-818e-39d81a298a01"
+    }
+  },
+  {
+    "id": "9dd0fc5f-7eeb-4e99-9b09-101e33124555",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-leaky-cauldron",
+      "order": 4,
+      "summary": "",
+      "title": "The Leaky Cauldron"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/9dd0fc5f-7eeb-4e99-9b09-101e33124555"
+    }
+  },
+  {
+    "id": "f756a187-44e8-4caa-9076-57207ed80291",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-dementor",
+      "order": 5,
+      "summary": "",
+      "title": "The Dementor"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/f756a187-44e8-4caa-9076-57207ed80291"
+    }
+  },
+  {
+    "id": "83b2acc3-e1aa-4878-be03-f024322c0637",
+    "type": "chapter",
+    "attributes": {
+      "slug": "talons-and-tea-leaves",
+      "order": 6,
+      "summary": "",
+      "title": "Talons and Tea Leaves"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/83b2acc3-e1aa-4878-be03-f024322c0637"
+    }
+  },
+  {
+    "id": "8a27ade1-81b7-45a5-80e3-11844f5336bd",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-boggart-in-the-wardrobe",
+      "order": 7,
+      "summary": "",
+      "title": "The Boggart in the Wardrobe"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/8a27ade1-81b7-45a5-80e3-11844f5336bd"
+    }
+  },
+  {
+    "id": "5abdc168-2f46-41a2-8e74-fddc0067d408",
+    "type": "chapter",
+    "attributes": {
+      "slug": "flight-of-the-fat-lady",
+      "order": 8,
+      "summary": "",
+      "title": "Flight of the Fat Lady"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/5abdc168-2f46-41a2-8e74-fddc0067d408"
+    }
+  },
+  {
+    "id": "8b8d517d-a89c-4e7c-bc9a-8c31423ae718",
+    "type": "chapter",
+    "attributes": {
+      "slug": "grim-defeat",
+      "order": 9,
+      "summary": "",
+      "title": "Grim Defeat"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/8b8d517d-a89c-4e7c-bc9a-8c31423ae718"
+    }
+  },
+  {
+    "id": "dcf4f6d0-8a6d-4cb3-92a2-a2146e5c2fc8",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-marauder-s-map",
+      "order": 10,
+      "summary": null,
+      "title": "The Marauder's Map"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/dcf4f6d0-8a6d-4cb3-92a2-a2146e5c2fc8"
+    }
+  },
+  {
+    "id": "50902854-84bd-4df8-b226-6f285f281907",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-firebolt",
+      "order": 11,
+      "summary": null,
+      "title": "The Firebolt"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/50902854-84bd-4df8-b226-6f285f281907"
+    }
+  },
+  {
+    "id": "8ef249a3-8dd1-4354-b0cb-e19a71419a6f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-patronus",
+      "order": 12,
+      "summary": null,
+      "title": "The Patronus"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/8ef249a3-8dd1-4354-b0cb-e19a71419a6f"
+    }
+  },
+  {
+    "id": "a45ebf95-07ae-4147-95d9-5fffc78f250b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "gryffindor-versus-ravenclaw",
+      "order": 13,
+      "summary": null,
+      "title": "Gryffindor versus Ravenclaw"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/a45ebf95-07ae-4147-95d9-5fffc78f250b"
+    }
+  },
+  {
+    "id": "edf54897-5d12-4c4d-af3e-cd5f53f56802",
+    "type": "chapter",
+    "attributes": {
+      "slug": "snape-s-grudge",
+      "order": 14,
+      "summary": null,
+      "title": "Snape's Grudge"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/edf54897-5d12-4c4d-af3e-cd5f53f56802"
+    }
+  },
+  {
+    "id": "165f7b63-09f0-4e93-85a1-81f2a4d7769e",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-quidditch-final",
+      "order": 15,
+      "summary": null,
+      "title": "The Quidditch Final"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/165f7b63-09f0-4e93-85a1-81f2a4d7769e"
+    }
+  },
+  {
+    "id": "bf4f1e0e-7eac-467e-9dba-1b8891d17aca",
+    "type": "chapter",
+    "attributes": {
+      "slug": "professor-trelawney-s-prediction",
+      "order": 16,
+      "summary": null,
+      "title": "Professor Trelawney's Prediction"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/bf4f1e0e-7eac-467e-9dba-1b8891d17aca"
+    }
+  },
+  {
+    "id": "871c5c26-f410-4461-ba4c-a54efee48c1f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "cat-rat-and-dog",
+      "order": 17,
+      "summary": null,
+      "title": "Cat, Rat and Dog"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/871c5c26-f410-4461-ba4c-a54efee48c1f"
+    }
+  },
+  {
+    "id": "081cc319-28ae-41c8-9875-f4f21be1f6e5",
+    "type": "chapter",
+    "attributes": {
+      "slug": "moony-wormtail-padfoot-and-prongs",
+      "order": 18,
+      "summary": null,
+      "title": "Moony, Wormtail, Padfoot and Prongs"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/081cc319-28ae-41c8-9875-f4f21be1f6e5"
+    }
+  },
+  {
+    "id": "c94381bd-b5dd-4ce4-98f1-bd5b3fdeb38e",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-servant-of-lord-voldemort",
+      "order": 19,
+      "summary": null,
+      "title": "The Servant of Lord Voldemort"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/c94381bd-b5dd-4ce4-98f1-bd5b3fdeb38e"
+    }
+  },
+  {
+    "id": "4e9773d4-c47c-4983-8826-a9d88da0654e",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-dementor-s-kiss",
+      "order": 20,
+      "summary": null,
+      "title": "The Dementor's Kiss"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/4e9773d4-c47c-4983-8826-a9d88da0654e"
+    }
+  },
+  {
+    "id": "79555e55-1498-4a54-9aa3-1dee804732ad",
+    "type": "chapter",
+    "attributes": {
+      "slug": "hermione-s-secret",
+      "order": 21,
+      "summary": null,
+      "title": "Hermione's Secret"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/79555e55-1498-4a54-9aa3-1dee804732ad"
+    }
+  },
+  {
+    "id": "f9657309-905a-49c7-afa3-142eb94a9eff",
+    "type": "chapter",
+    "attributes": {
+      "slug": "owl-post-again",
+      "order": 22,
+      "summary": null,
+      "title": "Owl Post Again"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "ceabeb92-9eb2-455b-898e-a22973a6a1e0",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/ceabeb92-9eb2-455b-898e-a22973a6a1e0/chapters/f9657309-905a-49c7-afa3-142eb94a9eff"
+    }
+  },
+  {
+    "id": "d188527c-ecdf-44c5-9406-8ba9c2915881",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-riddle-house",
+      "order": 1,
+      "summary": "",
+      "title": "The Riddle House"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/d188527c-ecdf-44c5-9406-8ba9c2915881"
+    }
+  },
+  {
+    "id": "3370b8ee-be27-4fa6-b24e-bf9fbfe93502",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-scar",
+      "order": 2,
+      "summary": "",
+      "title": "The Scar"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/3370b8ee-be27-4fa6-b24e-bf9fbfe93502"
+    }
+  },
+  {
+    "id": "c0f1fb25-99e9-4e97-9ec1-143196a145e1",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-invitation",
+      "order": 3,
+      "summary": "",
+      "title": "The Invitation"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/c0f1fb25-99e9-4e97-9ec1-143196a145e1"
+    }
+  },
+  {
+    "id": "c6d80238-0744-41be-b7be-1d3a282103d0",
+    "type": "chapter",
+    "attributes": {
+      "slug": "back-to-the-burrow",
+      "order": 4,
+      "summary": "",
+      "title": "Back to The Burrow"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/c6d80238-0744-41be-b7be-1d3a282103d0"
+    }
+  },
+  {
+    "id": "d2310724-af55-4202-8bc3-bfe8af727471",
+    "type": "chapter",
+    "attributes": {
+      "slug": "weasley-s-wizard-wheezes",
+      "order": 5,
+      "summary": "",
+      "title": "Weasley's Wizard Wheezes"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/d2310724-af55-4202-8bc3-bfe8af727471"
+    }
+  },
+  {
+    "id": "def89767-ab29-4054-a49d-a28c460ad686",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-portkey",
+      "order": 6,
+      "summary": "",
+      "title": "The Portkey"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/def89767-ab29-4054-a49d-a28c460ad686"
+    }
+  },
+  {
+    "id": "387e3f7d-b4da-4950-a6c5-c274554371db",
+    "type": "chapter",
+    "attributes": {
+      "slug": "bagman-and-crouch",
+      "order": 7,
+      "summary": "",
+      "title": "Bagman and Crouch"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/387e3f7d-b4da-4950-a6c5-c274554371db"
+    }
+  },
+  {
+    "id": "f20f2050-2ca3-4deb-8a42-fa27425ed237",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-quidditch-world-cup",
+      "order": 8,
+      "summary": "",
+      "title": "The Quidditch World Cup"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/f20f2050-2ca3-4deb-8a42-fa27425ed237"
+    }
+  },
+  {
+    "id": "ea6b31e0-bad7-4105-bf02-fb1b9f5aa014",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-dark-mark",
+      "order": 9,
+      "summary": "",
+      "title": "The Dark Mark"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/ea6b31e0-bad7-4105-bf02-fb1b9f5aa014"
+    }
+  },
+  {
+    "id": "418b0295-b1bb-426f-9405-72cddc08cc41",
+    "type": "chapter",
+    "attributes": {
+      "slug": "mayhem-at-the-ministry",
+      "order": 10,
+      "summary": "",
+      "title": "Mayhem at the Ministry"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/418b0295-b1bb-426f-9405-72cddc08cc41"
+    }
+  },
+  {
+    "id": "6572bb90-7d22-49f2-85fe-1dd948db36fa",
+    "type": "chapter",
+    "attributes": {
+      "slug": "aboard-the-hogwarts-express",
+      "order": 11,
+      "summary": "",
+      "title": "Aboard the Hogwarts Express"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/6572bb90-7d22-49f2-85fe-1dd948db36fa"
+    }
+  },
+  {
+    "id": "3c5f57e4-3a1f-4780-9770-02f59673a8ad",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-triwizard-tournament",
+      "order": 12,
+      "summary": "",
+      "title": "The Triwizard Tournament"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/3c5f57e4-3a1f-4780-9770-02f59673a8ad"
+    }
+  },
+  {
+    "id": "eb205401-4429-41cd-b00c-1c0befe4a006",
+    "type": "chapter",
+    "attributes": {
+      "slug": "mad-eye-moody",
+      "order": 13,
+      "summary": "",
+      "title": "Mad-Eye Moody"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/eb205401-4429-41cd-b00c-1c0befe4a006"
+    }
+  },
+  {
+    "id": "9871a443-8879-4f68-b9eb-464b3ef2e37c",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-unforgivable-curses",
+      "order": 14,
+      "summary": "",
+      "title": "The Unforgivable Curses"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/9871a443-8879-4f68-b9eb-464b3ef2e37c"
+    }
+  },
+  {
+    "id": "cbded50d-9bb3-4041-8ad4-fc815ea79ea6",
+    "type": "chapter",
+    "attributes": {
+      "slug": "beauxbatons-and-durmstrang",
+      "order": 15,
+      "summary": "",
+      "title": "Beauxbatons and Durmstrang"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/cbded50d-9bb3-4041-8ad4-fc815ea79ea6"
+    }
+  },
+  {
+    "id": "8ca43272-27be-4473-baa2-624c2dec8d43",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-goblet-of-fire",
+      "order": 16,
+      "summary": "",
+      "title": "The Goblet of Fire"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/8ca43272-27be-4473-baa2-624c2dec8d43"
+    }
+  },
+  {
+    "id": "78b17c40-f5a3-42ec-9090-c4d67e5122f5",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-four-champions",
+      "order": 17,
+      "summary": "",
+      "title": "The Four Champions"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/78b17c40-f5a3-42ec-9090-c4d67e5122f5"
+    }
+  },
+  {
+    "id": "855c9fc9-c692-41dd-86b4-6e0311477183",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-weighing-of-the-wands",
+      "order": 18,
+      "summary": "",
+      "title": "The Weighing of the Wands"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/855c9fc9-c692-41dd-86b4-6e0311477183"
+    }
+  },
+  {
+    "id": "1611c847-b2a0-47bf-a2e5-4eca3761642f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-hungarian-horntail",
+      "order": 19,
+      "summary": "",
+      "title": "The Hungarian Horntail"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/1611c847-b2a0-47bf-a2e5-4eca3761642f"
+    }
+  },
+  {
+    "id": "2eb2a40a-2bab-44d9-be46-5947a55e881b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-first-task",
+      "order": 20,
+      "summary": "",
+      "title": "The First Task"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/2eb2a40a-2bab-44d9-be46-5947a55e881b"
+    }
+  },
+  {
+    "id": "50ce41bd-c738-4e4d-be2e-37abcafc74db",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-house-elf-liberation-front",
+      "order": 21,
+      "summary": "",
+      "title": "The House-Elf Liberation Front"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/50ce41bd-c738-4e4d-be2e-37abcafc74db"
+    }
+  },
+  {
+    "id": "62d78747-9cc1-4865-abbf-b1b74955953d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-unexpected-task",
+      "order": 22,
+      "summary": "",
+      "title": "The Unexpected Task"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/62d78747-9cc1-4865-abbf-b1b74955953d"
+    }
+  },
+  {
+    "id": "e04b6081-6cee-474d-a847-1c648cde9ec7",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-yule-ball",
+      "order": 23,
+      "summary": "",
+      "title": "The Yule Ball"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/e04b6081-6cee-474d-a847-1c648cde9ec7"
+    }
+  },
+  {
+    "id": "7c5e2487-ea53-4f42-91e9-1d6ea704fc1a",
+    "type": "chapter",
+    "attributes": {
+      "slug": "rita-skeeter-s-scoop",
+      "order": 24,
+      "summary": "",
+      "title": "Rita Skeeter's Scoop"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/7c5e2487-ea53-4f42-91e9-1d6ea704fc1a"
+    }
+  },
+  {
+    "id": "56829c2c-99ff-40ad-8918-843540315b57",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-egg-and-the-eye",
+      "order": 25,
+      "summary": "",
+      "title": "The Egg and the Eye"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/56829c2c-99ff-40ad-8918-843540315b57"
+    }
+  },
+  {
+    "id": "10f8d709-a3fd-4f62-b5c6-37329ee2f880",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-second-task",
+      "order": 26,
+      "summary": "",
+      "title": "The Second Task"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/10f8d709-a3fd-4f62-b5c6-37329ee2f880"
+    }
+  },
+  {
+    "id": "53809dad-6fe4-461f-95f8-cb81e26e1e7d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "padfoot-returns",
+      "order": 27,
+      "summary": "",
+      "title": "Padfoot Returns"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/53809dad-6fe4-461f-95f8-cb81e26e1e7d"
+    }
+  },
+  {
+    "id": "c2ec359a-dc55-417c-af44-3d89da9ec5cb",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-madness-of-mr-crouch",
+      "order": 28,
+      "summary": "",
+      "title": "The Madness of Mr Crouch"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/c2ec359a-dc55-417c-af44-3d89da9ec5cb"
+    }
+  },
+  {
+    "id": "d88a9edb-4132-4d09-add7-ee23441087ce",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-dream",
+      "order": 29,
+      "summary": "",
+      "title": "The Dream"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/d88a9edb-4132-4d09-add7-ee23441087ce"
+    }
+  },
+  {
+    "id": "5b85dd93-f9f5-4700-a932-c5990bc2ca05",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-pensieve",
+      "order": 30,
+      "summary": "",
+      "title": "The Pensieve"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/5b85dd93-f9f5-4700-a932-c5990bc2ca05"
+    }
+  },
+  {
+    "id": "bbc84686-aa69-411f-a449-bcfc6bd01bb9",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-third-task",
+      "order": 31,
+      "summary": "",
+      "title": "The Third Task"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/bbc84686-aa69-411f-a449-bcfc6bd01bb9"
+    }
+  },
+  {
+    "id": "1b9549fd-1b81-4dc5-b588-17d95732e396",
+    "type": "chapter",
+    "attributes": {
+      "slug": "flesh-blood-and-bone",
+      "order": 32,
+      "summary": "",
+      "title": "Flesh, Blood and Bone"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/1b9549fd-1b81-4dc5-b588-17d95732e396"
+    }
+  },
+  {
+    "id": "1e716d89-081a-4a08-aef9-8937ecea2a01",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-death-eaters",
+      "order": 33,
+      "summary": "",
+      "title": "The Death Eaters"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/1e716d89-081a-4a08-aef9-8937ecea2a01"
+    }
+  },
+  {
+    "id": "60976b75-d9b3-455a-9461-350421f3c8ae",
+    "type": "chapter",
+    "attributes": {
+      "slug": "priori-incantatem",
+      "order": 34,
+      "summary": "",
+      "title": "Priori Incantatem"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/60976b75-d9b3-455a-9461-350421f3c8ae"
+    }
+  },
+  {
+    "id": "ea669911-ad23-4f97-b567-9a0194944743",
+    "type": "chapter",
+    "attributes": {
+      "slug": "veritaserum",
+      "order": 35,
+      "summary": "",
+      "title": "Veritaserum"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/ea669911-ad23-4f97-b567-9a0194944743"
+    }
+  },
+  {
+    "id": "59864f20-e892-42b7-9839-74e7ac4a03e4",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-parting-of-the-ways",
+      "order": 36,
+      "summary": "",
+      "title": "The Parting of the Ways"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/59864f20-e892-42b7-9839-74e7ac4a03e4"
+    }
+  },
+  {
+    "id": "703ef992-1e4a-4807-998c-a6a035bfcc19",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-beginning",
+      "order": 37,
+      "summary": "",
+      "title": "The Beginning"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "bc1effd3-163d-41c0-93f4-8d9737da9342",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/bc1effd3-163d-41c0-93f4-8d9737da9342/chapters/703ef992-1e4a-4807-998c-a6a035bfcc19"
+    }
+  },
+  {
+    "id": "52f94bcd-8aaf-446a-8695-d124d64a5d49",
+    "type": "chapter",
+    "attributes": {
+      "slug": "dudley-demented",
+      "order": 1,
+      "summary": "",
+      "title": "Dudley Demented"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/52f94bcd-8aaf-446a-8695-d124d64a5d49"
+    }
+  },
+  {
+    "id": "4c75a35d-0142-43a1-aa86-b33846e58d3c",
+    "type": "chapter",
+    "attributes": {
+      "slug": "a-peck-of-owls",
+      "order": 2,
+      "summary": "",
+      "title": "A Peck of Owls"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/4c75a35d-0142-43a1-aa86-b33846e58d3c"
+    }
+  },
+  {
+    "id": "9fbcf825-c532-478b-9996-f9c13c6587f2",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-advance-guard",
+      "order": 3,
+      "summary": "",
+      "title": "The Advance Guard"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/9fbcf825-c532-478b-9996-f9c13c6587f2"
+    }
+  },
+  {
+    "id": "fb7dbc24-cf78-4eb0-8e2b-afddfcd818a1",
+    "type": "chapter",
+    "attributes": {
+      "slug": "number-twelve-grimmauld-place",
+      "order": 4,
+      "summary": "",
+      "title": "Number Twelve Grimmauld Place"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/fb7dbc24-cf78-4eb0-8e2b-afddfcd818a1"
+    }
+  },
+  {
+    "id": "cf2903f2-b4a1-448c-931f-8453905cce43",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-order-of-the-phoenix",
+      "order": 5,
+      "summary": "",
+      "title": "The Order of the Phoenix"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/cf2903f2-b4a1-448c-931f-8453905cce43"
+    }
+  },
+  {
+    "id": "05671770-87a3-439a-af07-0eb92f3e4d74",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-noble-and-most-ancient-house-of-black",
+      "order": 6,
+      "summary": "",
+      "title": "The Noble and Most Ancient House of Black"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/05671770-87a3-439a-af07-0eb92f3e4d74"
+    }
+  },
+  {
+    "id": "1dc6ef9e-ca14-4482-9319-0c1ce64fb979",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-ministry-of-magic",
+      "order": 7,
+      "summary": "",
+      "title": "The Ministry of Magic"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/1dc6ef9e-ca14-4482-9319-0c1ce64fb979"
+    }
+  },
+  {
+    "id": "817aa12f-4162-4b7a-a823-caf52349bdb1",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-hearing",
+      "order": 8,
+      "summary": "",
+      "title": "The Hearing"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/817aa12f-4162-4b7a-a823-caf52349bdb1"
+    }
+  },
+  {
+    "id": "fbd8cf76-4b44-490b-b153-fdbeb80bbe59",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-woes-of-mrs-weasley",
+      "order": 9,
+      "summary": "",
+      "title": "The Woes of Mrs Weasley"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/fbd8cf76-4b44-490b-b153-fdbeb80bbe59"
+    }
+  },
+  {
+    "id": "b98c3603-fd1b-43c5-be31-71262d40c885",
+    "type": "chapter",
+    "attributes": {
+      "slug": "luna-lovegood",
+      "order": 10,
+      "summary": "",
+      "title": "Luna Lovegood"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/b98c3603-fd1b-43c5-be31-71262d40c885"
+    }
+  },
+  {
+    "id": "21ebce56-5c69-4e90-a200-5dd29016057f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-sorting-hat-s-new-song",
+      "order": 11,
+      "summary": "",
+      "title": "The Sorting Hat's New Song"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/21ebce56-5c69-4e90-a200-5dd29016057f"
+    }
+  },
+  {
+    "id": "8967a0eb-a0fe-4960-94ed-9726dd60c3d6",
+    "type": "chapter",
+    "attributes": {
+      "slug": "professor-umbridge",
+      "order": 12,
+      "summary": "",
+      "title": "Professor Umbridge"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/8967a0eb-a0fe-4960-94ed-9726dd60c3d6"
+    }
+  },
+  {
+    "id": "0d79b845-f233-4a6b-86b8-357f769e2e67",
+    "type": "chapter",
+    "attributes": {
+      "slug": "detention-with-dolores",
+      "order": 13,
+      "summary": "",
+      "title": "Detention with Dolores"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/0d79b845-f233-4a6b-86b8-357f769e2e67"
+    }
+  },
+  {
+    "id": "4fa924e6-94ef-4a91-90cd-b8d083a0c00a",
+    "type": "chapter",
+    "attributes": {
+      "slug": "percy-and-padfoot",
+      "order": 14,
+      "summary": "",
+      "title": "Percy and Padfoot"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/4fa924e6-94ef-4a91-90cd-b8d083a0c00a"
+    }
+  },
+  {
+    "id": "33a5fd58-b509-44a1-807d-aa5e5fbc1382",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-hogwarts-high-inquisitor",
+      "order": 15,
+      "summary": "",
+      "title": "The Hogwarts High Inquisitor"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/33a5fd58-b509-44a1-807d-aa5e5fbc1382"
+    }
+  },
+  {
+    "id": "4896e6d8-1e14-4502-875a-ed37bf7df775",
+    "type": "chapter",
+    "attributes": {
+      "slug": "in-the-hog-s-head",
+      "order": 16,
+      "summary": "",
+      "title": "In The Hog's Head"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/4896e6d8-1e14-4502-875a-ed37bf7df775"
+    }
+  },
+  {
+    "id": "1bec5d46-bd2f-4765-85d8-40165102e7fa",
+    "type": "chapter",
+    "attributes": {
+      "slug": "educational-decree-number-twenty-four",
+      "order": 17,
+      "summary": "",
+      "title": "Educational Decree Number Twenty-Four"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/1bec5d46-bd2f-4765-85d8-40165102e7fa"
+    }
+  },
+  {
+    "id": "dcdf99b2-f7d8-488d-9026-6f99f3d4a3dc",
+    "type": "chapter",
+    "attributes": {
+      "slug": "dumbledore-s-army",
+      "order": 18,
+      "summary": "",
+      "title": "Dumbledore's Army"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/dcdf99b2-f7d8-488d-9026-6f99f3d4a3dc"
+    }
+  },
+  {
+    "id": "a2012d50-b661-42ea-b955-98f9c7a52561",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-lion-and-the-serpent",
+      "order": 19,
+      "summary": "",
+      "title": "The Lion and the Serpent"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/a2012d50-b661-42ea-b955-98f9c7a52561"
+    }
+  },
+  {
+    "id": "de78e82b-c870-4774-9fd3-c0427b5668a9",
+    "type": "chapter",
+    "attributes": {
+      "slug": "hagrid-s-tale",
+      "order": 20,
+      "summary": "",
+      "title": "Hagrid's Tale"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/de78e82b-c870-4774-9fd3-c0427b5668a9"
+    }
+  },
+  {
+    "id": "25bce0e2-ec60-4517-9bef-7d8126fd02ba",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-eye-of-the-snake",
+      "order": 21,
+      "summary": "",
+      "title": "The Eye of the Snake"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/25bce0e2-ec60-4517-9bef-7d8126fd02ba"
+    }
+  },
+  {
+    "id": "79d32acf-2e65-437b-9803-8691d0a17196",
+    "type": "chapter",
+    "attributes": {
+      "slug": "st-mungo-s-hospital-for-magical-maladies-and-injuries",
+      "order": 22,
+      "summary": "",
+      "title": "St Mungo's Hospital for Magical Maladies and Injuries"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/79d32acf-2e65-437b-9803-8691d0a17196"
+    }
+  },
+  {
+    "id": "ab8c01e1-4cad-4cc6-a3f5-f95606f4ecbf",
+    "type": "chapter",
+    "attributes": {
+      "slug": "christmas-on-the-closed-ward",
+      "order": 23,
+      "summary": "",
+      "title": "Christmas on the Closed Ward"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/ab8c01e1-4cad-4cc6-a3f5-f95606f4ecbf"
+    }
+  },
+  {
+    "id": "a9168d69-7abb-4bfe-88df-11e8efbd7e8c",
+    "type": "chapter",
+    "attributes": {
+      "slug": "occlumency",
+      "order": 24,
+      "summary": "",
+      "title": "Occlumency"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/a9168d69-7abb-4bfe-88df-11e8efbd7e8c"
+    }
+  },
+  {
+    "id": "2bc52b76-9f38-49c9-9863-9df89c0f742c",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-beetle-at-bay",
+      "order": 25,
+      "summary": "",
+      "title": "The Beetle at Bay"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/2bc52b76-9f38-49c9-9863-9df89c0f742c"
+    }
+  },
+  {
+    "id": "32f7e9a0-36a0-464e-9073-b6c253c37e21",
+    "type": "chapter",
+    "attributes": {
+      "slug": "seen-and-unforeseen",
+      "order": 26,
+      "summary": "",
+      "title": "Seen and Unforeseen"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/32f7e9a0-36a0-464e-9073-b6c253c37e21"
+    }
+  },
+  {
+    "id": "db91991c-d2b7-44d6-b9a9-198a75dd3182",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-centaur-and-the-sneak",
+      "order": 27,
+      "summary": "",
+      "title": "The Centaur and the Sneak"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/db91991c-d2b7-44d6-b9a9-198a75dd3182"
+    }
+  },
+  {
+    "id": "2464e249-d6f5-40ef-b528-49c2bb3b3118",
+    "type": "chapter",
+    "attributes": {
+      "slug": "snape-s-worst-memory",
+      "order": 28,
+      "summary": "",
+      "title": "Snape's Worst Memory"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/2464e249-d6f5-40ef-b528-49c2bb3b3118"
+    }
+  },
+  {
+    "id": "25816d83-de41-476b-b124-9e89086a1e2a",
+    "type": "chapter",
+    "attributes": {
+      "slug": "careers-advice",
+      "order": 29,
+      "summary": "",
+      "title": "Careers Advice"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/25816d83-de41-476b-b124-9e89086a1e2a"
+    }
+  },
+  {
+    "id": "9bb7e1f1-28ce-4d53-815a-9366df2428a7",
+    "type": "chapter",
+    "attributes": {
+      "slug": "grawp",
+      "order": 30,
+      "summary": "",
+      "title": "Grawp"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/9bb7e1f1-28ce-4d53-815a-9366df2428a7"
+    }
+  },
+  {
+    "id": "86533ed7-9c93-4957-93fd-5fa2ffbef33d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "o-w-l-s",
+      "order": 31,
+      "summary": "",
+      "title": "O.W.L.s"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/86533ed7-9c93-4957-93fd-5fa2ffbef33d"
+    }
+  },
+  {
+    "id": "d5ab64d8-fb8e-4f80-a77d-573e2e5ee399",
+    "type": "chapter",
+    "attributes": {
+      "slug": "out-of-the-fire",
+      "order": 32,
+      "summary": "",
+      "title": "Out of the Fire"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/d5ab64d8-fb8e-4f80-a77d-573e2e5ee399"
+    }
+  },
+  {
+    "id": "ecec4232-6254-4cdf-954d-de2ee8c3637c",
+    "type": "chapter",
+    "attributes": {
+      "slug": "fight-and-flight",
+      "order": 33,
+      "summary": "",
+      "title": "Fight and Flight"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/ecec4232-6254-4cdf-954d-de2ee8c3637c"
+    }
+  },
+  {
+    "id": "57387950-fe77-4a8c-a8dc-c5af8a26b64d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-department-of-mysteries",
+      "order": 34,
+      "summary": "",
+      "title": "The Department of Mysteries"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/57387950-fe77-4a8c-a8dc-c5af8a26b64d"
+    }
+  },
+  {
+    "id": "01684a61-7c9c-4edb-bc85-60d1e18693c0",
+    "type": "chapter",
+    "attributes": {
+      "slug": "beyond-the-veil",
+      "order": 35,
+      "summary": "",
+      "title": "Beyond the Veil"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/01684a61-7c9c-4edb-bc85-60d1e18693c0"
+    }
+  },
+  {
+    "id": "e2a0ec8c-28f4-468e-bb3d-a9da715361f6",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-only-one-he-ever-feared",
+      "order": 36,
+      "summary": "",
+      "title": "The Only One He Ever Feared"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/e2a0ec8c-28f4-468e-bb3d-a9da715361f6"
+    }
+  },
+  {
+    "id": "2c47cf46-13bd-49bf-ad18-1a1a9f3a8bd6",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-lost-prophecy",
+      "order": 37,
+      "summary": "",
+      "title": "The Lost Prophecy"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/2c47cf46-13bd-49bf-ad18-1a1a9f3a8bd6"
+    }
+  },
+  {
+    "id": "a855f295-93da-4f04-b826-0620040f1e4b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-second-war-begins",
+      "order": 38,
+      "summary": "",
+      "title": "The Second War Begins"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "967ca2d4-9e19-4042-83ae-2ddc3960f0a9",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/967ca2d4-9e19-4042-83ae-2ddc3960f0a9/chapters/a855f295-93da-4f04-b826-0620040f1e4b"
+    }
+  },
+  {
+    "id": "fd932c85-cdcf-4429-93aa-78be3cc4083e",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-other-minister",
+      "order": 1,
+      "summary": "",
+      "title": "The Other Minister"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/fd932c85-cdcf-4429-93aa-78be3cc4083e"
+    }
+  },
+  {
+    "id": "deeba66b-1ed3-4c53-a223-e4a7f787df49",
+    "type": "chapter",
+    "attributes": {
+      "slug": "spinner-s-end",
+      "order": 2,
+      "summary": "",
+      "title": "Spinner's End"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/deeba66b-1ed3-4c53-a223-e4a7f787df49"
+    }
+  },
+  {
+    "id": "ab8fae13-4732-420d-81fc-21d9d6021c52",
+    "type": "chapter",
+    "attributes": {
+      "slug": "will-and-won-t",
+      "order": 3,
+      "summary": "",
+      "title": "Will and Won't"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/ab8fae13-4732-420d-81fc-21d9d6021c52"
+    }
+  },
+  {
+    "id": "c5e6be4b-ce6b-4dd7-8ed7-0683af9cef4d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "horace-slughorn",
+      "order": 4,
+      "summary": "",
+      "title": "Horace Slughorn"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/c5e6be4b-ce6b-4dd7-8ed7-0683af9cef4d"
+    }
+  },
+  {
+    "id": "b48eb093-8b35-466c-bf6c-87482b2663c9",
+    "type": "chapter",
+    "attributes": {
+      "slug": "an-excess-of-phlegm",
+      "order": 5,
+      "summary": "",
+      "title": "An Excess of Phlegm"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/b48eb093-8b35-466c-bf6c-87482b2663c9"
+    }
+  },
+  {
+    "id": "a3e031b1-738d-4973-8f13-080e278a3113",
+    "type": "chapter",
+    "attributes": {
+      "slug": "draco-s-detour",
+      "order": 6,
+      "summary": "",
+      "title": "Draco's Detour"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/a3e031b1-738d-4973-8f13-080e278a3113"
+    }
+  },
+  {
+    "id": "03831667-34d6-4f2b-ac50-30c38ce0f57f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-slug-club",
+      "order": 7,
+      "summary": "",
+      "title": "The Slug Club"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/03831667-34d6-4f2b-ac50-30c38ce0f57f"
+    }
+  },
+  {
+    "id": "2c324cca-0b8b-4b4b-b25a-8b35a414251f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "snape-victorious",
+      "order": 8,
+      "summary": "",
+      "title": "Snape Victorious"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/2c324cca-0b8b-4b4b-b25a-8b35a414251f"
+    }
+  },
+  {
+    "id": "4aa147a2-0cd4-4257-b2d7-eb14f18bf738",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-half-blood-prince",
+      "order": 9,
+      "summary": "",
+      "title": "The Half-Blood Prince"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/4aa147a2-0cd4-4257-b2d7-eb14f18bf738"
+    }
+  },
+  {
+    "id": "0097e9af-dd94-4b10-854b-8d61f5ce580a",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-house-of-gaunt",
+      "order": 10,
+      "summary": "",
+      "title": "The House of Gaunt"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/0097e9af-dd94-4b10-854b-8d61f5ce580a"
+    }
+  },
+  {
+    "id": "bc30847b-705f-47de-9db6-c52266801403",
+    "type": "chapter",
+    "attributes": {
+      "slug": "hermione-s-helping-hand",
+      "order": 11,
+      "summary": "",
+      "title": "Hermione's Helping Hand"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/bc30847b-705f-47de-9db6-c52266801403"
+    }
+  },
+  {
+    "id": "e006ca91-834d-4424-bca4-75035e245c92",
+    "type": "chapter",
+    "attributes": {
+      "slug": "silver-and-opals",
+      "order": 12,
+      "summary": "",
+      "title": "Silver and Opals"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/e006ca91-834d-4424-bca4-75035e245c92"
+    }
+  },
+  {
+    "id": "b2f56401-cda8-42f2-8138-dcf24fc1d5a0",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-secret-riddle",
+      "order": 13,
+      "summary": "",
+      "title": "The Secret Riddle"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/b2f56401-cda8-42f2-8138-dcf24fc1d5a0"
+    }
+  },
+  {
+    "id": "7c15ffa6-e617-44d3-8791-7c6e76f3db0c",
+    "type": "chapter",
+    "attributes": {
+      "slug": "felix-felicis",
+      "order": 14,
+      "summary": "",
+      "title": "Felix Felicis"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/7c15ffa6-e617-44d3-8791-7c6e76f3db0c"
+    }
+  },
+  {
+    "id": "8e1e4b0b-e9e8-430f-9504-deae1640fc89",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-unbreakable-vow",
+      "order": 15,
+      "summary": "",
+      "title": "The Unbreakable Vow"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/8e1e4b0b-e9e8-430f-9504-deae1640fc89"
+    }
+  },
+  {
+    "id": "82a631aa-7a9b-43ea-aab3-a9abfffbd807",
+    "type": "chapter",
+    "attributes": {
+      "slug": "a-very-frosty-christmas",
+      "order": 16,
+      "summary": "",
+      "title": "A Very Frosty Christmas"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/82a631aa-7a9b-43ea-aab3-a9abfffbd807"
+    }
+  },
+  {
+    "id": "c43699b4-489a-4816-a8a6-aa9dd9863f49",
+    "type": "chapter",
+    "attributes": {
+      "slug": "a-sluggish-memory",
+      "order": 17,
+      "summary": "",
+      "title": "A Sluggish Memory"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/c43699b4-489a-4816-a8a6-aa9dd9863f49"
+    }
+  },
+  {
+    "id": "2a947daf-2078-4848-ba7d-61eb421e8905",
+    "type": "chapter",
+    "attributes": {
+      "slug": "birthday-surprises",
+      "order": 18,
+      "summary": "",
+      "title": "Birthday Surprises"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/2a947daf-2078-4848-ba7d-61eb421e8905"
+    }
+  },
+  {
+    "id": "c96ec8c9-c74b-4783-a903-abbd6f8ecda8",
+    "type": "chapter",
+    "attributes": {
+      "slug": "elf-tails",
+      "order": 19,
+      "summary": "",
+      "title": "Elf Tails"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/c96ec8c9-c74b-4783-a903-abbd6f8ecda8"
+    }
+  },
+  {
+    "id": "ba344898-682d-40b9-83dc-116ba2e1e36f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "lord-voldemort-s-request",
+      "order": 20,
+      "summary": "",
+      "title": "Lord Voldemort's Request"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/ba344898-682d-40b9-83dc-116ba2e1e36f"
+    }
+  },
+  {
+    "id": "0623e4a7-fb86-4195-a6e8-842da9646f5d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-unknowable-room",
+      "order": 21,
+      "summary": "",
+      "title": "The Unknowable Room"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/0623e4a7-fb86-4195-a6e8-842da9646f5d"
+    }
+  },
+  {
+    "id": "364d6de0-c9eb-4bf5-a1af-e76d835e6c96",
+    "type": "chapter",
+    "attributes": {
+      "slug": "after-the-burial",
+      "order": 22,
+      "summary": "",
+      "title": "After the Burial"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/364d6de0-c9eb-4bf5-a1af-e76d835e6c96"
+    }
+  },
+  {
+    "id": "8076bd57-fc81-4da6-904c-5fcf40190a71",
+    "type": "chapter",
+    "attributes": {
+      "slug": "horcruxes",
+      "order": 23,
+      "summary": "",
+      "title": "Horcruxes"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/8076bd57-fc81-4da6-904c-5fcf40190a71"
+    }
+  },
+  {
+    "id": "52df2824-3d8b-4c54-881c-d269febd5bb2",
+    "type": "chapter",
+    "attributes": {
+      "slug": "sectumsempra",
+      "order": 24,
+      "summary": "",
+      "title": "Sectumsempra"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/52df2824-3d8b-4c54-881c-d269febd5bb2"
+    }
+  },
+  {
+    "id": "22ae559e-5753-4a12-9ecf-a63abaa8fe05",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-seer-overheard",
+      "order": 25,
+      "summary": "",
+      "title": "The Seer Overheard"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/22ae559e-5753-4a12-9ecf-a63abaa8fe05"
+    }
+  },
+  {
+    "id": "6a965596-de16-45b7-9b57-9ad477058c58",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-cave",
+      "order": 26,
+      "summary": "",
+      "title": "The Cave"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/6a965596-de16-45b7-9b57-9ad477058c58"
+    }
+  },
+  {
+    "id": "21aabe50-d5d5-47aa-8d25-8b5dec010330",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-lightning-struck-tower",
+      "order": 27,
+      "summary": "",
+      "title": "The Lightning-Struck Tower"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/21aabe50-d5d5-47aa-8d25-8b5dec010330"
+    }
+  },
+  {
+    "id": "f301518f-0061-4960-9d1a-848f9dda2a84",
+    "type": "chapter",
+    "attributes": {
+      "slug": "flight-of-the-prince",
+      "order": 28,
+      "summary": "",
+      "title": "Flight of the Prince"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/f301518f-0061-4960-9d1a-848f9dda2a84"
+    }
+  },
+  {
+    "id": "bef7e1b5-150b-4a0d-81a7-c071a3e51e39",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-phoenix-lament",
+      "order": 29,
+      "summary": "",
+      "title": "The Phoenix Lament"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/bef7e1b5-150b-4a0d-81a7-c071a3e51e39"
+    }
+  },
+  {
+    "id": "4688fae5-6446-4fcf-8eca-5ed354edf739",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-white-tomb",
+      "order": 30,
+      "summary": "",
+      "title": "The White Tomb"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "1ef82780-f894-43db-b5ac-076eebd0884d",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/1ef82780-f894-43db-b5ac-076eebd0884d/chapters/4688fae5-6446-4fcf-8eca-5ed354edf739"
+    }
+  },
+  {
+    "id": "81b3a329-6bfb-4e03-9153-1b57b9a51bfb",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-dark-lord-ascending",
+      "order": 1,
+      "summary": "",
+      "title": "The Dark Lord Ascending"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/81b3a329-6bfb-4e03-9153-1b57b9a51bfb"
+    }
+  },
+  {
+    "id": "a173d26f-0e98-42c9-87c7-1b6c7d8d607d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "in-memoriam",
+      "order": 2,
+      "summary": "",
+      "title": "In Memoriam"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/a173d26f-0e98-42c9-87c7-1b6c7d8d607d"
+    }
+  },
+  {
+    "id": "f33c59e7-4980-4437-a90e-3a806e1323af",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-dursleys-departing",
+      "order": 3,
+      "summary": "",
+      "title": "The Dursleys Departing"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/f33c59e7-4980-4437-a90e-3a806e1323af"
+    }
+  },
+  {
+    "id": "43d25c55-a675-4623-99c8-076fe894bfc1",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-seven-potters",
+      "order": 4,
+      "summary": "",
+      "title": "The Seven Potters"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/43d25c55-a675-4623-99c8-076fe894bfc1"
+    }
+  },
+  {
+    "id": "67782241-b50c-4f34-bed7-24bfff96df37",
+    "type": "chapter",
+    "attributes": {
+      "slug": "fallen-warrior",
+      "order": 5,
+      "summary": "",
+      "title": "Fallen Warrior"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/67782241-b50c-4f34-bed7-24bfff96df37"
+    }
+  },
+  {
+    "id": "63e98678-0474-4a69-883f-e7c61cf2720b",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-ghoul-in-pyjamas",
+      "order": 6,
+      "summary": "",
+      "title": "The Ghoul in Pyjamas"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/63e98678-0474-4a69-883f-e7c61cf2720b"
+    }
+  },
+  {
+    "id": "e3fe3c96-9f84-4b20-a601-7616ffeae002",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-will-of-albus-dumbledore",
+      "order": 7,
+      "summary": "",
+      "title": "The Will of Albus Dumbledore"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/e3fe3c96-9f84-4b20-a601-7616ffeae002"
+    }
+  },
+  {
+    "id": "dc5a25a9-b699-4747-9ec6-a4978331452a",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-wedding",
+      "order": 8,
+      "summary": "",
+      "title": "The Wedding"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/dc5a25a9-b699-4747-9ec6-a4978331452a"
+    }
+  },
+  {
+    "id": "e6f4b3c8-5aa0-4280-bbec-e40fc722ef1f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "a-place-to-hide",
+      "order": 9,
+      "summary": "",
+      "title": "A Place to Hide"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/e6f4b3c8-5aa0-4280-bbec-e40fc722ef1f"
+    }
+  },
+  {
+    "id": "f3986719-f257-4d9c-aecc-f9b488e7ac0e",
+    "type": "chapter",
+    "attributes": {
+      "slug": "kreacher-s-tale",
+      "order": 10,
+      "summary": "",
+      "title": "Kreacher's Tale"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/f3986719-f257-4d9c-aecc-f9b488e7ac0e"
+    }
+  },
+  {
+    "id": "ecddef43-f21c-4ab8-b321-f11fafd83133",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-bribe",
+      "order": 11,
+      "summary": "",
+      "title": "The Bribe"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/ecddef43-f21c-4ab8-b321-f11fafd83133"
+    }
+  },
+  {
+    "id": "842cca5b-dbab-44b2-b8c3-dd23ebb546dd",
+    "type": "chapter",
+    "attributes": {
+      "slug": "magic-is-might",
+      "order": 12,
+      "summary": "",
+      "title": "Magic is Might"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/842cca5b-dbab-44b2-b8c3-dd23ebb546dd"
+    }
+  },
+  {
+    "id": "dd77ad6b-ee55-4e38-9db2-9d628667f6bb",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-muggle-born-registration-commission",
+      "order": 13,
+      "summary": "",
+      "title": "The Muggle-Born Registration Commission"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/dd77ad6b-ee55-4e38-9db2-9d628667f6bb"
+    }
+  },
+  {
+    "id": "5d6b7a75-fb04-46b6-b76f-9f6b18d8e961",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-thief",
+      "order": 14,
+      "summary": "",
+      "title": "The Thief"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/5d6b7a75-fb04-46b6-b76f-9f6b18d8e961"
+    }
+  },
+  {
+    "id": "ebbb8cb1-4960-4acb-a0f0-9e6615b14a95",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-goblin-s-revenge",
+      "order": 15,
+      "summary": "",
+      "title": "The Goblin's Revenge"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/ebbb8cb1-4960-4acb-a0f0-9e6615b14a95"
+    }
+  },
+  {
+    "id": "98acf2c5-bef1-48e0-b942-0cf9c42a02ed",
+    "type": "chapter",
+    "attributes": {
+      "slug": "godric-s-hollow",
+      "order": 16,
+      "summary": "",
+      "title": "Godric's Hollow"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/98acf2c5-bef1-48e0-b942-0cf9c42a02ed"
+    }
+  },
+  {
+    "id": "5c7f9616-8686-4d12-aa26-bd65720e0b1f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "bathilda-s-secret",
+      "order": 17,
+      "summary": "",
+      "title": "Bathilda's Secret"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/5c7f9616-8686-4d12-aa26-bd65720e0b1f"
+    }
+  },
+  {
+    "id": "09225008-ff81-4116-a4d4-3c1c45ea22ec",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-life-and-lies-of-albus-dumbledore",
+      "order": 18,
+      "summary": "",
+      "title": "The Life and Lies of Albus Dumbledore"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/09225008-ff81-4116-a4d4-3c1c45ea22ec"
+    }
+  },
+  {
+    "id": "bcdb1633-dfd5-4376-833a-6335d4f4bc22",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-silver-doe",
+      "order": 19,
+      "summary": "",
+      "title": "The Silver Doe"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/bcdb1633-dfd5-4376-833a-6335d4f4bc22"
+    }
+  },
+  {
+    "id": "2a45680b-7334-48fc-9e19-43531a62b7f5",
+    "type": "chapter",
+    "attributes": {
+      "slug": "xenophilius-lovegood",
+      "order": 20,
+      "summary": "",
+      "title": "Xenophilius Lovegood"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/2a45680b-7334-48fc-9e19-43531a62b7f5"
+    }
+  },
+  {
+    "id": "94e31830-6612-44c5-b753-f75f970e1291",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-tale-of-the-three-brothers",
+      "order": 21,
+      "summary": "",
+      "title": "The Tale of the Three Brothers"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/94e31830-6612-44c5-b753-f75f970e1291"
+    }
+  },
+  {
+    "id": "28bb6696-b391-4d20-8298-47bd2c9ccc78",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-deathly-hallows",
+      "order": 22,
+      "summary": "",
+      "title": "The Deathly Hallows"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/28bb6696-b391-4d20-8298-47bd2c9ccc78"
+    }
+  },
+  {
+    "id": "cfe52267-f941-4998-9c52-8912a4d1f01d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "malfoy-manor",
+      "order": 23,
+      "summary": "",
+      "title": "Malfoy Manor"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/cfe52267-f941-4998-9c52-8912a4d1f01d"
+    }
+  },
+  {
+    "id": "f0630ccf-d7b9-43b7-b1c2-4b54d8c44a25",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-wandmaker",
+      "order": 24,
+      "summary": "",
+      "title": "The Wandmaker"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/f0630ccf-d7b9-43b7-b1c2-4b54d8c44a25"
+    }
+  },
+  {
+    "id": "fbe59801-de9a-455d-ab45-4695a558b321",
+    "type": "chapter",
+    "attributes": {
+      "slug": "shell-cottage",
+      "order": 25,
+      "summary": "",
+      "title": "Shell Cottage"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/fbe59801-de9a-455d-ab45-4695a558b321"
+    }
+  },
+  {
+    "id": "0216a6b8-9b6c-4116-9076-c779e135ae3f",
+    "type": "chapter",
+    "attributes": {
+      "slug": "gringotts",
+      "order": 26,
+      "summary": "",
+      "title": "Gringotts"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/0216a6b8-9b6c-4116-9076-c779e135ae3f"
+    }
+  },
+  {
+    "id": "1dbab344-9fc8-4074-b84e-390aa6e5ea30",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-final-hiding-place",
+      "order": 27,
+      "summary": "",
+      "title": "The Final Hiding Place"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/1dbab344-9fc8-4074-b84e-390aa6e5ea30"
+    }
+  },
+  {
+    "id": "bf5b499d-071e-41df-8560-0a08ce8b3214",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-missing-mirror",
+      "order": 28,
+      "summary": "",
+      "title": "The Missing Mirror"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/bf5b499d-071e-41df-8560-0a08ce8b3214"
+    }
+  },
+  {
+    "id": "67b0eefe-89a7-4870-8bbc-a57449194d8e",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-lost-diadem",
+      "order": 29,
+      "summary": "",
+      "title": "The Lost Diadem"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/67b0eefe-89a7-4870-8bbc-a57449194d8e"
+    }
+  },
+  {
+    "id": "aa6c60e7-2c1a-42f7-97e0-209cd05c4355",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-sacking-of-severus-snape",
+      "order": 30,
+      "summary": "",
+      "title": "The Sacking of Severus Snape"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/aa6c60e7-2c1a-42f7-97e0-209cd05c4355"
+    }
+  },
+  {
+    "id": "6ccbaf18-b68e-4498-9412-73e54ae5c290",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-battle-of-hogwarts",
+      "order": 31,
+      "summary": "",
+      "title": "The Battle of Hogwarts"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/6ccbaf18-b68e-4498-9412-73e54ae5c290"
+    }
+  },
+  {
+    "id": "73fd9ec5-d0ad-4df0-8126-45616c38de71",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-elder-wand",
+      "order": 32,
+      "summary": "",
+      "title": "The Elder Wand"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/73fd9ec5-d0ad-4df0-8126-45616c38de71"
+    }
+  },
+  {
+    "id": "89ab3cb7-32b4-4bd8-82da-d7fc93799473",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-prince-s-tale",
+      "order": 33,
+      "summary": "",
+      "title": "The Prince's Tale"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/89ab3cb7-32b4-4bd8-82da-d7fc93799473"
+    }
+  },
+  {
+    "id": "bb4fc7e4-b939-4d6a-853f-ff40ed8be694",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-forest-again",
+      "order": 34,
+      "summary": "",
+      "title": "The Forest Again"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/bb4fc7e4-b939-4d6a-853f-ff40ed8be694"
+    }
+  },
+  {
+    "id": "08bc005c-2b09-485c-9bca-f3524a40fd47",
+    "type": "chapter",
+    "attributes": {
+      "slug": "king-s-cross",
+      "order": 35,
+      "summary": "",
+      "title": "King's Cross"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/08bc005c-2b09-485c-9bca-f3524a40fd47"
+    }
+  },
+  {
+    "id": "8b429751-f24e-4814-9849-52692783303d",
+    "type": "chapter",
+    "attributes": {
+      "slug": "the-flaw-in-the-plan",
+      "order": 36,
+      "summary": "",
+      "title": "The Flaw in the Plan"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/8b429751-f24e-4814-9849-52692783303d"
+    }
+  },
+  {
+    "id": "1c967094-85d6-4671-8f2c-fa386160bfe4",
+    "type": "chapter",
+    "attributes": {
+      "slug": "nineteen-years-later",
+      "order": 37,
+      "summary": "",
+      "title": "Nineteen Years Later"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "id": "96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8",
+          "type": "book"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/books/96b50e5a-bd2d-4d19-94a3-9e45f6a25cf8/chapters/1c967094-85d6-4671-8f2c-fa386160bfe4"
+    }
+  }
+]

@@ -1,0 +1,385 @@
+openapi: 3.0.3
+info:
+  title: Videos
+  description: Videos
+  version: v1
+
+x-allowed-methods:
+  - get
+
+servers:
+  - url: 'https://localhost:3000'
+
+security:
+  - bearerAuth: []
+
+paths:
+  /videos/{videoId}:
+    get:
+      tags: [Videos]
+      x-collection: videos
+      summary: List videos
+      description: List videos
+      operationId: getVideos
+
+      parameters:
+        - $ref: '#/components/parameters/VideoId'
+
+      responses:
+        '200':
+          description: A video
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+
+  /videos:
+    get:
+      tags: [Videos]
+      x-collection: videos
+      summary: List videos
+      description: List videos
+      operationId: getVideos
+
+      parameters:
+        - $ref: '#/components/parameters/VideoIdsQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of videos
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of videos
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Video'
+                    minItems: 0
+                    maxItems: 50
+
+    post:
+      tags: [Videos]
+      x-collection: videos
+      description: Create multiple video records
+      summary: Create videos in bulk
+      operationId: createVideos
+      security:
+        - apiKey: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Video'
+              minItems: 1
+              maxItems: 50
+
+      responses:
+        '201':
+          description: Videos created successfully in bulk
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                readOnly: true
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of videos
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Video'
+                    minItems: 0
+                    maxItems: 50
+
+    patch:
+      tags: [Videos]
+      x-collection: videos
+      description: Update multiple videos in your personal library.
+        Only need to provide those fields that need to be updated.
+      summary: Update videos
+      operationId: updateVideos
+      security:
+        - apiKey: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Video'
+              minItems: 1
+              maxItems: 50
+
+      responses:
+        '200':
+          description: Updated successfully
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                readOnly: true
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of videos
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Video'
+                    minItems: 0
+                    maxItems: 50
+
+    delete:
+      tags: [Videos]
+      x-collection: videos
+      description: Remove a video
+      summary: Delete videos
+      operationId: deleteVideos
+      security:
+        - apiKey: []
+
+      responses:
+        '200':
+          description: A list of videos
+            The response also includes a Content-Range header in the format 'items start-end/total', which provides the total record count.
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                readOnly: true
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of videos
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Video'
+                    minItems: 0
+                    maxItems: 50
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    VideoIdsQueryOptional:
+      description: Unique identifier for the video.
+      name: videoIds
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+          format: uuid
+
+    VideoId:
+      description: Unique identifier for the video.
+      name: videoId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  schemas:
+    ContentRange:
+      description: The content range of the response
+      type: string
+      example: items 0-24/100
+
+    Video:
+      description: A video in your personal library (movie, TV show, etc.)
+      type: object
+      x-context:
+        required:
+          post: [title, mediaType]
+          put: [title, mediaType]
+          delete: [videoId]
+          patch: [videoId]
+        prohibited:
+          post: [videoId]
+          put: [videoId]
+      properties:
+        videoId:
+          $ref: '#/components/schemas/VideoId'
+        serviceProvider:
+          description: The service or platform where this video was obtained
+          type: string
+          enum:
+            - plex
+            - netflix
+            - primevideo
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^(eq\.|neq\.)(plex|netflix|primevideo)$|^isNull$'
+#        lastPlayedAtDateTime:
+#          description: When you last watched this video
+#          type: string
+#          format: date-time
+#        lastPositionMins:
+#          description: Your current viewing position in minutes
+#          type: integer
+#          minimum: 0
+#          x-query: optional
+#          x-query-name-prefix: Video
+#          x-query-pattern: '^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$'
+        userRating:
+          description: Your personal rating of this video (0-10 scale)
+          type: integer
+          minimum: 0
+          maximum: 10
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$'
+        mediaType:
+          description: The type of content (movie or tv)
+          type: string
+          enum: [movie, tv]
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^(eq\.|neq\.)(movie|tv)$|^isNull$'
+        tmdbId:
+          description: The Movie Database identifier
+          type: string
+          pattern: '^[0-9]+$'
+          minLength: 1
+          maxLength: 10
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^(eq\.|neq\.)[0-9]+$|^[0-9*]+$|^isNull$'
+        imdbId:
+          description: Internet Movie Database identifier
+          type: string
+          pattern: '^tt[0-9]+$'
+          minLength: 9
+          maxLength: 10
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^(eq\.|neq\.)tt[0-9]+$|^tt[0-9*]+$|^isNull$'
+        videoTitle:
+          description: The title of the video
+          type: string
+          maxLength: 150
+          minLength: 1
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?/-]+$'
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*/-]+$'
+        movieRatings:
+          $ref: '#/components/schemas/MovieRatings'
+        seriesName:
+          description: Name of the series this video belongs to (for TV shows)
+          type: string
+          minLength: 1
+          maxLength: 150
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?/-]+$'
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*/-]+$'
+        episodeTitle:
+          description: Title of the specific episode (for TV shows)
+          type: string
+          minLength: 1
+          maxLength: 150
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?/-]+$'
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*/-]+$'
+        season:
+          description: Season identifier (for TV shows)
+          type: string
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?/-]+$'
+          minLength: 1
+          maxLength: 50
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*/-]+$'
+        releaseYear:
+          description: Year the video was released
+          type: integer
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$'
+        releaseDate:
+          description: Official release date of the video
+          type: string
+          format: date
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^(gt\.|lt\.|gte\.|lte\.|eq\.|neq\.)[0-9]{4}-[0-9]{2}-[0-9]{2}$|^[0-9]{4}-[0-9]{2}-[0-9]{2}$|^isNull$'
+        genres:
+          description: Comma-separated list of genres
+          type: string
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?/-]+$'
+          maxLength: 100
+          minLength: 1
+          x-query: optional
+          x-query-name-prefix: Video
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*/-]+$'
+        createdAtDateTime:
+          description: When this video was added to your library from the original source
+          type: string
+          format: date-time
+          readOnly: true
+        updatedAtDateTime:
+          description: When this video was added to your library from the original source
+          type: string
+          format: date-time
+          readOnly: true
+
+    MovieRatings:
+      description: Content ratings and advisory information
+      type: string
+      enum:
+        - TV-Y7
+        - NR
+        - G
+        - TV-Y
+        - Approved
+        - PG
+        - TV-G
+        - TV-14
+        - TV-PG
+        - PG-13
+        - Not Rated
+        - R
+
+    VideoId:
+      description: Unique identifier for this resource
+      type: string
+      format: uuid
+      x-query: optional
+      x-primary-key: true
+      x-query-pattern: '^(eq\.|neq\.)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^isNull$'
