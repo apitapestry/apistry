@@ -1,6 +1,5 @@
 # Basic container config. The Docker image includes this file at
-# /home/node/site/config.yml. Docker Compose can override the mounted site
-# directory with APISTRY_SITE_DIR and the config path with APISTRY_CONFIG_PATH.
+# /home/node/site/config.yml.
 
 server:
   host: 0.0.0.0
@@ -12,10 +11,10 @@ server:
   swaggerUiEnabled: true
 
 contracts:
-  path: /app/contracts
+  path: /home/node/site/contracts
 
 database:
-  connection: sqlite:///app/data/sqlite.db
+  connection: sqlite:///home/node/site/sqlite.db
 
 logging:
   level: info

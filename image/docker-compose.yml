@@ -15,9 +15,3 @@ services:
       APISTRY_CONFIG_PATH: ${APISTRY_CONFIG_PATH:-/home/node/site/config.yml}
       API_KEY: ${API_KEY:-}
       MONGO_PASSWORD: ${MONGO_PASSWORD:-}
-    volumes:
-      - ${APISTRY_SITE_DIR:-.}:/home/node/site:ro
-      - apistry-data:/app/data
-
-volumes:
-  apistry-data:
