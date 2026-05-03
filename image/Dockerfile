@@ -33,4 +33,4 @@ USER node
 
 EXPOSE 3000
 
-ENTRYPOINT ["sh", "-c", "exec node dist/apistry.js start --config \"$APISTRY_CONFIG_PATH\""]
+ENTRYPOINT ["sh", "-c", "exec node dist/apistry.js start --config /home/node/site/config.yml"]
