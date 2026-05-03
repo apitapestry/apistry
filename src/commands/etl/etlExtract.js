@@ -1,6 +1,5 @@
 import fs from 'fs/promises';
 import path from 'path';
-import fetch from 'node-fetch';
 import { ConfigurationError } from '../../utils/errors.js';
 
 export default async function extractStage(config, dryRun = false, log, fetchImpl) {
@@ -73,7 +72,13 @@ export default async function extractStage(config, dryRun = false, log, fetchImp
 }
 
 async function fetchAllPages(baseUrl, strategy, unwrapProperty, fetchImpl) {
-    const fetchFn = fetchImpl || (typeof global !== 'undefined' && global.fetch) || fetch;
+    const fetchFn = fetchImpl || globalThis.fetch;
+    if (!fetchFn) {
+        throw new ConfigurationError(
+            {},
+            { message: 'Fetch API is unavailable in this Node.js runtime' }
+        );
+    }
     const strategies = {
         'none': (url, unwrap) => fetchNoneStrategy(url, unwrap, fetchFn),
         'swapi': (url, unwrap) => fetchSwapiStrategy(url, unwrap, fetchFn),

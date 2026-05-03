@@ -56,12 +56,16 @@
     "jsonpath-plus": "^10.3.0",
     "libphonenumber-js": "^1.12.33",
     "mongodb": "^7.0.0",
-    "node-fetch": "^3.3.2",
     "pg": "^8.16.3",
     "pino-pretty": "^13.1.2",
     "pluralize": "^8.0.0",
     "postal-codes-js": "^2.5.2",
     "uuid": "^13.0.0"
+  },
+  "overrides": {
+    "sockjs": {
+      "uuid": "^11.1.0"
+    }
   },
   "devDependencies": {
     "@vitest/ui": "^4.0.14",
