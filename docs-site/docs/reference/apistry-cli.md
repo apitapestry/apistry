@@ -41,8 +41,8 @@ Runtime behavior:
 
 Environment overrides:
 
-- `APISTRY_HOST` or `HOST` override `server.host`.
-- `APISTRY_PORT` or `PORT` override `server.port` unless `--port` is passed.
+- `HOST` overrides `server.host`.
+- `PORT` overrides `server.port` unless `--port` is passed.
 - Config file strings support `$VAR` and `${VAR}` substitution.
 
 ---

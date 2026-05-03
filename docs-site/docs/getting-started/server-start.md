@@ -73,8 +73,8 @@ Configuration precedence:
 
 Supported host and port environment variables:
 
-- `APISTRY_HOST` or `HOST`
-- `APISTRY_PORT` or `PORT`
+- `HOST`
+- `PORT`
 
 Config file strings support `$VAR` and `${VAR}` environment substitution.
 

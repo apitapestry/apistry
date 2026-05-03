@@ -91,7 +91,6 @@ function getLambdaDependencies(entrySource, rootPackageJson, packageLock) {
 
     return Object.fromEntries(
         [...dependencyNames]
-            .filter((name) => name !== 'better-sqlite3')
             .map((name) => [name, getDependencyVersion(name, rootPackageJson, packageLock)])
             .filter(([, version]) => version)
             .sort(([left], [right]) => left.localeCompare(right))

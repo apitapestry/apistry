@@ -14,8 +14,8 @@ contracts:
   path: docs-site/static/contracts # param override
 
 database:
-  connection: sqlite://data/sqlite.db # param override
-#  connection: mongodb+srv://apistry:${MONGO_PASSWORD}@apistry-db.ojsguxa.mongodb.net/apistry?appName=apistry-db
+#  connection: sqlite://data/sqlite.db # param override
+  connection: mongodb+srv://apistry:${MONGO_PASSWORD}@apistry-db.ojsguxa.mongodb.net/apistry?appName=apistry-db
 #  connection: postgresql://postgres.kkyagjfrftxexcburydq:${POSTGRES_PASSWORD}@aws-1-us-east-1.pooler.supabase.com:5432/postgres
 #  options:
 #    maxPoolSize: 10

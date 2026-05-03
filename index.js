@@ -41,7 +41,7 @@ async function getProxy() {
 
 function getLambdaConfig() {
     const defaultConfig = loadDefaultConfig();
-    const configPath = process.env.APISTRY_CONFIG;
+    const configPath = process.env.CONFIG;
     const mergedConfig = configPath
         ? mergeConfigs(defaultConfig, loadConfigFile(configPath, true))
         : defaultConfig;
@@ -50,13 +50,14 @@ function getLambdaConfig() {
 
     const { host, port } = resolveServerConfig(mergedConfig.server);
     const databaseConnection = getLambdaDatabaseConnection(mergedConfig.database.connection);
+    const security = getLambdaSecurityConfig(mergedConfig.security);
 
     return {
-        contractPath: process.env.APISTRY_CONTRACT
-            ? path.resolve(process.cwd(), process.env.APISTRY_CONTRACT)
+        contractPath: process.env.CONTRACT
+            ? path.resolve(process.cwd(), process.env.CONTRACT)
             : getContractPath(mergedConfig.contracts),
         dbConnection: getDbConnection(databaseConnection),
-        logLevel: getLogLevel(process.env.APISTRY_LOG_LEVEL ?? mergedConfig.logging?.level),
+        logLevel: getLogLevel(process.env.LOG_LEVEL ?? mergedConfig.logging?.level),
         port,
         host,
         swaggerEnabled: mergedConfig.server?.swaggerUiEnabled ?? true,
@@ -65,7 +66,7 @@ function getLambdaConfig() {
         webDir: getLocalSitePath(mergedConfig.localSite),
         defaultOrchestrationActionsPath: getDefaultOrchestrationActionsPath(),
         cors: getCorsConfig(mergedConfig.cors ?? mergedConfig.security?.cors),
-        security: getSecurityConfig(mergedConfig.security),
+        security,
         raw: {
             ...mergedConfig,
             database: {
@@ -91,13 +92,32 @@ function getDefaultOrchestrationActionsPath() {
 }
 
 function getLambdaDatabaseConnection(configConnection) {
-    return process.env.APISTRY_DATABASE_CONNECTION
-        ?? process.env.DATABASE_CONNECTION
+    return process.env.DB_CONN
         ?? resolveEnvVarOrValue(configConnection);
 }
 
+function getLambdaSecurityConfig(configSecurity) {
+    const security = getSecurityConfig(configSecurity);
+    if (security) {
+        return security;
+    }
+
+    const apiKey = process.env.API_KEY?.trim();
+    if (!apiKey) {
+        return undefined;
+    }
+
+    return {
+        bearerToken: apiKey,
+        apiKey: {
+            key: 'apiKey',
+            value: apiKey
+        }
+    };
+}
+
 function getLogLevel(configLogLevel) {
-    const level = (configLogLevel || process.env.LOG_LEVEL || 'info').toLowerCase();
+    const level = (configLogLevel || 'info').toLowerCase();
     const validLevels = ['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent'];
 
     if (!validLevels.includes(level)) {

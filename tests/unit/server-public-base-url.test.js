@@ -57,9 +57,8 @@ describe('server bind host and relative openapi server', () => {
     });
 
     it('prefers environment variables over config file values for bind host and port', () => {
-        process.env.APISTRY_HOST = '0.0.0.0';
-        process.env.APISTRY_PORT = '4000';
-        process.env.APISTRY_PUBLIC_BASE_URL = 'https://api.apistry.net';
+        process.env.HOST = '0.0.0.0';
+        process.env.PORT = '4000';
 
         const resolved = resolveServerConfig({
             host: '127.0.0.1',

@@ -9,8 +9,6 @@ const ETL_CLI_PATH = join(__dirname, '..', '..', 'src', 'apistry-etl.js');
 import pkg from "../../package.json" with { type: "json" };
 
 const CLI_ENV_KEYS_TO_CLEAR = [
-    'APISTRY_HOST',
-    'APISTRY_PORT',
     'HOST',
     'PORT',
     'LOG_LEVEL',

@@ -156,8 +156,8 @@ export function getLocalSitePath(config) {
 }
 
 export function resolveServerConfig(serverConfig = {}, env = process.env) {
-    const host = getPreferredString(env.APISTRY_HOST, env.HOST, serverConfig.host) ?? DEFAULT_LISTEN_HOST;
-    const port = getNormalizedPort(getPreferredValue(env.APISTRY_PORT, env.PORT, serverConfig.port));
+    const host = getPreferredString(env.HOST, serverConfig.host) ?? DEFAULT_LISTEN_HOST;
+    const port = getNormalizedPort(getPreferredValue(env.PORT, serverConfig.port));
 
     return { host, port };
 }

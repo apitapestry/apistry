@@ -15,7 +15,7 @@ await build({
   platform: 'node',
   format: 'esm',
   target: 'node18',
-  minify: true,
+  minify: false,
   treeShaking: true,
   loader: {
     '.json': 'json'
@@ -30,7 +30,7 @@ await build({
   target: 'node18',
   bundle: true,
   packages: 'external',
-  minify: true,
+  minify: false,
   treeShaking: true,
   loader: {
     '.json': 'json'
