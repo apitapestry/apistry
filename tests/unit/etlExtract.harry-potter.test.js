@@ -15,7 +15,7 @@ describe('ETL Extract - harry-potter pagination', () => {
       }
     ];
     let fetchCall = 0;
-    const mockFetch = vi.fn(async (url) => {
+    const mockFetch = vi.fn(async () => {
       const page = pages[fetchCall++];
       return {
         ok: true,

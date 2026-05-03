@@ -10,32 +10,42 @@ import { getSubResource, saveSubResource } from "./subResources.js";
 let pool = null;
 const initializedCollections = new Set();
 const initInFlight = new Map();
+// language=PostgreSQL
+const POSTGRES_PING_SQL = "SELECT 1";
+// language=PostgreSQL
+const POSTGRES_LIST_COLLECTIONS_SQL = `
+    SELECT table_name AS name
+    FROM information_schema.tables
+    WHERE table_schema = 'public'
+      AND table_type = 'BASE TABLE'
+    ORDER BY table_name ASC
+`;
 
 function parseConnectionString(conn) {
+    const hasPostgresScheme = conn.startsWith("postgres://");
+    const hasPostgresqlScheme = conn.startsWith("postgresql://");
+
+    if (!hasPostgresScheme && !hasPostgresqlScheme) {
+        throw new InternalServerError(
+            "postgres_connection_invalid",
+            { conn },
+            { message: "PostgreSQL connection must start with postgres:// or postgresql://" }
+        );
+    }
+
     try {
-        const hasPostgresScheme = conn.startsWith("postgres://");
-        const hasPostgresqlScheme = conn.startsWith("postgresql://");
-
-        if (!hasPostgresScheme && !hasPostgresqlScheme) {
-            throw new InternalServerError(
-                "postgres_connection_invalid",
-                { conn },
-                { message: "PostgreSQL connection must start with postgres:// or postgresql://" }
-            );
-        }
-
         // URL parsing validates basic URI shape without altering the original string.
         // eslint-disable-next-line no-new
         new URL(conn);
-        return conn;
     } catch (err) {
-        if (err instanceof InternalServerError) throw err;
         throw new InternalServerError(
             "postgres_connection_parse_failed",
             { conn },
             { message: err.message }
         );
     }
+
+    return conn;
 }
 
 function quoteIdentifier(value) {
@@ -49,7 +59,7 @@ export async function connect(dbConnection, options = {}) {
 
     try {
         pool = new Pool({ connectionString, ...options });
-        await pool.query("SELECT 1");
+        await pool.query(POSTGRES_PING_SQL);
     } catch (err) {
         if (pool) {
             await pool.end().catch(() => {});
@@ -101,6 +111,7 @@ export async function ensureCollection(collection) {
         return db;
     }
 
+    // language=PostgreSQL
     const sql = `
         CREATE TABLE IF NOT EXISTS ${db.table} (
             id   TEXT PRIMARY KEY,
@@ -132,7 +143,7 @@ export async function ping() {
         );
     }
 
-    await pool.query("SELECT 1");
+    await pool.query(POSTGRES_PING_SQL);
     return { ok: 1 };
 }
 
@@ -140,13 +151,7 @@ export async function getCollections() {
     if (!pool) return [];
 
     try {
-        const result = await pool.query(`
-            SELECT table_name AS name
-            FROM information_schema.tables
-            WHERE table_schema = 'public'
-              AND table_type = 'BASE TABLE'
-            ORDER BY table_name ASC
-        `);
+        const result = await pool.query(POSTGRES_LIST_COLLECTIONS_SQL);
 
         return result.rows.map(row => row.name);
     } catch (err) {

@@ -6,26 +6,6 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CLI_PATH = join(__dirname, '..', 'src', 'apistry.js');
 
-/**
- * Mock MongoDB responses for integration testing
- */
-const createMockMongoClient = () => {
-    return {
-        connect: vi.fn().mockResolvedValue(undefined),
-        close: vi.fn().mockResolvedValue(undefined),
-        db: vi.fn().mockReturnValue({
-            command: vi.fn().mockResolvedValue({ ok: 1 }),
-            collection: vi.fn().mockReturnValue({
-                countDocuments: vi.fn().mockResolvedValue(5),
-                dbDelete: vi.fn().mockResolvedValue({ deletedCount: 5 }),
-            }),
-            getCollections: vi.fn().mockReturnValue({
-                toArray: vi.fn().mockResolvedValue([]),
-            }),
-        }),
-    };
-};
-
 describe('APIstry CLI Integration Tests', () => {
     const TEST_DB_CONNECTION = 'mongodb://testuser:testpass@localhost:27017/testdb';
     const activeProcesses = [];

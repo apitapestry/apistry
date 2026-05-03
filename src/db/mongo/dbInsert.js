@@ -19,12 +19,11 @@ export async function dbInsert(collection, body) {
     }
 
     // Insert
-    let resp;
     if (docs.length === 1) {
-        resp = await db.insertOne(docs[0]);
+        await db.insertOne(docs[0]);
         results.inserted = 1;
     } else {
-        resp = await db.insertMany(docs);
+        await db.insertMany(docs);
         results.inserted = docs.length;
     }
 

@@ -13,40 +13,35 @@ let sqliteDb = null;
 let dbFilePath = null;
 const SQLITE_IN_MEMORY = "sqlite://IN-MEMORY-DB";
 const SQLITE_LEGACY_IN_MEMORY = "sqllite://IN-MEMORY-DB";
+// language=SQLite
+const SQLITE_PING_SQL = "SELECT 1";
+// language=SQLite
+const SQLITE_LIST_TABLES_SQL = "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'";
 
 /**
  * Parse and resolve the sqllite:// connection string.
  */
 function parseConnectionString(conn) {
-    try {
-        if (conn === SQLITE_IN_MEMORY || conn === SQLITE_LEGACY_IN_MEMORY) {
-            return { isInMemory: true, filePath: ":memory:" };
-        }
+    if (conn === SQLITE_IN_MEMORY || conn === SQLITE_LEGACY_IN_MEMORY) {
+        return { isInMemory: true, filePath: ":memory:" };
+    }
 
-        const hasSqlliteScheme = conn.startsWith("sqllite://");
-        const hasSqliteScheme = conn.startsWith("sqlite://");
+    const hasSqlliteScheme = conn.startsWith("sqllite://");
+    const hasSqliteScheme = conn.startsWith("sqlite://");
 
-        if (!hasSqlliteScheme && !hasSqliteScheme) {
-            throw new InternalServerError(
-                "sqllite_connection_invalid",
-                { conn },
-                { message: "SQLite connection must start with sqllite:// or sqlite://" }
-            );
-        }
-
-        const rawPath = hasSqlliteScheme
-            ? conn.replace("sqllite://", "")
-            : conn.replace("sqlite://", "");
-
-        return { isInMemory: false, filePath: path.resolve(process.cwd(), rawPath) };
-    } catch (err) {
-        if (err instanceof InternalServerError) throw err;
+    if (!hasSqlliteScheme && !hasSqliteScheme) {
         throw new InternalServerError(
-            "sqllite_connection_parse_failed",
+            "sqllite_connection_invalid",
             { conn },
-            { message: err.message }
+            { message: "SQLite connection must start with sqllite:// or sqlite://" }
         );
     }
+
+    const rawPath = hasSqlliteScheme
+        ? conn.replace("sqllite://", "")
+        : conn.replace("sqlite://", "");
+
+    return { isInMemory: false, filePath: path.resolve(process.cwd(), rawPath) };
 }
 
 /**
@@ -110,6 +105,7 @@ export function getDb(collection) {
     }
 
     // Create the table if it doesn't already exist.
+    // language=SQLite
     sqliteDb.exec(`
         CREATE TABLE IF NOT EXISTS "${collection}" (
             id   TEXT PRIMARY KEY,
@@ -132,7 +128,7 @@ export async function ping() {
         );
     }
     // A cheap round-trip to confirm the DB is responsive.
-    sqliteDb.prepare("SELECT 1").get();
+    sqliteDb.prepare(SQLITE_PING_SQL).get();
     return { ok: 1 };
 }
 
@@ -144,7 +140,7 @@ export async function getCollections() {
 
     try {
         const rows = sqliteDb
-            .prepare("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")
+            .prepare(SQLITE_LIST_TABLES_SQL)
             .all();
         return rows.map(r => r.name);
     } catch (err) {

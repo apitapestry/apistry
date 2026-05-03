@@ -1,4 +1,3 @@
-import { fail } from '../_helpers.js';
 import { dataError, definitionError, present } from '../_helpers.js';
 
 export function sumLessThanOrEqual({ value, property, params }) {
