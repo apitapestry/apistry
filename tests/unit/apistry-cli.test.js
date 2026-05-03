@@ -133,7 +133,7 @@ describe('APIstry CLI', () => {
                 15000
             );
 
-            expect(exitCode).toBe(0);
+            expect(exitCode, `stdout:\n${stdout}\nstderr:\n${stderr}`).toBe(0);
             expect(stderr).toBe('');
             expect(stdout).not.toContain('🚀 serve');
             expect(stdout).not.toContain('INFO: db_connected');
@@ -169,13 +169,13 @@ describe('APIstry CLI', () => {
 
         it('should emit startup logs as one-line JSON with config defaults', async () => {
             const { stdout, stderr, exitCode } = await runCLI(
-                ['start', '--config', 'config.yml'],
+                ['start', '--config', 'tests/fixtures/apistry-cli.config.yml'],
                 '',
                 15000,
                 { API_KEY: 'test-api-key' }
             );
 
-            expect(exitCode).toBe(0);
+            expect(exitCode, `stdout:\n${stdout}\nstderr:\n${stderr}`).toBe(0);
             expect(stderr).toBe('');
             expect(stdout).not.toContain('INFO: db_connected');
             expect(stdout).not.toContain('INFO: license_verified');

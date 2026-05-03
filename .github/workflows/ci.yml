@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 'feature-*'
     tags:
       - 'release-*'
   pull_request:
