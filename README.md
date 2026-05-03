@@ -23,25 +23,29 @@ See `src/apistry.js` for available CLI options.
 
 ## Docker Desktop
 
-The Docker Compose setup builds the app image locally, starts Apistry on `127.0.0.1:3000`, mounts your local config file, passes through `API_KEY` and `MONGO_PASSWORD`, and stores local SQLite data in a named Docker volume.
+The Docker Compose setup builds the app image locally, starts Apistry on `127.0.0.1:3000`, mounts a site directory at `/home/node/site`, passes through `API_KEY` and `MONGO_PASSWORD`, and stores local SQLite data in a named Docker volume.
 
-Your local config file must exist at:
-
-```sh
-~/Data/docker/config.yml
-```
-
-It is mounted read-only inside the container at:
+By default, Compose mounts the repo's `image/` directory. That gives the container this config file:
 
 ```sh
-/app/config/config.yml
+/home/node/site/config.yml
 ```
+
+The image also includes that same default config, so a plain `docker run` can start without a bind mount.
 
 The container starts with:
 
 ```sh
-node dist/apistry.js start --config /app/config/config.yml --dbDir /app/data/sqlite.db
+node dist/apistry.js start --config "$APISTRY_CONFIG_PATH"
 ```
+
+`APISTRY_CONFIG_PATH` defaults to:
+
+```sh
+/home/node/site/config.yml
+```
+
+The container does not support additional Apistry CLI arguments. Put runtime settings in `config.yml`.
 
 Build and start:
 
@@ -79,11 +83,25 @@ To publish a different host port, set `APISTRY_HOST_PORT`:
 APISTRY_HOST_PORT=8080 docker compose -f image/docker-compose.yml up --build -d
 ```
 
+To mount a different site directory, set `APISTRY_SITE_DIR` to an absolute or Compose-relative path. The directory should contain the config and any mounted assets referenced by that config:
+
+```sh
+APISTRY_SITE_DIR="$HOME/Data/docker" docker compose -f image/docker-compose.yml up --build -d
+```
+
+To use a different config file inside the mounted site directory, set `APISTRY_CONFIG_PATH`:
+
+```sh
+APISTRY_SITE_DIR="$HOME/Data/docker" \
+APISTRY_CONFIG_PATH=/home/node/site/local.yml \
+docker compose -f image/docker-compose.yml up --build -d
+```
+
 ## Notes
 
-Apistry accepts `.yml`, `.yaml`, and `.json` config files. The Docker setup uses `config.yml` because that is the filename provided for the local Docker Desktop config.
+Apistry accepts `.yml`, `.yaml`, and `.json` config files. The Docker image defaults to `/home/node/site/config.yml`.
 
-Your current Docker config uses `/home/ec2-user/site/contracts` and `/home/ec2-user/site/docs`; the image includes the contracts and built docs site at those paths. It also contains a MongoDB connection, but Docker Desktop defaults to local SQLite with `APISTRY_DB_DIR=/app/data/sqlite.db` so the app can run without depending on external MongoDB access. Remove or unset `APISTRY_DB_DIR` in `image/docker-compose.yml` if you want to use the database connection from the mounted config.
+The bundled Docker config references `/app/contracts`, which contains a sample contract copied into the image. A custom mounted config can instead reference paths inside the mounted site directory, such as `/home/node/site/contracts` or `/home/node/site/docs`. For local SQLite, use a path under `/app/data` so it persists in the `apistry-data` volume.
 
 If the config contains relative paths such as `docs-site/static/contracts`, `docs-site/build`, or `data/sqlite.db`, they resolve relative to `/app` inside the container. `data/sqlite.db` resolves to the persistent `apistry-data` volume mounted at `/app/data`.
 

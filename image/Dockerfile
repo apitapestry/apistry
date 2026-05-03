@@ -10,49 +10,26 @@ COPY src ./src
 COPY README.md LICENSE ./
 RUN npm run build
 
-
-FROM node:22-bookworm-slim AS docs-build
-
-WORKDIR /app/docs-site
-
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends autoconf automake g++ libtool make nasm pkg-config \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY docs-site/package.json docs-site/package-lock.json ./
-RUN npm ci
-
-COPY docs-site ./
-RUN npm run build
-
-
 FROM node:22-bookworm-slim AS runtime
 
 ENV NODE_ENV=production
-ENV APISTRY_HOST=0.0.0.0
-ENV APISTRY_PORT=3000
-ENV CONFIG_PATH=/app/config/config.yml
-ENV SERVICE_NAME=apistry
+ENV APISTRY_CONFIG_PATH=/home/node/site/config.yml
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
-COPY --from=app-build /app/dist ./dist
-COPY --from=docs-build /app/docs-site/build ./docs-site/build
-COPY --from=docs-build /app/docs-site/build /home/ec2-user/site/docs
-COPY docs-site/static ./docs-site/static
-COPY docs-site/static/contracts /home/ec2-user/site/contracts
-COPY contracts ./contracts
-COPY image/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN mkdir -p /app/contracts /app/data
 
-RUN mkdir -p /app/config /app/data /home/ec2-user/site \
-    && chown -R node:node /app /home/ec2-user \
-    && chmod +x /usr/local/bin/docker-entrypoint.sh
+COPY --from=app-build /app/dist ./dist
+COPY image/config.yml /app/config.yml
+COPY docs-site/static/contracts /app/contracts
+
+RUN chown -R node:node /app
 
 USER node
 
 EXPOSE 3000
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "-c", "exec node dist/apistry.js start --config \"$APISTRY_CONFIG_PATH\""]
