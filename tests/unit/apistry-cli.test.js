@@ -8,6 +8,25 @@ const CLI_PATH = join(__dirname, '..', '..', 'src', 'apistry.js');
 const ETL_CLI_PATH = join(__dirname, '..', '..', 'src', 'apistry-etl.js');
 import pkg from "../../package.json" with { type: "json" };
 
+const CLI_ENV_KEYS_TO_CLEAR = [
+    'APISTRY_HOST',
+    'APISTRY_PORT',
+    'HOST',
+    'PORT',
+    'LOG_LEVEL',
+    'SERVICE_NAME'
+];
+
+function getCliTestEnv(envOverrides = {}) {
+    const env = { ...process.env, NODE_ENV: 'test' };
+
+    for (const key of CLI_ENV_KEYS_TO_CLEAR) {
+        delete env[key];
+    }
+
+    return { ...env, ...envOverrides };
+}
+
 /**
  * Helper function to execute CLI commands
  * @param {string[]} args - Command line arguments
@@ -22,7 +41,7 @@ function runCLI(args, input = '', timeout = 5000, envOverrides = {}, etl = false
         const cliPath = etl ? ETL_CLI_PATH : CLI_PATH;
         const child = spawn('node', [cliPath, ...args], {
             cwd: join(__dirname, '..', '..'),
-            env: { ...process.env, NODE_ENV: 'test', ...envOverrides }
+            env: getCliTestEnv(envOverrides)
         });
 
         let stdout = '';
