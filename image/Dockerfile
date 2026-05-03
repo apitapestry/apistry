@@ -25,6 +25,7 @@ RUN mkdir -p /app/contracts /app/data
 COPY --from=app-build /app/dist ./dist
 COPY image/config.yml /app/config.yml
 COPY docs-site/static/contracts /app/contracts
+COPY data/sqlite.db /app/data/sqlite.db
 
 RUN chown -R node:node /app
 

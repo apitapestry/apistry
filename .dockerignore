@@ -6,7 +6,8 @@ node_modules
 dist
 docs-site/node_modules
 coverage
-data
+data/*
+!data/sqlite.db
 *.log
 .env
 .DS_Store
