@@ -40,10 +40,5 @@ describe('contractNormalizeResponse', () => {
     await execute(ctx, {});
 
     expect(ctx.validation.errors.length).toBe(0);
-    const actual = ctx.state.response.body.results[0];
-    // expect(actual).toEqual({
-    //   fullname: 'Luke Skywalker',
-    //   url: 'https://swapi.py4e.com/api/people/1/'
-    // });
   });
 });

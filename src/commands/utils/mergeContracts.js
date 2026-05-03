@@ -332,8 +332,7 @@ function mergePaths(merged, spec, i, pathOpSource, fileNames) {
             }
         }
 
-        const mergedPath = { ...(merged.paths[p] || {}), ...def };
-        merged.paths[p] = mergedPath;
+        merged.paths[p] = { ...(merged.paths[p] || {}), ...def };
 
         for (const op of Object.keys(def)) {
             pathOpSource.set(`${p}::${op}`, i);

@@ -259,7 +259,6 @@ function parseArgs(argv) {
     }
     if (arg === '--dir') {
       parsed.baseDir = args.shift();
-      continue;
     }
   }
 

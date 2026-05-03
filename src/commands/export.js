@@ -99,7 +99,6 @@ function getConfig(options = {}) {
         filePath = outputPath;
     } else {
         exportDir = outputPath;
-        format = format;
     }
 
     return {

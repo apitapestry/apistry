@@ -65,12 +65,3 @@ export class ActionRegistry {
         return Array.from(this.actions.values());
     }
 }
-
-export function createDefaultRegistry() {
-    const registry = new ActionRegistry();
-
-    // Built-ins are registered via explicit imports elsewhere.
-    // This keeps registration intentional and tree-shake-friendly.
-
-    return registry;
-}

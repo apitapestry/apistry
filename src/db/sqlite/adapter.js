@@ -15,6 +15,7 @@ const SQLITE_IN_MEMORY = "sqlite://IN-MEMORY-DB";
 const SQLITE_LEGACY_IN_MEMORY = "sqllite://IN-MEMORY-DB";
 // language=SQLite
 const SQLITE_PING_SQL = "SELECT 1";
+// noinspection SqlResolve
 // language=SQLite
 const SQLITE_LIST_TABLES_SQL = "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'";
 
@@ -105,6 +106,7 @@ export function getDb(collection) {
     }
 
     // Create the table if it doesn't already exist.
+    // noinspection SqlResolve
     // language=SQLite
     sqliteDb.exec(`
         CREATE TABLE IF NOT EXISTS "${collection}" (

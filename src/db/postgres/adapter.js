@@ -12,6 +12,7 @@ const initializedCollections = new Set();
 const initInFlight = new Map();
 // language=PostgreSQL
 const POSTGRES_PING_SQL = "SELECT 1";
+// noinspection SqlResolve
 // language=PostgreSQL
 const POSTGRES_LIST_COLLECTIONS_SQL = `
     SELECT table_name AS name

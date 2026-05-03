@@ -115,62 +115,64 @@ export default function TryIt({ basePath = '/v1/books/', defaultParams = '?bookT
           onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); sendRequest(); } }}
           aria-label="API path and query params"
           // placeholder="?bookTitle=*Hail*"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start" sx={{
-                background: '#f1f5f9',
-                color: '#2563eb',
-                fontWeight: 600,
-                borderRadius: '8px 0 0 8px',
-                px: 1.5,
-                fontSize: '0.85rem',
-                display: 'inline-flex',
-                whiteSpace: 'nowrap',
-                overflow: 'visible',
-                flex: '0 0 auto',
-                maxWidth: 'none',
-              }}>
-                {showBaseUrlDropdown ? (
-                  <Select
-                    variant="standard"
-                    value={selectedBaseUrl}
-                    onChange={e => {
-                      setSelectedBaseUrl(e.target.value);
-                      setInput("?limit=10"); // Set query string to '?limit=10' on dropdown change
-                    }}
-                    disableUnderline
-                    sx={{
-                      fontSize: '0.85rem',
-                      fontWeight: 600,
-                      color: '#2563eb',
-                      '& .MuiSelect-select': { py: 0.25 },
-                    }}
-                  >
-                    {baseUrlCandidates.map((u) => (
-                      <MenuItem key={u} value={u} sx={{ fontSize: '0.85rem' }}>
-                        {u}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                ) : (
-                  baseUrlCandidates[0]
-                )}
-              </InputAdornment>
-            ),
-            sx: {
-              borderTopRightRadius: 0,
-              borderBottomRightRadius: 0,
-              borderTopLeftRadius: 2,
-              borderBottomLeftRadius: 2,
-              background: '#f8fafc',
-              flex: 1,
-              minWidth: 80,
-              maxWidth: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              '& .MuiInputBase-input': {
-                flex: '1 1 auto',
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start" sx={{
+                  background: '#f1f5f9',
+                  color: '#2563eb',
+                  fontWeight: 600,
+                  borderRadius: '8px 0 0 8px',
+                  px: 1.5,
+                  fontSize: '0.85rem',
+                  display: 'inline-flex',
+                  whiteSpace: 'nowrap',
+                  overflow: 'visible',
+                  flex: '0 0 auto',
+                  maxWidth: 'none',
+                }}>
+                  {showBaseUrlDropdown ? (
+                    <Select
+                      variant="standard"
+                      value={selectedBaseUrl}
+                      onChange={e => {
+                        setSelectedBaseUrl(e.target.value);
+                        setInput("?limit=10"); // Set query string to '?limit=10' on dropdown change
+                      }}
+                      disableUnderline
+                      sx={{
+                        fontSize: '0.85rem',
+                        fontWeight: 600,
+                        color: '#2563eb',
+                        '& .MuiSelect-select': { py: 0.25 },
+                      }}
+                    >
+                      {baseUrlCandidates.map((u) => (
+                        <MenuItem key={u} value={u} sx={{ fontSize: '0.85rem' }}>
+                          {u}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  ) : (
+                    baseUrlCandidates[0]
+                  )}
+                </InputAdornment>
+              ),
+              sx: {
+                borderTopRightRadius: 0,
+                borderBottomRightRadius: 0,
+                borderTopLeftRadius: 2,
+                borderBottomLeftRadius: 2,
+                background: '#f8fafc',
+                flex: 1,
                 minWidth: 80,
+                maxWidth: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                '& .MuiInputBase-input': {
+                  flex: '1 1 auto',
+                  minWidth: 80,
+                },
               },
             },
           }}
