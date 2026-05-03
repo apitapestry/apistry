@@ -33,6 +33,82 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 /**
+ * Build the Apistry Fastify app with the given runtime configuration.
+ */
+export async function buildServer(config, options = {}) {
+    const runtimeConfig = {
+        ...config
+    };
+    const { contractPath, dbConnection, logLevel, swaggerEnabled, serviceName, serviceDesc } = runtimeConfig;
+    const log = getLogger(logLevel, 'server');
+
+    await initDb(dbConnection, log);
+
+    const fastify = (await import('fastify')).default;
+    const apiSpecs = getContracts(contractPath);
+    // Bind hosts like 0.0.0.0 are valid for listening inside Docker, but they are not
+    // a client-facing URL. Publish a relative OpenAPI server URL so docs work on whatever
+    // host and reverse-proxy path serves this app.
+    const apiSpec = mergeContracts(apiSpecs, contractPath, serviceName, serviceDesc, logLevel);
+
+    // ------------------------------
+    // Build orchestration action registry (startup-time only)
+    // ------------------------------
+    const registry = new ActionRegistry();
+    const defaultActionsPath = runtimeConfig.defaultOrchestrationActionsPath
+        ?? join(__dirname, '../orchestration/actions');
+    await loadOrchestrationActions(defaultActionsPath, registry);
+
+    // Optionally load user-provided actions (append-only).
+    // Config key is optional; if present, it must be a directory path.
+    if (runtimeConfig.orchestrationActionsPath) {
+        await loadOrchestrationActions(runtimeConfig.orchestrationActionsPath, registry);
+    }
+
+    // ------------------------------
+    // Build immutable external service registry (startup-time only)
+    // ------------------------------
+    const externalServices = ExternalServiceRegistry.fromConfig(runtimeConfig?.raw ?? {});
+
+    // Initialize Fastify app
+    const fastifyConfig = getFastifyConfig(logLevel, 'server');
+    const app = fastify(fastifyConfig);
+
+    // Decorate app with config and contract
+    app.decorate('config', runtimeConfig)
+    app.decorate('openapiSpec', apiSpec);
+
+    // Decorate orchestration registry (immutable at runtime)
+    app.decorate('orchestrationActions', registry);
+
+    // Decorate external service registry (immutable at runtime)
+    app.decorate('externalServices', externalServices);
+
+    app.addContentTypeParser('text/plain', { parseAs: 'string' }, (req, body, done) => done(null, body));
+
+    // Register plugins
+    await app.register(ajvPlugin);
+    await app.register(errorsPlugin);
+    await app.register(corsPlugin, config.cors ?? {});
+    await app.register(hooksPlugin, { openapiSpec: apiSpec });
+    await app.register(staticPlugin);
+    await app.register(securityPlugin, {
+        openapiSpec: apiSpec,
+        runtimeSecurity: runtimeConfig.security
+    });
+    await app.register(controllersPlugin, { openapiSpec: apiSpec});
+    if (swaggerEnabled) {
+        await swaggerPlugin(app, apiSpec);
+    }
+
+    if (options.ready !== false) {
+        await app.ready();
+    }
+
+    return app;
+}
+
+/**
  * Start the Apistry server with the given runtime configuration
  * This is the core server startup implementation, used by both CLI and tests
  */
@@ -40,71 +116,14 @@ export async function serverStart(config) {
     const runtimeConfig = {
         ...config
     };
-    const { contractPath, dbConnection, logLevel, port, host, swaggerEnabled, serviceName, serviceDesc } = runtimeConfig;
+    const { logLevel, port, host, swaggerEnabled } = runtimeConfig;
     const log = getLogger(logLevel, 'server');
+    const listenAddress = `http://${host}:${port}`;
+    const swaggerUiPath = '/swagger-ui';
 
     try {
-        await initDb(dbConnection, log);
+        const app = await buildServer(runtimeConfig);
 
-        const fastify = (await import('fastify')).default;
-        const listenAddress = `http://${host}:${port}`;
-        const swaggerUiPath = '/swagger-ui';
-        const apiSpecs = getContracts(contractPath);
-        // Bind hosts like 0.0.0.0 are valid for listening inside Docker, but they are not
-        // a client-facing URL. Publish a relative OpenAPI server URL so docs work on whatever
-        // host and reverse-proxy path serves this app.
-        const apiSpec = mergeContracts(apiSpecs, contractPath, serviceName, serviceDesc, logLevel);
-
-        // ------------------------------
-        // Build orchestration action registry (startup-time only)
-        // ------------------------------
-        const registry = new ActionRegistry();
-        await loadOrchestrationActions(join(__dirname, '../orchestration/actions'), registry);
-
-        // Optionally load user-provided actions (append-only).
-        // Config key is optional; if present, it must be a directory path.
-        if (runtimeConfig.orchestrationActionsPath) {
-            await loadOrchestrationActions(runtimeConfig.orchestrationActionsPath, registry);
-        }
-
-        // ------------------------------
-        // Build immutable external service registry (startup-time only)
-        // ------------------------------
-        const externalServices = ExternalServiceRegistry.fromConfig(runtimeConfig?.raw ?? {});
-
-        // Initialize Fastify app
-        const fastifyConfig = getFastifyConfig(logLevel, 'server');
-        const app = fastify(fastifyConfig);
-
-        // Decorate app with config and contract
-        app.decorate('config', runtimeConfig)
-        app.decorate('openapiSpec', apiSpec);
-
-        // Decorate orchestration registry (immutable at runtime)
-        app.decorate('orchestrationActions', registry);
-
-        // Decorate external service registry (immutable at runtime)
-        app.decorate('externalServices', externalServices);
-
-        app.addContentTypeParser('text/plain', { parseAs: 'string' }, (req, body, done) => done(null, body));
-
-        // Register plugins
-        await app.register(ajvPlugin);
-        await app.register(errorsPlugin);
-        await app.register(corsPlugin, config.cors ?? {});
-        await app.register(hooksPlugin, { openapiSpec: apiSpec });
-        await app.register(staticPlugin);
-        await app.register(securityPlugin, {
-            openapiSpec: apiSpec,
-            runtimeSecurity: runtimeConfig.security
-        });
-        await app.register(controllersPlugin, { openapiSpec: apiSpec});
-        if (swaggerEnabled) {
-            await swaggerPlugin(app, apiSpec);
-        }
-
-        // Start server
-        await app.ready();
         if (process.env.NODE_ENV !== 'test') {
             await app.listen({ port, host });
         }

@@ -5,6 +5,7 @@
 
 # Node.js
 **/dist/**
+**/dist-lambda/**
 **/generated/**
 node_modules/
 npm-debug.log
@@ -29,6 +30,7 @@ Thumbs.db
 # Archives
 *.7z
 *.rar
+*.zip
 *.tar.gz
 
 # Misc

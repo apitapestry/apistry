@@ -1,6 +1,3 @@
-import mongoAdapter from "./mongo/adapter.js";
-import sqlliteAdapter from "./sqlite/adapter.js";
-import postgresAdapter from "./postgres/adapter.js";
 import { ConfigurationError } from '../utils/errors.js';
 
 let adapter = null;
@@ -22,14 +19,14 @@ export async function initDb(dbConnection = {}, logger) {
         //     break;
         case 'mongodb+srv':
         case 'mongo':
-            adapter = mongoAdapter;
+            adapter = (await import('./mongo/adapter.js')).default;
             break
         case 'sqlite':
-            adapter = sqlliteAdapter;
+            adapter = (await import('./sqlite/adapter.js')).default;
             break;
         case 'postgres':
         case 'postgresql':
-            adapter = postgresAdapter;
+            adapter = (await import('./postgres/adapter.js')).default;
             break;
         default:
             throw new ConfigurationError(

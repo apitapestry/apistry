@@ -22,6 +22,21 @@ await build({
   }
 });
 
+await build({
+  entryPoints: ['index.js'],
+  outfile: 'dist/index.js',
+  platform: 'node',
+  format: 'esm',
+  target: 'node18',
+  bundle: true,
+  packages: 'external',
+  minify: true,
+  treeShaking: true,
+  loader: {
+    '.json': 'json'
+  }
+});
+
 // Copy JSON assets required at runtime.
 await mkdir('dist/validation/validations', { recursive: true });
 await copyFile(

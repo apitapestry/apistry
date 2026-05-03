@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
  */
 export function loadDefaultConfig() {
     try {
-        const defaultConfigPath = path.join(__dirname, '../config.default.yml');
+        const defaultConfigPath = getDefaultConfigPath();
         const raw = fs.readFileSync(defaultConfigPath, 'utf8');
         return yaml.load(raw) || {};
     } catch (err) {
@@ -22,6 +22,15 @@ export function loadDefaultConfig() {
             { message: `Failed to load default configuration: ${err.message}`, cause: err }
         );
     }
+}
+
+function getDefaultConfigPath() {
+    const sourceConfigPath = path.join(__dirname, '../config.default.yml');
+    if (fs.existsSync(sourceConfigPath)) {
+        return sourceConfigPath;
+    }
+
+    return path.join(__dirname, 'config.default.yml');
 }
 
 /**
@@ -121,4 +130,3 @@ export function substituteEnvVars(obj) {
         return obj;
     }
 }
-
