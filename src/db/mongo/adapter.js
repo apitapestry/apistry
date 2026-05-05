@@ -1,4 +1,5 @@
 import { InternalServerError } from "../../utils/errors.js";
+import { getMaskDbConnection } from "../../utils/configHelpers.js";
 import { MongoClient } from "mongodb";
 import { dbCount } from "./dbCount.js";
 import { dbDelete } from "./dbDelete.js";
@@ -48,7 +49,7 @@ export async function connect(dbConnection, options = {}) {
 
         throw new InternalServerError(
             "mongodb_connection_failed",
-            { uri },
+            { uri: getMaskDbConnection(uri) },
             { message: err.message }
         );
     }
