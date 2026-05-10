@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "docusaurus start --port 8080",
-    "build": "docusaurus clear && docusaurus build",
-    "buildLocal": "docusaurus clear && docusaurus build && cd build && zip -r ../../data/docs-site.zip *"
+    "build": "docusaurus clear && docusaurus build"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
