@@ -1,0 +1,67 @@
+# Paths are relative to the current working directory.
+server:
+  host: localhost
+  port: 3000 # param override
+  serviceName: APIstry
+  serviceDescription: >
+    APIstry is a powerful API management platform that enables developers to create, manage, and scale APIs with ease.
+  swaggerUiEnabled: true
+
+localSite:
+  path: docs-site/build
+
+contracts:
+  path: docs-site/static/contracts # param override
+
+database:
+#  connection: sqlite://data/sqlite.db # param override
+  connection: mongodb+srv://apistry:${MONGO_PASSWORD}@apistry-db.ojsguxa.mongodb.net/apistry?appName=apistry-db
+#  connection: postgresql://postgres.kkyagjfrftxexcburydq:${POSTGRES_PASSWORD}@aws-1-us-east-1.pooler.supabase.com:5432/postgres
+#  options:
+#    maxPoolSize: 10
+#    retryWrites: true
+#    writeConcern: majority
+
+logging:
+  level: info # param override
+  pretty: false
+  redact:
+    - req.headers.authorization
+    - req.headers.cookie
+
+cors:
+  enabled: true
+  origins:
+    - https://www.apistry.net
+    - http://localhost:8080
+
+security:
+  bearerToken: $API_KEY
+  apiKey:
+    key: apiKey
+    value: $API_KEY
+#  oauth1:
+#  oauth2:
+#  jwt:
+
+#shutdown:
+#  graceful:
+#    enabled: true
+#    timeoutMs: 10000
+
+#utilityEndpoints:
+#  ready: # /ready
+#    enabled: true
+#  health: # /health
+#    enabled: true
+#  metrics: # /metrics
+#    enabled: true
+
+#externalSources:
+#  vinValidation:
+#    baseUrl: https://vpic.nhtsa.dot.gov
+#    timeoutMs: 2000
+#    retries: 2
+#    auth:
+#      type: bearer
+#      tokenEnv: ACCOUNTS_API_TOKEN

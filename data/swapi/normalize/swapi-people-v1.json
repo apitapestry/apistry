@@ -1,0 +1,2241 @@
+[
+  {
+    "personId": "cf89ffdc-0e49-4f30-b4bb-1f6317e4a55e",
+    "id": "1",
+    "name": "Luke Skywalker",
+    "birth_year": "19BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "blond",
+    "height": "172",
+    "mass": "77",
+    "skin_color": "fair",
+    "homeworld": "1",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "6",
+      "7"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "12",
+      "22"
+    ],
+    "vehicles": [
+      "14",
+      "30"
+    ],
+    "url": "/people/1",
+    "created": "2014-12-09T13:50:51.644000Z",
+    "edited": "2014-12-20T21:17:56.891000Z"
+  },
+  {
+    "personId": "1caec1bd-a654-4723-a1b0-461269f4dc77",
+    "id": "2",
+    "name": "C-3PO",
+    "birth_year": "112BBY",
+    "eye_color": "yellow",
+    "gender": "n/a",
+    "hair_color": "n/a",
+    "height": "167",
+    "mass": "75",
+    "skin_color": "gold",
+    "homeworld": "1",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "2"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/2",
+    "created": "2014-12-10T15:10:51.357000Z",
+    "edited": "2014-12-20T21:17:50.309000Z"
+  },
+  {
+    "personId": "808f879f-43bf-4222-841f-30d2868c55c7",
+    "id": "3",
+    "name": "R2-D2",
+    "birth_year": "33BBY",
+    "eye_color": "red",
+    "gender": "n/a",
+    "hair_color": "n/a",
+    "height": "96",
+    "mass": "32",
+    "skin_color": "white, blue",
+    "homeworld": "8",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "species": [
+      "2"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/3",
+    "created": "2014-12-10T15:11:50.376000Z",
+    "edited": "2014-12-20T21:17:50.311000Z"
+  },
+  {
+    "personId": "b1b06058-978a-4759-8162-5fc7bb580564",
+    "id": "4",
+    "name": "Darth Vader",
+    "birth_year": "41.9BBY",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "202",
+    "mass": "136",
+    "skin_color": "white",
+    "homeworld": "1",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "13"
+    ],
+    "vehicles": [],
+    "url": "/people/4",
+    "created": "2014-12-10T15:18:20.704000Z",
+    "edited": "2014-12-20T21:17:50.313000Z"
+  },
+  {
+    "personId": "24244fa5-b637-4031-b07c-8e3ce44f393d",
+    "id": "5",
+    "name": "Leia Organa",
+    "birth_year": "19BBY",
+    "eye_color": "brown",
+    "gender": "female",
+    "hair_color": "brown",
+    "height": "150",
+    "mass": "49",
+    "skin_color": "light",
+    "homeworld": "2",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "6",
+      "7"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [
+      "30"
+    ],
+    "url": "/people/5",
+    "created": "2014-12-10T15:20:09.791000Z",
+    "edited": "2014-12-20T21:17:50.315000Z"
+  },
+  {
+    "personId": "4f780268-4bd1-4d5f-a894-8cf157ef9cb5",
+    "id": "6",
+    "name": "Owen Lars",
+    "birth_year": "52BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "brown, grey",
+    "height": "178",
+    "mass": "120",
+    "skin_color": "light",
+    "homeworld": "1",
+    "films": [
+      "1",
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/6",
+    "created": "2014-12-10T15:52:14.024000Z",
+    "edited": "2014-12-20T21:17:50.317000Z"
+  },
+  {
+    "personId": "4acb83e1-3e93-4523-87fb-44f5a4d70c7c",
+    "id": "7",
+    "name": "Beru Whitesun lars",
+    "birth_year": "47BBY",
+    "eye_color": "blue",
+    "gender": "female",
+    "hair_color": "brown",
+    "height": "165",
+    "mass": "75",
+    "skin_color": "light",
+    "homeworld": "1",
+    "films": [
+      "1",
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/7",
+    "created": "2014-12-10T15:53:41.121000Z",
+    "edited": "2014-12-20T21:17:50.319000Z"
+  },
+  {
+    "personId": "465dfa1b-6aa4-423c-988a-5fdf207bc07d",
+    "id": "8",
+    "name": "R5-D4",
+    "birth_year": "unknown",
+    "eye_color": "red",
+    "gender": "n/a",
+    "hair_color": "n/a",
+    "height": "97",
+    "mass": "32",
+    "skin_color": "white, red",
+    "homeworld": "1",
+    "films": [
+      "1"
+    ],
+    "species": [
+      "2"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/8",
+    "created": "2014-12-10T15:57:50.959000Z",
+    "edited": "2014-12-20T21:17:50.321000Z"
+  },
+  {
+    "personId": "6ed2a4d3-4336-464b-afd9-ea9c01529a0e",
+    "id": "9",
+    "name": "Biggs Darklighter",
+    "birth_year": "24BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "183",
+    "mass": "84",
+    "skin_color": "light",
+    "homeworld": "1",
+    "films": [
+      "1"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "12"
+    ],
+    "vehicles": [],
+    "url": "/people/9",
+    "created": "2014-12-10T15:59:50.509000Z",
+    "edited": "2014-12-20T21:17:50.323000Z"
+  },
+  {
+    "personId": "d69dda19-45c2-457a-8638-d72f94fa6d44",
+    "id": "10",
+    "name": "Obi-Wan Kenobi",
+    "birth_year": "57BBY",
+    "eye_color": "blue-gray",
+    "gender": "male",
+    "hair_color": "auburn, white",
+    "height": "182",
+    "mass": "77",
+    "skin_color": "fair",
+    "homeworld": "20",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "48",
+      "59",
+      "64",
+      "65",
+      "74"
+    ],
+    "vehicles": [
+      "38"
+    ],
+    "url": "/people/10",
+    "created": "2014-12-10T16:16:29.192000Z",
+    "edited": "2014-12-20T21:17:50.325000Z"
+  },
+  {
+    "personId": "bb264147-3c0d-4a45-8e9b-6ea0e3e84b80",
+    "id": "11",
+    "name": "Anakin Skywalker",
+    "birth_year": "41.9BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "blond",
+    "height": "188",
+    "mass": "84",
+    "skin_color": "fair",
+    "homeworld": "1",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "39",
+      "59",
+      "65"
+    ],
+    "vehicles": [
+      "44",
+      "46"
+    ],
+    "url": "/people/11",
+    "created": "2014-12-10T16:20:44.310000Z",
+    "edited": "2014-12-20T21:17:50.327000Z"
+  },
+  {
+    "personId": "ec8f7083-08f7-48fb-b731-afd7a65fced6",
+    "id": "12",
+    "name": "Wilhuff Tarkin",
+    "birth_year": "64BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "auburn, grey",
+    "height": "180",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "21",
+    "films": [
+      "1",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/12",
+    "created": "2014-12-10T16:26:56.138000Z",
+    "edited": "2014-12-20T21:17:50.330000Z"
+  },
+  {
+    "personId": "b9cdb713-fe68-4155-b70f-1fce5b497a51",
+    "id": "13",
+    "name": "Chewbacca",
+    "birth_year": "200BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "228",
+    "mass": "112",
+    "skin_color": "unknown",
+    "homeworld": "14",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "6",
+      "7"
+    ],
+    "species": [
+      "3"
+    ],
+    "starships": [
+      "10",
+      "22"
+    ],
+    "vehicles": [
+      "19"
+    ],
+    "url": "/people/13",
+    "created": "2014-12-10T16:42:45.066000Z",
+    "edited": "2014-12-20T21:17:50.332000Z"
+  },
+  {
+    "personId": "0f325acb-4232-4faa-b2e9-fa93dcb8e0b9",
+    "id": "14",
+    "name": "Han Solo",
+    "birth_year": "29BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "180",
+    "mass": "80",
+    "skin_color": "fair",
+    "homeworld": "22",
+    "films": [
+      "1",
+      "2",
+      "3",
+      "7"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "10",
+      "22"
+    ],
+    "vehicles": [],
+    "url": "/people/14",
+    "created": "2014-12-10T16:49:14.582000Z",
+    "edited": "2014-12-20T21:17:50.334000Z"
+  },
+  {
+    "personId": "42e808fe-a49e-4547-9815-0b6c46843a09",
+    "id": "15",
+    "name": "Greedo",
+    "birth_year": "44BBY",
+    "eye_color": "black",
+    "gender": "male",
+    "hair_color": "n/a",
+    "height": "173",
+    "mass": "74",
+    "skin_color": "green",
+    "homeworld": "23",
+    "films": [
+      "1"
+    ],
+    "species": [
+      "4"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/15",
+    "created": "2014-12-10T17:03:30.334000Z",
+    "edited": "2014-12-20T21:17:50.336000Z"
+  },
+  {
+    "personId": "fd125d06-fb30-45aa-8e8e-1cdff8a5a04b",
+    "id": "16",
+    "name": "Jabba Desilijic Tiure",
+    "birth_year": "600BBY",
+    "eye_color": "orange",
+    "gender": "hermaphrodite",
+    "hair_color": "n/a",
+    "height": "175",
+    "mass": "1,358",
+    "skin_color": "green-tan, brown",
+    "homeworld": "24",
+    "films": [
+      "1",
+      "3",
+      "4"
+    ],
+    "species": [
+      "5"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/16",
+    "created": "2014-12-10T17:11:31.638000Z",
+    "edited": "2014-12-20T21:17:50.338000Z"
+  },
+  {
+    "personId": "8697f65b-7573-4943-a6b0-f7bfebe8bd04",
+    "id": "18",
+    "name": "Wedge Antilles",
+    "birth_year": "21BBY",
+    "eye_color": "hazel",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "170",
+    "mass": "77",
+    "skin_color": "fair",
+    "homeworld": "22",
+    "films": [
+      "1",
+      "2",
+      "3"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "12"
+    ],
+    "vehicles": [
+      "14"
+    ],
+    "url": "/people/18",
+    "created": "2014-12-12T11:08:06.469000Z",
+    "edited": "2014-12-20T21:17:50.341000Z"
+  },
+  {
+    "personId": "d122823a-4012-496e-91c2-a95e12099624",
+    "id": "19",
+    "name": "Jek Tono Porkins",
+    "birth_year": "unknown",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "180",
+    "mass": "110",
+    "skin_color": "fair",
+    "homeworld": "26",
+    "films": [
+      "1"
+    ],
+    "species": [],
+    "starships": [
+      "12"
+    ],
+    "vehicles": [],
+    "url": "/people/19",
+    "created": "2014-12-12T11:16:56.569000Z",
+    "edited": "2014-12-20T21:17:50.343000Z"
+  },
+  {
+    "personId": "385cfd9c-ec54-4669-86ea-24887ef68cc9",
+    "id": "20",
+    "name": "Yoda",
+    "birth_year": "896BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "white",
+    "height": "66",
+    "mass": "17",
+    "skin_color": "green",
+    "homeworld": "28",
+    "films": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "6"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/20",
+    "created": "2014-12-15T12:26:01.042000Z",
+    "edited": "2014-12-20T21:17:50.345000Z"
+  },
+  {
+    "personId": "96ab86c9-288a-4bb4-87c1-ac1dad6f38ed",
+    "id": "21",
+    "name": "Palpatine",
+    "birth_year": "82BBY",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "grey",
+    "height": "170",
+    "mass": "75",
+    "skin_color": "pale",
+    "homeworld": "8",
+    "films": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/21",
+    "created": "2014-12-15T12:48:05.971000Z",
+    "edited": "2014-12-20T21:17:50.347000Z"
+  },
+  {
+    "personId": "2c9e0fd4-3004-4521-a288-4c00e28a6824",
+    "id": "22",
+    "name": "Boba Fett",
+    "birth_year": "31.5BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "183",
+    "mass": "78.2",
+    "skin_color": "fair",
+    "homeworld": "10",
+    "films": [
+      "2",
+      "3",
+      "5"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "21"
+    ],
+    "vehicles": [],
+    "url": "/people/22",
+    "created": "2014-12-15T12:49:32.457000Z",
+    "edited": "2014-12-20T21:17:50.349000Z"
+  },
+  {
+    "personId": "cedf9747-a5ec-425e-8071-6679d88427c9",
+    "id": "23",
+    "name": "IG-88",
+    "birth_year": "15BBY",
+    "eye_color": "red",
+    "gender": "none",
+    "hair_color": "none",
+    "height": "200",
+    "mass": "140",
+    "skin_color": "metal",
+    "homeworld": "28",
+    "films": [
+      "2"
+    ],
+    "species": [
+      "2"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/23",
+    "created": "2014-12-15T12:51:10.076000Z",
+    "edited": "2014-12-20T21:17:50.351000Z"
+  },
+  {
+    "personId": "48d22447-a2cd-48fc-b806-c019265b0b40",
+    "id": "24",
+    "name": "Bossk",
+    "birth_year": "53BBY",
+    "eye_color": "red",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "190",
+    "mass": "113",
+    "skin_color": "green",
+    "homeworld": "29",
+    "films": [
+      "2"
+    ],
+    "species": [
+      "7"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/24",
+    "created": "2014-12-15T12:53:49.297000Z",
+    "edited": "2014-12-20T21:17:50.355000Z"
+  },
+  {
+    "personId": "262ed871-bde9-4552-ae93-be761cebc8f5",
+    "id": "25",
+    "name": "Lando Calrissian",
+    "birth_year": "31BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "177",
+    "mass": "79",
+    "skin_color": "dark",
+    "homeworld": "30",
+    "films": [
+      "2",
+      "3"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "10"
+    ],
+    "vehicles": [],
+    "url": "/people/25",
+    "created": "2014-12-15T12:56:32.683000Z",
+    "edited": "2014-12-20T21:17:50.357000Z"
+  },
+  {
+    "personId": "27fdf628-d4b0-4aee-9284-9645668a097b",
+    "id": "26",
+    "name": "Lobot",
+    "birth_year": "37BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "175",
+    "mass": "79",
+    "skin_color": "light",
+    "homeworld": "6",
+    "films": [
+      "2"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/26",
+    "created": "2014-12-15T13:01:57.178000Z",
+    "edited": "2014-12-20T21:17:50.359000Z"
+  },
+  {
+    "personId": "b9b1f5df-ba4c-4a0c-8b8b-18ab09094f75",
+    "id": "27",
+    "name": "Ackbar",
+    "birth_year": "41BBY",
+    "eye_color": "orange",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "180",
+    "mass": "83",
+    "skin_color": "brown mottle",
+    "homeworld": "31",
+    "films": [
+      "3",
+      "7"
+    ],
+    "species": [
+      "8"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/27",
+    "created": "2014-12-18T11:07:50.584000Z",
+    "edited": "2014-12-20T21:17:50.362000Z"
+  },
+  {
+    "personId": "15549d55-56ce-4ad8-bfbb-4acb4c0589f6",
+    "id": "28",
+    "name": "Mon Mothma",
+    "birth_year": "48BBY",
+    "eye_color": "blue",
+    "gender": "female",
+    "hair_color": "auburn",
+    "height": "150",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "32",
+    "films": [
+      "3"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/28",
+    "created": "2014-12-18T11:12:38.895000Z",
+    "edited": "2014-12-20T21:17:50.364000Z"
+  },
+  {
+    "personId": "24ec2b1b-cadc-459f-9f15-f08ba5d07aae",
+    "id": "29",
+    "name": "Arvel Crynyd",
+    "birth_year": "unknown",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "unknown",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "28",
+    "films": [
+      "3"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "28"
+    ],
+    "vehicles": [],
+    "url": "/people/29",
+    "created": "2014-12-18T11:16:33.020000Z",
+    "edited": "2014-12-20T21:17:50.367000Z"
+  },
+  {
+    "personId": "7fee2b3e-0058-4134-8f7b-b30e9398cbc4",
+    "id": "30",
+    "name": "Wicket Systri Warrick",
+    "birth_year": "8BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "88",
+    "mass": "20",
+    "skin_color": "brown",
+    "homeworld": "7",
+    "films": [
+      "3"
+    ],
+    "species": [
+      "9"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/30",
+    "created": "2014-12-18T11:21:58.954000Z",
+    "edited": "2014-12-20T21:17:50.369000Z"
+  },
+  {
+    "personId": "038bbf89-1f47-43fb-bef8-23fafdfb1e1e",
+    "id": "31",
+    "name": "Nien Nunb",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "160",
+    "mass": "68",
+    "skin_color": "grey",
+    "homeworld": "33",
+    "films": [
+      "3"
+    ],
+    "species": [
+      "10"
+    ],
+    "starships": [
+      "10"
+    ],
+    "vehicles": [],
+    "url": "/people/31",
+    "created": "2014-12-18T11:26:18.541000Z",
+    "edited": "2014-12-20T21:17:50.371000Z"
+  },
+  {
+    "personId": "582887c1-bbc7-4616-9b3f-3c6ff6afe42e",
+    "id": "32",
+    "name": "Qui-Gon Jinn",
+    "birth_year": "92BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "193",
+    "mass": "89",
+    "skin_color": "fair",
+    "homeworld": "28",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [
+      "38"
+    ],
+    "url": "/people/32",
+    "created": "2014-12-19T16:54:53.618000Z",
+    "edited": "2014-12-20T21:17:50.375000Z"
+  },
+  {
+    "personId": "dc7d1c67-4b58-4a0b-9449-f231b359cde4",
+    "id": "33",
+    "name": "Nute Gunray",
+    "birth_year": "unknown",
+    "eye_color": "red",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "191",
+    "mass": "90",
+    "skin_color": "mottled green",
+    "homeworld": "18",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "11"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/33",
+    "created": "2014-12-19T17:05:57.357000Z",
+    "edited": "2014-12-20T21:17:50.377000Z"
+  },
+  {
+    "personId": "44eb57c1-658e-4936-8a22-bf4bc5801724",
+    "id": "34",
+    "name": "Finis Valorum",
+    "birth_year": "91BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "blond",
+    "height": "170",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "9",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/34",
+    "created": "2014-12-19T17:21:45.915000Z",
+    "edited": "2014-12-20T21:17:50.379000Z"
+  },
+  {
+    "personId": "e3aebed8-0828-4aee-a054-e729594e80cc",
+    "id": "35",
+    "name": "Padmé Amidala",
+    "birth_year": "46BBY",
+    "eye_color": "brown",
+    "gender": "female",
+    "hair_color": "brown",
+    "height": "185",
+    "mass": "45",
+    "skin_color": "light",
+    "homeworld": "8",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "39",
+      "49",
+      "64"
+    ],
+    "vehicles": [],
+    "url": "/people/35",
+    "created": "2014-12-19T17:28:26.926000Z",
+    "edited": "2014-12-20T21:17:50.381000Z"
+  },
+  {
+    "personId": "989f1132-0e82-47c8-824c-f7c8f660e14d",
+    "id": "36",
+    "name": "Jar Jar Binks",
+    "birth_year": "52BBY",
+    "eye_color": "orange",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "196",
+    "mass": "66",
+    "skin_color": "orange",
+    "homeworld": "8",
+    "films": [
+      "4",
+      "5"
+    ],
+    "species": [
+      "12"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/36",
+    "created": "2014-12-19T17:29:32.489000Z",
+    "edited": "2014-12-20T21:17:50.383000Z"
+  },
+  {
+    "personId": "c3b0b8ea-8bb0-4f9a-a08e-6bfaaac531e0",
+    "id": "37",
+    "name": "Roos Tarpals",
+    "birth_year": "unknown",
+    "eye_color": "orange",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "224",
+    "mass": "82",
+    "skin_color": "grey",
+    "homeworld": "8",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "12"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/37",
+    "created": "2014-12-19T17:32:56.741000Z",
+    "edited": "2014-12-20T21:17:50.385000Z"
+  },
+  {
+    "personId": "fc63ab5c-83da-493b-80ea-845cc135759d",
+    "id": "38",
+    "name": "Rugor Nass",
+    "birth_year": "unknown",
+    "eye_color": "orange",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "206",
+    "mass": "unknown",
+    "skin_color": "green",
+    "homeworld": "8",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "12"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/38",
+    "created": "2014-12-19T17:33:38.909000Z",
+    "edited": "2014-12-20T21:17:50.388000Z"
+  },
+  {
+    "personId": "909c997c-1094-4762-9c8a-5c64c30d28b2",
+    "id": "39",
+    "name": "Ric Olié",
+    "birth_year": "unknown",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "183",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "8",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "40"
+    ],
+    "vehicles": [],
+    "url": "/people/39",
+    "created": "2014-12-19T17:45:01.522000Z",
+    "edited": "2014-12-20T21:17:50.392000Z"
+  },
+  {
+    "personId": "3843c2b5-3abb-48a1-b2cf-1e2b61a112f1",
+    "id": "40",
+    "name": "Watto",
+    "birth_year": "unknown",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "137",
+    "mass": "unknown",
+    "skin_color": "blue, grey",
+    "homeworld": "34",
+    "films": [
+      "4",
+      "5"
+    ],
+    "species": [
+      "13"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/40",
+    "created": "2014-12-19T17:48:54.647000Z",
+    "edited": "2014-12-20T21:17:50.395000Z"
+  },
+  {
+    "personId": "f015a458-8b1b-436a-beaa-68837c5d7c8e",
+    "id": "41",
+    "name": "Sebulba",
+    "birth_year": "unknown",
+    "eye_color": "orange",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "112",
+    "mass": "40",
+    "skin_color": "grey, red",
+    "homeworld": "35",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "14"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/41",
+    "created": "2014-12-19T17:53:02.586000Z",
+    "edited": "2014-12-20T21:17:50.397000Z"
+  },
+  {
+    "personId": "b2fe26c7-c7db-4908-9ce5-9e9af40c3a07",
+    "id": "42",
+    "name": "Quarsh Panaka",
+    "birth_year": "62BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "183",
+    "mass": "unknown",
+    "skin_color": "dark",
+    "homeworld": "8",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/42",
+    "created": "2014-12-19T17:55:43.348000Z",
+    "edited": "2014-12-20T21:17:50.399000Z"
+  },
+  {
+    "personId": "3b21592a-e4d4-479c-95fb-cfbd9d3e7a27",
+    "id": "43",
+    "name": "Shmi Skywalker",
+    "birth_year": "72BBY",
+    "eye_color": "brown",
+    "gender": "female",
+    "hair_color": "black",
+    "height": "163",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "1",
+    "films": [
+      "4",
+      "5"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/43",
+    "created": "2014-12-19T17:57:41.191000Z",
+    "edited": "2014-12-20T21:17:50.401000Z"
+  },
+  {
+    "personId": "0ae1a9f4-5683-4d0f-b63e-558e3453ffb3",
+    "id": "44",
+    "name": "Darth Maul",
+    "birth_year": "54BBY",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "175",
+    "mass": "80",
+    "skin_color": "red",
+    "homeworld": "36",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "22"
+    ],
+    "starships": [
+      "41"
+    ],
+    "vehicles": [
+      "42"
+    ],
+    "url": "/people/44",
+    "created": "2014-12-19T18:00:41.929000Z",
+    "edited": "2014-12-20T21:17:50.403000Z"
+  },
+  {
+    "personId": "86360a47-10ff-47ef-964e-2e4af6d03483",
+    "id": "45",
+    "name": "Bib Fortuna",
+    "birth_year": "unknown",
+    "eye_color": "pink",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "180",
+    "mass": "unknown",
+    "skin_color": "pale",
+    "homeworld": "37",
+    "films": [
+      "3"
+    ],
+    "species": [
+      "15"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/45",
+    "created": "2014-12-20T09:47:02.512000Z",
+    "edited": "2014-12-20T21:17:50.407000Z"
+  },
+  {
+    "personId": "b328456e-42c4-4884-b684-8bc62fc09554",
+    "id": "46",
+    "name": "Ayla Secura",
+    "birth_year": "48BBY",
+    "eye_color": "hazel",
+    "gender": "female",
+    "hair_color": "none",
+    "height": "178",
+    "mass": "55",
+    "skin_color": "blue",
+    "homeworld": "37",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "15"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/46",
+    "created": "2014-12-20T09:48:01.172000Z",
+    "edited": "2014-12-20T21:17:50.409000Z"
+  },
+  {
+    "personId": "24d5b29b-1ce6-4560-8bec-adef78773b6b",
+    "id": "47",
+    "name": "Ratts Tyerel",
+    "birth_year": "unknown",
+    "eye_color": "unknown",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "79",
+    "mass": "15",
+    "skin_color": "grey, blue",
+    "homeworld": "38",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "16"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/47",
+    "created": "2014-12-20T09:53:15.086000Z",
+    "edited": "2014-12-20T21:17:50.410000Z"
+  },
+  {
+    "personId": "75c02e46-61b0-4d7d-94aa-02e067562043",
+    "id": "48",
+    "name": "Dud Bolt",
+    "birth_year": "unknown",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "94",
+    "mass": "45",
+    "skin_color": "blue, grey",
+    "homeworld": "39",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "17"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/48",
+    "created": "2014-12-20T09:57:31.858000Z",
+    "edited": "2014-12-20T21:17:50.414000Z"
+  },
+  {
+    "personId": "8bfa8571-d413-438a-9c18-e20d1ecb43b8",
+    "id": "49",
+    "name": "Gasgano",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "122",
+    "mass": "unknown",
+    "skin_color": "white, blue",
+    "homeworld": "40",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "18"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/49",
+    "created": "2014-12-20T10:02:12.223000Z",
+    "edited": "2014-12-20T21:17:50.416000Z"
+  },
+  {
+    "personId": "092456f9-f3ed-4dd8-ba8b-33e023bc41f5",
+    "id": "50",
+    "name": "Ben Quadinaros",
+    "birth_year": "unknown",
+    "eye_color": "orange",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "163",
+    "mass": "65",
+    "skin_color": "grey, green, yellow",
+    "homeworld": "41",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "19"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/50",
+    "created": "2014-12-20T10:08:33.777000Z",
+    "edited": "2014-12-20T21:17:50.417000Z"
+  },
+  {
+    "personId": "adffcbf9-8584-4d6d-8b09-37b43e25fddb",
+    "id": "51",
+    "name": "Mace Windu",
+    "birth_year": "72BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "188",
+    "mass": "84",
+    "skin_color": "dark",
+    "homeworld": "42",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/51",
+    "created": "2014-12-20T10:12:30.846000Z",
+    "edited": "2014-12-20T21:17:50.420000Z"
+  },
+  {
+    "personId": "adbb8614-748b-433c-b1c7-c08eddeb586d",
+    "id": "52",
+    "name": "Ki-Adi-Mundi",
+    "birth_year": "92BBY",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "white",
+    "height": "198",
+    "mass": "82",
+    "skin_color": "pale",
+    "homeworld": "43",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "20"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/52",
+    "created": "2014-12-20T10:15:32.293000Z",
+    "edited": "2014-12-20T21:17:50.422000Z"
+  },
+  {
+    "personId": "6f442720-7304-4dd2-a4b1-2810d145a2b5",
+    "id": "53",
+    "name": "Kit Fisto",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "196",
+    "mass": "87",
+    "skin_color": "green",
+    "homeworld": "44",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "21"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/53",
+    "created": "2014-12-20T10:18:57.202000Z",
+    "edited": "2014-12-20T21:17:50.424000Z"
+  },
+  {
+    "personId": "0d68a3f5-0db3-4a69-945e-85b525e5b1a9",
+    "id": "54",
+    "name": "Eeth Koth",
+    "birth_year": "unknown",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "171",
+    "mass": "unknown",
+    "skin_color": "brown",
+    "homeworld": "45",
+    "films": [
+      "4",
+      "6"
+    ],
+    "species": [
+      "22"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/54",
+    "created": "2014-12-20T10:26:47.902000Z",
+    "edited": "2014-12-20T21:17:50.427000Z"
+  },
+  {
+    "personId": "4f8821a7-a15e-4b10-930d-0a7f8a763f81",
+    "id": "55",
+    "name": "Adi Gallia",
+    "birth_year": "unknown",
+    "eye_color": "blue",
+    "gender": "female",
+    "hair_color": "none",
+    "height": "184",
+    "mass": "50",
+    "skin_color": "dark",
+    "homeworld": "9",
+    "films": [
+      "4",
+      "6"
+    ],
+    "species": [
+      "23"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/55",
+    "created": "2014-12-20T10:29:11.661000Z",
+    "edited": "2014-12-20T21:17:50.432000Z"
+  },
+  {
+    "personId": "d439432f-3a5f-4ddf-aef7-d524e017a91c",
+    "id": "56",
+    "name": "Saesee Tiin",
+    "birth_year": "unknown",
+    "eye_color": "orange",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "188",
+    "mass": "unknown",
+    "skin_color": "pale",
+    "homeworld": "47",
+    "films": [
+      "4",
+      "6"
+    ],
+    "species": [
+      "24"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/56",
+    "created": "2014-12-20T10:32:11.669000Z",
+    "edited": "2014-12-20T21:17:50.434000Z"
+  },
+  {
+    "personId": "4d1374ef-3d76-4b61-b863-8331fb06f544",
+    "id": "57",
+    "name": "Yarael Poof",
+    "birth_year": "unknown",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "264",
+    "mass": "unknown",
+    "skin_color": "white",
+    "homeworld": "48",
+    "films": [
+      "4"
+    ],
+    "species": [
+      "25"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/57",
+    "created": "2014-12-20T10:34:48.725000Z",
+    "edited": "2014-12-20T21:17:50.437000Z"
+  },
+  {
+    "personId": "f5737245-340d-4e32-aa29-f74d41a878f2",
+    "id": "58",
+    "name": "Plo Koon",
+    "birth_year": "22BBY",
+    "eye_color": "black",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "188",
+    "mass": "80",
+    "skin_color": "orange",
+    "homeworld": "49",
+    "films": [
+      "4",
+      "5",
+      "6"
+    ],
+    "species": [
+      "26"
+    ],
+    "starships": [
+      "48"
+    ],
+    "vehicles": [],
+    "url": "/people/58",
+    "created": "2014-12-20T10:49:19.859000Z",
+    "edited": "2014-12-20T21:17:50.439000Z"
+  },
+  {
+    "personId": "902294fe-da05-454f-a7b6-ec214e3500ab",
+    "id": "59",
+    "name": "Mas Amedda",
+    "birth_year": "unknown",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "196",
+    "mass": "unknown",
+    "skin_color": "blue",
+    "homeworld": "50",
+    "films": [
+      "4",
+      "5"
+    ],
+    "species": [
+      "27"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/59",
+    "created": "2014-12-20T10:53:26.457000Z",
+    "edited": "2014-12-20T21:17:50.442000Z"
+  },
+  {
+    "personId": "d4a416d7-77d2-4483-8480-2e7a0012a8da",
+    "id": "60",
+    "name": "Gregar Typho",
+    "birth_year": "unknown",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "185",
+    "mass": "85",
+    "skin_color": "dark",
+    "homeworld": "8",
+    "films": [
+      "5"
+    ],
+    "species": [],
+    "starships": [
+      "39"
+    ],
+    "vehicles": [],
+    "url": "/people/60",
+    "created": "2014-12-20T11:10:10.381000Z",
+    "edited": "2014-12-20T21:17:50.445000Z"
+  },
+  {
+    "personId": "d0aab938-a121-4474-a4da-78ee87e8a711",
+    "id": "61",
+    "name": "Cordé",
+    "birth_year": "unknown",
+    "eye_color": "brown",
+    "gender": "female",
+    "hair_color": "brown",
+    "height": "157",
+    "mass": "unknown",
+    "skin_color": "light",
+    "homeworld": "8",
+    "films": [
+      "5"
+    ],
+    "species": [],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/61",
+    "created": "2014-12-20T11:11:39.630000Z",
+    "edited": "2014-12-20T21:17:50.449000Z"
+  },
+  {
+    "personId": "dd5771fd-50e6-4415-889c-5c11a4bea8e3",
+    "id": "62",
+    "name": "Cliegg Lars",
+    "birth_year": "82BBY",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "183",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "1",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/62",
+    "created": "2014-12-20T15:59:03.958000Z",
+    "edited": "2014-12-20T21:17:50.451000Z"
+  },
+  {
+    "personId": "0b571a07-df98-468d-9842-24fdabafd4f9",
+    "id": "63",
+    "name": "Poggle the Lesser",
+    "birth_year": "unknown",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "183",
+    "mass": "80",
+    "skin_color": "green",
+    "homeworld": "11",
+    "films": [
+      "5",
+      "6"
+    ],
+    "species": [
+      "28"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/63",
+    "created": "2014-12-20T16:40:43.977000Z",
+    "edited": "2014-12-20T21:17:50.453000Z"
+  },
+  {
+    "personId": "607c14f8-d02e-4001-8aa4-02dcd8ea84d4",
+    "id": "64",
+    "name": "Luminara Unduli",
+    "birth_year": "58BBY",
+    "eye_color": "blue",
+    "gender": "female",
+    "hair_color": "black",
+    "height": "170",
+    "mass": "56.2",
+    "skin_color": "yellow",
+    "homeworld": "51",
+    "films": [
+      "5",
+      "6"
+    ],
+    "species": [
+      "29"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/64",
+    "created": "2014-12-20T16:45:53.668000Z",
+    "edited": "2014-12-20T21:17:50.455000Z"
+  },
+  {
+    "personId": "82150f1e-c598-44e4-8b41-4ec7644d854b",
+    "id": "65",
+    "name": "Barriss Offee",
+    "birth_year": "40BBY",
+    "eye_color": "blue",
+    "gender": "female",
+    "hair_color": "black",
+    "height": "166",
+    "mass": "50",
+    "skin_color": "yellow",
+    "homeworld": "51",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "29"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/65",
+    "created": "2014-12-20T16:46:40.440000Z",
+    "edited": "2014-12-20T21:17:50.457000Z"
+  },
+  {
+    "personId": "9c5c7c24-95c8-44d5-9c6d-8807668cc870",
+    "id": "66",
+    "name": "Dormé",
+    "birth_year": "unknown",
+    "eye_color": "brown",
+    "gender": "female",
+    "hair_color": "brown",
+    "height": "165",
+    "mass": "unknown",
+    "skin_color": "light",
+    "homeworld": "8",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/66",
+    "created": "2014-12-20T16:49:14.640000Z",
+    "edited": "2014-12-20T21:17:50.460000Z"
+  },
+  {
+    "personId": "34e33f86-8222-4c12-b13a-bfbac4243e5c",
+    "id": "67",
+    "name": "Dooku",
+    "birth_year": "102BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "white",
+    "height": "193",
+    "mass": "80",
+    "skin_color": "fair",
+    "homeworld": "52",
+    "films": [
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [
+      "55"
+    ],
+    "url": "/people/67",
+    "created": "2014-12-20T16:52:14.726000Z",
+    "edited": "2014-12-20T21:17:50.462000Z"
+  },
+  {
+    "personId": "6eb04e3d-efad-4940-8f79-658b59f89034",
+    "id": "68",
+    "name": "Bail Prestor Organa",
+    "birth_year": "67BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "191",
+    "mass": "unknown",
+    "skin_color": "tan",
+    "homeworld": "2",
+    "films": [
+      "5",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/68",
+    "created": "2014-12-20T16:53:08.575000Z",
+    "edited": "2014-12-20T21:17:50.463000Z"
+  },
+  {
+    "personId": "07e84693-d768-4b48-8144-f319d1124a0b",
+    "id": "69",
+    "name": "Jango Fett",
+    "birth_year": "66BBY",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "183",
+    "mass": "79",
+    "skin_color": "tan",
+    "homeworld": "53",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/69",
+    "created": "2014-12-20T16:54:41.620000Z",
+    "edited": "2014-12-20T21:17:50.465000Z"
+  },
+  {
+    "personId": "6dcaa3a9-1b89-49b0-8acc-a4d8ed9863f0",
+    "id": "70",
+    "name": "Zam Wesell",
+    "birth_year": "unknown",
+    "eye_color": "yellow",
+    "gender": "female",
+    "hair_color": "blonde",
+    "height": "168",
+    "mass": "55",
+    "skin_color": "fair, green, yellow",
+    "homeworld": "54",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "30"
+    ],
+    "starships": [],
+    "vehicles": [
+      "45"
+    ],
+    "url": "/people/70",
+    "created": "2014-12-20T16:57:44.471000Z",
+    "edited": "2014-12-20T21:17:50.468000Z"
+  },
+  {
+    "personId": "50fef24c-bb91-404e-a5fc-542732a87f35",
+    "id": "71",
+    "name": "Dexter Jettster",
+    "birth_year": "unknown",
+    "eye_color": "yellow",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "198",
+    "mass": "102",
+    "skin_color": "brown",
+    "homeworld": "55",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "31"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/71",
+    "created": "2014-12-20T17:28:27.248000Z",
+    "edited": "2014-12-20T21:17:50.470000Z"
+  },
+  {
+    "personId": "8f0e40cd-c0d6-4cec-a275-9d9e0d76bc58",
+    "id": "72",
+    "name": "Lama Su",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "229",
+    "mass": "88",
+    "skin_color": "grey",
+    "homeworld": "10",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "32"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/72",
+    "created": "2014-12-20T17:30:50.416000Z",
+    "edited": "2014-12-20T21:17:50.473000Z"
+  },
+  {
+    "personId": "187cf0c5-d4cd-4cd8-a4f5-406c22a30a15",
+    "id": "73",
+    "name": "Taun We",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "female",
+    "hair_color": "none",
+    "height": "213",
+    "mass": "unknown",
+    "skin_color": "grey",
+    "homeworld": "10",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "32"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/73",
+    "created": "2014-12-20T17:31:21.195000Z",
+    "edited": "2014-12-20T21:17:50.474000Z"
+  },
+  {
+    "personId": "957a60e1-1b40-4ccd-ac8e-e2aae61a880f",
+    "id": "74",
+    "name": "Jocasta Nu",
+    "birth_year": "unknown",
+    "eye_color": "blue",
+    "gender": "female",
+    "hair_color": "white",
+    "height": "167",
+    "mass": "unknown",
+    "skin_color": "fair",
+    "homeworld": "9",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/74",
+    "created": "2014-12-20T17:32:51.996000Z",
+    "edited": "2014-12-20T21:17:50.476000Z"
+  },
+  {
+    "personId": "a00aa467-3e19-4b69-a2a6-4d9fec0b4b13",
+    "id": "75",
+    "name": "R4-P17",
+    "birth_year": "unknown",
+    "eye_color": "red, blue",
+    "gender": "female",
+    "hair_color": "none",
+    "height": "96",
+    "mass": "unknown",
+    "skin_color": "silver, red",
+    "homeworld": "28",
+    "films": [
+      "5",
+      "6"
+    ],
+    "species": [],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/75",
+    "created": "2014-12-20T17:43:36.409000Z",
+    "edited": "2014-12-20T21:17:50.478000Z"
+  },
+  {
+    "personId": "5053ec48-7036-44d3-9e89-1160c8d3374a",
+    "id": "76",
+    "name": "Wat Tambor",
+    "birth_year": "unknown",
+    "eye_color": "unknown",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "193",
+    "mass": "48",
+    "skin_color": "green, grey",
+    "homeworld": "56",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "33"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/76",
+    "created": "2014-12-20T17:53:52.607000Z",
+    "edited": "2014-12-20T21:17:50.481000Z"
+  },
+  {
+    "personId": "21d43d63-1ed1-4bf2-a98a-6d3be73b2815",
+    "id": "77",
+    "name": "San Hill",
+    "birth_year": "unknown",
+    "eye_color": "gold",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "191",
+    "mass": "unknown",
+    "skin_color": "grey",
+    "homeworld": "57",
+    "films": [
+      "5"
+    ],
+    "species": [
+      "34"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/77",
+    "created": "2014-12-20T17:58:17.049000Z",
+    "edited": "2014-12-20T21:17:50.484000Z"
+  },
+  {
+    "personId": "298469f5-dea6-4a7c-b170-38774fa46402",
+    "id": "78",
+    "name": "Shaak Ti",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "female",
+    "hair_color": "none",
+    "height": "178",
+    "mass": "57",
+    "skin_color": "red, blue, white",
+    "homeworld": "58",
+    "films": [
+      "5",
+      "6"
+    ],
+    "species": [
+      "35"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/78",
+    "created": "2014-12-20T18:44:01.103000Z",
+    "edited": "2014-12-20T21:17:50.486000Z"
+  },
+  {
+    "personId": "259c4cd3-917b-4344-9700-e8deafc491fe",
+    "id": "79",
+    "name": "Grievous",
+    "birth_year": "unknown",
+    "eye_color": "green, yellow",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "216",
+    "mass": "159",
+    "skin_color": "brown, white",
+    "homeworld": "59",
+    "films": [
+      "6"
+    ],
+    "species": [
+      "36"
+    ],
+    "starships": [
+      "74"
+    ],
+    "vehicles": [
+      "60"
+    ],
+    "url": "/people/79",
+    "created": "2014-12-20T19:43:53.348000Z",
+    "edited": "2014-12-20T21:17:50.488000Z"
+  },
+  {
+    "personId": "ae193957-3240-4bfe-8f60-117dbdd947a9",
+    "id": "80",
+    "name": "Tarfful",
+    "birth_year": "unknown",
+    "eye_color": "blue",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "234",
+    "mass": "136",
+    "skin_color": "brown",
+    "homeworld": "14",
+    "films": [
+      "6"
+    ],
+    "species": [
+      "3"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/80",
+    "created": "2014-12-20T19:46:34.209000Z",
+    "edited": "2014-12-20T21:17:50.491000Z"
+  },
+  {
+    "personId": "28d9b48c-bcb6-4248-af9c-12c0ebf331c5",
+    "id": "81",
+    "name": "Raymus Antilles",
+    "birth_year": "unknown",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "188",
+    "mass": "79",
+    "skin_color": "light",
+    "homeworld": "2",
+    "films": [
+      "1",
+      "6"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/81",
+    "created": "2014-12-20T19:49:35.583000Z",
+    "edited": "2014-12-20T21:17:50.493000Z"
+  },
+  {
+    "personId": "4a5a68a7-1267-4aa7-ba2f-884070b16172",
+    "id": "82",
+    "name": "Sly Moore",
+    "birth_year": "unknown",
+    "eye_color": "white",
+    "gender": "female",
+    "hair_color": "none",
+    "height": "178",
+    "mass": "48",
+    "skin_color": "pale",
+    "homeworld": "60",
+    "films": [
+      "5",
+      "6"
+    ],
+    "species": [],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/82",
+    "created": "2014-12-20T20:18:37.619000Z",
+    "edited": "2014-12-20T21:17:50.496000Z"
+  },
+  {
+    "personId": "57af7237-adf3-4be0-996a-817c323e54d7",
+    "id": "83",
+    "name": "Tion Medon",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "male",
+    "hair_color": "none",
+    "height": "206",
+    "mass": "80",
+    "skin_color": "grey",
+    "homeworld": "12",
+    "films": [
+      "6"
+    ],
+    "species": [
+      "37"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/83",
+    "created": "2014-12-20T20:35:04.260000Z",
+    "edited": "2014-12-20T21:17:50.498000Z"
+  },
+  {
+    "personId": "3bf6f6e4-0332-44a8-9fa2-66a2988289dd",
+    "id": "84",
+    "name": "Finn",
+    "birth_year": "unknown",
+    "eye_color": "dark",
+    "gender": "male",
+    "hair_color": "black",
+    "height": "unknown",
+    "mass": "unknown",
+    "skin_color": "dark",
+    "homeworld": "28",
+    "films": [
+      "7"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/84",
+    "created": "2015-04-17T06:52:40.793621Z",
+    "edited": "2015-04-17T06:52:40.793674Z"
+  },
+  {
+    "personId": "7c06b4ec-ff3a-47a1-817e-b0a91d142626",
+    "id": "85",
+    "name": "Rey",
+    "birth_year": "unknown",
+    "eye_color": "hazel",
+    "gender": "female",
+    "hair_color": "brown",
+    "height": "unknown",
+    "mass": "unknown",
+    "skin_color": "light",
+    "homeworld": "28",
+    "films": [
+      "7"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/85",
+    "created": "2015-04-17T06:54:01.495077Z",
+    "edited": "2015-04-17T06:54:01.495128Z"
+  },
+  {
+    "personId": "af94bae0-9106-4043-acde-90af09ef9678",
+    "id": "86",
+    "name": "Poe Dameron",
+    "birth_year": "unknown",
+    "eye_color": "brown",
+    "gender": "male",
+    "hair_color": "brown",
+    "height": "unknown",
+    "mass": "unknown",
+    "skin_color": "light",
+    "homeworld": "28",
+    "films": [
+      "7"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [
+      "77"
+    ],
+    "vehicles": [],
+    "url": "/people/86",
+    "created": "2015-04-17T06:55:21.622786Z",
+    "edited": "2015-04-17T06:55:21.622835Z"
+  },
+  {
+    "personId": "233ce9ec-17e2-45ad-93e3-4bb11f685ed6",
+    "id": "87",
+    "name": "BB8",
+    "birth_year": "unknown",
+    "eye_color": "black",
+    "gender": "none",
+    "hair_color": "none",
+    "height": "none",
+    "mass": "unknown",
+    "skin_color": "none",
+    "homeworld": "28",
+    "films": [
+      "7"
+    ],
+    "species": [
+      "2"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/87",
+    "created": "2015-04-17T06:57:38.061346Z",
+    "edited": "2015-04-17T06:57:38.061453Z"
+  },
+  {
+    "personId": "4d6b7580-54d3-4feb-8aef-0ff51309b2d5",
+    "id": "88",
+    "name": "Captain Phasma",
+    "birth_year": "unknown",
+    "eye_color": "unknown",
+    "gender": "female",
+    "hair_color": "none",
+    "height": "none",
+    "mass": "unknown",
+    "skin_color": "none",
+    "homeworld": "28",
+    "films": [
+      "7"
+    ],
+    "species": [
+      "1"
+    ],
+    "starships": [],
+    "vehicles": [],
+    "url": "/people/88",
+    "created": "2015-10-13T10:35:39.229823Z",
+    "edited": "2015-10-13T10:35:39.229894Z"
+  }
+]

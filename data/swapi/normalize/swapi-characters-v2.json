@@ -1,0 +1,1898 @@
+[
+  {
+    "characterId": "cf89ffdc-0e49-4f30-b4bb-1f6317e4a55e",
+    "name": "Luke Skywalker",
+    "birthYear": "19BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "blond",
+    "height": "172",
+    "mass": "77",
+    "skinColor": "fair",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "6f618153-0251-4e77-b147-f569fdab17d8",
+      "0cad7fa4-dfd3-4580-942e-ae08d0c3e07a"
+    ],
+    "vehicleIds": [
+      "e0299695-d718-4776-a88a-972554e4b362",
+      "953903f3-aaf5-4f02-bf6d-7147d34075dc"
+    ],
+    "createdDateTime": "2014-12-09T13:50:51.644000Z",
+    "updatedDateTime": "2014-12-20T21:17:56.891000Z"
+  },
+  {
+    "characterId": "1caec1bd-a654-4723-a1b0-461269f4dc77",
+    "name": "C-3PO",
+    "birthYear": "112BBY",
+    "eyeColor": "yellow",
+    "gender": "n/a",
+    "hairColor": "n/a",
+    "height": "167",
+    "mass": "75",
+    "skinColor": "gold",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T15:10:51.357000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.309000Z"
+  },
+  {
+    "characterId": "808f879f-43bf-4222-841f-30d2868c55c7",
+    "name": "R2-D2",
+    "birthYear": "33BBY",
+    "eyeColor": "red",
+    "gender": "n/a",
+    "hairColor": "n/a",
+    "height": "96",
+    "mass": "32",
+    "skinColor": "white, blue",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T15:11:50.376000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.311000Z"
+  },
+  {
+    "characterId": "b1b06058-978a-4759-8162-5fc7bb580564",
+    "name": "Darth Vader",
+    "birthYear": "41.9BBY",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "202",
+    "mass": "136",
+    "skinColor": "white",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "dad6687e-cfd6-4f86-acad-359e25f5880c"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T15:18:20.704000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.313000Z"
+  },
+  {
+    "characterId": "24244fa5-b637-4031-b07c-8e3ce44f393d",
+    "name": "Leia Organa",
+    "birthYear": "19BBY",
+    "eyeColor": "brown",
+    "gender": "female",
+    "hairColor": "brown",
+    "height": "150",
+    "mass": "49",
+    "skinColor": "light",
+    "homeworldPlanetId": "3c742194-314a-46ed-ab2c-dfb5aa9d0f65",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [
+      "e0299695-d718-4776-a88a-972554e4b362"
+    ],
+    "createdDateTime": "2014-12-10T15:20:09.791000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.315000Z"
+  },
+  {
+    "characterId": "4f780268-4bd1-4d5f-a894-8cf157ef9cb5",
+    "name": "Owen Lars",
+    "birthYear": "52BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "brown, grey",
+    "height": "178",
+    "mass": "120",
+    "skinColor": "light",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T15:52:14.024000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.317000Z"
+  },
+  {
+    "characterId": "4acb83e1-3e93-4523-87fb-44f5a4d70c7c",
+    "name": "Beru Whitesun lars",
+    "birthYear": "47BBY",
+    "eyeColor": "blue",
+    "gender": "female",
+    "hairColor": "brown",
+    "height": "165",
+    "mass": "75",
+    "skinColor": "light",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T15:53:41.121000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.319000Z"
+  },
+  {
+    "characterId": "465dfa1b-6aa4-423c-988a-5fdf207bc07d",
+    "name": "R5-D4",
+    "birthYear": "unknown",
+    "eyeColor": "red",
+    "gender": "n/a",
+    "hairColor": "n/a",
+    "height": "97",
+    "mass": "32",
+    "skinColor": "white, red",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "speciesId": "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T15:57:50.959000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.321000Z"
+  },
+  {
+    "characterId": "6ed2a4d3-4336-464b-afd9-ea9c01529a0e",
+    "name": "Biggs Darklighter",
+    "birthYear": "24BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "183",
+    "mass": "84",
+    "skinColor": "light",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "6f618153-0251-4e77-b147-f569fdab17d8"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T15:59:50.509000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.323000Z"
+  },
+  {
+    "characterId": "d69dda19-45c2-457a-8638-d72f94fa6d44",
+    "name": "Obi-Wan Kenobi",
+    "birthYear": "57BBY",
+    "eyeColor": "blue-gray",
+    "gender": "male",
+    "hairColor": "auburn, white",
+    "height": "182",
+    "mass": "77",
+    "skinColor": "fair",
+    "homeworldPlanetId": "a1f83625-450e-426b-8541-d1e46c452294",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "b0810047-953b-44b8-8fa5-4612b736eb6f",
+      "5c0bf128-d4bb-4c1d-ae9d-9ee6fe4355b9",
+      "978649e8-a8fc-45e0-bbf3-19ef53273d38",
+      "c5435721-8de8-422d-a458-57bb786343d8",
+      "7d8d2136-5dd8-4782-90ea-8fbd9c6a5958"
+    ],
+    "vehicleIds": [
+      "c02366fa-68d0-4a05-82bf-75275c673bdd"
+    ],
+    "createdDateTime": "2014-12-10T16:16:29.192000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.325000Z"
+  },
+  {
+    "characterId": "bb264147-3c0d-4a45-8e9b-6ea0e3e84b80",
+    "name": "Anakin Skywalker",
+    "birthYear": "41.9BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "blond",
+    "height": "188",
+    "mass": "84",
+    "skinColor": "fair",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "5c0bf128-d4bb-4c1d-ae9d-9ee6fe4355b9",
+      "978649e8-a8fc-45e0-bbf3-19ef53273d38",
+      "7b72afed-60eb-4588-a44e-fee9af2391c4"
+    ],
+    "vehicleIds": [
+      "b0d7d739-fc17-41ee-941d-271e1d7ed6f5",
+      "ca3f7218-9c5b-4a37-8034-8e8e24cba073"
+    ],
+    "createdDateTime": "2014-12-10T16:20:44.310000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.327000Z"
+  },
+  {
+    "characterId": "ec8f7083-08f7-48fb-b731-afd7a65fced6",
+    "name": "Wilhuff Tarkin",
+    "birthYear": "64BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "auburn, grey",
+    "height": "180",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "cea92c97-d6b7-4d6f-ad8c-fad10b6523a7",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T16:26:56.138000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.330000Z"
+  },
+  {
+    "characterId": "b9cdb713-fe68-4155-b70f-1fce5b497a51",
+    "name": "Chewbacca",
+    "birthYear": "200BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "228",
+    "mass": "112",
+    "skinColor": "unknown",
+    "homeworldPlanetId": "72e4a6f5-39c9-4f1a-87f2-f63573f0177d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "f1ce0980-6671-4211-986a-a81f191fa5ec",
+    "starshipIds": [
+      "0cad7fa4-dfd3-4580-942e-ae08d0c3e07a",
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0"
+    ],
+    "vehicleIds": [
+      "76296713-d5dc-4795-8499-a8febc83af4f"
+    ],
+    "createdDateTime": "2014-12-10T16:42:45.066000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.332000Z"
+  },
+  {
+    "characterId": "0f325acb-4232-4faa-b2e9-fa93dcb8e0b9",
+    "name": "Han Solo",
+    "birthYear": "29BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "180",
+    "mass": "80",
+    "skinColor": "fair",
+    "homeworldPlanetId": "a4723a9f-fc62-4230-a2aa-c80aeaba848f",
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "0cad7fa4-dfd3-4580-942e-ae08d0c3e07a",
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T16:49:14.582000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.334000Z"
+  },
+  {
+    "characterId": "42e808fe-a49e-4547-9815-0b6c46843a09",
+    "name": "Greedo",
+    "birthYear": "44BBY",
+    "eyeColor": "black",
+    "gender": "male",
+    "hairColor": "n/a",
+    "height": "173",
+    "mass": "74",
+    "skinColor": "green",
+    "homeworldPlanetId": "147b5c6d-378c-4a9e-8a58-0fa8bd92325d",
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "speciesId": "42f96f0f-ecc5-42b0-b2f9-839f3e83ee85",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T17:03:30.334000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.336000Z"
+  },
+  {
+    "characterId": "fd125d06-fb30-45aa-8e8e-1cdff8a5a04b",
+    "name": "Jabba Desilijic Tiure",
+    "birthYear": "600BBY",
+    "eyeColor": "orange",
+    "gender": "hermaphrodite",
+    "hairColor": "n/a",
+    "height": "175",
+    "mass": "1,358",
+    "skinColor": "green-tan, brown",
+    "homeworldPlanetId": "15a09956-cab8-4e07-9b01-cff34431132d",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "speciesId": "4f039600-68da-4d0d-9ca4-3f8ba421162d",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-10T17:11:31.638000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.338000Z"
+  },
+  {
+    "characterId": "8697f65b-7573-4943-a6b0-f7bfebe8bd04",
+    "name": "Wedge Antilles",
+    "birthYear": "21BBY",
+    "eyeColor": "hazel",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "170",
+    "mass": "77",
+    "skinColor": "fair",
+    "homeworldPlanetId": "a4723a9f-fc62-4230-a2aa-c80aeaba848f",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "6f618153-0251-4e77-b147-f569fdab17d8"
+    ],
+    "vehicleIds": [
+      "953903f3-aaf5-4f02-bf6d-7147d34075dc"
+    ],
+    "createdDateTime": "2014-12-12T11:08:06.469000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.341000Z"
+  },
+  {
+    "characterId": "d122823a-4012-496e-91c2-a95e12099624",
+    "name": "Jek Tono Porkins",
+    "birthYear": "unknown",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "180",
+    "mass": "110",
+    "skinColor": "fair",
+    "homeworldPlanetId": "0ffe49a1-95e7-4348-b49a-baaae36ad413",
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "starshipIds": [
+      "6f618153-0251-4e77-b147-f569fdab17d8"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-12T11:16:56.569000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.343000Z"
+  },
+  {
+    "characterId": "385cfd9c-ec54-4669-86ea-24887ef68cc9",
+    "name": "Yoda",
+    "birthYear": "896BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "white",
+    "height": "66",
+    "mass": "17",
+    "skinColor": "green",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "2a2700bd-df71-4467-b1e2-800bfd041a5e",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-15T12:26:01.042000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.345000Z"
+  },
+  {
+    "characterId": "96ab86c9-288a-4bb4-87c1-ac1dad6f38ed",
+    "name": "Palpatine",
+    "birthYear": "82BBY",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "grey",
+    "height": "170",
+    "mass": "75",
+    "skinColor": "pale",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-15T12:48:05.971000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.347000Z"
+  },
+  {
+    "characterId": "2c9e0fd4-3004-4521-a288-4c00e28a6824",
+    "name": "Boba Fett",
+    "birthYear": "31.5BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "183",
+    "mass": "78.2",
+    "skinColor": "fair",
+    "homeworldPlanetId": "31ece572-eac9-4d90-9da3-06a696e4702d",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "0cbeea96-2744-47e3-af8f-f218fe964195",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "97cf4c88-a530-4581-ba35-98acea44f037"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-15T12:49:32.457000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.349000Z"
+  },
+  {
+    "characterId": "cedf9747-a5ec-425e-8071-6679d88427c9",
+    "name": "IG-88",
+    "birthYear": "15BBY",
+    "eyeColor": "red",
+    "gender": "none",
+    "hairColor": "none",
+    "height": "200",
+    "mass": "140",
+    "skinColor": "metal",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-15T12:51:10.076000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.351000Z"
+  },
+  {
+    "characterId": "48d22447-a2cd-48fc-b806-c019265b0b40",
+    "name": "Bossk",
+    "birthYear": "53BBY",
+    "eyeColor": "red",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "190",
+    "mass": "113",
+    "skinColor": "green",
+    "homeworldPlanetId": "6c72612a-99c9-4152-88de-a032993c9ff4",
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "9d7e046a-72b9-4de9-831c-4ae3b802ffd4",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-15T12:53:49.297000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.355000Z"
+  },
+  {
+    "characterId": "262ed871-bde9-4552-ae93-be761cebc8f5",
+    "name": "Lando Calrissian",
+    "birthYear": "31BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "177",
+    "mass": "79",
+    "skinColor": "dark",
+    "homeworldPlanetId": "8605008d-2fdd-46b8-a713-c8977f2a89ac",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-15T12:56:32.683000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.357000Z"
+  },
+  {
+    "characterId": "27fdf628-d4b0-4aee-9284-9645668a097b",
+    "name": "Lobot",
+    "birthYear": "37BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "175",
+    "mass": "79",
+    "skinColor": "light",
+    "homeworldPlanetId": "f9a3a13c-d3fc-424b-992d-132c8b995bc3",
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-15T13:01:57.178000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.359000Z"
+  },
+  {
+    "characterId": "b9b1f5df-ba4c-4a0c-8b8b-18ab09094f75",
+    "name": "Ackbar",
+    "birthYear": "41BBY",
+    "eyeColor": "orange",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "180",
+    "mass": "83",
+    "skinColor": "brown mottle",
+    "homeworldPlanetId": "e0926153-f12f-4e08-baa1-ac508b27e066",
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "speciesId": "d59668a0-01c4-4b8a-a761-752c80efa879",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-18T11:07:50.584000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.362000Z"
+  },
+  {
+    "characterId": "15549d55-56ce-4ad8-bfbb-4acb4c0589f6",
+    "name": "Mon Mothma",
+    "birthYear": "48BBY",
+    "eyeColor": "blue",
+    "gender": "female",
+    "hairColor": "auburn",
+    "height": "150",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "d855167d-3866-44a1-be8c-e9310a67c9c1",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-18T11:12:38.895000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.364000Z"
+  },
+  {
+    "characterId": "24ec2b1b-cadc-459f-9f15-f08ba5d07aae",
+    "name": "Arvel Crynyd",
+    "birthYear": "unknown",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "unknown",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "3de8014b-5db2-4665-92d4-82abd85c5f37"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-18T11:16:33.020000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.367000Z"
+  },
+  {
+    "characterId": "7fee2b3e-0058-4134-8f7b-b30e9398cbc4",
+    "name": "Wicket Systri Warrick",
+    "birthYear": "8BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "88",
+    "mass": "20",
+    "skinColor": "brown",
+    "homeworldPlanetId": "3cf9072f-f88c-4d7a-b8a0-5c69654b3d71",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "speciesId": "d4f9735a-c2a2-478a-8e5f-dc80416c7fed",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-18T11:21:58.954000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.369000Z"
+  },
+  {
+    "characterId": "038bbf89-1f47-43fb-bef8-23fafdfb1e1e",
+    "name": "Nien Nunb",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "160",
+    "mass": "68",
+    "skinColor": "grey",
+    "homeworldPlanetId": "7c83af7a-1410-4a03-ba97-825b288b8fca",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "speciesId": "f4f2d973-f1d0-44dc-82a8-d4c85c18f759",
+    "starshipIds": [
+      "8e6cf380-a3d3-49b2-8611-bf57790175b0"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-18T11:26:18.541000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.371000Z"
+  },
+  {
+    "characterId": "582887c1-bbc7-4616-9b3f-3c6ff6afe42e",
+    "name": "Qui-Gon Jinn",
+    "birthYear": "92BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "193",
+    "mass": "89",
+    "skinColor": "fair",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [
+      "c02366fa-68d0-4a05-82bf-75275c673bdd"
+    ],
+    "createdDateTime": "2014-12-19T16:54:53.618000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.375000Z"
+  },
+  {
+    "characterId": "dc7d1c67-4b58-4a0b-9449-f231b359cde4",
+    "name": "Nute Gunray",
+    "birthYear": "unknown",
+    "eyeColor": "red",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "191",
+    "mass": "90",
+    "skinColor": "mottled green",
+    "homeworldPlanetId": "78a90c3b-604a-44df-986a-04523fc3ee0d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0e378afc-07ac-442c-b368-19016650e513",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:05:57.357000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.377000Z"
+  },
+  {
+    "characterId": "44eb57c1-658e-4936-8a22-bf4bc5801724",
+    "name": "Finis Valorum",
+    "birthYear": "91BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "blond",
+    "height": "170",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:21:45.915000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.379000Z"
+  },
+  {
+    "characterId": "e3aebed8-0828-4aee-a054-e729594e80cc",
+    "name": "Padmé Amidala",
+    "birthYear": "46BBY",
+    "eyeColor": "brown",
+    "gender": "female",
+    "hairColor": "brown",
+    "height": "185",
+    "mass": "45",
+    "skinColor": "light",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "b0810047-953b-44b8-8fa5-4612b736eb6f",
+      "a41a246b-6691-4533-ad0a-310d6c766958",
+      "7b72afed-60eb-4588-a44e-fee9af2391c4"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:28:26.926000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.381000Z"
+  },
+  {
+    "characterId": "989f1132-0e82-47c8-824c-f7c8f660e14d",
+    "name": "Jar Jar Binks",
+    "birthYear": "52BBY",
+    "eyeColor": "orange",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "196",
+    "mass": "66",
+    "skinColor": "orange",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "2550fae8-19b4-41f8-a05b-a0ebdd0d35fc",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:29:32.489000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.383000Z"
+  },
+  {
+    "characterId": "c3b0b8ea-8bb0-4f9a-a08e-6bfaaac531e0",
+    "name": "Roos Tarpals",
+    "birthYear": "unknown",
+    "eyeColor": "orange",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "224",
+    "mass": "82",
+    "skinColor": "grey",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "2550fae8-19b4-41f8-a05b-a0ebdd0d35fc",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:32:56.741000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.385000Z"
+  },
+  {
+    "characterId": "fc63ab5c-83da-493b-80ea-845cc135759d",
+    "name": "Rugor Nass",
+    "birthYear": "unknown",
+    "eyeColor": "orange",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "206",
+    "mass": "unknown",
+    "skinColor": "green",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "2550fae8-19b4-41f8-a05b-a0ebdd0d35fc",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:33:38.909000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.388000Z"
+  },
+  {
+    "characterId": "909c997c-1094-4762-9c8a-5c64c30d28b2",
+    "name": "Ric Olié",
+    "birthYear": "unknown",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "183",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "9607978c-96c9-44b8-8fc0-fdd6b07735d1"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:45:01.522000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.392000Z"
+  },
+  {
+    "characterId": "3843c2b5-3abb-48a1-b2cf-1e2b61a112f1",
+    "name": "Watto",
+    "birthYear": "unknown",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "137",
+    "mass": "unknown",
+    "skinColor": "blue, grey",
+    "homeworldPlanetId": "e066303f-10f8-474b-a505-1695e4284be2",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "a3b620bb-d6c0-4594-bcfc-2c352161e8fc",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:48:54.647000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.395000Z"
+  },
+  {
+    "characterId": "f015a458-8b1b-436a-beaa-68837c5d7c8e",
+    "name": "Sebulba",
+    "birthYear": "unknown",
+    "eyeColor": "orange",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "112",
+    "mass": "40",
+    "skinColor": "grey, red",
+    "homeworldPlanetId": "2934bf4a-029a-4141-86ee-9fd130d2a1b5",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "a532267d-81d1-4d93-89ad-7ce055c790ca",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:53:02.586000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.397000Z"
+  },
+  {
+    "characterId": "b2fe26c7-c7db-4908-9ce5-9e9af40c3a07",
+    "name": "Quarsh Panaka",
+    "birthYear": "62BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "183",
+    "mass": "unknown",
+    "skinColor": "dark",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:55:43.348000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.399000Z"
+  },
+  {
+    "characterId": "3b21592a-e4d4-479c-95fb-cfbd9d3e7a27",
+    "name": "Shmi Skywalker",
+    "birthYear": "72BBY",
+    "eyeColor": "brown",
+    "gender": "female",
+    "hairColor": "black",
+    "height": "163",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-19T17:57:41.191000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.401000Z"
+  },
+  {
+    "characterId": "0ae1a9f4-5683-4d0f-b63e-558e3453ffb3",
+    "name": "Darth Maul",
+    "birthYear": "54BBY",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "175",
+    "mass": "80",
+    "skinColor": "red",
+    "homeworldPlanetId": "b217b2ba-1bce-4506-bf0d-9ceb38ff546c",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "8b9dd4d9-4017-4d32-b644-6a77d0894efd",
+    "starshipIds": [
+      "719dce4b-a62b-4f49-b3cf-7395477bce86"
+    ],
+    "vehicleIds": [
+      "05d95eff-074d-4af1-85c6-efd8070080f8"
+    ],
+    "createdDateTime": "2014-12-19T18:00:41.929000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.403000Z"
+  },
+  {
+    "characterId": "86360a47-10ff-47ef-964e-2e4af6d03483",
+    "name": "Bib Fortuna",
+    "birthYear": "unknown",
+    "eyeColor": "pink",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "180",
+    "mass": "unknown",
+    "skinColor": "pale",
+    "homeworldPlanetId": "a1ffb800-b25c-4dd0-b311-8d446fbdb2d4",
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "speciesId": "bb91c831-5444-4703-901b-19aaed674945",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T09:47:02.512000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.407000Z"
+  },
+  {
+    "characterId": "b328456e-42c4-4884-b684-8bc62fc09554",
+    "name": "Ayla Secura",
+    "birthYear": "48BBY",
+    "eyeColor": "hazel",
+    "gender": "female",
+    "hairColor": "none",
+    "height": "178",
+    "mass": "55",
+    "skinColor": "blue",
+    "homeworldPlanetId": "a1ffb800-b25c-4dd0-b311-8d446fbdb2d4",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "bb91c831-5444-4703-901b-19aaed674945",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T09:48:01.172000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.409000Z"
+  },
+  {
+    "characterId": "24d5b29b-1ce6-4560-8bec-adef78773b6b",
+    "name": "Ratts Tyerel",
+    "birthYear": "unknown",
+    "eyeColor": "unknown",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "79",
+    "mass": "15",
+    "skinColor": "grey, blue",
+    "homeworldPlanetId": "35237c06-669a-49bd-9ead-142320b0f3d0",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "079545be-73b3-4abb-b108-37df2f5b808f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T09:53:15.086000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.410000Z"
+  },
+  {
+    "characterId": "75c02e46-61b0-4d7d-94aa-02e067562043",
+    "name": "Dud Bolt",
+    "birthYear": "unknown",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "94",
+    "mass": "45",
+    "skinColor": "blue, grey",
+    "homeworldPlanetId": "5ec98ab1-d983-4eb9-b5ad-0f8c3e177068",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "78db6c36-b4b2-4d5c-8f1f-f04e785684e2",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T09:57:31.858000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.414000Z"
+  },
+  {
+    "characterId": "8bfa8571-d413-438a-9c18-e20d1ecb43b8",
+    "name": "Gasgano",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "122",
+    "mass": "unknown",
+    "skinColor": "white, blue",
+    "homeworldPlanetId": "e73035c5-9e9e-4e65-9f0f-332b78e9462c",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "5e23de9c-b395-4cd1-b184-2d46468b20e2",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:02:12.223000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.416000Z"
+  },
+  {
+    "characterId": "092456f9-f3ed-4dd8-ba8b-33e023bc41f5",
+    "name": "Ben Quadinaros",
+    "birthYear": "unknown",
+    "eyeColor": "orange",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "163",
+    "mass": "65",
+    "skinColor": "grey, green, yellow",
+    "homeworldPlanetId": "fb733a36-6b3a-4974-ad47-adaced094f3f",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "ead755fe-abd2-4616-ab1f-396bc75a5ffa",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:08:33.777000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.417000Z"
+  },
+  {
+    "characterId": "adffcbf9-8584-4d6d-8b09-37b43e25fddb",
+    "name": "Mace Windu",
+    "birthYear": "72BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "188",
+    "mass": "84",
+    "skinColor": "dark",
+    "homeworldPlanetId": "66caaca9-ec19-452c-b03f-82e851ded489",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:12:30.846000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.420000Z"
+  },
+  {
+    "characterId": "adbb8614-748b-433c-b1c7-c08eddeb586d",
+    "name": "Ki-Adi-Mundi",
+    "birthYear": "92BBY",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "white",
+    "height": "198",
+    "mass": "82",
+    "skinColor": "pale",
+    "homeworldPlanetId": "73271a24-535b-49c9-882c-26a1b53d0cad",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "a67198fa-6744-45ae-ba2e-7757d604e883",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:15:32.293000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.422000Z"
+  },
+  {
+    "characterId": "6f442720-7304-4dd2-a4b1-2810d145a2b5",
+    "name": "Kit Fisto",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "196",
+    "mass": "87",
+    "skinColor": "green",
+    "homeworldPlanetId": "9331898f-03f0-4c23-be80-cd6906401aee",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "f7502062-956d-4a37-a0e9-373d24bda196",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:18:57.202000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.424000Z"
+  },
+  {
+    "characterId": "0d68a3f5-0db3-4a69-945e-85b525e5b1a9",
+    "name": "Eeth Koth",
+    "birthYear": "unknown",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "171",
+    "mass": "unknown",
+    "skinColor": "brown",
+    "homeworldPlanetId": "2f609383-f072-468f-be3a-be24bde47db9",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "8b9dd4d9-4017-4d32-b644-6a77d0894efd",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:26:47.902000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.427000Z"
+  },
+  {
+    "characterId": "4f8821a7-a15e-4b10-930d-0a7f8a763f81",
+    "name": "Adi Gallia",
+    "birthYear": "unknown",
+    "eyeColor": "blue",
+    "gender": "female",
+    "hairColor": "none",
+    "height": "184",
+    "mass": "50",
+    "skinColor": "dark",
+    "homeworldPlanetId": "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "f626af14-9ffd-4b51-87b7-d00b0c2ebad5",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:29:11.661000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.432000Z"
+  },
+  {
+    "characterId": "d439432f-3a5f-4ddf-aef7-d524e017a91c",
+    "name": "Saesee Tiin",
+    "birthYear": "unknown",
+    "eyeColor": "orange",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "188",
+    "mass": "unknown",
+    "skinColor": "pale",
+    "homeworldPlanetId": "6c02ba74-2eeb-49ef-b79d-c8db91fb5bd7",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "8dcc298c-059f-47eb-b159-8493ad7cf79c",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:32:11.669000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.434000Z"
+  },
+  {
+    "characterId": "4d1374ef-3d76-4b61-b863-8331fb06f544",
+    "name": "Yarael Poof",
+    "birthYear": "unknown",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "264",
+    "mass": "unknown",
+    "skinColor": "white",
+    "homeworldPlanetId": "d88b0255-02b0-4f73-b7e9-6752c7fa7244",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373"
+    ],
+    "speciesId": "eb7dc56d-0548-4009-9a79-4be656c67694",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:34:48.725000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.437000Z"
+  },
+  {
+    "characterId": "f5737245-340d-4e32-aa29-f74d41a878f2",
+    "name": "Plo Koon",
+    "birthYear": "22BBY",
+    "eyeColor": "black",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "188",
+    "mass": "80",
+    "skinColor": "orange",
+    "homeworldPlanetId": "a622e6b0-3c41-4e41-b909-0334f2baad81",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "50119801-8731-499a-aebb-33aebf523318",
+    "starshipIds": [
+      "c5435721-8de8-422d-a458-57bb786343d8"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:49:19.859000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.439000Z"
+  },
+  {
+    "characterId": "902294fe-da05-454f-a7b6-ec214e3500ab",
+    "name": "Mas Amedda",
+    "birthYear": "unknown",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "196",
+    "mass": "unknown",
+    "skinColor": "blue",
+    "homeworldPlanetId": "8cb8d7f7-852d-49e5-b012-a5df45d301c1",
+    "filmIds": [
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "2ede9f00-187d-44ec-814c-a93e4e6ccc07",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T10:53:26.457000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.442000Z"
+  },
+  {
+    "characterId": "d4a416d7-77d2-4483-8480-2e7a0012a8da",
+    "name": "Gregar Typho",
+    "birthYear": "unknown",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "185",
+    "mass": "85",
+    "skinColor": "dark",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "starshipIds": [
+      "7b72afed-60eb-4588-a44e-fee9af2391c4"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T11:10:10.381000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.445000Z"
+  },
+  {
+    "characterId": "d0aab938-a121-4474-a4da-78ee87e8a711",
+    "name": "Cordé",
+    "birthYear": "unknown",
+    "eyeColor": "brown",
+    "gender": "female",
+    "hairColor": "brown",
+    "height": "157",
+    "mass": "unknown",
+    "skinColor": "light",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T11:11:39.630000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.449000Z"
+  },
+  {
+    "characterId": "dd5771fd-50e6-4415-889c-5c11a4bea8e3",
+    "name": "Cliegg Lars",
+    "birthYear": "82BBY",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "183",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T15:59:03.958000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.451000Z"
+  },
+  {
+    "characterId": "0b571a07-df98-468d-9842-24fdabafd4f9",
+    "name": "Poggle the Lesser",
+    "birthYear": "unknown",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "183",
+    "mass": "80",
+    "skinColor": "green",
+    "homeworldPlanetId": "56f53ff1-f7f3-4aae-b38f-dfd42fb6ca44",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "56b97c52-978a-4d68-826a-792b69ec07cd",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T16:40:43.977000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.453000Z"
+  },
+  {
+    "characterId": "607c14f8-d02e-4001-8aa4-02dcd8ea84d4",
+    "name": "Luminara Unduli",
+    "birthYear": "58BBY",
+    "eyeColor": "blue",
+    "gender": "female",
+    "hairColor": "black",
+    "height": "170",
+    "mass": "56.2",
+    "skinColor": "yellow",
+    "homeworldPlanetId": "b1ddd481-3499-497f-a90a-6367f323f376",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "aed52f91-215e-48e7-babc-9f45db8ba42f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T16:45:53.668000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.455000Z"
+  },
+  {
+    "characterId": "82150f1e-c598-44e4-8b41-4ec7644d854b",
+    "name": "Barriss Offee",
+    "birthYear": "40BBY",
+    "eyeColor": "blue",
+    "gender": "female",
+    "hairColor": "black",
+    "height": "166",
+    "mass": "50",
+    "skinColor": "yellow",
+    "homeworldPlanetId": "b1ddd481-3499-497f-a90a-6367f323f376",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "aed52f91-215e-48e7-babc-9f45db8ba42f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T16:46:40.440000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.457000Z"
+  },
+  {
+    "characterId": "9c5c7c24-95c8-44d5-9c6d-8807668cc870",
+    "name": "Dormé",
+    "birthYear": "unknown",
+    "eyeColor": "brown",
+    "gender": "female",
+    "hairColor": "brown",
+    "height": "165",
+    "mass": "unknown",
+    "skinColor": "light",
+    "homeworldPlanetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T16:49:14.640000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.460000Z"
+  },
+  {
+    "characterId": "34e33f86-8222-4c12-b13a-bfbac4243e5c",
+    "name": "Dooku",
+    "birthYear": "102BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "white",
+    "height": "193",
+    "mass": "80",
+    "skinColor": "fair",
+    "homeworldPlanetId": "1fdececf-aa7a-42c1-a954-e5a7e1245962",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [
+      "a25e4e96-0998-4489-ad42-ce9204a9cfa5"
+    ],
+    "createdDateTime": "2014-12-20T16:52:14.726000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.462000Z"
+  },
+  {
+    "characterId": "6eb04e3d-efad-4940-8f79-658b59f89034",
+    "name": "Bail Prestor Organa",
+    "birthYear": "67BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "191",
+    "mass": "unknown",
+    "skinColor": "tan",
+    "homeworldPlanetId": "3c742194-314a-46ed-ab2c-dfb5aa9d0f65",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T16:53:08.575000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.463000Z"
+  },
+  {
+    "characterId": "07e84693-d768-4b48-8144-f319d1124a0b",
+    "name": "Jango Fett",
+    "birthYear": "66BBY",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "183",
+    "mass": "79",
+    "skinColor": "tan",
+    "homeworldPlanetId": "c6076fad-da7c-4223-a017-c9d185535f7a",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T16:54:41.620000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.465000Z"
+  },
+  {
+    "characterId": "6dcaa3a9-1b89-49b0-8acc-a4d8ed9863f0",
+    "name": "Zam Wesell",
+    "birthYear": "unknown",
+    "eyeColor": "yellow",
+    "gender": "female",
+    "hairColor": "blonde",
+    "height": "168",
+    "mass": "55",
+    "skinColor": "fair, green, yellow",
+    "homeworldPlanetId": "8766f0e1-6fcc-4776-ab50-950166f80213",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "3ccd0266-c7cc-474d-ba65-aac1ce1c29ca",
+    "starshipIds": [],
+    "vehicleIds": [
+      "87b60f2c-361f-4713-a0ea-c1f45743c5fc"
+    ],
+    "createdDateTime": "2014-12-20T16:57:44.471000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.468000Z"
+  },
+  {
+    "characterId": "50fef24c-bb91-404e-a5fc-542732a87f35",
+    "name": "Dexter Jettster",
+    "birthYear": "unknown",
+    "eyeColor": "yellow",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "198",
+    "mass": "102",
+    "skinColor": "brown",
+    "homeworldPlanetId": "684ee5bb-fe2d-4005-990b-8cda012ffa54",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "2fdef310-21fa-48bf-9f28-6b9ea501a027",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T17:28:27.248000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.470000Z"
+  },
+  {
+    "characterId": "8f0e40cd-c0d6-4cec-a275-9d9e0d76bc58",
+    "name": "Lama Su",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "229",
+    "mass": "88",
+    "skinColor": "grey",
+    "homeworldPlanetId": "31ece572-eac9-4d90-9da3-06a696e4702d",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "87def42b-de37-489d-9b9f-a61a60e3ba57",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T17:30:50.416000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.473000Z"
+  },
+  {
+    "characterId": "187cf0c5-d4cd-4cd8-a4f5-406c22a30a15",
+    "name": "Taun We",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "female",
+    "hairColor": "none",
+    "height": "213",
+    "mass": "unknown",
+    "skinColor": "grey",
+    "homeworldPlanetId": "31ece572-eac9-4d90-9da3-06a696e4702d",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "87def42b-de37-489d-9b9f-a61a60e3ba57",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T17:31:21.195000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.474000Z"
+  },
+  {
+    "characterId": "957a60e1-1b40-4ccd-ac8e-e2aae61a880f",
+    "name": "Jocasta Nu",
+    "birthYear": "unknown",
+    "eyeColor": "blue",
+    "gender": "female",
+    "hairColor": "white",
+    "height": "167",
+    "mass": "unknown",
+    "skinColor": "fair",
+    "homeworldPlanetId": "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T17:32:51.996000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.476000Z"
+  },
+  {
+    "characterId": "a00aa467-3e19-4b69-a2a6-4d9fec0b4b13",
+    "name": "R4-P17",
+    "birthYear": "unknown",
+    "eyeColor": "red, blue",
+    "gender": "female",
+    "hairColor": "none",
+    "height": "96",
+    "mass": "unknown",
+    "skinColor": "silver, red",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T17:43:36.409000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.478000Z"
+  },
+  {
+    "characterId": "5053ec48-7036-44d3-9e89-1160c8d3374a",
+    "name": "Wat Tambor",
+    "birthYear": "unknown",
+    "eyeColor": "unknown",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "193",
+    "mass": "48",
+    "skinColor": "green, grey",
+    "homeworldPlanetId": "701dbf2d-eb5c-4e3c-9035-93d997364828",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "031bdae3-5fbf-4a09-b126-ae84dafbe671",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T17:53:52.607000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.481000Z"
+  },
+  {
+    "characterId": "21d43d63-1ed1-4bf2-a98a-6d3be73b2815",
+    "name": "San Hill",
+    "birthYear": "unknown",
+    "eyeColor": "gold",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "191",
+    "mass": "unknown",
+    "skinColor": "grey",
+    "homeworldPlanetId": "a7d54262-72f2-40d6-9402-c4dab6d4ada7",
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "63cfdcb9-dc22-420a-8769-e7e01a22b8f4",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T17:58:17.049000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.484000Z"
+  },
+  {
+    "characterId": "298469f5-dea6-4a7c-b170-38774fa46402",
+    "name": "Shaak Ti",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "female",
+    "hairColor": "none",
+    "height": "178",
+    "mass": "57",
+    "skinColor": "red, blue, white",
+    "homeworldPlanetId": "981bd173-5b58-4bec-bd1b-6fc9cc592128",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "speciesId": "27f5411f-5544-47a8-bcf4-17bd6099f2ee",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T18:44:01.103000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.486000Z"
+  },
+  {
+    "characterId": "259c4cd3-917b-4344-9700-e8deafc491fe",
+    "name": "Grievous",
+    "birthYear": "unknown",
+    "eyeColor": "green, yellow",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "216",
+    "mass": "159",
+    "skinColor": "brown, white",
+    "homeworldPlanetId": "53210c39-ca51-4a2e-bc5f-dcde98e1b02d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "speciesId": "9b58836a-7272-4f22-bfa7-b3f3dba5c520",
+    "starshipIds": [
+      "7d8d2136-5dd8-4782-90ea-8fbd9c6a5958"
+    ],
+    "vehicleIds": [
+      "9e6747f4-8547-46a9-ac50-34cd33384e51"
+    ],
+    "createdDateTime": "2014-12-20T19:43:53.348000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.488000Z"
+  },
+  {
+    "characterId": "ae193957-3240-4bfe-8f60-117dbdd947a9",
+    "name": "Tarfful",
+    "birthYear": "unknown",
+    "eyeColor": "blue",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "234",
+    "mass": "136",
+    "skinColor": "brown",
+    "homeworldPlanetId": "72e4a6f5-39c9-4f1a-87f2-f63573f0177d",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "speciesId": "f1ce0980-6671-4211-986a-a81f191fa5ec",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T19:46:34.209000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.491000Z"
+  },
+  {
+    "characterId": "28d9b48c-bcb6-4248-af9c-12c0ebf331c5",
+    "name": "Raymus Antilles",
+    "birthYear": "unknown",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "188",
+    "mass": "79",
+    "skinColor": "light",
+    "homeworldPlanetId": "3c742194-314a-46ed-ab2c-dfb5aa9d0f65",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T19:49:35.583000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.493000Z"
+  },
+  {
+    "characterId": "4a5a68a7-1267-4aa7-ba2f-884070b16172",
+    "name": "Sly Moore",
+    "birthYear": "unknown",
+    "eyeColor": "white",
+    "gender": "female",
+    "hairColor": "none",
+    "height": "178",
+    "mass": "48",
+    "skinColor": "pale",
+    "homeworldPlanetId": "a54764ac-4e6b-4fb9-98c3-8a6a4c35d4e6",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T20:18:37.619000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.496000Z"
+  },
+  {
+    "characterId": "57af7237-adf3-4be0-996a-817c323e54d7",
+    "name": "Tion Medon",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "male",
+    "hairColor": "none",
+    "height": "206",
+    "mass": "80",
+    "skinColor": "grey",
+    "homeworldPlanetId": "428d8b00-d821-4991-a216-9529e77d767c",
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "speciesId": "d0413627-6582-4c4a-a783-46d5a0da1359",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2014-12-20T20:35:04.260000Z",
+    "updatedDateTime": "2014-12-20T21:17:50.498000Z"
+  },
+  {
+    "characterId": "3bf6f6e4-0332-44a8-9fa2-66a2988289dd",
+    "name": "Finn",
+    "birthYear": "unknown",
+    "eyeColor": "dark",
+    "gender": "male",
+    "hairColor": "black",
+    "height": "unknown",
+    "mass": "unknown",
+    "skinColor": "dark",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2015-04-17T06:52:40.793621Z",
+    "updatedDateTime": "2015-04-17T06:52:40.793674Z"
+  },
+  {
+    "characterId": "7c06b4ec-ff3a-47a1-817e-b0a91d142626",
+    "name": "Rey",
+    "birthYear": "unknown",
+    "eyeColor": "hazel",
+    "gender": "female",
+    "hairColor": "brown",
+    "height": "unknown",
+    "mass": "unknown",
+    "skinColor": "light",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2015-04-17T06:54:01.495077Z",
+    "updatedDateTime": "2015-04-17T06:54:01.495128Z"
+  },
+  {
+    "characterId": "af94bae0-9106-4043-acde-90af09ef9678",
+    "name": "Poe Dameron",
+    "birthYear": "unknown",
+    "eyeColor": "brown",
+    "gender": "male",
+    "hairColor": "brown",
+    "height": "unknown",
+    "mass": "unknown",
+    "skinColor": "light",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [
+      "e364f769-07d2-4888-831b-6731108ffb4c"
+    ],
+    "vehicleIds": [],
+    "createdDateTime": "2015-04-17T06:55:21.622786Z",
+    "updatedDateTime": "2015-04-17T06:55:21.622835Z"
+  },
+  {
+    "characterId": "233ce9ec-17e2-45ad-93e3-4bb11f685ed6",
+    "name": "BB8",
+    "birthYear": "unknown",
+    "eyeColor": "black",
+    "gender": "none",
+    "hairColor": "none",
+    "height": "none",
+    "mass": "unknown",
+    "skinColor": "none",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f"
+    ],
+    "speciesId": "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2015-04-17T06:57:38.061346Z",
+    "updatedDateTime": "2015-04-17T06:57:38.061453Z"
+  },
+  {
+    "characterId": "4d6b7580-54d3-4feb-8aef-0ff51309b2d5",
+    "name": "Captain Phasma",
+    "birthYear": "unknown",
+    "eyeColor": "unknown",
+    "gender": "female",
+    "hairColor": "none",
+    "height": "none",
+    "mass": "unknown",
+    "skinColor": "none",
+    "homeworldPlanetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f"
+    ],
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "starshipIds": [],
+    "vehicleIds": [],
+    "createdDateTime": "2015-10-13T10:35:39.229823Z",
+    "updatedDateTime": "2015-10-13T10:35:39.229894Z"
+  }
+]

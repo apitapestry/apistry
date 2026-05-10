@@ -1,0 +1,936 @@
+[
+  {
+    "speciesId": "0f15fc8c-d55a-4f77-bfb4-59964509cd3a",
+    "id": "1",
+    "name": "Human",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "120",
+    "eye_colors": "brown, blue, green, hazel, grey, amber",
+    "hair_colors": "blonde, brown, black, red",
+    "skin_colors": "caucasian, black, asian, hispanic",
+    "language": "Galactic Basic",
+    "homeworld": "9",
+    "people": [
+      "1",
+      "4",
+      "5",
+      "6",
+      "7",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "18",
+      "21",
+      "22",
+      "25",
+      "26",
+      "28",
+      "29",
+      "32",
+      "34",
+      "35",
+      "39",
+      "42",
+      "43",
+      "51",
+      "62",
+      "66",
+      "67",
+      "68",
+      "69",
+      "74",
+      "81",
+      "84",
+      "85",
+      "86",
+      "88"
+    ],
+    "films": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "url": "/species/1",
+    "created": "2014-12-10T13:52:11.567000Z",
+    "edited": "2014-12-20T21:36:42.136000Z"
+  },
+  {
+    "speciesId": "cf5724a9-5cdd-4f1b-8df2-8e999b04849f",
+    "id": "2",
+    "name": "Droid",
+    "classification": "artificial",
+    "designation": "sentient",
+    "average_height": "n/a",
+    "average_lifespan": "indefinite",
+    "eye_colors": "n/a",
+    "hair_colors": "n/a",
+    "skin_colors": "n/a",
+    "language": "n/a",
+    "people": [
+      "2",
+      "3",
+      "8",
+      "23",
+      "87"
+    ],
+    "films": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "url": "/species/2",
+    "created": "2014-12-10T15:16:16.259000Z",
+    "edited": "2014-12-20T21:36:42.139000Z"
+  },
+  {
+    "speciesId": "f1ce0980-6671-4211-986a-a81f191fa5ec",
+    "id": "3",
+    "name": "Wookiee",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "210",
+    "average_lifespan": "400",
+    "eye_colors": "blue, green, yellow, brown, golden, red",
+    "hair_colors": "black, brown",
+    "skin_colors": "gray",
+    "language": "Shyriiwook",
+    "homeworld": "14",
+    "people": [
+      "13",
+      "80"
+    ],
+    "films": [
+      "1",
+      "2",
+      "3",
+      "6",
+      "7"
+    ],
+    "url": "/species/3",
+    "created": "2014-12-10T16:44:31.486000Z",
+    "edited": "2014-12-20T21:36:42.142000Z"
+  },
+  {
+    "speciesId": "42f96f0f-ecc5-42b0-b2f9-839f3e83ee85",
+    "id": "4",
+    "name": "Rodian",
+    "classification": "sentient",
+    "designation": "reptilian",
+    "average_height": "170",
+    "average_lifespan": "unknown",
+    "eye_colors": "black",
+    "hair_colors": "n/a",
+    "skin_colors": "green, blue",
+    "language": "Galatic Basic",
+    "homeworld": "23",
+    "people": [
+      "15"
+    ],
+    "films": [
+      "1"
+    ],
+    "url": "/species/4",
+    "created": "2014-12-10T17:05:26.471000Z",
+    "edited": "2014-12-20T21:36:42.144000Z"
+  },
+  {
+    "speciesId": "4f039600-68da-4d0d-9ca4-3f8ba421162d",
+    "id": "5",
+    "name": "Hutt",
+    "classification": "gastropod",
+    "designation": "sentient",
+    "average_height": "300",
+    "average_lifespan": "1000",
+    "eye_colors": "yellow, red",
+    "hair_colors": "n/a",
+    "skin_colors": "green, brown, tan",
+    "language": "Huttese",
+    "homeworld": "24",
+    "people": [
+      "16"
+    ],
+    "films": [
+      "1",
+      "3"
+    ],
+    "url": "/species/5",
+    "created": "2014-12-10T17:12:50.410000Z",
+    "edited": "2014-12-20T21:36:42.146000Z"
+  },
+  {
+    "speciesId": "2a2700bd-df71-4467-b1e2-800bfd041a5e",
+    "id": "6",
+    "name": "Yoda's species",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "66",
+    "average_lifespan": "900",
+    "eye_colors": "brown, green, yellow",
+    "hair_colors": "brown, white",
+    "skin_colors": "green, yellow",
+    "language": "Galactic basic",
+    "homeworld": "28",
+    "people": [
+      "20"
+    ],
+    "films": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "url": "/species/6",
+    "created": "2014-12-15T12:27:22.877000Z",
+    "edited": "2014-12-20T21:36:42.148000Z"
+  },
+  {
+    "speciesId": "9d7e046a-72b9-4de9-831c-4ae3b802ffd4",
+    "id": "7",
+    "name": "Trandoshan",
+    "classification": "reptile",
+    "designation": "sentient",
+    "average_height": "200",
+    "average_lifespan": "unknown",
+    "eye_colors": "yellow, orange",
+    "hair_colors": "none",
+    "skin_colors": "brown, green",
+    "language": "Dosh",
+    "homeworld": "29",
+    "people": [
+      "24"
+    ],
+    "films": [
+      "2"
+    ],
+    "url": "/species/7",
+    "created": "2014-12-15T13:07:47.704000Z",
+    "edited": "2014-12-20T21:36:42.151000Z"
+  },
+  {
+    "speciesId": "d59668a0-01c4-4b8a-a761-752c80efa879",
+    "id": "8",
+    "name": "Mon Calamari",
+    "classification": "amphibian",
+    "designation": "sentient",
+    "average_height": "160",
+    "average_lifespan": "unknown",
+    "eye_colors": "yellow",
+    "hair_colors": "none",
+    "skin_colors": "red, blue, brown, magenta",
+    "language": "Mon Calamarian",
+    "homeworld": "31",
+    "people": [
+      "27"
+    ],
+    "films": [
+      "3"
+    ],
+    "url": "/species/8",
+    "created": "2014-12-18T11:09:52.263000Z",
+    "edited": "2014-12-20T21:36:42.153000Z"
+  },
+  {
+    "speciesId": "d4f9735a-c2a2-478a-8e5f-dc80416c7fed",
+    "id": "9",
+    "name": "Ewok",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "100",
+    "average_lifespan": "unknown",
+    "eye_colors": "orange, brown",
+    "hair_colors": "white, brown, black",
+    "skin_colors": "brown",
+    "language": "Ewokese",
+    "homeworld": "7",
+    "people": [
+      "30"
+    ],
+    "films": [
+      "3"
+    ],
+    "url": "/species/9",
+    "created": "2014-12-18T11:22:00.285000Z",
+    "edited": "2014-12-20T21:36:42.155000Z"
+  },
+  {
+    "speciesId": "f4f2d973-f1d0-44dc-82a8-d4c85c18f759",
+    "id": "10",
+    "name": "Sullustan",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "unknown",
+    "eye_colors": "black",
+    "hair_colors": "none",
+    "skin_colors": "pale",
+    "language": "Sullutese",
+    "homeworld": "33",
+    "people": [
+      "31"
+    ],
+    "films": [
+      "3"
+    ],
+    "url": "/species/10",
+    "created": "2014-12-18T11:26:20.103000Z",
+    "edited": "2014-12-20T21:36:42.157000Z"
+  },
+  {
+    "speciesId": "0e378afc-07ac-442c-b368-19016650e513",
+    "id": "11",
+    "name": "Neimodian",
+    "classification": "unknown",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "unknown",
+    "eye_colors": "red, pink",
+    "hair_colors": "none",
+    "skin_colors": "grey, green",
+    "language": "Neimoidia",
+    "homeworld": "18",
+    "people": [
+      "33"
+    ],
+    "films": [
+      "4"
+    ],
+    "url": "/species/11",
+    "created": "2014-12-19T17:07:31.319000Z",
+    "edited": "2014-12-20T21:36:42.160000Z"
+  },
+  {
+    "speciesId": "2550fae8-19b4-41f8-a05b-a0ebdd0d35fc",
+    "id": "12",
+    "name": "Gungan",
+    "classification": "amphibian",
+    "designation": "sentient",
+    "average_height": "190",
+    "average_lifespan": "unknown",
+    "eye_colors": "orange",
+    "hair_colors": "none",
+    "skin_colors": "brown, green",
+    "language": "Gungan basic",
+    "homeworld": "8",
+    "people": [
+      "36",
+      "37",
+      "38"
+    ],
+    "films": [
+      "4",
+      "5"
+    ],
+    "url": "/species/12",
+    "created": "2014-12-19T17:30:37.341000Z",
+    "edited": "2014-12-20T21:36:42.163000Z"
+  },
+  {
+    "speciesId": "a3b620bb-d6c0-4594-bcfc-2c352161e8fc",
+    "id": "13",
+    "name": "Toydarian",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "120",
+    "average_lifespan": "91",
+    "eye_colors": "yellow",
+    "hair_colors": "none",
+    "skin_colors": "blue, green, grey",
+    "language": "Toydarian",
+    "homeworld": "34",
+    "people": [
+      "40"
+    ],
+    "films": [
+      "4",
+      "5"
+    ],
+    "url": "/species/13",
+    "created": "2014-12-19T17:48:56.893000Z",
+    "edited": "2014-12-20T21:36:42.165000Z"
+  },
+  {
+    "speciesId": "a532267d-81d1-4d93-89ad-7ce055c790ca",
+    "id": "14",
+    "name": "Dug",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "100",
+    "average_lifespan": "unknown",
+    "eye_colors": "yellow, blue",
+    "hair_colors": "none",
+    "skin_colors": "brown, purple, grey, red",
+    "language": "Dugese",
+    "homeworld": "35",
+    "people": [
+      "41"
+    ],
+    "films": [
+      "4"
+    ],
+    "url": "/species/14",
+    "created": "2014-12-19T17:53:11.214000Z",
+    "edited": "2014-12-20T21:36:42.167000Z"
+  },
+  {
+    "speciesId": "bb91c831-5444-4703-901b-19aaed674945",
+    "id": "15",
+    "name": "Twi'lek",
+    "classification": "mammals",
+    "designation": "sentient",
+    "average_height": "200",
+    "average_lifespan": "unknown",
+    "eye_colors": "blue, brown, orange, pink",
+    "hair_colors": "none",
+    "skin_colors": "orange, yellow, blue, green, pink, purple, tan",
+    "language": "Twi'leki",
+    "homeworld": "37",
+    "people": [
+      "45",
+      "46"
+    ],
+    "films": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "url": "/species/15",
+    "created": "2014-12-20T09:48:02.406000Z",
+    "edited": "2014-12-20T21:36:42.169000Z"
+  },
+  {
+    "speciesId": "079545be-73b3-4abb-b108-37df2f5b808f",
+    "id": "16",
+    "name": "Aleena",
+    "classification": "reptile",
+    "designation": "sentient",
+    "average_height": "80",
+    "average_lifespan": "79",
+    "eye_colors": "unknown",
+    "hair_colors": "none",
+    "skin_colors": "blue, gray",
+    "language": "Aleena",
+    "homeworld": "38",
+    "people": [
+      "47"
+    ],
+    "films": [
+      "4"
+    ],
+    "url": "/species/16",
+    "created": "2014-12-20T09:53:16.481000Z",
+    "edited": "2014-12-20T21:36:42.171000Z"
+  },
+  {
+    "speciesId": "78db6c36-b4b2-4d5c-8f1f-f04e785684e2",
+    "id": "17",
+    "name": "Vulptereen",
+    "classification": "unknown",
+    "designation": "sentient",
+    "average_height": "100",
+    "average_lifespan": "unknown",
+    "eye_colors": "yellow",
+    "hair_colors": "none",
+    "skin_colors": "grey",
+    "language": "vulpterish",
+    "homeworld": "39",
+    "people": [
+      "48"
+    ],
+    "films": [
+      "4"
+    ],
+    "url": "/species/17",
+    "created": "2014-12-20T09:57:33.128000Z",
+    "edited": "2014-12-20T21:36:42.173000Z"
+  },
+  {
+    "speciesId": "5e23de9c-b395-4cd1-b184-2d46468b20e2",
+    "id": "18",
+    "name": "Xexto",
+    "classification": "unknown",
+    "designation": "sentient",
+    "average_height": "125",
+    "average_lifespan": "unknown",
+    "eye_colors": "black",
+    "hair_colors": "none",
+    "skin_colors": "grey, yellow, purple",
+    "language": "Xextese",
+    "homeworld": "40",
+    "people": [
+      "49"
+    ],
+    "films": [
+      "4"
+    ],
+    "url": "/species/18",
+    "created": "2014-12-20T10:02:13.915000Z",
+    "edited": "2014-12-20T21:36:42.175000Z"
+  },
+  {
+    "speciesId": "ead755fe-abd2-4616-ab1f-396bc75a5ffa",
+    "id": "19",
+    "name": "Toong",
+    "classification": "unknown",
+    "designation": "sentient",
+    "average_height": "200",
+    "average_lifespan": "unknown",
+    "eye_colors": "orange",
+    "hair_colors": "none",
+    "skin_colors": "grey, green, yellow",
+    "language": "Tundan",
+    "homeworld": "41",
+    "people": [
+      "50"
+    ],
+    "films": [
+      "4",
+      "6"
+    ],
+    "url": "/species/19",
+    "created": "2014-12-20T10:08:36.795000Z",
+    "edited": "2014-12-20T21:36:42.177000Z"
+  },
+  {
+    "speciesId": "a67198fa-6744-45ae-ba2e-7757d604e883",
+    "id": "20",
+    "name": "Cerean",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "200",
+    "average_lifespan": "unknown",
+    "eye_colors": "hazel",
+    "hair_colors": "red, blond, black, white",
+    "skin_colors": "pale pink",
+    "language": "Cerean",
+    "homeworld": "43",
+    "people": [
+      "52"
+    ],
+    "films": [
+      "4",
+      "6"
+    ],
+    "url": "/species/20",
+    "created": "2014-12-20T10:15:33.765000Z",
+    "edited": "2014-12-20T21:36:42.179000Z"
+  },
+  {
+    "speciesId": "f7502062-956d-4a37-a0e9-373d24bda196",
+    "id": "21",
+    "name": "Nautolan",
+    "classification": "amphibian",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "70",
+    "eye_colors": "black",
+    "hair_colors": "none",
+    "skin_colors": "green, blue, brown, red",
+    "language": "Nautila",
+    "homeworld": "44",
+    "people": [
+      "53"
+    ],
+    "films": [
+      "4"
+    ],
+    "url": "/species/21",
+    "created": "2014-12-20T10:18:58.610000Z",
+    "edited": "2014-12-20T21:36:42.181000Z"
+  },
+  {
+    "speciesId": "8b9dd4d9-4017-4d32-b644-6a77d0894efd",
+    "id": "22",
+    "name": "Zabrak",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "unknown",
+    "eye_colors": "brown, orange",
+    "hair_colors": "black",
+    "skin_colors": "pale, brown, red, orange, yellow",
+    "language": "Zabraki",
+    "homeworld": "45",
+    "people": [
+      "44",
+      "54"
+    ],
+    "films": [
+      "4"
+    ],
+    "url": "/species/22",
+    "created": "2014-12-20T10:26:59.894000Z",
+    "edited": "2014-12-20T21:36:42.183000Z"
+  },
+  {
+    "speciesId": "f626af14-9ffd-4b51-87b7-d00b0c2ebad5",
+    "id": "23",
+    "name": "Tholothian",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "unknown",
+    "average_lifespan": "unknown",
+    "eye_colors": "blue, indigo",
+    "hair_colors": "unknown",
+    "skin_colors": "dark",
+    "language": "unknown",
+    "homeworld": "46",
+    "people": [
+      "55"
+    ],
+    "films": [
+      "4",
+      "6"
+    ],
+    "url": "/species/23",
+    "created": "2014-12-20T10:29:13.798000Z",
+    "edited": "2014-12-20T21:36:42.186000Z"
+  },
+  {
+    "speciesId": "8dcc298c-059f-47eb-b159-8493ad7cf79c",
+    "id": "24",
+    "name": "Iktotchi",
+    "classification": "unknown",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "unknown",
+    "eye_colors": "orange",
+    "hair_colors": "none",
+    "skin_colors": "pink",
+    "language": "Iktotchese",
+    "homeworld": "47",
+    "people": [
+      "56"
+    ],
+    "films": [
+      "4",
+      "6"
+    ],
+    "url": "/species/24",
+    "created": "2014-12-20T10:32:13.046000Z",
+    "edited": "2014-12-20T21:36:42.188000Z"
+  },
+  {
+    "speciesId": "eb7dc56d-0548-4009-9a79-4be656c67694",
+    "id": "25",
+    "name": "Quermian",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "240",
+    "average_lifespan": "86",
+    "eye_colors": "yellow",
+    "hair_colors": "none",
+    "skin_colors": "white",
+    "language": "Quermian",
+    "homeworld": "48",
+    "people": [
+      "57"
+    ],
+    "films": [
+      "4",
+      "6"
+    ],
+    "url": "/species/25",
+    "created": "2014-12-20T10:34:50.827000Z",
+    "edited": "2014-12-20T21:36:42.189000Z"
+  },
+  {
+    "speciesId": "50119801-8731-499a-aebb-33aebf523318",
+    "id": "26",
+    "name": "Kel Dor",
+    "classification": "unknown",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "70",
+    "eye_colors": "black, silver",
+    "hair_colors": "none",
+    "skin_colors": "peach, orange, red",
+    "language": "Kel Dor",
+    "homeworld": "49",
+    "people": [
+      "58"
+    ],
+    "films": [
+      "4",
+      "6"
+    ],
+    "url": "/species/26",
+    "created": "2014-12-20T10:49:21.692000Z",
+    "edited": "2014-12-20T21:36:42.191000Z"
+  },
+  {
+    "speciesId": "2ede9f00-187d-44ec-814c-a93e4e6ccc07",
+    "id": "27",
+    "name": "Chagrian",
+    "classification": "amphibian",
+    "designation": "sentient",
+    "average_height": "190",
+    "average_lifespan": "unknown",
+    "eye_colors": "blue",
+    "hair_colors": "none",
+    "skin_colors": "blue",
+    "language": "Chagria",
+    "homeworld": "50",
+    "people": [
+      "59"
+    ],
+    "films": [
+      "4",
+      "6"
+    ],
+    "url": "/species/27",
+    "created": "2014-12-20T10:53:28.795000Z",
+    "edited": "2014-12-20T21:36:42.193000Z"
+  },
+  {
+    "speciesId": "56b97c52-978a-4d68-826a-792b69ec07cd",
+    "id": "28",
+    "name": "Geonosian",
+    "classification": "insectoid",
+    "designation": "sentient",
+    "average_height": "178",
+    "average_lifespan": "unknown",
+    "eye_colors": "green, hazel",
+    "hair_colors": "none",
+    "skin_colors": "green, brown",
+    "language": "Geonosian",
+    "homeworld": "11",
+    "people": [
+      "63"
+    ],
+    "films": [
+      "5",
+      "6"
+    ],
+    "url": "/species/28",
+    "created": "2014-12-20T16:40:45.618000Z",
+    "edited": "2014-12-20T21:36:42.195000Z"
+  },
+  {
+    "speciesId": "aed52f91-215e-48e7-babc-9f45db8ba42f",
+    "id": "29",
+    "name": "Mirialan",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "unknown",
+    "eye_colors": "blue, green, red, yellow, brown, orange",
+    "hair_colors": "black, brown",
+    "skin_colors": "yellow, green",
+    "language": "Mirialan",
+    "homeworld": "51",
+    "people": [
+      "64",
+      "65"
+    ],
+    "films": [
+      "5",
+      "6"
+    ],
+    "url": "/species/29",
+    "created": "2014-12-20T16:46:48.290000Z",
+    "edited": "2014-12-20T21:36:42.197000Z"
+  },
+  {
+    "speciesId": "3ccd0266-c7cc-474d-ba65-aac1ce1c29ca",
+    "id": "30",
+    "name": "Clawdite",
+    "classification": "reptilian",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "70",
+    "eye_colors": "yellow",
+    "hair_colors": "none",
+    "skin_colors": "green, yellow",
+    "language": "Clawdite",
+    "homeworld": "54",
+    "people": [
+      "70"
+    ],
+    "films": [
+      "5",
+      "6"
+    ],
+    "url": "/species/30",
+    "created": "2014-12-20T16:57:46.171000Z",
+    "edited": "2014-12-20T21:36:42.199000Z"
+  },
+  {
+    "speciesId": "2fdef310-21fa-48bf-9f28-6b9ea501a027",
+    "id": "31",
+    "name": "Besalisk",
+    "classification": "amphibian",
+    "designation": "sentient",
+    "average_height": "178",
+    "average_lifespan": "75",
+    "eye_colors": "yellow",
+    "hair_colors": "none",
+    "skin_colors": "brown",
+    "language": "besalisk",
+    "homeworld": "55",
+    "people": [
+      "71"
+    ],
+    "films": [
+      "5"
+    ],
+    "url": "/species/31",
+    "created": "2014-12-20T17:28:28.821000Z",
+    "edited": "2014-12-20T21:36:42.200000Z"
+  },
+  {
+    "speciesId": "87def42b-de37-489d-9b9f-a61a60e3ba57",
+    "id": "32",
+    "name": "Kaminoan",
+    "classification": "amphibian",
+    "designation": "sentient",
+    "average_height": "220",
+    "average_lifespan": "80",
+    "eye_colors": "black",
+    "hair_colors": "none",
+    "skin_colors": "grey, blue",
+    "language": "Kaminoan",
+    "homeworld": "10",
+    "people": [
+      "72",
+      "73"
+    ],
+    "films": [
+      "5"
+    ],
+    "url": "/species/32",
+    "created": "2014-12-20T17:31:24.838000Z",
+    "edited": "2014-12-20T21:36:42.202000Z"
+  },
+  {
+    "speciesId": "031bdae3-5fbf-4a09-b126-ae84dafbe671",
+    "id": "33",
+    "name": "Skakoan",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "unknown",
+    "average_lifespan": "unknown",
+    "eye_colors": "unknown",
+    "hair_colors": "none",
+    "skin_colors": "grey, green",
+    "language": "Skakoan",
+    "homeworld": "56",
+    "people": [
+      "76"
+    ],
+    "films": [
+      "5",
+      "6"
+    ],
+    "url": "/species/33",
+    "created": "2014-12-20T17:53:54.515000Z",
+    "edited": "2014-12-20T21:36:42.204000Z"
+  },
+  {
+    "speciesId": "63cfdcb9-dc22-420a-8769-e7e01a22b8f4",
+    "id": "34",
+    "name": "Muun",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "190",
+    "average_lifespan": "100",
+    "eye_colors": "black",
+    "hair_colors": "none",
+    "skin_colors": "grey, white",
+    "language": "Muun",
+    "homeworld": "57",
+    "people": [
+      "77"
+    ],
+    "films": [
+      "5",
+      "6"
+    ],
+    "url": "/species/34",
+    "created": "2014-12-20T17:58:19.088000Z",
+    "edited": "2014-12-20T21:36:42.207000Z"
+  },
+  {
+    "speciesId": "27f5411f-5544-47a8-bcf4-17bd6099f2ee",
+    "id": "35",
+    "name": "Togruta",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "180",
+    "average_lifespan": "94",
+    "eye_colors": "red, orange, yellow, green, blue, black",
+    "hair_colors": "none",
+    "skin_colors": "red, white, orange, yellow, green, blue",
+    "language": "Togruti",
+    "homeworld": "58",
+    "people": [
+      "78"
+    ],
+    "films": [
+      "5",
+      "6"
+    ],
+    "url": "/species/35",
+    "created": "2014-12-20T18:44:03.246000Z",
+    "edited": "2014-12-20T21:36:42.209000Z"
+  },
+  {
+    "speciesId": "9b58836a-7272-4f22-bfa7-b3f3dba5c520",
+    "id": "36",
+    "name": "Kaleesh",
+    "classification": "reptile",
+    "designation": "sentient",
+    "average_height": "170",
+    "average_lifespan": "80",
+    "eye_colors": "yellow",
+    "hair_colors": "none",
+    "skin_colors": "brown, orange, tan",
+    "language": "Kaleesh",
+    "homeworld": "59",
+    "people": [
+      "79"
+    ],
+    "films": [
+      "6"
+    ],
+    "url": "/species/36",
+    "created": "2014-12-20T19:45:42.537000Z",
+    "edited": "2014-12-20T21:36:42.210000Z"
+  },
+  {
+    "speciesId": "d0413627-6582-4c4a-a783-46d5a0da1359",
+    "id": "37",
+    "name": "Pau'an",
+    "classification": "mammal",
+    "designation": "sentient",
+    "average_height": "190",
+    "average_lifespan": "700",
+    "eye_colors": "black",
+    "hair_colors": "none",
+    "skin_colors": "grey",
+    "language": "Utapese",
+    "homeworld": "12",
+    "people": [
+      "83"
+    ],
+    "films": [
+      "6"
+    ],
+    "url": "/species/37",
+    "created": "2014-12-20T20:35:06.777000Z",
+    "edited": "2014-12-20T21:36:42.212000Z"
+  }
+]

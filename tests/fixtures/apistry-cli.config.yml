@@ -1,0 +1,25 @@
+server:
+  host: localhost
+  port: 3000
+  serviceName: APIstry
+  serviceDescription: Test configuration for CLI startup assertions.
+  swaggerUiEnabled: true
+
+contracts:
+  path: docs-site/static/contracts
+
+database:
+  connection: sqlite://IN-MEMORY-DB
+
+logging:
+  level: info
+
+cors:
+  enabled: true
+  origins: true
+
+security:
+  bearerToken: $API_KEY
+  apiKey:
+    key: apiKey
+    value: $API_KEY

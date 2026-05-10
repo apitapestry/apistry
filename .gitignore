@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node.js
+**/dist/**
+**/dist-lambda/**
+**/generated/**
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+**.tgz
+**/pushContracts.sh
+
+# VSCode
+.vscode/
+
+# IntelliJ
+.idea/**
+*.iml
+*.ipr
+*.iws
+
+# OS generated files
+Desktop.ini
+Thumbs.db
+
+# Archives
+*.7z
+*.rar
+*.zip
+*.tar.gz
+
+# Misc
+.env
+*.csv
+*.db
+*.local
+*.pid
+*.seed
+*.sqlite3
+
+# Project specific
+**/license.*
+licenseMgmt
+_release-test
+**/.docusaurus/
+**/build/
+*.db-shm
+*.db-wal

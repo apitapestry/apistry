@@ -1,0 +1,17 @@
+:root {
+    --md-primary-fg-color: #0a1628;
+}
+
+/* Make inline links look like links */
+.md-typeset a {
+    color: var(--md-primary-fg-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+/* Stronger hover/focus state */
+.md-typeset a:hover,
+.md-typeset a:focus {
+    text-decoration-thickness: 2px;
+}

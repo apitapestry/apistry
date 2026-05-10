@@ -1,0 +1,272 @@
+openapi: 3.0.3
+info:
+  title: Utility Endpoints
+  description: Utility endpoints
+  version: v1
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developer.acme.com/terms/
+servers:
+  - url: https://myserver.amazonaws.com
+security:
+  - bearerAuth: []
+paths:
+  /v1/orchestration-actions:
+    get:
+      tags:
+        - Utilities
+      summary: Orchestration endpoint
+      description: Provides list of Orchestration actions
+      operationId: getOrchestrationActions
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrchestrationAction'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/health:
+    get:
+      tags:
+        - Utilities
+      summary: Health check endpoint
+      description: Returns the health status of the Service.
+      operationId: getHealth
+      responses:
+        '200':
+          description: Health check successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/ready:
+    get:
+      tags:
+        - Utilities
+      summary: Readiness check endpoint
+      description: Returns the ready status of the Service
+      operationId: getReady
+      responses:
+        '200':
+          description: Ready check successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ready
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/metrics:
+    get:
+      tags:
+        - Utilities
+      summary: Metrics endpoint
+      description: Returns the metrics for the Service
+      operationId: getMetrics
+      responses:
+        '200':
+          description: Metrics successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ready
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    ResourceTypeQueryOptional:
+      description: Resource type
+      name: resourceType
+      in: query
+      required: false
+      schema:
+        $ref: '#/components/schemas/ResourceType'
+    MethodQueryOptional:
+      description: Resource type
+      name: method
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - query
+          - post
+          - put
+          - patch
+          - delete
+  schemas:
+    ActionParameter:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Parameter name
+        type:
+          type: string
+          description: Parameter type (e.g., "string", "object", "boolean")
+        required:
+          type: boolean
+          description: Whether the parameter is required
+        description:
+          type: string
+          description: Description of the parameter
+        enum:
+          type: array
+          items:
+            type: string
+          description: Allowed values if the parameter is an enum
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message from service
+    ErrorItem:
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        property:
+          description: Name of the property in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+        message:
+          type: string
+          description: Error message from service
+    OrchestrationAction:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        params:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionParameter'
+    ResourceType:
+      description: The type of resource this is
+      type: string
+      enum:
+        - Book
+        - Calendar
+        - Note
+        - Preference
+        - Task
+        - Video
+    Schema:
+      type: object
+      properties:
+        resourceType:
+          type: string
+        propertyName:
+          type: string
+        post:
+          type: string
+        put:
+          type: string
+        patch:
+          type: string
+        delete:
+          type: string
+        query:
+          type: string
+        queryPattern:
+          type: string
+        primaryKey:
+          type: string
+  responses:
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com

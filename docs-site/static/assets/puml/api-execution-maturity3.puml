@@ -1,0 +1,41 @@
+@startuml
+' ---------- Global styling ----------
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #555555
+
+skinparam rectangle {
+  BorderColor #333333
+  FontColor #222222
+  RoundCorner 8
+}
+
+skinparam note {
+  BackgroundColor #FFFDE7
+  BorderColor #999999
+  FontColor #222222
+}
+
+top to bottom direction
+
+' ---------- Level 3 ----------
+rectangle "Level 3: Contract as a Service (CaaS)" #EAF4EA {
+  top to bottom direction
+
+  rectangle "Executable Contract\n(OpenAPI + Extensions)" as L3Contract #D6EAD6
+  rectangle "Action Library\n(Reusable, Imperative)" as L3Actions #E0F0E0
+  rectangle "Generic CaaS Runtime" as L3Runtime #C4E0C4
+
+  L3Contract --> L3Runtime
+  L3Actions  --> L3Runtime
+
+  note right of L3Runtime
+    BEHAVIOR
+    - Declared in contract
+    - Realized via actions
+    - Executed by runtime
+  end note
+}
+
+@enduml

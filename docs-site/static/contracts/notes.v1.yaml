@@ -1,0 +1,717 @@
+openapi: 3.0.3
+info:
+  title: Notes
+  description: API for managing and searching personal reminders including notes, preferences and tasks.
+  version: v1
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developer.acme.com/terms/
+x-allowed-methods:
+  - get
+servers:
+  - url: https://myserver.amazonaws.com
+security:
+  - bearerAuth: []
+paths:
+  /v1/notes/{noteId}:
+    get:
+      tags:
+        - Notes
+      x-collection: notes
+      summary: Get a Note
+      description: Get a Note
+      operationId: getNote
+      parameters:
+        - $ref: '#/components/parameters/NoteId'
+      responses:
+        '200':
+          description: A note
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/notes:
+    get:
+      tags:
+        - Notes
+      x-collection: notes
+      summary: List user notes
+      description: List user notes
+      operationId: getNotes
+      parameters:
+        - $ref: '#/components/parameters/NoteTypeQueryOptional'
+        - $ref: '#/components/parameters/NoteIdsQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/NoteIdQueryOptional'
+        - $ref: '#/components/parameters/SubjectQueryOptional'
+        - $ref: '#/components/parameters/NoteQueryOptional'
+        - $ref: '#/components/parameters/NameQueryOptional'
+        - $ref: '#/components/parameters/ValueQueryOptional'
+        - $ref: '#/components/parameters/IsPiiQueryOptional'
+        - $ref: '#/components/parameters/ExpiresAtDateTimeQueryOptional'
+        - $ref: '#/components/parameters/NoteCategoryQueryOptional'
+        - $ref: '#/components/parameters/ParentIdQueryOptional'
+        - $ref: '#/components/parameters/DueDateTimeQueryOptional'
+        - $ref: '#/components/parameters/IsCompletedQueryOptional'
+        - $ref: '#/components/parameters/TaskTitleQueryOptional'
+        - $ref: '#/components/parameters/CourseQueryOptional'
+        - $ref: '#/components/parameters/CalendarSourceQueryOptional'
+        - $ref: '#/components/parameters/NotesQueryOptional'
+        - $ref: '#/components/parameters/UrlQueryOptional'
+      responses:
+        '200':
+          description: A list of notes The response also includes a Content-Range header in the format 'items start-end/total', which provides the total record count.
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                readOnly: true
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    description: The list of resources
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Note'
+                    minItems: 0
+                    maxItems: 50
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - Notes
+      x-collection: notes
+      description: Create multiple note records
+      summary: Create notes in bulk
+      operationId: createNotes
+      security:
+        - apiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Note'
+              minItems: 1
+              maxItems: 50
+      responses:
+        '201':
+          description: Notes created successfully in bulk
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                readOnly: true
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    description: The list of resources
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Note'
+                    minItems: 0
+                    maxItems: 50
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    patch:
+      tags:
+        - Notes
+      x-collection: notes
+      description: Update multiple notes in your personal library. Only need to provide those fields that need to be updated. NoteType valid values are 'UpdatePreference', 'UpdateSimple', 'UpdateTask'.
+      summary: Update notes
+      operationId: updateNotes
+      security:
+        - apiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Note'
+              minItems: 1
+              maxItems: 50
+      responses:
+        '200':
+          description: Updated successfully
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                readOnly: true
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    description: The list of resources
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Note'
+                    minItems: 0
+                    maxItems: 50
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - Notes
+      x-collection: notes
+      description: Remove a note from your settings
+      summary: Delete notes
+      operationId: deleteNotes
+      security:
+        - apiKey: []
+      parameters:
+        - $ref: '#/components/parameters/NoteTypeQueryOptional'
+        - $ref: '#/components/parameters/NotesCategoryQueryOptional'
+        - $ref: '#/components/parameters/NoteIdsQueryOptional'
+        - $ref: '#/components/parameters/NoteIdQueryOptional'
+        - $ref: '#/components/parameters/NotesDueDateTimeQueryOptional'
+      responses:
+        '200':
+          description: A list of notes The response also includes a Content-Range header in the format 'items start-end/total', which provides the total record count.
+          headers:
+            Content-Range:
+              $ref: '#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                readOnly: true
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    description: The list of resources
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Note'
+                    minItems: 0
+                    maxItems: 50
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    NoteTypeQueryOptional:
+      description: Resource type
+      name: noteType
+      in: query
+      required: false
+      schema:
+        $ref: '#/components/schemas/NoteType'
+    NoteIdsQueryOptional:
+      description: Unique identifier for the note.
+      name: noteIds
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+          format: uuid
+    NoteIdQueryOptional:
+      name: noteId
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^isNull$
+      description: Unique noteIdentifier for this resource
+    NoteId:
+      description: Unique identifier for the note.
+      name: noteId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    NotesDueDateTimeQueryOptional:
+      description: Due date for the reminder (ISO 8601 format). Only applicable for tasks note.
+      name: dueDateTime
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    NotesCategoryQueryOptional:
+      name: noteCategory
+      in: query
+      description: Filter by category (supports wildcard and partial matches).
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+        minLength: 1
+        maxLength: 40
+    LimitQueryOptional:
+      description: Specifies the number(limit) of results to provide in a single response.
+      in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+        default: 20
+        x-ignore-merge: true
+    OffsetQueryOptional:
+      description: Specify the page offset this request is to provide.
+      in: query
+      name: offset
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+        x-ignore-merge: true
+    OrderQueryOptional:
+      name: order
+      in: query
+      description: Sort order for the results (e.g., order=price.asc or order=year.desc)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9_]+\.(asc|desc)$
+        x-ignore-merge: true
+      example: price.asc
+    SubjectQueryOptional:
+      name: subject
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: The name of the note setting
+    NoteQueryOptional:
+      name: note
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:;'|→/#%$&@\s()#!?*-]+$
+      description: The new value for this note
+    NameQueryOptional:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: The name of the preference setting
+    ValueQueryOptional:
+      name: value
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.)[A-Za-z0-9._,+:'|&@\s()#!?-]+$|^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$|^isNull$
+      description: The new value for this preference
+    IsPiiQueryOptional:
+      name: isPii
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^(eq\.|neq\.)(true|false)$|^(true|false)$|^isNull$
+      description: Whether this preference contains personally noteIdentifiable information
+    ExpiresAtDateTimeQueryOptional:
+      name: expiresAtDateTime
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^(gt\.|lt\.|gte\.|lte\.|eq\.|neq\.)[0-9T:\-Z]+$|^[0-9T:\-Z]+$|^isNull$
+      description: When this preference should expire (if applicable)
+    NoteCategoryQueryOptional:
+      name: noteCategory
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: The category or group this preference belongs to
+    ParentIdQueryOptional:
+      name: parentId
+      in: query
+      required: false
+      schema:
+        type: string
+        format: uuid
+      description: Parent task UUID for subtasks
+    DueDateTimeQueryOptional:
+      name: dueDateTime
+      in: query
+      required: false
+      schema:
+        type: string
+        format: date-time
+      description: The due date and time for the task
+    IsCompletedQueryOptional:
+      name: isCompleted
+      in: query
+      required: false
+      schema:
+        type: boolean
+      description: Whether the task is completed
+    TaskTitleQueryOptional:
+      name: taskTitle
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: The title of the task
+    CourseQueryOptional:
+      name: course
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: The course or project this task is associated with
+    CalendarSourceQueryOptional:
+      name: calendarSource
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: which calendar this task was sourced from (if any)
+    NotesQueryOptional:
+      name: notes
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: Additional notes for the task
+    UrlQueryOptional:
+      name: url
+      in: query
+      required: false
+      schema:
+        type: string
+        maxLength: 500
+      description: The URL associated with the task
+  schemas:
+    ContentRange:
+      description: The range of items returned and total count
+      type: string
+      x-format: items {start}-{end}/{total}
+      example: items 0-24/100
+      x-ignore-merge: true
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message from service
+      additionalProperties: false
+    ErrorItem:
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        property:
+          description: Name of the property in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+        message:
+          type: string
+          description: Error message from service
+      additionalProperties: false
+    Note:
+      oneOf:
+        - $ref: '#/components/schemas/SimpleNote'
+        - $ref: '#/components/schemas/Preference'
+        - $ref: '#/components/schemas/Task'
+      discriminator:
+        propertyName: noteType
+    NoteId:
+      description: Unique noteIdentifier for this resource
+      type: string
+      format: uuid
+      x-primary-key: true
+    NoteType:
+      description: The type of resource this is
+      type: string
+      enum:
+        - Simple
+        - Preference
+        - Task
+    Preference:
+      description: A user preference or configuration setting
+      type: object
+      required:
+        - noteType
+      properties:
+        noteId:
+          $ref: '#/components/schemas/NoteId'
+        noteType:
+          type: string
+          enum:
+            - Preference
+        noteCategory:
+          description: The category or group this preference belongs to
+          type: string
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          minLength: 1
+          maxLength: 40
+        name:
+          description: The name of the preference setting
+          type: string
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          minLength: 1
+          maxLength: 40
+        value:
+          description: The new value for this preference
+          type: string
+          minLength: 1
+          maxLength: 200
+        isPii:
+          description: Whether this preference contains personally noteIdentifiable information
+          type: boolean
+        expiresAtDateTime:
+          description: When this preference should expire (if applicable)
+          type: string
+          format: date-time
+        createdAtDateTime:
+          description: When this note was created
+          type: string
+          format: date-time
+        updatedAtDateTime:
+          description: When this note was updated
+          type: string
+          format: date-time
+      additionalProperties: false
+    SimpleNote:
+      description: A user note or configuration setting
+      type: object
+      required:
+        - noteType
+      properties:
+        noteId:
+          $ref: '#/components/schemas/NoteId'
+        noteType:
+          type: string
+          enum:
+            - Simple
+        noteCategory:
+          description: The category or group this preference belongs to
+          type: string
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          minLength: 1
+          maxLength: 40
+        subject:
+          description: The name of the note setting
+          type: string
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          minLength: 1
+          maxLength: 40
+        note:
+          description: The new value for this note
+          type: string
+          pattern: ^[A-Za-z0-9._,+:;'|→/#%$&@\s()#!?*-]+$
+          minLength: 1
+          maxLength: 500
+        createdAtDateTime:
+          description: When this note was created
+          type: string
+          format: date-time
+        updatedAtDateTime:
+          description: When this note was updated
+          type: string
+          format: date-time
+      additionalProperties: false
+    Task:
+      description: List of tasks - can be added to manually by user or is populated by pulling the calendar events.
+      type: object
+      required:
+        - noteType
+      properties:
+        noteId:
+          $ref: '#/components/schemas/NoteId'
+        noteType:
+          type: string
+          enum:
+            - Task
+        noteCategory:
+          description: The category or group this preference belongs to
+          type: string
+          pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?-]+$
+          minLength: 1
+          maxLength: 40
+        providerId:
+          description: External provider noteIdentifier
+          type: string
+        providerTaskListId:
+          description: External provider task list ID
+          type: string
+        parentId:
+          description: Parent task UUID for subtasks
+          type: string
+          format: uuid
+          nullable: true
+        dueDateTime:
+          description: The due date and time for the task
+          type: string
+          format: date-time
+          nullable: true
+        isCompleted:
+          description: Whether the task is completed
+          type: boolean
+          default: false
+        taskTitle:
+          description: The title of the task
+          type: string
+          maxLength: 255
+        course:
+          description: The course or project this task is associated with
+          type: string
+          maxLength: 255
+        calendarSource:
+          description: which calendar this task was sourced from (if any)
+          type: string
+          maxLength: 255
+        notes:
+          description: Additional notes for the task
+          type: string
+          maxLength: 500
+        url:
+          description: The URL associated with the task
+          type: string
+          maxLength: 500
+        createdAtDateTime:
+          description: When this note was created
+          type: string
+          format: date-time
+        updatedAtDateTime:
+          description: When this note was updated
+          type: string
+          format: date-time
+      additionalProperties: false
+  headers:
+    Content-Range:
+      description: The range of items returned and total count
+      schema:
+        $ref: '#/components/schemas/ContentRange'
+      x-ignore-merge: true
+  responses:
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com

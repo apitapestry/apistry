@@ -1,0 +1,3096 @@
+{
+  "info": {
+    "_postman_id": "3019560d-9a95-4127-b250-7ca578256106",
+    "name": "Apistry",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2749290"
+  },
+  "item": [
+    {
+      "name": "Cars Main",
+      "item": [
+        {
+          "name": "Delete (hard) Tests",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "color",
+                  "value": "Testing"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Cars",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Results array has 2 elements\", function () {",
+                  "    pm.expect(data.results).to.have.length(3);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has 'success' property\", function () {",
+                  "    pm.expect(data.results[0]).to.have.property(\"vin\", \"1HGBH41JXMN109186\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"vin\": \"1HGBH41JXMN109186\",\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"modelYear\": 2023,\n    \"color\": \"Testing\",\n    \"mileage\": 99999,\n    \"price\": 28500.00,\n    \"status\": \"available\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"automatic\",\n    \"fuelType\": \"hybrid\",\n    \"engine\": \"2.5L 4-Cylinder\",\n    \"driveType\": \"fwd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\"Backup Camera\", \"Bluetooth\", \"Cruise Control\", \"Leather Seats\"],\n    \"description\": \"Well-maintained, single owner, complete service history\",\n    \"images\": [\n      \"https://example.com/images/car1.jpg\",\n      \"https://example.com/images/car2.jpg\"\n    ]\n  },\n  {\n    \"vin\": \"2HGCM82633A004352\",\n    \"make\": \"Honda\",\n    \"model\": \"Accord\",\n    \"modelYear\": 2022,\n    \"color\": \"Testing\",\n    \"mileage\": 99999,\n    \"price\": 26500.00,\n    \"status\": \"sold\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"automatic\",\n    \"fuelType\": \"gasoline\",\n    \"engine\": \"2.0L Turbo\",\n    \"driveType\": \"fwd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\"Bluetooth\", \"Heated Seats\"],\n    \"description\": \"Low mileage, certified pre-owned\",\n    \"images\": [\n      \"https://example.com/images/car3.jpg\"\n    ]\n  },\n  {\n    \"vin\": \"3FA6P0K98HR123456\",\n    \"make\": \"Ford\",\n    \"model\": \"Fusion\",\n    \"modelYear\": 2021,\n    \"color\": \"Testing\",\n    \"mileage\": 99999,\n    \"price\": 21000.00,\n    \"status\": \"available\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"manual\",\n    \"fuelType\": \"gasoline\",\n    \"engine\": \"1.5L EcoBoost\",\n    \"driveType\": \"awd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\"Navigation\", \"Remote Start\"],\n    \"description\": \"Clean title, recent service\",\n    \"images\": [\n      \"https://example.com/images/car4.jpg\"\n    ]\n  }\n]\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Car",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'success' property\", function () {",
+                  "    pm.expect(data.results[0]).to.have.property(\"vin\", \"JHMCM56557C404453\")",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vin\": \"JHMCM56557C404453\",\n  \"carId\": \"5b411b07-86ce-4c6e-a0b1-40dcfcb44cd3\",\n  \"createdAtDateTime\": \"2025-01-15T10:30:00Z\",\n  \"make\": \"Honda\",\n  \"model\": \"Accord\",\n  \"modelYear\": 2007,\n  \"manufactureDate\": \"2007-07-08\",\n  \"color\": \"Testing\",\n  \"mileage\": 99999,\n  \"price\": 28500.00,\n  \"carStatus\": \"available\",\n  \"bodyType\": \"sedan\",\n  \"transmission\": \"automatic\",\n  \"fuelType\": \"hybrid\",\n  \"engine\": \"2.5L 4-Cylinder\",\n  \"driveType\": \"fwd\",\n  \"doors\": 4,\n  \"seats\": 5,\n  \"features\": [\n    \"Backup Camera\",\n    \"Bluetooth\",\n    \"Cruise Control\",\n    \"Leather Seats\"\n  ],\n  \"description\": \"Well-maintained, single owner, complete service history\",\n  \"images\": [\n    \"https://example.com/images/car1.jpg\",\n    \"https://example.com/images/car2.jpg\"\n  ]\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Replace Car",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 501\", function () {",
+                  "    pm.response.to.have.status(501);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'not_implemented' property\", function () {",
+                  "    pm.expect(data).to.have.property(\"error\", \"not_implemented\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"vin\": \"1HGBH41JXMN109186\",\n    \"make\": \"Toyota\",\n    \"model\": \"Highlander\",\n    \"modelYear\": 2023,\n    \"price\": 50000,\n    \"carId\": \"5ed431e3-4e09-43a2-9069-65eb68911111\",\n    \"color\": \"Testing\",\n    \"mileage\": 99,\n    \"carStatus\": \"pending\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"automatic\",\n    \"fuelType\": \"hybrid\",\n    \"engine\": \"2.5L 4-Cylinder\",\n    \"driveType\": \"fwd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\n        \"Backup Camera\",\n        \"bluetooth\",\n        \"Cruise Control\",\n        \"Leather Seats\"\n    ],\n    \"events\": [\n        {\n            \"eventId\": \"5670e8a5-c427-4dea-999a-946b786d1898\",\n            \"eventDate\": \"2025-01-01\",\n            \"eventType\": \"Maintenance Standard\",\n            \"description\": \"Test Update 2\"\n        },\n        {\n            \"eventId\": \"66e8e974-081a-459d-9d4b-756c528b1572\",\n            \"eventDate\": \"2025-04-02\",\n            \"eventType\": \"Maintenance\",\n            \"description\": \"Fix Handle\"\n        }\n    ],\n    \"description\": \"Well-maintained, single owner, complete service history\",\n    \"images\": [\n        \"https://example.com/images/car1.jpg\",\n        \"https://example.com/images/car2.jpg\"\n    ],\n    \"createdAtDateTime\": \"2025-12-12T03:14:55.275Z\",\n    \"updatedAtDateTime\": \"2025-12-12T03:14:55.778Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Test Cors",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "",
+                  "// CORS header checks",
+                  "pm.test(\"Has Access-Control-Allow-Origin header\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Access-Control-Allow-Origin\"))",
+                  "        .to.eql(\"http://localhost:8080\");",
+                  "});",
+                  "",
+                  "pm.test(\"Allow-Methods includes GET, HEAD, POST\", function () {",
+                  "    const methods = pm.response.headers.get(\"Access-Control-Allow-Methods\") || \"\";",
+                  "    pm.expect(methods).to.include(\"GET\");",
+                  "    pm.expect(methods).to.include(\"HEAD\");",
+                  "    pm.expect(methods).to.include(\"POST\");",
+                  "});",
+                  "",
+                  "pm.test(\"Allow-Headers includes Content-Type and Authorization\", function () {",
+                  "    const headers = pm.response.headers.get(\"Access-Control-Allow-Headers\") || \"\";",
+                  "    pm.expect(headers).to.include(\"Content-Type\");",
+                  "    pm.expect(headers).to.include(\"Authorization\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "OPTIONS",
+            "header": [
+              {
+                "key": "Origin",
+                "value": "http://localhost:8080",
+                "type": "text"
+              },
+              {
+                "key": "Access-Control-Request-Method",
+                "value": "POST",
+                "type": "text"
+              },
+              {
+                "key": "Access-Control-Request-Headers",
+                "value": "content-type, authorization",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?carStatus=sold",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "carStatus",
+                  "value": "sold"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Cars",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "if (data && data.results && data.results[0] && data.results[0].carId) {",
+                  "    pm.environment.set('carId', data.results[0].carId);",
+                  "}",
+                  "if (data && data.results && data.results[1] && data.results[0].carId) {",
+                  "    pm.environment.set('carId2', data.results[1].carId);",
+                  "}",
+                  "",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'success' property\", function () {",
+                  "    pm.expect(data.results[0]).to.have.property(\"color\", \"Testing\");",
+                  "});",
+                  "",
+                  "pm.test(\"Results array has 4 elements\", function () {",
+                  "    pm.expect(data.results).to.have.length(4);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Origin",
+                "value": "http://localhost:3000",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?color=Testing",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "color",
+                  "value": "Testing"
+                },
+                {
+                  "key": "carStatus",
+                  "value": "sold",
+                  "disabled": true
+                },
+                {
+                  "key": "carStatus",
+                  "value": "deleted",
+                  "disabled": true
+                },
+                {
+                  "key": "carStatus",
+                  "value": "pending",
+                  "disabled": true
+                },
+                {
+                  "key": "carStatus",
+                  "value": "neq.maintenance",
+                  "disabled": true
+                },
+                {
+                  "key": "carIds",
+                  "value": "{{carId2}}",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "carIds",
+                  "value": "{{carId}}",
+                  "disabled": true
+                },
+                {
+                  "key": "color",
+                  "value": "Blue",
+                  "disabled": true
+                },
+                {
+                  "key": "events",
+                  "value": "isNull",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "vin",
+                  "value": "3*123456",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "mileage",
+                  "value": "lt.100",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "modelYear",
+                  "value": "gt.2021",
+                  "disabled": true
+                },
+                {
+                  "key": "createdAtDateTime",
+                  "value": "lte.2025-01-15",
+                  "disabled": true
+                },
+                {
+                  "key": "color",
+                  "value": "in.Blue,Silver",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "make",
+                  "value": "Toyota",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "7",
+                  "disabled": true
+                },
+                {
+                  "key": "offset",
+                  "value": "7",
+                  "disabled": true
+                },
+                {
+                  "key": "blah",
+                  "value": "xxx",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Cars Bad Param",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "if (data && data.results && data.results[0] && data.results[0].carId) {",
+                  "    pm.environment.set('carId', data.results[0].carId);",
+                  "}",
+                  "if (data && data.results && data.results[1] && data.results[0].carId) {",
+                  "    pm.environment.set('carId2', data.results[1].carId);",
+                  "}",
+                  "",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 422\", function () {",
+                  "    pm.response.to.have.status(422);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'Query parameter 'blah' is not valid\", function () {",
+                  "    pm.expect(data[0]).to.have.property(\"message\", \"Query parameter 'blah' is not valid\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?color=in.Blue,Silver&blah=xxx",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "color",
+                  "value": "in.Blue,Silver",
+                  "type": "text"
+                },
+                {
+                  "key": "blah",
+                  "value": "xxx"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Car",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has 'success' property\", function () {",
+                  "    pm.expect(data).to.have.property(\"mileage\", 99999);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Car",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has 'success' property\", function () {",
+                  "    pm.expect(data).to.not.have.property(\"mileage\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response has contain carStatus\", function () {",
+                  "    pm.expect(data.carStatus).to.be.oneOf([\"pending\", \"deleted\"]);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"carId\": \"{{carId}}\",\n  \"color\": \"Testing\",\n  \"mileage\": null,\n  \"price\": 50000,\n  \"carStatus\": \"will be ignored\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Cars",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response does contain mileage\", function () {",
+                  "    pm.expect(data.results[0]).to.have.property(\"mileage\", 99);",
+                  "});",
+                  "",
+                  "pm.test(\"Results array has 2 elements\", function () {",
+                  "    pm.expect(data.results).to.have.length(2);",
+                  "});",
+                  "",
+                  "pm.test(\"updatedAtDateTime is within last 5ms\", function () {",
+                  "    const updated = new Date(data.results[0].updatedAtDateTime).getTime();",
+                  "    const threshold = Date.now() - 300;",
+                  "    pm.expect(updated).to.be.above(threshold);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\"carId\": \"{{carId}}\",\"color\": \"Testing\",\"mileage\": 99}, \n    {\"carId\": \"{{carId2}}\",\"color\": \"Testing\",\"mileage\": 99}\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete (soft) Tests",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"carStatus updated to deleted\", function () {",
+                  "    pm.expect(data).to.have.property(\"carStatus\", \"deleted\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Car Features",
+      "item": [
+        {
+          "name": "Create Car Features Init",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "if (data && data.results && data.results[0] && data.results[0].carId) {",
+                  "    pm.environment.set('carId', data.results[0].carId);",
+                  "}",
+                  "",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'success' property\", function () {",
+                  "    pm.expect(data.results[0]).to.have.property(\"vin\", \"1HGBH41JXMN109186\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n                \"vin\": \"1HGBH41JXMN109186\",\n                \"make\": \"Chevy\",\n                \"model\": \"Silverado\",\n                \"modelYear\": 2023,\n                \"price\": 50000,\n                \"color\": \"Testing\",\n                \"mileage\": 99,\n                \"carStatus\": \"deleted\",\n                \"bodyType\": \"sedan\",\n                \"transmission\": \"automatic\",\n                \"fuelType\": \"hybrid\",\n                \"engine\": \"2.5L 4-Cylinder\",\n                \"driveType\": \"fwd\",\n                \"doors\": 4,\n                \"seats\": 5,\n                \"features\": [\n                    \"Backup Camera\",\n                    \"Bluetooth\",\n                    \"Cruise Control\",\n                    \"Leather Seats\"\n                ],\n                \"events\": [\n                    {\n                        \"eventDate\": \"2025-04-02\",\n                        \"eventType\": \"Maintenance\",\n                        \"description\": \"Fix Handle\"\n                    },\n                    {\n                        \"eventDate\": \"2025-02-02\",\n                        \"eventType\": \"Accident\",\n                        \"description\": \"Passenger front panel\"\n                    }\n                ],\n                \"description\": \"Well-maintained, single owner, complete service history\",\n                \"images\": [\n                    \"https://example.com/images/car1.jpg\",\n                    \"https://example.com/images/car2.jpg\"\n                ],\n                \"createdAtDateTime\": \"2025-12-23T11:45:07.290Z\",\n                \"updatedAtDateTime\": \"2025-12-23T12:33:54.711Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Car Features",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"First element is Backup Camera\", function () {",
+                  "    pm.expect(data[0]).to.eql(\"Backup Camera\");",
+                  "});",
+                  "",
+                  "pm.test(\"Features array has more than 0 elements\", function () {",
+                  "    pm.expect(data.length).to.be.above(0);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Car Feature",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Bluetooth was response\", function () {",
+                  "    pm.expect(pm.response.text()).to.eql(\"Bluetooth\");",
+                  "});",
+                  "",
+                  "pm.test(\"Content-Type is text/plain if present\", function () {",
+                  "    const contentType = pm.response.headers.get(\"Content-Type\");",
+                  "    if (contentType) {",
+                  "        pm.expect(contentType).to.include(\"text/plain\");",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features/Bluetooth",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features",
+                "Bluetooth"
+              ],
+              "query": [
+                {
+                  "key": "feature",
+                  "value": "Bluetooth",
+                  "disabled": true
+                },
+                {
+                  "key": "feature",
+                  "value": "neq.Bluetooth",
+                  "disabled": true
+                },
+                {
+                  "key": "feature",
+                  "value": "isNotNull",
+                  "disabled": true
+                },
+                {
+                  "key": "feature",
+                  "value": "*c*c*",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "feature",
+                  "value": "gt.golf",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "feature",
+                  "value": "in.Autopilot,Navigation",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "feature",
+                  "value": "New*",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Car Features Regex",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"First element is Backup Camera\", function () {",
+                  "    pm.expect(data[0]).to.eql(\"Backup Camera\");",
+                  "});",
+                  "",
+                  "pm.test(\"Features array has 2 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(2);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features?feature=*c*c*",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features"
+              ],
+              "query": [
+                {
+                  "key": "feature",
+                  "value": "*c*c*"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Car Feature",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"First element is Backup Camera\", function () {",
+                  "    pm.expect(data[0]).to.eql(\"Backup Camera\");",
+                  "});",
+                  "",
+                  "pm.test(\"Features array has 5 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(5);",
+                  "});",
+                  "",
+                  "pm.test(\"Array contains 'New Feature'\", function () {",
+                  "    pm.expect(data).to.include(\"New Feature\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\"New Feature\"",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Car Features",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"First element is Backup Camera\", function () {",
+                  "    pm.expect(data[0]).to.eql(\"Backup Camera\");",
+                  "});",
+                  "",
+                  "pm.test(\"Features array has 7 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(7);",
+                  "});",
+                  "",
+                  "pm.test(\"Array contains 'Something'\", function () {",
+                  "    pm.expect(data).to.include(\"Something\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\"Something\", \"Something Else\"]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Replace Car Features",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 501\", function () {",
+                  "    pm.response.to.have.status(501);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'not_implemented' property\", function () {",
+                  "    pm.expect(data).to.have.property(\"error\", \"not_implemented\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\"Something\", \"Something Else\"]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DEL Car Features",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"First element is Backup Camera\", function () {",
+                  "    pm.expect(data[0]).to.eql(\"Backup Camera\");",
+                  "});",
+                  "",
+                  "pm.test(\"Features array has 5 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(5);",
+                  "});",
+                  "",
+                  "pm.test(\"Array contains 'New Feature'\", function () {",
+                  "    pm.expect(data).to.include(\"New Feature\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features"
+              ],
+              "query": [
+                {
+                  "key": "feature",
+                  "value": "Something*"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DEL Car Feature",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"First element is Backup Camera\", function () {",
+                  "    pm.expect(data[0]).to.eql(\"Backup Camera\");",
+                  "});",
+                  "",
+                  "pm.test(\"Features array has 4 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(4);",
+                  "});",
+                  "",
+                  "pm.test(\"Array contains 'New Feature'\", function () {",
+                  "    pm.expect(data).to.not.include(\"New Feature\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features/New Feature",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features",
+                "New Feature"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Car Feature",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"First element is Backup Camera\", function () {",
+                  "    pm.expect(data[0]).to.eql(\"Backup Camera\");",
+                  "});",
+                  "",
+                  "pm.test(\"Features array has 4 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(4);",
+                  "});",
+                  "",
+                  "pm.test(\"Array contains 'bluetooth'\", function () {",
+                  "    pm.expect(data).to.include(\"bluetooth\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\"bluetooth\"",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/features/Bluetooth",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "features",
+                "Bluetooth"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Car Events",
+      "item": [
+        {
+          "name": "Create Car Event Init",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "if (data && data.results && data.results[0] && data.results[0].carId) {",
+                  "    pm.environment.set('carId', data.results[0].carId);",
+                  "}",
+                  "",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'success' property\", function () {",
+                  "    pm.expect(data.results[0]).to.have.property(\"vin\", \"1HGBH41JXMN109186\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"vin\": \"1HGBH41JXMN109186\",\n    \"make\": \"Chevy\",\n    \"model\": \"Silverado\",\n    \"modelYear\": 2023,\n    \"price\": 50000,\n    \"color\": \"Testing\",\n    \"mileage\": 99,\n    \"carStatus\": \"deleted\",\n    \"bodyType\": \"sedan\",\n    \"transmission\": \"automatic\",\n    \"fuelType\": \"hybrid\",\n    \"engine\": \"2.5L 4-Cylinder\",\n    \"driveType\": \"fwd\",\n    \"doors\": 4,\n    \"seats\": 5,\n    \"features\": [\n        \"Backup Camera\",\n        \"Bluetooth\",\n        \"Cruise Control\",\n        \"Leather Seats\"\n    ],\n    \"events\": [\n        {\n            \"eventDate\": \"2025-04-02\",\n            \"eventType\": \"Maintenance\",\n            \"description\": \"Fix Handle\"\n        },\n        {\n            \"eventDate\": \"2025-02-02\",\n            \"eventType\": \"Accident\",\n            \"description\": \"Passenger front panel\"\n        }\n    ],\n    \"description\": \"Well-maintained, single owner, complete service history\",\n    \"images\": [\n        \"https://example.com/images/car1.jpg\",\n        \"https://example.com/images/car2.jpg\"\n    ],\n    \"createdAtDateTime\": \"2025-12-23T11:45:07.290Z\",\n    \"updatedAtDateTime\": \"2025-12-23T12:33:54.711Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Car Event",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is an array\", function () {",
+                  "    pm.expect(data).to.be.an('array');",
+                  "});",
+                  "",
+                  "pm.test(\"Each event has required properties\", function () {",
+                  "    data.forEach(function(event) {",
+                  "        pm.expect(event).to.have.property('eventId');",
+                  "        pm.expect(event).to.have.property('eventDate');",
+                  "        pm.expect(event).to.have.property('eventType');",
+                  "        pm.expect(event).to.have.property('description');",
+                  "    });",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"eventDate\": \"2025-02-02\",\n    \"eventType\": \"Maintenance\",\n    \"description\": \"Oil Change\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Car Events",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"First element value\", function () {",
+                  "    pm.expect(data[0].description).to.eql(\"Fix Handle\");",
+                  "});",
+                  "",
+                  "pm.test(\"Events array has 3 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(5);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"eventDate\": \"2025-02-02\",\n        \"eventType\": \"Accident\",\n        \"description\": \"Passenger front panel\"\n    },\n    {\n        \"eventDate\": \"2025-04-02\",\n        \"eventType\": \"Maintenance\",\n        \"description\": \"Fix Handle\"\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Car Events",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "if (data[0] && data[0].eventId) {",
+                  "    pm.environment.set('eventId', data[0].eventId);",
+                  "}",
+                  "if (data[1] && data[1].eventId) {",
+                  "    pm.environment.set('eventId2', data[1].eventId);",
+                  "}",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Element 3 value\", function () {",
+                  "    pm.expect(data[0].description).to.eql(\"Fix Handle\");",
+                  "});",
+                  "",
+                  "pm.test(\"Events array has 5 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(5);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "eventDate",
+                  "value": "lt.2024-01-01",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "eventType",
+                  "value": "accident",
+                  "disabled": true
+                },
+                {
+                  "key": "eventDate",
+                  "value": "lt.2024-03-22",
+                  "disabled": true
+                },
+                {
+                  "key": "eventId",
+                  "value": "isNotNull",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Car Event",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Element 1 value\", function () {",
+                  "    pm.expect(data[0].eventType).to.eql(\"Maintenance - Update\");",
+                  "});",
+                  "",
+                  "pm.test(\"Events array has 5 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(5);",
+                  "});",
+                  "",
+                  "pm.test(\"No event object contains a description property\", function () {",
+                  "    data.forEach(function (event, index) {",
+                  "        pm.expect(event).to.not.have.property(\"description\", \"Event at index \" + index + \" should not have a description property\");",
+                  "    });",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"eventId\": \"{{eventId}}\",\n    \"eventDate\": \"2024-02-02\",\n    \"eventType\": \"Maintenance - Update\",\n    \"description\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events/{{eventId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events",
+                "{{eventId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Car Events",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Element 1 value\", function () {",
+                  "    pm.expect(data[0].eventType).to.eql(\"Test Updates 1\");",
+                  "});",
+                  "",
+                  "pm.test(\"Element 2 value\", function () {",
+                  "    pm.expect(data[1].description).to.eql(\"Test Updates 2\");",
+                  "});",
+                  "",
+                  "pm.test(\"Events array has 5 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(5);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"eventId\": \"{{eventId}}\",\n        \"eventDate\": \"2023-01-01\",\n        \"eventType\": \"Test Updates 1\",\n        \"description\": \"Test Updates 1\"\n    },\n    {\n        \"eventId\": \"{{eventId2}}\",\n        \"eventDate\": \"2025-01-01\",\n        \"eventType\": \"Test Updates 2\",\n        \"description\": \"Test Updates 2\"\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DEL Car Event",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Events array has 4 elements\", function () {",
+                  "    pm.expect(data.length).to.eql(4);",
+                  "});",
+                  "",
+                  "pm.test(\"Deleted event is not in the array\", function () {",
+                  "    const deletedId = \"{{eventId}}\";",
+                  "    pm.expect(data.some(e => e.eventId === deletedId)).to.be.false;",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events/{{eventId}}",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events",
+                "{{eventId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DEL Car Events",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Empty Array\", function () {",
+                  "    pm.expect(data.length).to.eql(0);",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "eventDate",
+                  "value": "gt.1900-01-01"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Replace Car Events",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let data = pm.response.json();",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 501\", function () {",
+                  "    pm.response.to.have.status(501);",
+                  "});",
+                  "",
+                  "// Check if the response body contains a specific property",
+                  "pm.test(\"Response has 'not_implemented' property\", function () {",
+                  "    pm.expect(data).to.have.property(\"error\", \"not_implemented\");",
+                  "});",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "apikey",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"eventDate\": \"2025-02-02\",\n        \"eventType\": \"Accident\",\n        \"description\": \"Passenger front panel\"\n    },\n    {\n        \"eventDate\": \"2025-04-02\",\n        \"eventType\": \"Maintenance\",\n        \"description\": \"Fix Handle\"\n    }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{hostname}}/v1/cars/{{carId}}/events",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars",
+                "{{carId}}",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Utils",
+      "item": [
+        {
+          "name": "Get Orchestration Actions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const data = pm.response.json();",
+                  "pm.test('Response is array', () => pm.expect(data).to.be.an('array'));",
+                  "pm.test('Action shape', () => {",
+                  "  const a = data[0];",
+                  "  pm.expect(a).to.have.property('name');",
+                  "  pm.expect(a).to.have.property('description');",
+                  "  pm.expect(a).to.have.property('params');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/orchestration-actions",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "orchestration-actions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Health OK', () => pm.expect(body.status).to.eql('Healthy'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/health",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "health"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Ready",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const body = pm.response.json();",
+                  "pm.test('Ready OK', () => pm.expect(body.status).to.eql('Ready'));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/ready",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "ready"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Metrics",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const text = pm.response.text();",
+                  "pm.test('Prometheus format', () => {",
+                  "  pm.expect(text).to.include('http_requests_total');",
+                  "  pm.expect(text).to.include('process_resident_memory_bytes');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/metrics",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "metrics"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notes",
+      "item": [
+        {
+          "name": "GET Note",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const data = pm.response.json();",
+                  "",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// // Check if the response body contains a specific property",
+                  "// pm.test(\"Response has 'success' property\", function () {",
+                  "//     pm.expect(data.results[0]).to.have.property(\"category\", \"health\");",
+                  "// });",
+                  "",
+                  "// pm.test(\"Results array has 7 elements\", function () {",
+                  "//     pm.expect(data.results).to.have.length(7);",
+                  "// });",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/notes/f3270599-9841-4e30-873e-2f939aa38800",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "notes",
+                "f3270599-9841-4e30-873e-2f939aa38800"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Notes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const data = pm.response.json();",
+                  "",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// // Check if the response body contains a specific property",
+                  "// pm.test(\"Response has 'success' property\", function () {",
+                  "//     pm.expect(data.results[0]).to.have.property(\"category\", \"health\");",
+                  "// });",
+                  "",
+                  "// pm.test(\"Results array has 7 elements\", function () {",
+                  "//     pm.expect(data.results).to.have.length(7);",
+                  "// });",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/notes?noteType=Simple",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "notes"
+              ],
+              "query": [
+                {
+                  "key": "noteType",
+                  "value": "Simple"
+                },
+                {
+                  "key": "noteType",
+                  "value": "Preference",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "noteType",
+                  "value": "Task",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Videos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const data = pm.response.json();",
+                  "",
+                  "// Check if the response status is 200",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// // Check if the response body contains a specific property",
+                  "// pm.test(\"Response has 'success' property\", function () {",
+                  "//     pm.expect(data.results[0]).to.have.property(\"category\", \"health\");",
+                  "// });",
+                  "",
+                  "// pm.test(\"Results array has 7 elements\", function () {",
+                  "//     pm.expect(data.results).to.have.length(7);",
+                  "// });",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/videos",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "videos"
+              ],
+              "query": [
+                {
+                  "key": "noteType",
+                  "value": "Simple",
+                  "disabled": true
+                },
+                {
+                  "key": "noteType",
+                  "value": "Task",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "noteType",
+                  "value": "Preference",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Harry Potter",
+      "item": [
+        {
+          "name": "Characters",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/characters?house=Gryffindor&eyeColor=Bright blue",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "characters"
+              ],
+              "query": [
+                {
+                  "key": "house",
+                  "value": "Gryffindor"
+                },
+                {
+                  "key": "eyeColor",
+                  "value": "Bright blue"
+                },
+                {
+                  "key": "isHogwartsStudent",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Characters invalid query",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/characters?isHogwartsStaff=true",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "characters"
+              ],
+              "query": [
+                {
+                  "key": "isHogwartsStudent",
+                  "value": "true",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isHogwartsStaff",
+                  "value": "true"
+                },
+                {
+                  "key": "house",
+                  "value": "Ravenclaw",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "house",
+                  "value": "Gryffindor",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Spells",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/spells",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "spells"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "filters",
+      "item": [
+        {
+          "name": "Filter: eq (make=Toyota)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars are Toyota\", function () { pm.expect(data.results.every(car => car.make === 'Toyota')).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?make=Toyota",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "make",
+                  "value": "Toyota"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: neq (make!=Honda)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"No car is Honda\", function () { pm.expect(data.results.every(car => car.make !== 'Honda')).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?make=neq.Honda",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "make",
+                  "value": "neq.Honda"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: gt (price>20000)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have price > 20000\", function () { pm.expect(data.results.every(car => car.price > 20000)).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?price=gt.20000",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "price",
+                  "value": "gt.20000"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: gte (modelYear>=2020)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have modelYear >= 2020\", function () { pm.expect(data.results.every(car => car.modelYear >= 2020)).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?modelYear=gte.2020",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "modelYear",
+                  "value": "gte.2020"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: lt (price<30000)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have price < 30000\", function () { pm.expect(data.results.every(car => car.price < 30000)).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?price=lt.30000",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "price",
+                  "value": "lt.30000"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: lte (modelYear<=2023)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have modelYear <= 2023\", function () { pm.expect(data.results.every(car => car.modelYear <= 2023)).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?modelYear=lte.2023",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "modelYear",
+                  "value": "lte.2023"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: between (modelYear between 2015 and 2020)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have modelYear between 2015 and 2020\", function () { pm.expect(data.results.every(car => car.modelYear >= 2015 && car.modelYear <= 2020)).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?modelYear=between.2015,2020",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "modelYear",
+                  "value": "between.2015,2020"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: in (color in Red,Blue)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have color Red or Blue\", function () { pm.expect(data.results.every(car => ['Red','Blue'].includes(car.color))).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?color=in.Red,Blue",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "color",
+                  "value": "in.Red,Blue"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: nin (color not in Black,White)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"No car is Black or White\", function () { pm.expect(data.results.every(car => !['Black','White'].includes(car.color))).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?color=nin.Black,White",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "color",
+                  "value": "nin.Black,White"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: isNull (description is null)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have null or empty description\", function () { pm.expect(data.results.every(car => !car.description)).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?description=isNull",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "description",
+                  "value": "isNull"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: isNotNull (description is not null)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have non-null description\", function () { pm.expect(data.results.every(car => !!car.description)).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?description=isNotNull",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "description",
+                  "value": "isNotNull"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter: wildcard (model like *Cam*)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let data = pm.response.json();",
+                  "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"All cars have model matching *Cam*\", function () { pm.expect(data.results.every(car => car.model && car.model.includes('Cam'))).to.be.true; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v1/cars?model=*Cam*",
+              "host": [
+                "{{hostname}}"
+              ],
+              "path": [
+                "v1",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "model",
+                  "value": "*Cam*"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

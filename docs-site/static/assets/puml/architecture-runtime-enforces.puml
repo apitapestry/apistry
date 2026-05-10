@@ -1,0 +1,66 @@
+@startuml
+title Contract Declares, Runtime Enforces
+
+' ===============================
+' Shared Style
+' ===============================
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Inter
+skinparam defaultFontSize 14
+skinparam defaultTextAlignment center
+
+top to bottom direction
+
+skinparam rectangle {
+  RoundCorner 8
+  BorderColor #1F2937
+  FontColor #111827
+}
+
+skinparam arrow {
+  Color #374151
+  Thickness 1.5
+}
+
+skinparam note {
+  BackgroundColor #F9FAFB
+  BorderColor #9CA3AF
+  FontColor #374151
+}
+
+' ===============================
+' Responsibility Domains
+' ===============================
+
+rectangle #E0E7FF "API Contract\n\n\
+- OpenAPI schema\n\
+- Semantic validation declarations\n\
+- Persistence intent" as C
+
+rectangle #DBEAFE "API Runtime\n\n\
+- Interprets contract\n\
+- Executes semantic validations\n\
+- Applies deterministic derivations\n\
+- Persists to the Database" as R
+
+rectangle #DCFCE7 "Database Persistence\n\n\
+- Durable facts recorded\n\
+- Database guarantees applied\n\
+- Change becomes observable" as DB
+
+rectangle #F3E8FF "Validation Function Library\n\n\
+- Pure validation functions\n\
+- Reusable across contracts\n\
+- Side-effect free" as V
+
+C --> R : declared intent
+R --> DB : persist to database
+R --> V : invokes
+
+note right of DB
+Persistence marks the end
+of runtime responsibility.
+end note
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+' ---------- Global styling ----------
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #555555
+
+skinparam rectangle {
+  BorderColor #333333
+  FontColor #222222
+  RoundCorner 8
+}
+
+skinparam note {
+  BackgroundColor #FFFDE7
+  BorderColor #999999
+  FontColor #222222
+}
+
+' ---------- Level 1 ----------
+rectangle "Level 1: Code-First API" #F6E6E6 {
+  top to bottom direction
+
+  rectangle "Contract\n(optional / stale)" as L1Contract #FBEFEF
+  rectangle "API Service Code" as L1Code #EBCACA
+
+  L1Contract -[dashed]-> L1Code
+
+  note right of L1Code
+    BEHAVIOR
+    - Validation
+    - Business Logic
+    - Persistence
+    - Errors
+  end note
+}
+@enduml

@@ -1,0 +1,15 @@
+.git
+.github
+.idea
+.run
+node_modules
+dist
+docs-site/node_modules
+coverage
+data/*
+!data/sqlite.db
+*.log
+.env
+.DS_Store
+docs-site/.docusaurus
+docs-site/build

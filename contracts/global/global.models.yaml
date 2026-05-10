@@ -1,0 +1,211 @@
+openapi: 3.0.0
+info:
+  title: Global - Common Components
+  version: v1
+paths: {}
+
+components:
+  headers:
+    Content-Range:
+      description: The range of items returned and total count
+      schema:
+        $ref: '#/components/schemas/ContentRange'
+      x-ignore-merge: true
+
+    ETag:
+      description: ETag for the response.
+      schema:
+        $ref: '#/components/schemas/ETag'
+
+    XResponseId:
+      description: Represents a unique response
+      schema:
+        type: string
+        pattern: ^\{?[0-9a-fA-F]{8}\-?[0-9a-fA-F]{4}\-?[0-9a-fA-F]{4}\-?[0-9a-fA-F]{4}\-?[0-9a-fA-F]{12}\}?$
+
+    XCorrelationId:
+      description: Serves as a session id for multi-step workflows
+      schema:
+        type: string
+        pattern: ^\{?[0-9a-fA-F]{8}\-?[0-9a-fA-F]{4}\-?[0-9a-fA-F]{4}\-?[0-9a-fA-F]{4}\-?[0-9a-fA-F]{12}\}?$
+
+    X-Total-Count:
+      description: >
+        The total number of items available for the given query, ignoring pagination.
+        Useful for calculating the total number of pages or progress through a dataset.
+        Always returned when pagination parameters (e.g., limit, offset) are used.
+      schema:
+        type: integer
+        minimum: 0
+      example: 1023
+
+  parameters:
+    Authorization:
+      in: header
+      name: Authorization
+      description: Provide Authorization token - for using in calling downstream api's
+      schema:
+        type: string
+      required: false
+
+    IfMatch:
+      in: header
+      name: If-Match
+      schema:
+        $ref: '#/components/schemas/ETag'
+
+    IfMatchRequired:
+      in: header
+      name: If-Match
+      required: true
+      schema:
+        $ref: '#/components/schemas/ETag'
+
+    IfNoneMatch:
+      in: header
+      name: If-None-Match
+      schema:
+        $ref: '#/components/schemas/ETag'
+
+    IfNoneMatchRequired:
+      in: header
+      name: If-None-Match
+      required: true
+      schema:
+        $ref: '#/components/schemas/ETag'
+
+    XRequestId:
+      in: header
+      name: X-Request-Id
+      description: Represents a unique request
+      schema:
+        type: string
+        format: uuid
+      required: false
+
+    XCorrelationId:
+      in: header
+      name: X-Correlation-Id
+      description: Serves as a session id for multi-step workflows
+      schema:
+        type: string
+        format: uuid
+      required: false
+
+    OffsetQueryOptional:
+      description: Specify the page offset this request is to provide.
+      in: query
+      name: offset
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+        x-ignore-merge: true
+
+    LimitQueryOptional:
+      description: Specifies the number(limit) of results to provide in a single response.
+      in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+        default: 20
+        x-ignore-merge: true
+
+    OrderQueryOptional:
+      name: order
+      in: query
+      description: Sort order for the results (e.g., order=price.asc or order=year.desc)
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9_]+\.(asc|desc)$'
+        x-ignore-merge: true
+      example: "price.asc"
+
+  responses:
+    NotFound:
+      description: Resource Not Found
+      x-ignore-merge: true
+
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+
+    Conflict:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message from service
+
+    ErrorItem:
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        property:
+          description: Name of the property in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+        message:
+          type: string
+          description: Error message from service
+
+    ETag:
+      description: ETag version of Object
+      type: string
+      pattern: ^\{?[a-fA-F\d]{32}\}?$
+
+    Offset:
+      description: Specify the page offset this request is to provide.
+      type: integer
+      default: 0
+      minimum: 0
+
+    Limit:
+      description: Specifies the number(limit) of results to provide in a single response.
+      type: integer
+      default: 50
+      minimum: 1
+      maximum: 50
+
+    ContentRange:
+      description: The range of items returned and total count
+      type: string
+      x-format: "items {start}-{end}/{total}"
+      example: "items 0-24/100"
+      x-ignore-merge: true

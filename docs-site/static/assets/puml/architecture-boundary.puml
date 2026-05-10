@@ -1,0 +1,64 @@
+@startuml
+title API Service Responsibility Boundary
+
+' ===============================
+' Shared Style
+' ===============================
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Inter
+skinparam defaultFontSize 14
+skinparam defaultTextAlignment center
+
+top to bottom direction
+
+skinparam rectangle {
+  RoundCorner 8
+  BorderColor #1F2937
+  FontColor #111827
+}
+
+skinparam arrow {
+  Color #374151
+  Thickness 1.5
+}
+
+skinparam note {
+  BackgroundColor #F9FAFB
+  BorderColor #9CA3AF
+  FontColor #374151
+}
+
+' ===============================
+' Responsibility Domains
+' ===============================
+
+rectangle #DBEAFE "API Service\n\n\
+- Authentication & authorization\n\
+- Schema & structural validation\n\
+- Semantic business validation\n\
+- Deterministic derivations\n\
+- Referential integrity checks\n\
+- Durable fact persistence" as API
+
+rectangle #DCFCE7 "Persistence Boundary\n\n\
+- Durable facts recorded\n\
+- Database guarantees applied\n\
+- Change becomes observable" as PB
+
+rectangle #FEE2E2 "Outside API Responsibility\n\n\
+- Business meaning & interpretation\n\
+- Business-driven enrichment\n\
+- Domain workflows & policies\n\
+- Side effects & notifications\n\
+- Integrations & projections" as OUT
+
+API --> PB : Persist to Database
+PB --> OUT : Event Stream
+
+note right of PB
+Persistence is the execution boundary.
+API responsibility ends here.
+end note
+
+@enduml
