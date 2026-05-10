@@ -28,7 +28,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && node scripts/build.mjs",
-    "build:lambda": "npm run build && node scripts/package-lambda.mjs",
+    "buil d:lambda": "npm run build && node scripts/package-lambda.mjs",
     "test": "vitest run --config tests/vitest.config.js",
     "lint": "eslint . --ext .mjs,.js"
   },

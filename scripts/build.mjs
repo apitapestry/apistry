@@ -44,6 +44,10 @@ await copyFile(
   path.join('dist', 'validation', 'validations', 'statePostalCode.json')
 );
 await copyFile(
+  path.join('src', 'validation', 'validations', 'statePostalCode.json'),
+  path.join('dist', 'statePostalCode.json')
+);
+await copyFile(
   path.join('src', 'config.default.yml'),
   path.join('dist', 'config.default.yml')
 );
