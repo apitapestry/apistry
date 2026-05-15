@@ -1,0 +1,1035 @@
+openapi: 3.0.3
+info:
+  title: Harry Potter
+  version: v1
+  description: Harry Potter API, providing information about books, characters, movies, potions and spells of the Harry Potter universe.
+
+servers:
+  - url: https://api.potterdb.com
+    description: Production server
+
+paths:
+  /magic-books:
+    get:
+      summary: Retrieves a list of books
+      tags:
+        - books
+      x-collection: harry-potter-books-v1
+      description: Retrieves a list of books
+      operationId: getBooks
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/MagicBook'
+
+  /magic-books/{magicBookId}:
+    get:
+      summary: Retrieves a book
+      tags:
+        - books
+      x-collection: harry-potter-books-v1
+      description: Retrieves a specific book by id
+      operationId: getBook
+
+      parameters:
+        - $ref: '#/components/parameters/MagicBookId'
+
+      responses:
+        '200':
+          description: A single book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MagicBook'
+
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+  /chapters:
+    get:
+      summary: Retrieves a list of chapters
+      tags:
+        - chapters
+      x-collection: harry-potter-chapters-v1
+      description: Retrieves a list of chapters
+      operationId: getChapters
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of chapters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Chapter'
+
+  /chapters/{chapterId}:
+    get:
+      summary: Retrieves a character
+      tags:
+        - chapters
+      x-collection: harry-potter-chapters-v1
+      description: Retrieves a specific chapter
+      operationId: getChapter
+
+      parameters:
+        - $ref: '#/components/parameters/ChapterId'
+
+      responses:
+        '200':
+          description: A single character
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chapter'
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+  /characters:
+    get:
+      summary: Retrieves a list of characters
+      tags:
+        - characters
+      x-collection: harry-potter-characters-v1
+      description: Retrieves a list of characters
+      operationId: getCharacters
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of characters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Character'
+
+  /characters/{characterId}:
+    get:
+      summary: Retrieves a character
+      tags:
+        - characters
+      x-collection: harry-potter-characters-v1
+      description: Retrieves a specific character by id
+      operationId: getCharacter
+
+      parameters:
+        - $ref: '#/components/parameters/HPCharacterId'
+
+      responses:
+        '200':
+          description: A single character
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Character'
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+  /movies:
+    get:
+      summary: Retrieves a list of movies
+      tags:
+        - movies
+      x-collection: harry-potter-movies-v1
+      description: Retrieves a list of movies
+      operationId: getMovies
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of movies
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Movie'
+
+  /movies/{movieId}:
+    get:
+      summary: Retrieves a movie
+      tags:
+        - movies
+      x-collection: harry-potter-movies-v1
+      description: Retrieves a specific movie by id
+      operationId: getMovie
+
+      parameters:
+        - $ref: '#/components/parameters/HPMovieId'
+
+      responses:
+        '200':
+          description: A single movie
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movie'
+
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+  /potions:
+    get:
+      summary: Retrieves a list of potions
+      tags:
+        - potions
+      x-collection: harry-potter-potions-v1
+      description: Retrieves a list of potions
+      operationId: getPotions
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of potions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Potion'
+
+  /potions/{potionId}:
+    get:
+      summary: Retrieves a potion
+      tags:
+        - potions
+      x-collection: harry-potter-potions-v1
+      description: Retrieves a specific potion by id
+      operationId: getPotion
+
+      parameters:
+        - $ref: '#/components/parameters/PotionId'
+
+      responses:
+        '200':
+          description: A single potion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Potion'
+
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+  /spells:
+    get:
+      summary: Retrieves a list of spells
+      tags:
+        - spells
+      x-collection: harry-potter-spells-v1
+      description: Retrieves a list of spells
+      operationId: getSpells
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of spells
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Spell'
+
+  /spells/{spellId}:
+    get:
+      summary: Retrieves a spell
+      tags:
+        - spells
+      x-collection: harry-potter-sspells-v1
+      description: Retrieves a specific spell by id
+      operationId: getSpell
+
+      parameters:
+        - $ref: '#/components/parameters/SpellId'
+
+      responses:
+        '200':
+          description: A single spell
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Spell'
+
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+components:
+  parameters:
+    MagicBookId:
+      name: magicBookId
+      in: path
+      description: The identifier of the book.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+
+    ChapterId:
+      name: chapterId
+      in: path
+      description: The identifier of the chapter.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+
+    HPCharacterId:
+      name: characterId
+      in: path
+      description: The identifier of the character.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+
+    HPMovieId:
+      name: movieId
+      in: path
+      description: The identifier of the movie.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+
+    PotionId:
+      name: potionId
+      in: path
+      description: The identifier of the potion.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+
+    SpellId:
+      name: spellId
+      in: path
+      description: The identifier of the spell.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+
+  schemas:
+    MagicBook:
+      description: Representation of a book.
+      type: object
+      properties:
+        magicBookId:
+          description: The unique identifier of the book.
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: 'id'
+#        slug:
+#          type: string
+#          example: harry-potter-and-the-philosopher-s-stone
+#          x-etl-transforms:
+#            - source: 'attributes.slug'
+        title:
+          type: string
+          example: Harry Potter and the Philosopher's Stone
+          x-etl-transforms:
+            - source: 'attributes.title'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        summary:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.summary'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        author:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.author'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        releaseDate:
+          type: string
+          format: date
+          x-etl-transforms:
+            - source: 'attributes.release_date'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        dedication:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.dedication'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        pages:
+          type: integer
+          x-etl-transforms:
+            - source: 'attributes.pages'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        cover:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.cover'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.wiki'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        chapters:
+          type: array
+          items:
+            description: The unique identifier of the chapter.
+            type: string
+            format: uuid
+          uniqueItems: true
+#          x-etl-transforms:
+#            - source: 'relationships.chapters.data'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    Chapter:
+      description: Representation of a chapter.
+      type: object
+      properties:
+        chapterId:
+          description: The unique identifier of the chapter
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: 'id'
+        magicBookId:
+          description: The unique identifier of the magic book
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: 'relationships.book.data.id'
+#            - pick: 'first'
+        title:
+          type: string
+          example: The Boy Who Lived
+          x-etl-transforms:
+            - source: 'attributes.title'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        summary:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.summary'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        order:
+          type: integer
+          x-etl-transforms:
+            - source: 'attributes.order'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    Character:
+      description: Representation of a character.
+      type: object
+      properties:
+        characterId:
+          description: The unique identifier of the character
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: 'id'
+        name:
+          type: string
+          example: Harry James Potter
+          x-etl-transforms:
+            - source: 'attributes.name'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        born:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.born'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        died:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.died'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        gender:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.gender'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        species:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.species'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        height:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.height'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        weight:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.weight'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        hairColor:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.hair_color'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        eyeColor:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.eye_color'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        skinColor:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.skin_color'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        bloodStatus:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.blood_status'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        maritalStatus:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.marital_status'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        nationality:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.nationality'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        animagus:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.animagus'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        boggart:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.boggart'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        house:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.house'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        patronus:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.patronus'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        aliasNames:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.alias_names'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        familyMembers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.family_members'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        jobs:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.jobs'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        romances:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.romances'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        titles:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.titles'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        wands:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.wands'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.image'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.wiki'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    Movie:
+      description: Representation of a movie.
+      type: object
+      properties:
+        movieId:
+          description: The unique identifier of the movie
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: 'id'
+        title:
+          type: string
+          example: Harry Potter and the Philosopher's Stone
+          x-etl-transforms:
+            - source: 'attributes.title'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        summary:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.summary'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        director:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.director'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        screenwriters:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.screenwriters'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        producers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.producers'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        cinematographers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.cinematographers'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        editors:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.editors'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        distributors:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.distributors'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        musicComposers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'attributes.music_composers'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        releaseDate:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.release_date'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        runningTime:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.running_time'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        budget:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.budget'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        boxOffice:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.box_office'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        rating:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.rating'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        trailer:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.trailer'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.image'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.wiki'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    Potion:
+      description: Representation of a potion.
+      type: object
+      properties:
+        potionId:
+          description: The unique identifier of the potion
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: 'id'
+        name:
+          type: string
+          example: Ageing Potion
+          x-etl-transforms:
+            - source: 'attributes.name'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        effect:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.effect'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        side_effects:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.side_effects'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        characteristics:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.characteristics'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        time:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.time'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        difficulty:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.difficulty'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        ingredients:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.ingredients'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        inventors:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.inventors'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        manufacturers:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.manufacturers'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.image'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.wiki'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    Spell:
+      description: Representation of a spells.
+      type: object
+      properties:
+        spellId:
+          description: The unique identifier of the spells
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: 'id'
+        name:
+          type: string
+          example: Age Line
+          x-etl-transforms:
+            - source: 'attributes.name'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        incantation:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.incantation'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        category:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.category'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        effect:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.effect'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        light:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.light'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        hand:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.hand'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        creator:
+          type: string
+          x-etl-transforms:
+            - source: 'attributes.creator'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.image'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: 'attributes.wiki'
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'

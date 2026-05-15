@@ -1,0 +1,588 @@
+openapi: 3.0.3
+info:
+  title: Media Assets
+  description: >
+    A read-only search API for discovering and retrieving a unified catalog of audiobooks, movies, music, and TV shows with consistent, normalized metadata across all asset types.<br><br>
+    
+    **Purpose:** Let agent-based clients and lightweight UIs access digital media records, each sourced from a single provider per record via ETL.<br><br>
+
+    **Data shape:** Returns a unified `MediaAsset` object with:
+    <ul>
+      <li><b>Core fields:</b> <code>title</code>, <code>summary</code>, <code>releaseDate</code>, <code>primaryLanguage</code>, <code>contributors</code>, <code>identifiers</code>, <code>providerSource</code>/<code>providerId</code>, <code>genres</code>.</li>
+      <li><b>Usage context:</b> <code>usageStatus</code>, <code>playCount</code>, <code>lastPlayedAtDateTime</code>, <code>progressPercentage</code>, <code>userRating</code> (user-editable).</li>
+      <li><b>Ratings:</b> Map of sources (e.g., <code>IMDb</code>, <code>rtTomatometer</code>).</li>
+      <li><b>Content advisories:</b> e.g., MPA <code>PG-13</code>.</li>
+      <li><b>Field rules:</b> Read-only fields are system/ETL-derived; only <code>userRating</code> and <code>usageStatus</code> may be updated via your UI.</li>
+    </ul><br>
+
+    **Filtering:** Filter by <code>assetType</code>, <code>genres</code>, <code>title</code>, <code>summary</code>, contributors (free-text over <code>name</code>/<code>role</code>), <code>primaryLanguage</code>, <code>providerSource</code>, <code>usageStatus</code>, <code>lastPlayedAfter</code>/<code>lastPlayedBefore</code>, <code>playCountMin</code>/<code>playCountMax</code>, <code>releaseMinYear</code>/<code>releaseMaxYear</code>, and rating bounds with optional <code>ratingSource</code>.<br><br>
+
+    **Sorting & pagination:** Sort via <code>sort</code> (default: <code>sortTitle,asc</code>). Paginate with <code>limit</code> and <code>offset</code>. Responses include <code>X-Total-Count</code> with the total matching items; the body returns an array of <code>MediaAsset</code>.<br><br>
+
+    **Intended use:** Designed for GPT-style agents and lightweight UIs—stable ordering, minimal payload noise, and a clear separation between semantic metadata and operational fields.<br><br>
+
+    **Auth & limits:** Secured via the configured OAuth2 scheme. Callers should handle <code>401</code>, <code>403</code>, and <code>429</code> per standard semantics.
+  version: v1
+
+
+servers:
+  - url: https://maxtoveahbpfrtkjghjz.supabase.co/rest
+
+paths:
+  /media-assets:
+    get:
+      tags:
+        - MediaAssets
+      summary: Return a list of Digital Assets
+      description: Returns a list of Digital Assets based on the search criteria.
+      operationId: getMediaAssets
+
+      parameters:
+        - $ref: '#/components/parameters/AssetTypeQueryOptional'
+        - $ref: '#/components/parameters/ContentAdvisoryQueryOptional'
+        - $ref: '#/components/parameters/ContributorsQueryOptional'
+        - $ref: '#/components/parameters/GenresQueryOptional'
+        - $ref: '#/components/parameters/LastPlayedAfterQueryOptional'
+        - $ref: '#/components/parameters/LastPlayedBeforeQueryOptional'
+        - $ref: '#/components/parameters/PlayCountMaxQueryOptional'
+        - $ref: '#/components/parameters/PlayCountMinQueryOptional'
+        - $ref: '#/components/parameters/PrimaryLanguageQueryOptional'
+        - $ref: '#/components/parameters/ProviderSourceQueryOptional'
+        - $ref: '#/components/parameters/RatingSourceQueryOptional'
+        - $ref: '#/components/parameters/RatingValueMaxQueryOptional'
+        - $ref: '#/components/parameters/RatingValueMinQueryOptional'
+        - $ref: '#/components/parameters/ReleaseDateQueryOptional'
+        - $ref: '#/components/parameters/ReleaseMaxYearQueryOptional'
+        - $ref: '#/components/parameters/ReleaseMinYearQueryOptional'
+        - $ref: '#/components/parameters/SortByQueryOptional'
+        - $ref: '#/components/parameters/SortDirQueryOptional'
+        - $ref: '#/components/parameters/SummaryQueryOptional'
+        - $ref: '#/components/parameters/TitleQueryOptional'
+        - $ref: '#/components/parameters/UsageStatusQueryOptional'
+        - $ref: '#/components/parameters/UserRatingMaxQueryOptional'
+        - $ref: '#/components/parameters/UserRatingMinQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          headers:
+            X-Total-Count:
+              $ref: '../global/global.models.yaml#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MediaAsset'
+                minItems: 0
+                maxItems: 50
+
+components:
+  parameters:
+    AssetTypeQueryOptional:
+      in: query
+      name: assetType
+      description: assetType
+      required: false
+      schema:
+        $ref: '#/components/schemas/AssetTypeEnum'
+
+    ContributorsQueryOptional:
+      description: 'Case-insensitive substring match over contributor name and role (e.g., ''nolan'', ''director'').'
+      in: query
+      name: contributor
+      required: false
+      schema:
+        type: string
+
+    ContentAdvisoryQueryOptional:
+      description: Content Advisory - Will search across all content advisory sources
+      in: query
+      name: contentAdvisory
+      required: false
+      schema:
+        type: string
+        example: 'PG-13'
+
+    GenresQueryOptional:
+      description: Genres
+      in: query
+      name: genres
+      required: false
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/Genre'
+        minItems: 1
+        maxItems: 5
+
+    LastPlayedBeforeQueryOptional:
+      description: Last Played Before Date
+      in: query
+      name: lastPlayedBefore
+      required: false
+      schema:
+        type: string
+        format: date-time
+
+    LastPlayedAfterQueryOptional:
+      description: Last Played After Date
+      in: query
+      name: lastPlayedAfter
+      required: false
+      schema:
+        type: string
+        format: date-time
+
+    PlayCountMinQueryOptional:
+      description: Play Count Minimum
+      in: query
+      name: playCountMin
+      required: false
+      schema:
+        type: integer
+
+    PlayCountMaxQueryOptional:
+      description: Play Count Maximum
+      in: query
+      name: playCountMax
+      required: false
+      schema:
+        type: integer
+
+    ProviderSourceQueryOptional:
+      description: ProviderSource
+      in: query
+      name: providerSource
+      required: false
+      schema:
+        $ref: '#/components/schemas/ProviderSource'
+
+    PrimaryLanguageQueryOptional:
+      description: Primary Language
+      in: query
+      name: primaryLanguage
+      required: false
+      schema:
+        $ref: '#/components/schemas/PrimaryLanguage'
+
+    RatingSourceQueryOptional:
+      description: Rating Source
+      in: query
+      name: ratingSource
+      required: false
+      schema:
+        type: string
+        example: 'IMDb'
+
+    RatingValueMinQueryOptional:
+      description: Rating Value Minimum - if source is not specified, will search across all sources
+      in: query
+      name: ratingValueMin
+      required: false
+      schema:
+        type: number
+        minimum: 0
+        example: 4.2
+
+    RatingValueMaxQueryOptional:
+      description: Rating Value Maximum - if source is not specified, will search across all sources
+      in: query
+      name: ratingValueMax
+      required: false
+      schema:
+        type: number
+        minimum: 0
+        example: 7.5
+
+    ReleaseMinYearQueryOptional:
+      description: Start year of the release
+      in: query
+      name: releaseMinYear
+      required: false
+      schema:
+        type: string
+        pattern: '^(18|19|20)[0-9]{2}$'
+
+    ReleaseMaxYearQueryOptional:
+      description: End year of the release
+      in: query
+      name: releaseMaxYear
+      required: false
+      schema:
+        type: string
+        pattern: '^(18|19|20)[0-9]{2}$'
+
+    ReleaseDateQueryOptional:
+      description: Release Date
+      in: query
+      name: releaseDate
+      required: false
+      schema:
+        type: string
+        format: date
+
+    SortByQueryOptional:
+      in: query
+      name: sort
+      required: false
+      description: 'Sort key. Default: sortTitle'
+      schema:
+        type: string
+        enum:
+          - 'SORT_TITLE'
+          - 'RELEASE_DATE'
+          - 'LAST_PLAYED_AT'
+
+    SortDirQueryOptional:
+      in: query
+      name: sortDir
+      required: false
+      description: 'Sort Direction.'
+      schema:
+        type: string
+        enum:
+          - 'ASC'
+          - 'DESC'
+        default: 'ASC'
+
+    SummaryQueryOptional:
+      in: query
+      name: summary
+      description: Summary
+      required: false
+      schema:
+        $ref: '#/components/schemas/Summary'
+
+    TitleQueryOptional:
+      in: query
+      name: title
+      description: Title
+      required: false
+      schema:
+        $ref: '#/components/schemas/Title'
+
+    UsageStatusQueryOptional:
+      description: Usage Status
+      in: query
+      name: usageStatus
+      required: false
+      schema:
+        $ref: '#/components/schemas/UsageStatusEnum'
+
+    UserRatingMinQueryOptional:
+      description: Min User Rating value
+      in: query
+      name: userRatingMin
+      required: false
+      schema:
+        type: integer
+
+    UserRatingMaxQueryOptional:
+      description: Max User Rating value
+      in: query
+      name: userRatingMax
+      required: false
+      schema:
+        type: integer
+
+  schemas:
+    MediaAsset:
+      description: MediaAsset Schema
+      oneOf:
+        - $ref: '#/components/schemas/MediaAssetAudioBook'
+        - $ref: '#/components/schemas/MediaAssetMovie'
+        - $ref: '#/components/schemas/MediaAssetMusic'
+        - $ref: '#/components/schemas/MediaAssetTvShow'
+      discriminator:
+        propertyName: assetType
+
+    MediaAssetUpdate:
+      description: MediaAsset Updatable properties
+      type: object
+      properties:
+        genres:
+          description: Genres
+          type: array
+          items:
+            $ref: '#/components/schemas/Genre'
+          minItems: 1
+          maxItems: 10
+          example: ['Science Fiction', 'Adventure']
+        usageStatus:
+          $ref: '#/components/schemas/UsageStatusEnum'
+        userRating:
+          type: integer
+          minimum: 1
+          maximum: 5
+          example: 4
+
+    MediaAssetBase:
+      description: MediaAsset
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/MediaAssetUpdate'
+      required:
+        - assetType
+        - title
+        - summary
+      properties:
+        mediaAssetId:
+          $ref: '#/components/schemas/MediaAssetsId'
+        assetType:
+          $ref: '#/components/schemas/AssetTypeEnum'
+        title:
+          $ref: '#/components/schemas/Title'
+        sortTitle:
+          $ref: '#/components/schemas/SortTitle'
+        summary:
+          $ref: '#/components/schemas/Summary'
+        releaseDate:
+          description: Date asset was released
+          type: string
+          format: date
+          readOnly: true
+        primaryLanguage:
+          $ref: '#/components/schemas/PrimaryLanguage'
+        contributors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contributor'
+          minItems: 1
+          maxItems: 30
+        identifiers:
+          type: object
+          additionalProperties:
+            type: string
+          example:
+            isbn13: '9780441013593'
+            eidr: '10.5240/AAAA-BBBB-CCCC-DDDD-EEEE-C'
+        providerSource:
+          $ref: '#/components/schemas/ProviderSource'
+        providerId:
+          type: string
+          description: The unique identifier for this asset in the provider's system
+          readOnly: true
+          example: 'B00ABCDEFGHI'
+        ratings:
+          type: object
+          description: Keys are the rating system (e.g. 'IMDb', 'provider', 'audience', 'rtTomatometer', 'rtAudience', etc.)
+          additionalProperties:
+            $ref: '#/components/schemas/Rating'
+        lastPlayedAtDateTime:
+          type: string
+          format: date-time
+          readOnly: true
+          example: '2025-07-01T21:00:00Z'
+        playCount:
+          type: integer
+          minimum: 0
+          example: 3
+          readOnly: true
+        progressPercentage:
+          description: Percent of the MediaAsset that has been watched/listened to
+          type: integer
+          minimum: 0
+          maximum: 100
+          example: 80
+          readOnly: true
+        userEditedAtDateTime:
+          type: string
+          format: date-time
+          readOnly: true
+          example: '2025-08-09T15:12:00Z'
+        contentAdvisory:
+          type: string
+          example: 'PG-13'
+        addedDateTime:
+          description: Date time asset was added to the Media provider
+          type: string
+          format: date-time
+          readOnly: true
+      discriminator:
+        propertyName: assetType
+        mapping:
+          AUDIO_BOOK: '#/components/schemas/MediaAssetAudioBook'
+          MOVIE: '#/components/schemas/MediaAssetMovie'
+          MUSIC: '#/components/schemas/MediaAssetMusic'
+          TV_SHOW: '#/components/schemas/MediaAssetTvShow'
+
+    MediaAssetAudioBook:
+      description: AudioBook Schema
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/MediaAssetBase'
+      properties:
+        narrator:
+          description: Narrator
+          type: string
+        seriesName:
+          description: Narrator
+          type: string
+        numBooksInSeries:
+          description: Number of books in the series
+          type: integer
+          minimum: 1
+          example: 10
+        bookNumInSeries:
+          description: Number of books in the series
+          type: integer
+          minimum: 1
+          example: 10
+
+    MediaAssetMovie:
+      description: Movie Schema
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/MediaAssetBase'
+      properties:
+        tagline:
+          description: Movie Tagline
+          type: string
+        studio:
+          description: Studio where the Movie was produced
+          type: string
+
+    MediaAssetMusic:
+      description: Music Schema
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/MediaAssetBase'
+
+    MediaAssetTvShow:
+      description: TV Show Schema
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/MediaAssetBase'
+      properties:
+        tagline:
+          description: Tagline of the MediaAsset
+          type: string
+        studio:
+          description: Studio where the MediaAsset was produced
+          type: string
+
+    AssetTypeEnum:
+      description: Type of MediaAssets
+      type: string
+      enum:
+        - AUDIO_BOOK
+#        - PODCAST
+#        - EBOOK
+        - MOVIE
+        - MUSIC
+        - TV_SHOW
+
+    ContentAdvisory:
+      description: Content Advisory Schema
+      type: object
+      properties:
+        system:
+          type: string
+          description: The rating/advisory system name.
+          example: 'MPA'
+        rating:
+          type: string
+          description: The rating label from the advisory system.
+          example: 'PG-13'
+        region:
+          type: string
+          description: ISO 3166-1 alpha-2 region code.
+          example: 'US'
+        source:
+          type: string
+          description: Origin of the data (provider, enrichment service).
+          example: 'imdb'
+        asOfDateTime:
+          type: string
+          format: date-time
+          example: '2025-08-09T12:00:00Z'
+
+    Contributor:
+      description: Contributor of the MediaAsset
+      type: object
+      properties:
+        contributorId:
+          description: internal id
+          type: string
+          format: uuid
+          readOnly: true
+        role:
+          type: string
+          example: 'Director'
+        name:
+          type: string
+          example: 'Christopher Nolan'
+
+    Genre:
+      description: Genre of the MediaAsset
+      type: string
+      pattern: '^[0-9.a-zA-Z,\|\:\ \-'']{1,100}$'
+
+    MediaAssetsId:
+      description: Primary key for the MediaAssets resource
+      type: string
+      format: uuid
+      readOnly: true
+
+    ProviderSource:
+      description: The name or key of the provider where this asset originated
+      type: string
+      readOnly: true
+      example: 'audible'
+
+    PrimaryLanguage:
+      description: Primary language of the MediaAsset - BCP-47
+      type: string
+      pattern: '^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$'
+      readOnly: true
+      example: 'en'
+
+    Rating:
+      description: Rating Schema
+      type: object
+      properties:
+        value:
+          type: number
+          minimum: 0
+          example: 4.2   # 0–100 or 1–5—document per source
+        scale:
+          type: integer
+          minimum: 1
+          example: 5    # e.g., 5 for 1–5 stars, 100 for percentages
+        asOfDateTime:
+          type: string
+          format: date-time
+          example: '2025-08-01T12:00:00Z'
+
+    SortTitle:
+      description: Title of the MediaAsset - formatted for sorting
+      type: string
+      pattern: '^[0-9.a-zA-Z,\|\:\ \-'']{1,300}$'
+      readOnly: true
+      example: 'Matrix, The'
+
+    Summary:
+      description: Summary of the MediaAsset
+      type: string
+      pattern: '^[0-9.a-zA-Z,\|\:\ \-'']{1,2000}$'
+      example: 'Set in the distant future amidst a feudal interstellar society.'
+
+    Title:
+      description: Title of the MediaAsset
+      type: string
+      pattern: '^[0-9.a-zA-Z,\|\:\ \-'']{1,300}$'
+      example: 'The Matrix'
+
+    UsageStatusEnum:
+      description: Usage Status
+      type: string
+      enum:
+        - UNSEEN
+        - IN_PROGRESS
+        - COMPLETED
+        - ABANDONED

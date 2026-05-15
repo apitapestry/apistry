@@ -1,0 +1,361 @@
+{
+  "info": {
+    "_postman_id": "ae8d2057-efea-4c91-afe2-449aa0c4c645",
+    "name": "SWAPI V2 (The Star Wars API)",
+    "description": "Postman collection for SWAPI (The Star Wars API) v2 endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2749290"
+  },
+  "variable": [],
+  "item": [
+    {
+      "name": "Films",
+      "item": [
+        {
+          "name": "List films (baseline)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('List envelope has contentRange/results', function () {",
+                  "  pm.expect(json).to.be.an('object');",
+                  "  pm.expect(json).to.have.property('contentRange');",
+                  "  pm.expect(json.contentRange).to.be.a('string');",
+                  "  pm.expect(json).to.have.property('results');",
+                  "  pm.expect(json.results).to.be.an('array');",
+                  "  pm.expect(json.results.length).to.be.at.most(10);",
+                  "});",
+                  "pm.test('Film items have filmId/title/releaseDate', function(){",
+                  "  json.results.forEach(f => {",
+                  "    pm.expect(f).to.have.property('filmId');",
+                  "    pm.expect(String(f.filmId)).to.match(/^[0-9a-fA-F-]{36}$/);",
+                  "    pm.expect(f).to.have.property('title');",
+                  "    pm.expect(f.title).to.be.a('string');",
+                  "    if (f.releaseDate !== undefined) pm.expect(f.releaseDate).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);",
+                  "  });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v2/films",
+              "host": ["{{hostname}}"],
+              "path": ["v2", "films"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find filmId via filter (title contains Hope*)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('At least one result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                  "pm.environment.set('filmId', String(json.results[0].filmId));",
+                  "pm.test('Stored filmId', () => pm.expect(pm.environment.get('filmId')).to.match(/^[0-9a-fA-F-]{36}$/));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v2/films?title=Hope*",
+              "host": ["{{hostname}}"],
+              "path": ["v2", "films"],
+              "query": [{"key":"title","value":"Hope*"}]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get film by derived filmId",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('filmId exists', function(){ pm.expect(pm.environment.get('filmId')).to.match(/^[0-9a-fA-F-]{36}$/); });",
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const f = pm.response.json();",
+                  "pm.test('filmId matches', function(){ pm.expect(String(f.filmId)).to.equal(String(pm.environment.get('filmId'))); });",
+                  "pm.test('Film has required fields', function(){",
+                  "  pm.expect(f.title).to.be.a('string');",
+                  "  pm.expect(f.episode).to.be.a('number');",
+                  "  pm.expect(f.createdDateTime).to.match(/Z$/);",
+                  "  pm.expect(f.updatedDateTime).to.match(/Z$/);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{hostname}}/v2/films/{{filmId}}",
+              "host": ["{{hostname}}"],
+              "path": ["v2", "films", "{{filmId}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Characters",
+      "item": [
+        {
+          "name": "List characters (baseline)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                  "const json = pm.response.json();",
+                  "pm.test('Envelope has contentRange/results', function(){",
+                  "  pm.expect(json.contentRange).to.be.a('string');",
+                  "  pm.expect(json.results).to.be.an('array');",
+                  "  pm.expect(json.results.length).to.be.at.most(10);",
+                  "});",
+                  "pm.test('Character items have characterId/name', function(){",
+                  "  json.results.forEach(c => {",
+                  "    pm.expect(String(c.characterId)).to.match(/^[0-9a-fA-F-]{36}$/);",
+                  "    pm.expect(c.name).to.be.a('string');",
+                  "  });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {"raw":"{{hostname}}/v2/characters?limit=5","host":["{{hostname}}"],"path":["v2","characters"],"query":[{"key":"limit","value":"5"}]}
+          },
+          "response": []
+        },
+        {
+          "name": "Find characterId via filter (name contains Luke*)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {"type":"text/javascript","exec":[
+                "pm.test('Status 200', () => pm.response.to.have.status(200));",
+                "const json = pm.response.json();",
+                "pm.test('At least one result', () => pm.expect(json.results.length).to.be.at.least(1));",
+                "pm.test('All names contain luke', function(){ json.results.forEach(c => pm.expect(String(c.name).toLowerCase()).to.include('luke')); });",
+                "const luke = json.results[0];",
+                "pm.environment.set('characterId', String(luke.characterId));",
+                "if (luke.homeworldPlanetId) pm.environment.set('planetId', String(luke.homeworldPlanetId));",
+                "if (luke.speciesId) pm.environment.set('speciesId', String(luke.speciesId));",
+                "pm.test('Stored characterId', () => pm.expect(pm.environment.get('characterId')).to.match(/^[0-9a-fA-F-]{36}$/));"
+              ]}
+            }
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/characters?name=Luke*","host":["{{hostname}}"],"path":["v2","characters"],"query":[{"key":"name","value":"Luke*"}]}} ,
+          "response": []
+        },
+        {
+          "name": "Get character by derived characterId",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('characterId exists', function(){ pm.expect(pm.environment.get('characterId')).to.match(/^[0-9a-fA-F-]{36}$/); });",
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const c = pm.response.json();",
+              "pm.test('characterId matches', function(){ pm.expect(String(c.characterId)).to.equal(String(pm.environment.get('characterId'))); });",
+              "pm.test('Character has required fields', function(){",
+              "  pm.expect(c.name).to.be.a('string');",
+              "  pm.expect(c.createdDateTime).to.match(/Z$/);",
+              "  pm.expect(c.updatedDateTime).to.match(/Z$/);",
+              "});",
+              "pm.test('Linked ids have expected shapes', function(){",
+              "  if (c.homeworldPlanetId) pm.expect(String(c.homeworldPlanetId)).to.match(/^[0-9a-fA-F-]{36}$/);",
+              "  if (c.speciesId) pm.expect(String(c.speciesId)).to.match(/^[0-9a-fA-F-]{36}$/);",
+              "  ['filmIds','starshipIds','vehicleIds'].forEach(k => {",
+              "    if (c[k]) { pm.expect(c[k]).to.be.an('array'); c[k].forEach(id => pm.expect(String(id)).to.match(/^[0-9a-fA-F-]{36}$/)); }",
+              "  });",
+              "});"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/characters/{{characterId}}","host":["{{hostname}}"],"path":["v2","characters","{{characterId}}"]}},
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Planets",
+      "item": [
+        {
+          "name": "List planets (baseline)",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const json = pm.response.json();",
+              "pm.test('Envelope has contentRange/results', function(){ pm.expect(json.contentRange).to.be.a('string'); pm.expect(json.results).to.be.an('array'); });",
+              "pm.environment.set('planetId', json.results[0] ? String(json.results[0].planetId) : pm.environment.get('planetId') || '');"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/planets?limit=5","host":["{{hostname}}"],"path":["v2","planets"],"query":[{"key":"limit","value":"5"}]}} ,
+          "response": []
+        },
+        {
+          "name": "Get planet by derived planetId",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('planetId exists', function(){ pm.expect(pm.environment.get('planetId')).to.match(/^[0-9a-fA-F-]{36}$/); });",
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const p = pm.response.json();",
+              "pm.test('planetId matches', function(){ pm.expect(String(p.planetId)).to.equal(String(pm.environment.get('planetId'))); });",
+              "pm.test('Planet has name and timestamps', function(){ pm.expect(p.name).to.be.a('string'); pm.expect(p.createdDateTime).to.match(/Z$/); pm.expect(p.updatedDateTime).to.match(/Z$/); });"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/planets/{{planetId}}","host":["{{hostname}}"],"path":["v2","planets","{{planetId}}"]}},
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Species",
+      "item": [
+        {
+          "name": "List species (baseline)",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const json = pm.response.json();",
+              "pm.test('Envelope has contentRange/results', function(){ pm.expect(json.contentRange).to.be.a('string'); pm.expect(json.results).to.be.an('array'); });",
+              "pm.environment.set('speciesId', json.results[0] ? String(json.results[0].speciesId) : pm.environment.get('speciesId') || '');"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/species?limit=5","host":["{{hostname}}"],"path":["v2","species"],"query":[{"key":"limit","value":"5"}]}} ,
+          "response": []
+        },
+        {
+          "name": "Get species by derived speciesId",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('speciesId exists', function(){ pm.expect(pm.environment.get('speciesId')).to.match(/^[0-9a-fA-F-]{36}$/); });",
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const s = pm.response.json();",
+              "pm.test('speciesId matches', function(){ pm.expect(String(s.speciesId)).to.equal(String(pm.environment.get('speciesId'))); });",
+              "pm.test('Species has name and classification', function(){ pm.expect(s.name).to.be.a('string'); if (s.classification!==undefined) pm.expect(s.classification).to.be.a('string'); });"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/species/{{speciesId}}","host":["{{hostname}}"],"path":["v2","species","{{speciesId}}"]}},
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Starships",
+      "item": [
+        {
+          "name": "List starships (baseline)",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const json = pm.response.json();",
+              "pm.test('Envelope has contentRange/results', function(){ pm.expect(json.contentRange).to.be.a('string'); pm.expect(json.results).to.be.an('array'); });",
+              "pm.environment.set('starshipId', json.results[0] ? String(json.results[0].starshipId) : pm.environment.get('starshipId') || '');"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/starships?limit=5","host":["{{hostname}}"],"path":["v2","starships"],"query":[{"key":"limit","value":"5"}]}} ,
+          "response": []
+        },
+        {
+          "name": "Get starship by derived starshipId",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('starshipId exists', function(){ pm.expect(pm.environment.get('starshipId')).to.match(/^[0-9a-fA-F-]{36}$/); });",
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const s = pm.response.json();",
+              "pm.test('starshipId matches', function(){ pm.expect(String(s.starshipId)).to.equal(String(pm.environment.get('starshipId'))); });",
+              "pm.test('Starship has name/model', function(){ pm.expect(s.name).to.be.a('string'); pm.expect(s.model).to.be.a('string'); });"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/starships/{{starshipId}}","host":["{{hostname}}"],"path":["v2","starships","{{starshipId}}"]}},
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vehicles",
+      "item": [
+        {
+          "name": "List vehicles (baseline)",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const json = pm.response.json();",
+              "pm.test('Envelope has contentRange/results', function(){ pm.expect(json.contentRange).to.be.a('string'); pm.expect(json.results).to.be.an('array'); });",
+              "pm.environment.set('vehicleId', json.results[0] ? String(json.results[0].vehicleId) : pm.environment.get('vehicleId') || '');"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/vehicles?limit=5","host":["{{hostname}}"],"path":["v2","vehicles"],"query":[{"key":"limit","value":"5"}]}} ,
+          "response": []
+        },
+        {
+          "name": "Get vehicle by derived vehicleId",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":[
+              "pm.test('vehicleId exists', function(){ pm.expect(pm.environment.get('vehicleId')).to.match(/^[0-9a-fA-F-]{36}$/); });",
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "const v = pm.response.json();",
+              "pm.test('vehicleId matches', function(){ pm.expect(String(v.vehicleId)).to.equal(String(pm.environment.get('vehicleId'))); });",
+              "pm.test('Vehicle has name/model', function(){ pm.expect(v.name).to.be.a('string'); pm.expect(v.model).to.be.a('string'); });"
+            ]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/vehicles/{{vehicleId}}","host":["{{hostname}}"],"path":["v2","vehicles","{{vehicleId}}"]}},
+          "response": []
+        },
+        {
+          "name": "Get vehicle 404 (uuid does not exist)",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":["pm.test('Status 404', () => pm.response.to.have.status(404));"]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/vehicles/00000000-0000-0000-0000-000000000000","host":["{{hostname}}"],"path":["v2","vehicles","00000000-0000-0000-0000-000000000000"]}},
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Negative / validation",
+      "item": [
+        {
+          "name": "Invalid limit triggers 400 or 422",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":["pm.test('Status is 400 or 422', function(){ pm.expect([400,422]).to.include(pm.response.code); });"]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/characters?limit=-1","host":["{{hostname}}"],"path":["v2","characters"],"query":[{"key":"limit","value":"-1"}]}} ,
+          "response": []
+        },
+        {
+          "name": "Invalid offset triggers 400 or 422",
+          "event": [
+            {"listen":"test","script":{"type":"text/javascript","exec":["pm.test('Status is 400 or 422', function(){ pm.expect([400,422]).to.include(pm.response.code); });"]}}
+          ],
+          "request": {"method":"GET","header":[],"url":{"raw":"{{hostname}}/v2/films?offset=-1","host":["{{hostname}}"],"path":["v2","films"],"query":[{"key":"offset","value":"-1"}]}} ,
+          "response": []
+        }
+      ]
+    }
+  ]
+}

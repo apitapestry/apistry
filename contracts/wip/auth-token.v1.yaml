@@ -1,0 +1,312 @@
+openapi: 3.0.3
+info:
+  title: Auth Token API
+  description: OAuth2 token endpoint for issuing and refreshing access tokens using the 
+    authorization_code and refresh_token grants. Submit application/x-www-form-urlencoded 
+    bodies to obtain (grant_type=authorization_code with code & redirect_uri) or 
+    rotate (grant_type=refresh_token with refresh_token) JWT bearer credentials used by the media APIs.
+  version: v1
+
+servers:
+  - url: 'https://7ntasa3rqj.execute-api.us-west-1.amazonaws.com'
+
+security: []
+
+paths:
+  /oauth2/authorize:
+    get:
+      tags: [Auth]
+      summary: OAuth2 authorize
+      description: Redirect to login and consent page. Provide `response_type=code`, `client_id`, and `redirect_uri` as query parameters.
+      operationId: getOauth2Authorize
+      security: []
+
+      x-amazon-apigateway-integration: &lambda_integration
+        payloadFormatVersion: '2.0'
+        type: aws_proxy
+        httpMethod: GET
+        uri: arn:aws:lambda:us-west-1:447315180786:function:api-gateway-oath
+
+      parameters:
+        - $ref: '#/components/parameters/OAuthResponseType'
+        - $ref: '#/components/parameters/OAuthClientId'
+        - $ref: '#/components/parameters/OAuthRedirectUri'
+        - $ref: '#/components/parameters/OAuthState'
+        - $ref: '#/components/parameters/PKCECodeChallenge'
+        - $ref: '#/components/parameters/PKCECodeChallengeMethod'
+
+      responses:
+        '302':
+          description: Redirect to login/consent page (may include authorization code & state on success)
+          headers:
+            Location:
+              description: Redirect URI including authorization code (and state if provided)
+              schema:
+                type: string
+
+  /oauth2/token:
+    post:
+      tags: [Auth]
+      summary: OAuth2 token & refresh
+      description: Obtain or refresh access tokens. Provide `grant_type` in the body.
+      operationId: createOauth2Token
+      security: []
+
+#      x-amazon-apigateway-integration: *lambda_integration
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AuthTokenRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthTokenRequest'
+#            examples:
+#              authorization_code_flow:
+#                $ref: '#/components/examples/AuthorizationCodeFlowRequest'
+#              refresh_flow:
+#                $ref: '#/components/examples/RefreshFlowRequest'
+
+      responses:
+        '200':
+          description: Token response
+          headers:
+            Cache-Control:
+              description: Per RFC 6749 section 5.1
+              schema:
+                type: string
+                example: 'no-store'
+            Pragma:
+              description: Per RFC 6749 section 5.1
+              schema:
+                type: string
+                example: 'no-cache'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthTokenResponse'
+#              examples:
+#                success_auth_code:
+#                  $ref: '#/components/examples/SuccessAuthCodeResponse'
+#                success_refresh:
+#                  $ref: '#/components/examples/SuccessRefreshResponse'
+
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: Authorization Code flow for downstream APIs
+      flows:
+        authorizationCode:
+          authorizationUrl: https://1wz48u09w6.execute-api.us-west-1.amazonaws.com/oauth2/authorize
+          tokenUrl: https://1wz48u09w6.execute-api.us-west-1.amazonaws.com/oauth2/token
+          scopes:
+            media.read: Read media resources
+            media.write: Modify media resources
+            preferences.read: Read preferences data
+            preferences.write: Modify preferences data
+
+  parameters:
+    OAuthResponseType:
+      name: response_type
+      in: query
+      description: OAuth2 response_type (must be 'code')
+      required: true
+      schema:
+        type: string
+        enum: [code]
+
+    OAuthClientId:
+      name: client_id
+      in: query
+      description: Public client identifier issued during registration
+      required: true
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9._-]{8,64}$'
+        minLength: 8
+        maxLength: 64
+
+    OAuthRedirectUri:
+      name: redirect_uri
+      in: query
+      description: Registered redirect URI for this client
+      required: true
+      schema:
+        type: string
+        format: uri
+
+    OAuthState:
+      name: state
+      in: query
+      description: Opaque value used by the client to maintain state between the request and callback (recommended for CSRF protection)
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9._~-]{8,128}$'
+        minLength: 8
+        maxLength: 128
+
+    PKCECodeChallenge:
+      name: code_challenge
+      in: query
+      description: PKCE code challenge (base64url without padding) derived from code_verifier
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9._~-]{43,128}$'
+        minLength: 43
+        maxLength: 128
+
+    PKCECodeChallengeMethod:
+      name: code_challenge_method
+      in: query
+      description: PKCE transformation method
+      required: false
+      schema:
+        type: string
+#        enum: [S256]
+
+  schemas:
+    AuthTokenRequest:
+      description: Token endpoint request parameters (authorization_code or refresh_token grant)
+      type: object
+      required:
+        - grant_type
+      properties:
+        grant_type:
+          type: string
+          enum: [authorization_code, refresh_token]
+          writeOnly: true
+        code:
+          description: Authorization code (required when grant_type=authorization_code)
+          type: string
+          writeOnly: true
+          pattern: '^[A-Za-z0-9._~-]{8,128}$'
+          minLength: 8
+          maxLength: 128
+        redirect_uri:
+          description: Redirect URI (required if it was included in the authorization request)
+          type: string
+          format: uri
+          writeOnly: true
+        refresh_token:
+          description: Refresh token (required when grant_type=refresh_token)
+          type: string
+          pattern: '^[A-Za-z0-9._~-]{20,256}$'
+          minLength: 20
+          maxLength: 256
+          writeOnly: true
+        client_id:
+          description: Public client identifier
+          type: string
+          writeOnly: true
+        client_secret:
+          description: Client secret (confidential clients only)
+          type: string
+          writeOnly: true
+          pattern: '^[A-Za-z0-9._~+-]{16,128}$'
+          minLength: 16
+          maxLength: 128
+        code_verifier:
+          description: PKCE code verifier (required if code_challenge used)
+          type: string
+          pattern: '^[A-Za-z0-9._~-]{43,128}$'
+          minLength: 43
+          maxLength: 128
+          writeOnly: true
+
+    AuthTokenResponse:
+      description: Successful token response (RFC 6749 section 5.1) with issued refresh token separated from request parameters
+      type: object
+      required:
+        - access_token
+        - token_type
+        - expires_in
+      properties:
+        access_token:
+          type: string
+          readOnly: true
+        token_type:
+          type: string
+          enum:
+            - Bearer
+          readOnly: true
+        expires_in:
+          type: integer
+          format: int32
+          minimum: 1
+          readOnly: true
+        scope:
+          type: string
+          description: Space-delimited scopes
+          readOnly: true
+        issued_refresh_token:
+          type: string
+          description: Newly issued refresh token (if rotation enabled and a new token is minted on this call; omit if unchanged)
+          readOnly: true
+
+    OAuthError:
+      description: OAuth 2.0 error response (RFC 6749 section 5.2)
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+          enum:
+            - invalid_request
+            - invalid_client
+            - invalid_grant
+            - unauthorized_client
+            - unsupported_grant_type
+            - invalid_scope
+        error_description:
+          type: string
+        error_uri:
+          type: string
+          format: uri
+
+#  examples:
+#    AuthorizationCodeFlowRequest:
+#      summary: Exchange authorization code request
+#      value:
+#        grant_type: authorization_code
+#        code: AbCdEf123456
+#        redirect_uri: https://client.example.com/cb
+#        client_id: demo_client
+#        code_verifier: 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+#    RefreshFlowRequest:
+#      summary: Refresh token request
+#      value:
+#        grant_type: 'refresh_token'
+#        refresh_token: 'rgsdfsdfsfgsdfgdfgdg1-2-3'
+#        client_id: 'demo_client'
+#    SuccessAuthCodeResponse:
+#      summary: Successful authorization_code exchange
+#      value:
+#        access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+#        token_type: Bearer
+#        expires_in: 3600
+#        scope: media.read media.write
+#        issued_refresh_token: r1-2-3
+#    SuccessRefreshResponse:
+#      summary: Successful refresh exchange
+#      value:
+#        access_token: eyNewAccess...
+#        token_type: Bearer
+#        expires_in: 3600
+#        scope: media.read media.write
+#        issued_refresh_token: r1-2-4
+#    InvalidGrantError:
+#      summary: Expired or invalid authorization code
+#      value:
+#        error: invalid_grant
+#        error_description: Authorization code has expired
+#    InvalidClientError:
+#      summary: Unknown client credentials
+#      value:
+#        error: invalid_client
+#        error_description: Unknown client or bad credentials

@@ -1,0 +1,305 @@
+openapi: 3.0.3
+info:
+  title: Harry Potter API
+  description: Harry Potter API (Characters and Spells)
+  version: 'v1'
+
+servers:
+  - url: https://localhost
+
+paths:
+  /characters:
+    get:
+      tags:
+        - Harry Potter v1
+      x-collection: harry-potter-characters-v1
+      summary: List characters
+      operationId: getCharacters
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of characters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/HpCharacterV1'
+                    minItems: 0
+                    maxItems: 10
+
+  /characters/{characterId}:
+    get:
+      tags:
+        - Harry Potter v1
+      x-collection: harry-potter-characters-v1
+      summary: Get a character
+      operationId: getCharacter
+
+      parameters:
+        - $ref: '#/components/parameters/CharacterId'
+
+      responses:
+        '200':
+          description: A character
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HpCharacterV1'
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+  /spells:
+    get:
+      tags:
+        - Harry Potter v1
+      x-collection: harry-potter-spells-v1
+      summary: List spells
+      operationId: getSpells
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of spells
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/HpSpellV1'
+                    minItems: 0
+                    maxItems: 10
+
+  /spells/{spellId}:
+    get:
+      tags:
+        - Harry Potter v1
+      x-collection: harry-potter-spells-v1
+      summary: Get a spell
+      operationId: getSpell
+
+      parameters:
+        - $ref: '#/components/parameters/SpellId'
+
+      responses:
+        '200':
+          description: A spell
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HpSpellV1'
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+components:
+  parameters:
+    CharacterId:
+      name: characterId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    SpellId:
+      name: spellId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  schemas:
+    HpCharacterV1:
+      type: object
+      required:
+        - characterId
+        - name
+      properties:
+        characterId:
+          description: Unique identifier for the character
+          type: string
+          format: uuid
+          readOnly: true
+          x-etl-transforms:
+            - source: 'id'
+        name:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        alternateNames:
+          description: Alternate names for the character
+          type: array
+          items:
+            type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        species:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        gender:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        house:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        birthDate:
+          description: Date of birth
+          type: string
+          format: date
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'dateOfBirth'
+            - reformat-date: 'dd-mm-yyyy'
+        isWizard:
+          type: boolean
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-etl-transforms:
+            - source: 'wizard'
+        ancestry:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        eyeColor:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'eyeColour'
+        hairColor:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'hairColour'
+        wandType:
+          type: string
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'wand.wood'
+        wandCore:
+          type: string
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'wand.core'
+        wandLength:
+          type: number
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-etl-transforms:
+            - source: 'wand.length'
+        patronus:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        isHogwartsStudent:
+          type: boolean
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-etl-transforms:
+            - source: 'hogwartsStudent'
+        isHogwartsStaff:
+          type: boolean
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-etl-transforms:
+            - source: 'hogwartsStaff'
+        actorName:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'actor'
+        alternateActors:
+          type: array
+          items:
+            type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        isAlive:
+          type: boolean
+          nullable: true
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-etl-transforms:
+            - source: 'alive'
+        imageUrl:
+          type: string
+          format: uri
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'image'
+
+    HpSpellV1:
+      type: object
+      required:
+        - spellId
+        - name
+        - description
+      properties:
+        spellId:
+          description: Unique identifier for the spell
+          type: string
+          format: uuid
+          readOnly: true
+          x-etl-transforms:
+            - source: 'id'
+        name:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1Spell
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        description:
+          type: string
+          x-query: optional
+          x-query-name-prefix: HpV1
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'

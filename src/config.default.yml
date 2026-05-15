@@ -1,0 +1,33 @@
+# Default Apistry Configuration
+# This is the built-in default configuration. Values can be overridden by:
+# 1. A provided configuration file (--config option)
+# 2. Environment variables
+# 3. CLI parameters
+
+server:
+  host: localhost
+  port: 3000
+  serviceName: APIstry
+  serviceDescription: >
+    APIstry provides functional APIs directly from OpenAPI specifications
+    without writing any code.
+  swaggerUiEnabled: true
+
+contracts:
+  source: filesystem
+  path: ./contracts
+
+database:
+  connection: sqlite://IN-MEMORY-DB
+
+logging:
+  level: info
+  pretty: false
+  redact:
+    - req.headers.authorization
+    - req.headers.cookie
+
+cors:
+  enabled: true
+  origins: true
+

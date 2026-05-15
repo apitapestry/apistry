@@ -1,0 +1,380 @@
+openapi: 3.0.3
+info:
+  title: Books
+  description: Books
+  version: v1
+
+servers:
+  - url: 'https://localhost:3000'
+
+security:
+  - bearerAuth: []
+
+paths:
+  /books/{bookId}:
+    get:
+      tags: [Books]
+      x-collection: books
+      summary: Get book
+      description: Get book
+      operationId: getBook
+
+      parameters:
+        - $ref: '#/components/parameters/BookId'
+
+      responses:
+        '200':
+          description: A book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+
+  /books:
+    get:
+      tags: [Books]
+      x-collection: books
+      summary: List books
+      description: List books
+      operationId: getBooks
+
+      parameters:
+        - $ref: '#/components/parameters/BookIdsQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of books
+            The response also includes a Content-Range header in the format 'items start-end/total', which provides the total record count.
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of books
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Book'
+                    minItems: 0
+                    maxItems: 50
+
+    post:
+      tags: [Books]
+      x-collection: books
+      description: Create multiple book records
+      summary: Create books in bulk
+      operationId: createBooks
+      security:
+        - apiKey: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Book'
+              minItems: 1
+              maxItems: 50
+
+      responses:
+        '201':
+          description: Books created successfully in bulk
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of books
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Book'
+                    minItems: 0
+                    maxItems: 50
+
+    patch:
+      tags: [Books]
+      x-collection: books
+      description: Update multiple books in your personal library.
+        Only need to provide those fields that need to be updated.
+      summary: Update books
+      operationId: updateBooks
+      security:
+        - apiKey: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Book'
+              minItems: 1
+              maxItems: 50
+
+      responses:
+        '200':
+          description: Updated successfully
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of books
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Book'
+                    minItems: 0
+                    maxItems: 50
+
+    delete:
+      tags: [Books]
+      x-collection: books
+      description: Remove a book
+      summary: Delete books
+      operationId: deleteBooks
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/BookIdsQueryOptional'
+        - $ref: '#/components/parameters/BookIdQueryOptional'
+
+      responses:
+        '200':
+          description: A list of books
+            The response also includes a Content-Range header in the format 'items start-end/total', which provides the total record count.
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    description: The list of books
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Book'
+                    minItems: 0
+                    maxItems: 50
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    BookIdsQueryOptional:
+      description: Unique identifier for the book.
+      name: bookIds
+      in: query
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+          format: uuid
+
+    BookIdQueryOptional:
+      description: Unique identifier for the book.
+      name: bookId
+      in: query
+      required: false
+      schema:
+        type: string
+        format: uuid
+
+    BookId:
+      description: Unique identifier for the book.
+      name: bookId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  schemas:
+    Book:
+      description: An book in your personal library
+      type: object
+      x-context:
+        required:
+          post: [title, author, mediaType]
+          put: [title, author, mediaType]
+          delete: [bookId]
+          patch: [bookId]
+        prohibited:
+          post: [bookId]
+          put: [bookId]
+      properties:
+        bookId:
+          $ref: '#/components/schemas/BookId'
+#        providerId:
+#          description: Unique identifier from the content provider
+#          type: string
+#          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?-]+$'
+#          minLength: 1
+#          maxLength: 64
+#          example: 'B07HY7TSLY'
+#          x-query: optional
+#          x-query-name-prefix: Book
+#          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+#        lastPlayedAtDateTime:
+#          description: When you last listened to this book
+#          type: string
+#          format: 'date-time'
+        userRating:
+          description: Personal rating of this book (0-10 scale)
+          type: integer
+          minimum: 0
+          maximum: 10
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^(eq\.|neq\.|gt\.|lt\.|gte\.|lte\.)[0-9]+$|^[0-9]+$|^isNull$'
+#        mediaType:
+#          description: The type of content (book or podcast)
+#          type: string
+#          enum: [audiobook, ebook, book, podcast]
+#          x-query: optional
+#          x-query-name-prefix: Book
+#          x-query-pattern: '^(eq\.|neq\.)(audiobook|ebook|book|podcast)$|^isNull$'
+        isbnId:
+          description: International Standard Book Number for the book
+          type: string
+          pattern: '^[0-9\-]+$'
+          minLength: 10
+          maxLength: 17
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        bookTitle:
+          description: The title of the book
+          type: string
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?/-]+$'
+          minLength: 1
+          maxLength: 255
+          example: 'The Great Gatsby'
+          x-query: optional
+          x-query-name-prefix-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        genres:
+          description: Comma-separated list of genres
+          type: string
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?-]+$'
+          minLength: 1
+          maxLength: 255
+          example: 'Fiction, Classic, Drama'
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        author:
+          description: The person who wrote the book
+          type: string
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?-]+$'
+          minLength: 1
+          maxLength: 255
+          example: 'F. Scott Fitzgerald'
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        narrator:
+          description: The person who narrated the book
+          type: string
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?-]+$'
+          minLength: 1
+          maxLength: 255
+          example: 'Jake Gyllenhaal'
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        seriesName:
+          description: Name of the book series this book belongs to
+          type: string
+          pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?-]+$'
+          minLength: 1
+          maxLength: 150
+          example: 'The Hunger Games'
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        numBooksInSeries:
+          description: Total number of books in the series
+          type: integer
+          minimum: 0
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        bookNumInSeries:
+          description: The position of this book within its series
+          type: integer
+          minimum: 0
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+#        usageStatus:
+#          $ref: '#/components/schemas/UsageStatusEnum'
+        addedAtDateTime:
+          description: When this book was added to your library
+          type: string
+          format: 'date-time'
+          readOnly: true
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        updatedAtDateTime:
+          description: When this book was last updated
+          type: string
+          format: 'date-time'
+          readOnly: true
+          x-query: optional
+          x-query-name-prefix: Book
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    BookId:
+      description: Unique identifier for this resource
+      type: string
+      format: uuid
+      x-query: optional
+      x-primary-key: true
+      x-query-pattern: '^(eq\.|neq\.)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^isNull$'
+
+    UsageStatusEnum:
+      description: Your viewing or listening progress status
+      type: string
+      enum:
+        - UNKNOWN
+        - UNSEEN
+        - IN_PROGRESS
+        - COMPLETED
+        - ABANDONED
+      x-query: optional
+      x-query-name-prefix: Book
+      x-query-pattern: '^(eq\.|neq\.)(UNKNOWN|UNSEEN|IN_PROGRESS|COMPLETED|ABANDONED)$|^isNull$'

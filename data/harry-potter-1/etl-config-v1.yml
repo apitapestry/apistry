@@ -1,0 +1,48 @@
+description: >
+  Ingests HP data, normalizes it using the OpenAPI contract,
+  applies unit conversions, and writes normalized records.
+
+extract:
+  description: Extracts data from an api source
+  isEnabled: false
+  output-path: ./data/harry-potter/extract
+  naming-strategy: '{resource}.json'
+#  pagination-strategy: harry-potter
+#  unwrap-property: results
+  actions:
+    - resource: harry-potter-characters-v1
+      url: https://hp-api.onrender.com/api/characters
+    - resource: harry-potter-spells-v1
+      url: https://hp-api.onrender.com/api/spells
+
+#contractCopy:
+#  description: Normalizes HP data according to OpenAPI contracts. if output is not provided, input name will be used.
+#  isEnabled: false
+#  sourceDirectory: ./contracts
+#  outputDirectory: ./docs/contracts
+
+normalize:
+  description: Normalizes HP data according to OpenAPI contracts. if output is not provided, input name will be used.
+  isEnabled: true
+  contractDirectory: ./docs/contracts
+  sourceDirectory: ./data/harry-potter/extract
+  outputDirectory: ./data/harry-potter/normalize
+  filename-strategy: '{collection}.json'
+  actions:
+  - contract: harry-potter.v1.yaml
+    collection: harry-potter-characters-v1
+    schema: HpCharacterV1
+  - contract: harry-potter.v1.yaml
+    collection: harry-potter-spells-v1
+    schema: HpSpellV1
+
+load:
+  description: compare file results with db and upsert new/updated records
+  isEnabled: true
+  replace: true
+  sourceDirectory: ./data/harry-potter/normalize
+  dbUrl: sqlite://data/sqlite.db
+  filename-strategy: '{collection}.json'
+  collections:
+  - harry-potter-characters-v1
+  - harry-potter-spells-v1

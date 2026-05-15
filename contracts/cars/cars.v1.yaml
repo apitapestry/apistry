@@ -1,0 +1,1169 @@
+openapi: 3.0.3
+info:
+  title: Car Lot Management API
+  description: API for managing cars in a car lot inventory system.
+    Supports CRUD operations for car inventory with filtering, sorting, and pagination.
+  version: v1
+
+servers:
+  - url: 'https://api.carlot.example.com/v1'
+
+paths:
+  /cars:
+    get:
+      tags: [Cars]
+      x-collection: cars
+      summary: Get Cars
+      description: |
+        Search for cars in the inventory with optional filtering, sorting, and pagination.
+        Supports query operators for flexible filtering.
+      operationId: getCars
+      x-filters:
+        - carStatus.nin.deleted,sold
+# todo: lint format of x-filters is correct, key will override if duplicated
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+                    minItems: 0
+                    maxItems: 10
+
+    delete:
+      tags: [Cars]
+      x-collection: cars
+      summary: Delete Cars
+      description: Delete Cars
+      operationId: deleteCars
+#      x-soft-delete: carStatus.deleted
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarIdsOptional'
+
+      responses:
+        '200':
+          description: A list of cars matching the search criteria
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+
+    post:
+      tags: [Cars]
+      x-collection: cars
+      summary: Create a new car
+      description: Add a new car to the inventory.
+      operationId: createCar
+      security:
+        - apiKey: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/Car'
+                - $ref: '#/components/schemas/Car'
+
+      responses:
+        '201':
+          description: Cars created successfully
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+
+#    put: Not valid to replace entire collection
+
+    patch:
+      tags: [Cars]
+      x-collection: cars
+      summary: Update cars
+      description: Update cars
+      operationId: updateCars
+      security:
+        - apiKey: []
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/CarUpdate'
+              minItems: 1
+              maxItems: 100
+
+      responses:
+        '200':
+          description: Cars update successfully
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Car'
+
+  /cars/{carId}:
+    get:
+      tags: [Cars]
+      x-collection: cars
+      summary: Get car by ID
+      description: Retrieve a single car by its unique identifier.
+      operationId: getCar
+# add filters if you want a 404 if they try to add a deleted or sold car
+#      x-filters:
+#        - carStatus.nin.deleted,sold
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      responses:
+        '200':
+          description: Car found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+    patch:
+      tags: [Cars]
+      x-collection: cars
+      summary: Update car by ID
+      description: Update an existing car's information.
+      operationId: updateCar
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarUpdate'
+
+      responses:
+        '200':
+          description: Car updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '404':
+          description: Car not found
+
+    put:
+      tags: [Cars]
+      x-collection: cars
+      summary: Replace a car
+      description: Replace a car
+      operationId: replaceCar
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Car'
+
+      responses:
+        '200':
+          description: Car updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '404':
+          description: Car not found
+
+    delete:
+      tags: [Cars]
+      x-collection: cars
+      summary: Delete car by ID
+      description: Remove a car from the inventory.
+      operationId: deleteCar
+      x-soft-delete: carStatus.deleted
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      responses:
+        '200':
+          description: Car deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '404':
+          description: Car not found
+
+  /cars/{carId}/features:
+    get:
+      tags: [Cars]
+      x-collection: cars
+      summary: Get Car Features
+      description: Get Car Features
+      operationId: getCarFeatures
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/FeatureQueryOptional'
+
+      responses:
+        '200':
+          description: features found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+    delete:
+      tags: [Cars]
+      x-collection: cars
+      summary: Delete Car Features
+      description: Delete Car Features
+      operationId: deleteCarFeatures
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/FeatureQueryOptional'
+
+      responses:
+        '200':
+          description: features deleted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          description: Car not found
+
+    post:
+      tags: [Cars]
+      x-collection: cars
+      summary: Create Car Features
+      description: Create Car Features
+      operationId: createCarFeatures
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: array
+                  items:
+                    type: string
+                - type: string
+
+      responses:
+        '201':
+          description: features created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          description: Car not found
+
+    put:
+      tags: [Cars]
+      x-collection: cars
+      summary: Replace ALL Car Features
+      description: Replace ALL Car Features
+      operationId: replaceCarFeatures
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+
+      responses:
+        '201':
+          description: features created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          description: Car not found
+
+  /cars/{carId}/features/{feature}:
+    get:
+      tags: [Cars]
+      x-collection: cars
+      summary: Get Car Feature
+      description: Get Car Features
+      operationId: getCarFeature
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/Feature'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+    delete:
+      tags: [Cars]
+      x-collection: cars
+      summary: Delete Car Feature
+      description: Delete Car Features
+      operationId: deleteCarFeature
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/Feature'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          description: Car not found
+
+    patch:
+      tags: [Cars]
+      x-collection: cars
+      summary: Update Car Feature
+      description: Update Car Features
+      operationId: updateCarFeature
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/Feature'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+
+        '404':
+          description: Car not found
+
+#    put: Not valid use patch instead
+
+  /cars/{carId}/events:
+    get:
+      tags: [Cars]
+      x-collection: cars
+      summary: Get Car Events
+      description: Get Car Events
+      operationId: getCarEvents
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventIdQueryOptional'
+        - $ref: '#/components/parameters/EventDescriptionQueryOptional'
+        - $ref: '#/components/parameters/EventDateQueryOptional'
+        - $ref: '#/components/parameters/EventTypeQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+                minItems: 0
+                maxItems: 100
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+    delete:
+      tags: [Cars]
+      x-collection: cars
+      summary: Delete Car Events
+      description: Delete Car Events
+      operationId: deleteCarEvents
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventIdQueryOptional'
+        - $ref: '#/components/parameters/EventDescriptionQueryOptional'
+        - $ref: '#/components/parameters/EventDateQueryOptional'
+        - $ref: '#/components/parameters/EventTypeQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+                minItems: 0
+                maxItems: 100
+        '404':
+          description: Car not found
+
+    post:
+      tags: [Cars]
+      x-collection: cars
+      summary: Create Car Event
+      description: Create Car Event
+      operationId: createCarEvent
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/Event'
+                - $ref: '#/components/schemas/Event'
+
+      responses:
+        '201':
+          description: features created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: Car not found
+
+    patch:
+      tags: [Cars]
+      x-collection: cars
+      summary: Update Car Events
+      description: Update Car Events
+      operationId: updateCarEvents
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Event'
+
+      responses:
+        '200':
+          description: Event updated
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: Car not found
+
+    put:
+      tags: [Cars]
+      x-collection: cars
+      summary: Replace ALL Car Events
+      description: Replace ALL Car Events
+      operationId: replaceCarEvents
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Event'
+
+      responses:
+        '200':
+          description: Events updated
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: Car not found
+
+  /cars/{carId}/events/{eventId}:
+    get:
+      tags: [Cars]
+      x-collection: cars
+      summary: Get Car Event
+      description: Get Car Event
+      operationId: getCarEvent
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventId'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          $ref: '../global/global.models.yaml#/components/responses/NotFound'
+
+    delete:
+      tags: [Cars]
+      x-collection: cars
+      summary: Delete Car Event
+      description: Delete Car Event
+      operationId: deleteCarEvent
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventId'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '404':
+          description: Car Event not found
+
+    patch:
+      tags: [Cars]
+      x-collection: cars
+      summary: Update Car Event
+      description: Update Car Event
+      operationId: updateCarEvent
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+
+        '404':
+          description: Car Event Not Found
+
+    put:
+      tags: [Cars]
+      x-collection: cars
+      summary: Replace Car Event
+      description: Replace Car Event
+      operationId: replaceCarEvent
+      security:
+        - apiKey: []
+
+      parameters:
+        - $ref: '#/components/parameters/CarId'
+        - $ref: '#/components/parameters/EventId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+
+        '404':
+          description: Car Event Not Found
+
+components:
+  parameters:
+    CarId:
+      name: carId
+      in: path
+      required: true
+      description: Unique identifier of the car
+      schema:
+        type: string
+        format: uuid
+
+    EventId:
+      name: eventId
+      in: path
+      required: true
+      description: Unique identifier of the Car Event
+      schema:
+        type: string
+        format: uuid
+
+    EventIdQueryOptional:
+      name: eventId
+      in: query
+      required: false
+      description: Unique identifier of the Car Event
+      schema:
+        type: string
+        format: uuid
+
+    EventDescriptionQueryOptional:
+      name: description
+      in: query
+      required: false
+      description: Event Description
+      schema:
+        type: string
+
+    EventDateQueryOptional:
+      name: eventDate
+      in: query
+      required: false
+      description: Event Date
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        maxLength: 15
+
+    EventTypeQueryOptional:
+      name: eventType
+      in: query
+      required: false
+      description: Event Type
+      schema:
+        type: string
+
+    CarIdsOptional:
+      name: carIds
+      in: query
+      required: false
+      description: Unique identifiers of the car
+      schema:
+        type: array
+        items:
+          type: string
+          format: uuid
+
+    FeatureQueryOptional:
+      name: feature
+      in: query
+      description: Filter by feature
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        maxLength: 30
+      example: "*Camera*"
+
+    Feature:
+      name: feature
+      in: path
+      description: Filter by feature
+      required: true
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        maxLength: 30
+        uniqueItems: true
+      example: "Bluetooth"
+
+  schemas:
+    Car:
+      description: A car in the car lot inventory
+      type: object
+      required:
+        - vin
+        - make
+        - model
+        - modelYear
+        - price
+      x-validations:
+#        - httpCheck:
+#            source: vinValidation
+#            request:
+#              method: GET
+#              path: /api/vehicles/DecodeVinValues/{vin}?format=json
+#              bind:
+#                vin: $.body.vin
+#                reqMake: $.body.make
+#                reqModelYear: $.body.modelYear
+#            response:
+#              bind:
+#                respCode: $response.status
+#                respErrorText: $response.body.Results[0].ErrorText
+#                respMake: $response.body.Results[0].Make
+#                respModelYear: $response.body.Results[0].ModelYear
+#            assertThat:
+#              - property: respCode
+#                operator: equals
+#                value: 200
+#              - property: respErrorText
+#                operator: contains
+#                value: VIN decoded clean
+#              - property: respMake
+#                operator: equalsIgnoreCase
+#                value: "{reqMake}"
+#              - property: respModelYear
+#                operator: equals
+#                value: "{reqModelYear}"
+      properties:
+        carId:
+          description: Unique identifier for the car
+          type: string
+          format: uuid
+          readOnly: true
+          example: "a3bb189e-8bf9-3888-9912-ace4e6543002"
+          x-insert: uuid
+        vin:
+          description: Vehicle Identification Number (17 characters)
+          type: string
+          pattern: '^[A-HJ-NPR-Z0-9]+$'
+          minLength: 17
+          maxLength: 17
+          example: "JHMCM56557C404453"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        make:
+          description: Car manufacturer
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: "Toyota"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        model:
+          description: Car model name
+          type: string
+          minLength: 1
+          maxLength: 50
+          example: "Camry"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        modelYear:
+          description: Model year
+          type: integer
+          minimum: 1900
+          maximum: 2100
+          example: 2023
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+#          x-validations:
+#            # Must be no older than 50 years
+#            - function: compare
+#              parameters:
+#                operator: ">="
+#                value: "now(year)-50y"
+#            # Must not be more than 1 year in the future
+#            - function: compare
+#              parameters:
+#                operator: "<="
+#                value: "now(year)+1y"
+        manufactureDate:
+          description: Date of manufacture
+          type: string
+          format: date
+          example: '2023-04-15'
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-validations:
+            # Must be at least 6 months old (manufactured on/before now minus 6 months)
+            - function: compare
+              parameters:
+                operator: "<="
+                value: "now-6mo"
+            # Must not be older than 50 years (manufactured on/after now minus 50 years)
+            - function: compare
+              parameters:
+                operator: ">="
+                value: "now-50y"
+        color:
+          description: Exterior color
+          type: string
+          minLength: 1
+          maxLength: 30
+          example: "Silver"
+          nullable: true
+          x-query: optional
+          x-query-delete: true
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        mileage:
+          description: Current odometer reading in miles
+          type: integer
+          minimum: 0
+          example: 15234
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        price:
+          description: List price in USD
+          type: number
+          minimum: 0
+          example: 28500.00
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        carStatus:
+          $ref: '#/components/schemas/CarStatus'
+        bodyType:
+          description: Type of vehicle body
+          type: string
+          enum: [sedan, suv, truck, coupe, convertible, wagon, van, hatchback]
+          example: "sedan"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        transmission:
+          description: Type of transmission
+          type: string
+          enum: [automatic, manual, cvt]
+          example: "automatic"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        fuelType:
+          description: Type of fuel or power source
+          type: string
+          enum: [gasoline, diesel, electric, hybrid, plug-in-hybrid]
+          example: "hybrid"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        engine:
+          description: Engine specifications
+          type: string
+          maxLength: 100
+          example: "2.5L 4-Cylinder"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        driveType:
+          description: Drive train configuration
+          type: string
+          enum: [fwd, rwd, awd, 4wd]
+          example: "fwd"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        doors:
+          description: Number of doors
+          type: integer
+          minimum: 2
+          maximum: 5
+          example: 4
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        seats:
+          description: Number of seats
+          type: integer
+          minimum: 2
+          maximum: 9
+          example: 5
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        features:
+          description: List of features and options
+          type: array
+          items:
+            type: string
+          uniqueItems: true
+          maxItems: 50
+          example: ["Backup Camera", "Bluetooth", "Cruise Control", "Leather Seats"]
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        events:
+          description: List of significant events (e.g., accidents, services)
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+          minItems: 0
+          maxItems: 100
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        description:
+          description: Additional notes or description
+          type: string
+          maxLength: 1000
+          example: "Well-maintained, single owner, complete service history"
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        images:
+          description: URLs to car images
+          type: array
+          items:
+            type: string
+          maxItems: 20
+          example: ["https://example.com/images/car1.jpg", "https://example.com/images/car2.jpg"]
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        createdAtDateTime:
+          description: When this car was added to inventory
+          type: string
+          format: date-time
+          readOnly: true
+          example: "2025-01-15T10:30:00Z"
+          x-insert: now
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        updatedAtDateTime:
+          description: When this car record was last updated
+          type: string
+          format: date-time
+          readOnly: true
+          example: "2025-01-20T14:45:00Z"
+          x-update: now
+          x-query: optional
+          x-query-name-prefix: Cars
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    CarStatus:
+      description: Current availability status
+      type: string
+      enum: [available, sold, deleted, reserved, pending, maintenance]
+      example: "available"
+      readOnly: true
+      x-insert: "pending"
+      x-query: optional
+      x-query-name-prefix: Cars
+      x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+
+    Event:
+      type: object
+      additionalProperties: false
+      properties:
+        eventId:
+          description: Unique Event ID
+          type: string
+          format: uuid
+          readOnly: true
+          x-insert: uuid
+        eventDate:
+          description: Date of the event
+          type: string
+          format: date
+          example: "2024-05-10"
+        eventType:
+          description: Type of event
+          type: string
+          example: "Accident"
+        description:
+          description: Details about the event
+          type: string
+          nullable: true
+          example: "Rear-ended at a stoplight, minor damage to bumper"
+
+    CarUpdate:
+      description: Schema for updating an existing car (all fields optional)
+      type: object
+      properties:
+        carId:
+          type: string
+          format: uuid
+          readOnly: true # used as key for update. Only needed for a bulk update
+        color:
+          description: Exterior color
+          type: string
+          minLength: 1
+          maxLength: 30
+          example: "Silver"
+          nullable: true
+        mileage:
+          description: Current odometer reading in miles
+          type: integer
+          minimum: 0
+          nullable: true
+          example: 15234
+        price:
+          description: List price in USD
+          type: number
+          minimum: 0
+          example: 28500.00
+        features:
+          description: List of features and options
+          type: array
+          items:
+            type: string
+          maxItems: 50
+          example: ["Backup Camera", "Bluetooth", "Cruise Control", "Leather Seats"]
+        description:
+          description: Additional notes or description
+          type: string
+          minLength: 2
+          maxLength: 1000
+          example: "Well-maintained, single owner, complete service history"
+        images:
+          description: URLs to car images
+          type: array
+          items:
+            type: string
+          maxItems: 20
+          example: ["https://example.com/images/car1.jpg", "https://example.com/images/car2.jpg"]

@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="export mongo" type="NodeJSConfigurationType" application-parameters="export -o data/exports -d mongodb+srv://apistry:${MONGO_PASSWORD}@apistry-db.ojsguxa.mongodb.net/apistry?appName=apistry-db" path-to-js-file="src/apistry.js" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,1069 @@
+openapi: 3.0.3
+info:
+  title: SWAPI (The Star Wars API)
+  description: The Star Wars API
+  version: 'v2'
+
+servers:
+  - url: https://localhost
+
+paths:
+  /characters:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-characters-v2
+      summary: List characters
+      operationId: getCharacters
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of Characters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiCharacterV2'
+                    minItems: 0
+                    maxItems: 10
+
+  /characters/{characterId}:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-characters-v2
+      summary: Get a character
+      operationId: getCharacter
+
+      parameters:
+        - $ref: '#/components/parameters/CharacterId'
+
+      responses:
+        '200':
+          description: A person
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiCharacterV2'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /films:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-films-v2
+      summary: List films
+      operationId: listFilms
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of Films
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiFilmV2'
+                    minItems: 0
+                    maxItems: 10
+
+  /films/{filmId}:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-films-v2
+      summary: Get a film
+      operationId: getFilm
+
+      parameters:
+        - $ref: '#/components/parameters/FilmId'
+
+      responses:
+        '200':
+          description: A film
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiFilmV2'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /starships:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-starships-v2
+      summary: List starships
+      operationId: listStarships
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of Starships
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiStarshipV2'
+                    minItems: 0
+                    maxItems: 10
+
+  /starships/{starshipId}:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-starships-v2
+      summary: Get a starship
+      operationId: getStarship
+
+      parameters:
+        - $ref: '#/components/parameters/StarshipId'
+
+      responses:
+        '200':
+          description: A starship
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiStarshipV2'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /vehicles:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-vehicles-v2
+      summary: List vehicles
+      operationId: listVehicles
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of Vehicles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiVehicleV2'
+                    minItems: 0
+                    maxItems: 10
+
+  /vehicles/{vehicleId}:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-vehicles-v2
+      summary: Get a vehicle
+      operationId: getVehicle
+
+      parameters:
+        - $ref: '#/components/parameters/VehicleId'
+
+      responses:
+        '200':
+          description: A vehicle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiVehicleV2'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /species:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-species-v2
+      summary: List species
+      operationId: listSpecies
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of Species
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiSpeciesV2'
+                    minItems: 0
+                    maxItems: 10
+
+  /species/{speciesId}:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-species-v2
+      summary: Get a species
+      operationId: getSpecies
+
+      parameters:
+        - $ref: '#/components/parameters/SpeciesId'
+
+      responses:
+        '200':
+          description: A species
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiSpeciesV2'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /planets:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-planets-v2
+      summary: List planets
+      operationId: listPlanets
+
+      parameters:
+        - $ref: '../global/global.models.yaml#/components/parameters/LimitQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OffsetQueryOptional'
+        - $ref: '../global/global.models.yaml#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of Planets
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    $ref: '../global/global.models.yaml#/components/schemas/ContentRange'
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiPlanetV2'
+                    minItems: 0
+                    maxItems: 10
+
+  /planets/{planetId}:
+    get:
+      tags:
+        - SWAPI v2
+      x-collection: swapi-planets-v2
+      summary: Get a planet
+      operationId: getPlanet
+
+      parameters:
+        - $ref: '#/components/parameters/PlanetId'
+        
+      responses:
+        '200':
+          description: A planet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiPlanetV2'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^\d+$'
+
+    CharacterId:
+      name: characterId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    FilmId:
+      name: filmId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    StarshipId:
+      name: starshipId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    VehicleId:
+      name: vehicleId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    SpeciesId:
+      name: speciesId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    PlanetId:
+      name: planetId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    NotFound:
+      description: Resource not found
+
+  schemas:
+    SwapiCharacterV2:
+      type: object
+      required:
+        - name
+        - createdDateTime
+        - updatedDateTime
+      properties:
+        characterId:
+          description: Unique identifier for the character
+          type: string
+          format: uuid
+          readOnly: true
+          example: 'a3bb189e-8bf9-3888-9912-ace4e6543002'
+          x-insert: uuid
+          x-etl-transforms:
+            - source: 'personId'
+        id:
+          description: Person Identifier
+          type: string
+          readOnly: true
+          example: 1
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        name:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        birthYear:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'birth_year'
+#            - apply-pattern: '^.*/people/(\d+)/?$'
+        eyeColor:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'eye_color'
+        gender:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        hairColor:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'hair_color'
+        height:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        mass:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        skinColor:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'skin_color'
+        homeworldPlanetId:
+          type: string
+          x-etl-transforms:
+            - source: 'homeworld'
+        films:
+          type: array
+          items:
+            type: string
+        filmIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'films'
+        species:
+          type: array
+          items:
+            type: string
+#        characterSpeciesId:
+        speciesId:
+          type: string
+#          x-etl-transforms:
+#            - source: 'species'
+#            - pick: 'first'
+        starships:
+          type: array
+          items:
+            type: string
+        starshipIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'starships'
+        vehicles:
+          type: array
+          items:
+            type: string
+        vehicleIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'vehicles'
+        createdDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'created'
+        updatedDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'edited'
+
+    SwapiFilmV2:
+      type: object
+#      required:
+#        - title
+#        - episode
+#        - createdDateTime
+#        - updatedDateTime
+      properties:
+        filmId:
+          description: Unique identifier for the film
+          type: string
+          format: uuid
+          readOnly: true
+          example: 'a3bb189e-8bf9-3888-9912-ace4e6543002'
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+        title:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        episode:
+          type: integer
+          x-etl-transforms:
+            - source: 'episode_id'
+        openingCrawl:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'opening_crawl'
+        director:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        producer:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        releaseDate:
+          type: string
+          format: date
+          x-etl-transforms:
+            - source: 'release_date'
+        species:
+          type: array
+          items:
+            type: string
+        speciesIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'species'
+        starships:
+          type: array
+          items:
+            type: string
+        starshipIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'starships'
+        vehicles:
+          type: array
+          items:
+            type: string
+        vehicleIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'vehicles'
+        people:
+          type: array
+          items:
+            type: string
+        characterIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'people'
+        planets:
+          type: array
+          items:
+            type: string
+        planetIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'planets'
+        createdDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'created'
+        updatedDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'edited'
+
+    SwapiStarshipV2:
+      type: object
+      required:
+        - name
+        - model
+        - createdDateTime
+        - updatedDateTime
+      properties:
+        starshipId:
+          description: Unique identifier for the starship
+          type: string
+          format: uuid
+          readOnly: true
+          example: 'a3bb189e-8bf9-3888-9912-ace4e6543002'
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        name:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        model:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        starshipClass:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'starship_class'
+        manufacturer:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        creditCost:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'cost_in_credits'
+        length:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        crew:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        passengers:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        atmosphericSpeed:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'max_atmosphering_speed'
+        hyperdriveRating:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'hyperdrive_rating'
+        megalightSpeed:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'MGLT'
+        cargoCapacity:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'cargo_capacity'
+        consumables:
+          type: string
+          description: Maximum time before resupply (e.g., '2 months').
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        films:
+          type: array
+          items:
+            type: string
+        filmIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'films'
+        pilots:
+          type: array
+          items:
+            type: string
+        characterIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'pilots'
+        createdDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'created'
+        updatedDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'edited'
+
+    SwapiVehicleV2:
+      type: object
+      required:
+        - name
+        - model
+        - createdDateTime
+        - updatedDateTime
+      properties:
+        vehicleId:
+          description: Unique identifier for the vehicle
+          type: string
+          format: uuid
+          readOnly: true
+          example: 'a3bb189e-8bf9-3888-9912-ace4e6543002'
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+        name:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        model:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        vehicleClass:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'vehicle_class'
+        manufacturer:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        length:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        creditCost:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'cost_in_credits'
+        crew:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        passengers:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        atmosphericSpeed:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'max_atmosphering_speed'
+        cargoCapacity:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'cargo_capacity'
+        consumables:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        films:
+          type: array
+          items:
+            type: string
+        filmIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'films'
+        pilots:
+          type: array
+          items:
+            type: string
+        characterIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'pilots'
+        createdDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'created'
+        updatedDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'edited'
+
+    SwapiSpeciesV2:
+      type: object
+      required:
+        - name
+        - createdDateTime
+        - updatedDateTime
+      properties:
+        speciesId:
+          description: Unique identifier for the species
+          type: string
+          format: uuid
+          readOnly: true
+          example: 'a3bb189e-8bf9-3888-9912-ace4e6543002'
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+        name:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        classification:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        designation:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        averageHeight:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'average_height'
+        averageLifespan:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'average_lifespan'
+        eyeColors:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'eye_colors'
+        hairColors:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'hair_colors'
+        skinColors:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'skin_colors'
+        language:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        homeworldPlanetId:
+          type: string
+          x-etl-transforms:
+            - source: 'homeworld'
+        people:
+          type: array
+          items:
+            type: string
+        characterIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'people'
+        films:
+          type: array
+          items:
+            type: string
+        filmIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'films'
+        createdDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'created'
+        updatedDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'edited'
+
+    SwapiPlanetV2:
+      type: object
+      required:
+        - name
+        - createdDateTime
+        - updatedDateTime
+      properties:
+        planetId:
+          description: Unique identifier for the planet
+          type: string
+          format: uuid
+          readOnly: true
+          example: 'a3bb189e-8bf9-3888-9912-ace4e6543002'
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+        name:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        diameter:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        rotationalPeriod:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'rotation_period'
+        orbitalPeriod:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'orbital_period'
+        gravity:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        population:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        climate:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        terrain:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+        surfaceWater:
+          type: string
+          x-query: optional
+          x-query-name-prefix: SwapiV2
+          x-query-pattern: '^[A-Za-z0-9._,+:''|&@\s()#!?*-]+$'
+          x-etl-transforms:
+            - source: 'surface_water'
+        residents:
+          type: array
+          items:
+            type: string
+        characterIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'residents'
+        films:
+          type: array
+          items:
+            type: string
+        filmIds:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: 'films'
+        createdDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'created'
+        updatedDateTime:
+          type: string
+          format: date-time
+          x-etl-transforms:
+            - source: 'edited'

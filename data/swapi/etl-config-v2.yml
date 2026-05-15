@@ -1,0 +1,76 @@
+description: >
+  Ingests SWAPI data, normalizes it using the OpenAPI contract,
+  applies unit conversions, and writes normalized records.
+
+#  https://swapi.py4e.com/ 87
+#  https://swapi.tech/ 82
+#  https://swapi.info/ 82
+#  https://swapi-node.vercel.app/ 82
+#  https://swapi.dev 82
+#  https://swapi.info 82
+extract:
+  description: Extracts data from an api source
+  isEnabled: false
+  output-path: ./data//swapi/extract
+  naming-strategy: '{resource}.json'
+  pagination-strategy: swapi
+  unwrap-property: results
+  actions:
+    - resource: swapi-people-v1
+      url: https://swapi.py4e.com/api/people/
+    - resource: swapi-planets-v1
+      url: https://swapi.py4e.com/api/planets/
+    - resource: swapi-films-v1
+      url: https://swapi.py4e.com/api/films/
+    - resource: swapi-species-v1
+      url: https://swapi.py4e.com/api/species/
+    - resource: swapi-vehicles-v1
+      url: https://swapi.py4e.com/api/vehicles/
+    - resource: swapi-starships-v1
+      url: https://swapi.py4e.com/api/starships/
+
+normalize:
+  description: Normalizes SWAPI data according to OpenAPI contracts. if output is not provided, input name will be used.
+  isEnabled: false
+  contractDirectory: ./docs/contracts
+  sourceDirectory: ./data/swapi/normalize
+  outputDirectory: ./data/swapi/normalize
+  filename-strategy: '{collection}.json'
+  actions:
+  - contract: swapi.v2.yaml
+    collection: swapi-people-v1
+    outputCollection: swapi-characters-v2
+    schema: SwapiCharacterV2
+  - contract: swapi.v2.yaml
+    collection: swapi-films-v1
+    outputCollection: swapi-films-v2
+    schema: SwapiFilmV2
+  - contract: swapi.v2.yaml
+    collection: swapi-planets-v1
+    outputCollection: swapi-planets-v2
+    schema: SwapiPlanetV2
+  - contract: swapi.v2.yaml
+    collection: swapi-species-v1
+    outputCollection: swapi-species-v2
+    schema: SwapiSpeciesV2
+  - contract: swapi.v2.yaml
+    collection: swapi-starships-v1
+    outputCollection: swapi-starships-v2
+    schema: SwapiStarshipV2
+  - contract: swapi.v2.yaml
+    collection: swapi-vehicles-v1
+    outputCollection: swapi-vehicles-v2
+    schema: SwapiVehicleV2
+
+load:
+  description: compare file results with db and upsert new/updated records
+  isEnabled: false
+  sourceDirectory: ./data/swapi/normalize
+  filename-strategy: '{collection}.json'
+  collections:
+  - people
+#  - movies
+#  - planets
+#  - species-types
+#  - starships
+#  - vehicles

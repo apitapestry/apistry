@@ -1,0 +1,1221 @@
+openapi: 3.0.3
+info:
+  title: Personal Assistant
+  description: API for managing and searching personal media collections including audiobooks, videos, and user preferences.
+  version: v1
+
+servers:
+  - url: 'https://1wz48u09w6.execute-api.us-west-1.amazonaws.com'
+
+security:
+  - bearerAuth: []
+
+paths:
+  /{proxy+}:
+    x-amazon-apigateway-any-method:
+      x-amazon-apigateway-integration:
+        uri: arn:aws:apigateway:us-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-1:447315180786:function:api-gateway/invocations
+        httpMethod: POST
+        type: aws_proxy
+
+  /audiobooks:
+    get:
+      tags: [Audiobooks]
+      summary: List audiobooks
+      description: Returns a filtered, paginated list of audiobooks.
+      operationId: getAudiobooks
+
+      parameters:
+        - $ref: '#/components/parameters/ProviderSourceQueryOptional'
+        - $ref: '#/components/parameters/SeriesNameQueryOptional'
+        - $ref: '#/components/parameters/TitleQueryOptional'
+        - $ref: '#/components/parameters/UserRatingQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+
+      responses:
+        '200':
+          description: A list of audiobooks
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Audiobook'
+                minItems: 0
+                maxItems: 95
+
+    post:
+      tags: [Audiobooks]
+      summary: Create an audiobook
+      description: Creates a new audiobook entry in your personal library.
+      operationId: createAudiobook
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Audiobook'
+
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Audiobook'
+
+  /audiobooks/{audiobook_id}:
+    get:
+      tags: [Audiobooks]
+      description: Retrieve details for a specific audiobook
+      summary: Get a single audiobook
+      operationId: getAudiobook
+
+      parameters:
+        - $ref: '#/components/parameters/AudioBookId'
+
+      responses:
+        '200':
+          description: The audiobook
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Audiobook'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    patch:
+      tags: [Audiobooks]
+      summary: Update an audiobook
+      description: Partially update audiobook details using JSON Merge Patch format.
+      operationId: updateAudiobook
+
+      parameters:
+        - $ref: '#/components/parameters/AudioBookId'
+
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/AudiobookUpdate'
+
+      responses:
+        '200':
+          description: Updated audiobook
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Audiobook'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      tags: [Audiobooks]
+      description: Remove an audiobook from your library
+      summary: Delete an audiobook
+      operationId: deleteAudiobook
+
+      parameters:
+        - $ref: '#/components/parameters/AudioBookId'
+
+      responses:
+        '200':
+          description: Updated audiobook
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Audiobook'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /audiobooks_summary:
+    get:
+      tags: [Audiobooks]
+      summary: Get audiobook statistics
+      description: Retrieve summary statistics and counts for your audiobook collection
+      operationId: getAudiobooksSummary
+
+      parameters:
+        - $ref: '#/components/parameters/ProviderSourceQueryOptional'
+        - $ref: '#/components/parameters/MediaTypeQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AudiobookSummary'
+                minItems: 0
+                maxItems: 195
+
+  /preferences:
+    get:
+      tags: [Preferences]
+      summary: List user preferences
+      description: Retrieve your personal preferences with optional filtering by category, name, or expiration date. Supports wildcard searching using % symbols for partial matches.
+      operationId: getPreferences
+
+      parameters:
+        - $ref: '#/components/parameters/PreferenceIdQueryOptional'
+        - $ref: '#/components/parameters/CategoryQueryOptional'
+        - $ref: '#/components/parameters/NameQueryOptional'
+        - $ref: '#/components/parameters/IsPiiQueryOptional'
+        - $ref: '#/components/parameters/ExpiresAtQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+
+      responses:
+        '200':
+          description: A list of preferences
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Preference'
+                minItems: 0
+                maxItems: 50
+
+    post:
+      tags: [Preferences]
+      description: Create a new user preference setting
+      summary: Create a preference
+      operationId: createPreference
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Preference'
+
+      responses:
+        '201':
+          description: Preference created successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Preference'
+
+    delete:
+      tags: [Preferences]
+      description: Remove a user preference from your settings
+      summary: Delete preferences
+      operationId: deletePreferences
+
+      parameters:
+        - $ref: '#/components/parameters/CategoryQueryOptional'
+
+      responses:
+        '200':
+          description: Preference deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Preference'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /preferences/{preference_id}:
+    patch:
+      tags: [Preferences]
+      description: Update an existing user preference
+      summary: Update preferences
+      operationId: updatePreference
+
+      parameters:
+        - $ref: '#/components/parameters/PreferenceId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PreferenceUpdate'
+
+      responses:
+        '200':
+          description: Updated successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Preference'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      tags: [Preferences]
+      description: Remove a user preference from your settings
+      summary: Delete preferences
+      operationId: deletePreference
+
+      parameters:
+        - $ref: '#/components/parameters/PreferenceId'
+
+      responses:
+        '200':
+          description: Preference deleted successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Preference'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /videos:
+    get:
+      tags: [Videos]
+      summary: List videos
+      description: Retrieve a filtered and paginated list of videos from your personal library.
+      operationId: getVideos
+
+      parameters:
+        - $ref: '#/components/parameters/MediaTypeQueryOptional'
+        - $ref: '#/components/parameters/ContentAdvisoryQueryOptional'
+        - $ref: '#/components/parameters/ContributorsQueryOptional'
+        - $ref: '#/components/parameters/GenresQueryOptional'
+        - $ref: '#/components/parameters/PlayedAtQueryOptional'
+        - $ref: '#/components/parameters/PlayCountQueryOptional'
+        - $ref: '#/components/parameters/ProviderSourceQueryOptional'
+        - $ref: '#/components/parameters/ReleaseDateQueryOptional'
+        - $ref: '#/components/parameters/ReleaseYearQueryOptional'
+        - $ref: '#/components/parameters/SummaryQueryOptional'
+        - $ref: '#/components/parameters/SeriesNameQueryOptional'
+        - $ref: '#/components/parameters/TitleQueryOptional'
+        - $ref: '#/components/parameters/UsageStatusQueryOptional'
+        - $ref: '#/components/parameters/UserRatingQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Video'
+                minItems: 0
+                maxItems: 95
+
+    post:
+      tags: [Videos]
+      summary: Add or update videos
+      description: Add new videos to your library or update existing ones.
+      operationId: createVideo
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Video'
+
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Video'
+                minItems: 0
+                maxItems: 95
+
+    patch:
+      tags: [Videos]
+      description: Batch Update
+      summary: Update videos
+      operationId: updateVideos
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  video_id:
+                    type: string
+                    format: uuid
+                  video:
+                    $ref: '#/components/schemas/VideoUpdate'
+
+      responses:
+        '200':
+          description: Updated successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Video'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /videos/{video_id}:
+    get:
+      tags: [Videos]
+      description: Get a video
+      summary: Get video
+      operationId: getVideo
+
+      parameters:
+        - $ref: '#/components/parameters/VideoId'
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    patch:
+      tags: [Videos]
+      description: Update details for a specific video in your library
+      summary: Update video
+      operationId: updateVideo
+
+      parameters:
+        - $ref: '#/components/parameters/VideoId'
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoUpdate'
+
+      responses:
+        '200':
+          description: Updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      tags: [Videos]
+      description: Remove a video from your personal library
+      summary: Delete video
+      operationId: deleteVideo
+
+      parameters:
+        - $ref: '#/components/parameters/VideoId'
+
+      responses:
+        '200':
+          description: Video deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /videos_summary:
+    get:
+      tags: [Videos]
+      summary: Get video collection statistics
+      description: Retrieve summary statistics and counts for your video collection
+      operationId: getVideosSummary
+
+      parameters:
+        - $ref: '#/components/parameters/ProviderSourceQueryOptional'
+        - $ref: '#/components/parameters/MediaTypeQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Range:
+              $ref: '../global/global.models.yaml#/components/headers/Content-Range'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VideoSummary'
+                minItems: 0
+                maxItems: 195
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    AudioBookId:
+      description: Unique identifier for the audiobook
+      name: audiobook_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    VideoId:
+      description: Unique identifier for the audiobook
+      name: video_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    CategoryQueryOptional:
+      description: Filter by preference category
+      name: category
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9_\-\s]+$'
+        minLength: 1
+        maxLength: 40
+
+    ContentAdvisoryQueryOptional:
+      description: Filter by content advisory rating (e.g., G, PG, PG-13, R, NC-17)
+      in: query
+      name: content_advisory
+      required: false
+      schema:
+        type: string
+        enum: [G, PG, PG-13, R, NC-17]
+
+    ContributorsQueryOptional:
+      description: Filter by contributor name (actors, directors, authors, etc.)
+      in: query
+      name: contributors
+      required: false
+      schema:
+        description: A string value used for filtering results
+        type: string
+        pattern: '^[A-Za-z0-9._,\-+*|&@\s]+$'
+        minLength: 1
+        maxLength: 100
+      example: Christopher Nolan
+
+    ExpiresAtQueryOptional:
+      description: Filter by preference expiration date. Use ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)
+      name: expires_at
+      in: query
+      required: false
+      schema:
+        type: string
+        format: date-time
+
+    GenresQueryOptional:
+      description: Filter by genre. Multiple genres can be specified
+      in: query
+      name: genres
+      required: false
+      schema:
+        description: A string value used for filtering results
+        type: string
+        pattern: '^[A-Za-z0-9._,"''(){}\[\]:/\-+*|&@\s]+$'
+        minLength: 1
+        maxLength: 100
+      example: Drama,Sci-Fi
+
+    IsPiiQueryOptional:
+      description: Filter by whether the preference contains personally identifiable information
+      name: is_pii
+      in: query
+      required: false
+      schema:
+        type: boolean
+
+    LimitQueryOptional:
+      description: Maximum number of items to return per page
+      in: query
+      name: limit
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+
+    MediaTypeQueryOptional:
+      description: Filter by content type
+      in: query
+      name: media_type
+      required: false
+      schema:
+        type: string
+        pattern: '^(audiobook|podcast|movie|tv)+$'
+        minLength: 2
+        maxLength: 200
+      example: movie,tv
+
+    NameQueryOptional:
+      description: Filter by preference name. Supports partial matching with % wildcards
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9_\-\s%]+$'
+        minLength: 1
+        maxLength: 40
+
+    OffsetQueryOptional:
+      description: Number of items to skip for pagination
+      in: query
+      name: offset
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+
+    OrderQueryOptional:
+      description: Field to sort results by. Format is 'field_name.asc' or 'field_name.desc'
+      in: query
+      name: order
+      required: false
+      schema:
+        type: string
+        pattern: '^[a-z0-9_]+\.(asc|desc)$'
+        minLength: 6
+        maxLength: 40
+        example: 'title.asc'
+
+    PlayCountQueryOptional:
+      description: Filter by number of times the content has been played
+      in: query
+      name: play_count
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+      example: 5
+
+    PlayedAtQueryOptional:
+      description: Filter by when the content was last played. Use ISO 8601 format
+      in: query
+      name: last_played_at
+      required: false
+      schema:
+        type: string
+        format: date-time
+      example: 2025-08-01T00:00:00Z
+
+    PreferenceId:
+      description: Unique identifier for the preference
+      name: preference_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    PreferenceIdQueryOptional:
+      description: Unique identifier for the preference
+      name: preference_id
+      in: query
+      required: false
+      schema:
+        type: string
+        format: uuid
+
+    ProviderSourceQueryOptional:
+      description: Filter by provider source/platform
+      in: query
+      name: provider_source
+      required: false
+      schema:
+        type: string
+        pattern: '^(audible|plex|netflix|primevideo)*$'
+        minLength: 4
+        maxLength: 200
+      example: netflix
+
+    ReleaseDateQueryOptional:
+      description: Filter by release date (YYYY-MM-DD)
+      in: query
+      name: release_date
+      required: false
+      schema:
+        type: string
+        format: date
+
+    ReleaseYearQueryOptional:
+      description: Filter by release year
+      in: query
+      name: release_year
+      required: false
+      schema:
+        type: integer
+        minimum: 1900
+        maximum: 2100
+      example: 1990
+
+    SeriesNameQueryOptional:
+      description: Filter by series or collection name can use wildcards (%) for partial case insensitive matches
+      name: series_name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9 _\-.,%]+$'
+        minLength: 1
+        maxLength: 60
+
+    SummaryQueryOptional:
+      description: Filter by content summary or description. Supports partial text matching
+      in: query
+      name: summary
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9 _\-.,]+$'
+        minLength: 1
+        maxLength: 200
+      example: science fiction
+
+    TitleQueryOptional:
+      description: Filter by title can use wildcards (%) for partial case insensitive matches
+      in: query
+      name: title
+      required: false
+      schema:
+        type: string
+        pattern: '^[A-Za-z0-9 _\-.,]+$'
+        minLength: 1
+        maxLength: 100
+      example: dune
+
+    UsageStatusQueryOptional:
+      description: Filter by viewing/listening status
+      in: query
+      name: usage_status
+      required: false
+      schema:
+        $ref: '#/components/schemas/UsageStatusEnum'
+      example: in_progress
+
+    UserRatingQueryOptional:
+      description: Filter by user rating (1-5 scale)
+      in: query
+      name: user_rating
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 5
+      example: 4
+#
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Resource not found
+
+  schemas:
+    Audiobook:
+      description: An audiobook in your personal library
+      type: object
+      required: [media_type, title, sort_title]
+      properties:
+        audiobook_id:
+          description: Unique identifier for this audiobook
+          type: string
+          format: uuid
+        provider_id:
+          description: Unique identifier from the content provider
+          type: string
+          pattern: '^[A-Za-z0-9_\-]+$'
+          minLength: 1
+          maxLength: 64
+        provider_source:
+          description: The service or platform where this audiobook was obtained
+          type: string
+          enum: [audible]
+        media_type:
+          description: The type of content (audiobook or podcast)
+          type: string
+          enum: [audiobook, podcast]
+        isbn_id:
+          description: International Standard Book Number for the audiobook
+          type: string
+          pattern: '^[0-9\-]+$'
+          minLength: 10
+          maxLength: 17
+        title:
+          description: The title of the audiobook
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        sort_title:
+          description: A normalized version of the title used for alphabetical sorting
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        narrator:
+          description: The person who narrated the audiobook
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+        series_name:
+          description: Name of the book series this audiobook belongs to
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+        num_books_in_series:
+          description: Total number of books in the series
+          type: integer
+          minimum: 0
+        book_num_in_series:
+          description: The position of this book within its series
+          type: integer
+          minimum: 0
+        added_at:
+          description: When this audiobook was added to your library
+          type: string
+          format: date-time
+        usage_status:
+          description: Your current listening status (e.g., "not_started", "in_progress", "completed")
+          type: string
+        last_played_at:
+          description: When you last listened to this audiobook
+          type: string
+          format: date-time
+        last_position_mins:
+          description: Your current listening position in minutes
+          type: integer
+          minimum: 0
+        user_rating:
+          description: Your personal rating of this audiobook (0.0 to 10.0)
+          type: number
+          format: float
+          minimum: 0
+          maximum: 10
+        user_edited_at:
+          description: When you last modified any details of this audiobook
+          type: string
+          format: date-time
+        created_at:
+          description: When this record was first created in the system
+          type: string
+          format: date-time
+        updated_at:
+          description: When this record was last updated in the system
+          type: string
+          format: date-time
+
+    AudiobookUpdate:
+      description: An audiobook in your personal library
+      type: object
+      properties:
+        audiobook_id:
+          description: Unique identifier for this audiobook
+          type: string
+          format: uuid
+        media_type:
+          description: The type of content (audiobook or podcast)
+          type: string
+          enum: [audiobook, podcast]
+        isbn_id:
+          description: International Standard Book Number for the audiobook
+          type: string
+          pattern: '^[0-9\-]+$'
+          minLength: 10
+          maxLength: 17
+        title:
+          description: The title of the audiobook
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        sort_title:
+          description: A normalized version of the title used for alphabetical sorting
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        narrator:
+          description: The person who narrated the audiobook
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+        series_name:
+          description: Name of the book series this audiobook belongs to
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+        num_books_in_series:
+          description: Total number of books in the series
+          type: integer
+          minimum: 0
+        book_num_in_series:
+          description: The position of this book within its series
+          type: integer
+          minimum: 0
+        usage_status:
+          description: Your current listening status (e.g., "not_started", "in_progress", "completed")
+          type: string
+        user_rating:
+          description: Your personal rating of this audiobook (0.0 to 10.0)
+          type: number
+          format: float
+          minimum: 0
+          maximum: 10
+
+    AudiobookSummary:
+      description: Audiobook summary
+      type: object
+      properties:
+        provider_source:
+          description: The service or platform where this audiobook was obtained
+          type: string
+          enum: [audible]
+        media_type:
+          description: The type of content (audiobook or podcast)
+          type: string
+          enum: [audiobook, podcast]
+        series_name:
+          description: Name of the book series this audiobook belongs to
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+        narrator:
+          description: The person who narrated the audiobook
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+
+    VideoSummary:
+      description: Summary statistics for your media collection
+      type: object
+      properties:
+        provider_source:
+          description: The service or platform where this content originated
+          type: string
+          example: 'audible'
+        media_type:
+          $ref: '#/components/schemas/MediaTypeEnum'
+        total_count:
+          description: Total number of items for this provider and media type
+          type: integer
+
+    MediaTypeEnum:
+      description: The type of content in your library
+      type: string
+      enum: [audiobook, podcast, movie, tv]
+
+    Preference:
+      description: A user preference or configuration setting
+      type: object
+      required:
+        - category
+        - name
+        - value
+      properties:
+        preference_id:
+          description: Unique identifier for this preference
+          type: string
+          format: uuid
+          readOnly: true
+        category:
+          description: The category or group this preference belongs to (lower_snake_case)
+          type: string
+          pattern: '^[A-Za-z0-9_]+$'
+          minLength: 1
+          maxLength: 40
+        name:
+          description: The name of the preference setting (lower_snake_case)
+          type: string
+          pattern: '^[A-za-z0-9_]+$'
+          minLength: 1
+          maxLength: 40
+        value:
+          description: The current value of this preference
+          type: string
+          minLength: 1
+          maxLength: 200
+        is_pii:
+          description: Whether this preference contains personally identifiable information
+          type: boolean
+        expires_at:
+          description: When this preference expires (if applicable)
+          type: string
+          format: date-time
+
+    PreferenceUpdate:
+      description: Data for updating an existing user preference
+      type: object
+      properties:
+        category:
+          description: The category or group this preference belongs to (lower_snake_case)
+          type: string
+          pattern: '^[a-z0-9_]+$'
+          minLength: 1
+          maxLength: 40
+        name:
+          description: The name of the preference setting (lower_snake_case)
+          type: string
+          pattern: '^[a-z0-9_]+$'
+          minLength: 1
+          maxLength: 40
+        value:
+          description: The new value for this preference
+          type: string
+          minLength: 1
+          maxLength: 200
+        is_pii:
+          description: Whether this preference contains personally identifiable information
+          type: boolean
+        expires_at:
+          description: When this preference should expire (if applicable)
+          type: string
+          format: date-time
+
+    UsageStatusEnum:
+      description: Your viewing or listening progress status
+      type: string
+      enum:
+        - unknown
+        - unseen
+        - in_progress
+        - completed
+        - abandoned
+
+    Video:
+      description: A video in your personal library (movie, TV show, etc.)
+      type: object
+      required:
+        - media_type
+        - title
+        - sort_title
+      properties:
+        video_id:
+          description: Unique identifier for this video
+          type: string
+          format: uuid
+        provider_source:
+          description: The service or platform where this video was obtained
+          type: string
+          enum:
+            - plex
+            - netflix
+            - primevideo
+        media_type:
+          description: The type of content (movie or tv)
+          type: string
+          enum:
+            - movie
+            - tv
+        tmdb_id:
+          description: The Movie Database identifier
+          type: string
+          pattern: '^[0-9]+$'
+          minLength: 1
+          maxLength: 10
+        imdb_id:
+          description: Internet Movie Database identifier
+          type: string
+          pattern: '^tt[0-9]+$'
+          minLength: 7
+          maxLength: 10
+        title:
+          description: The title of the video
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        sort_title:
+          description: A normalized version of the title used for alphabetical sorting
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        genres:
+          description: Comma-separated list of genres
+          type: string
+          pattern: '^[A-Za-z0-9 _\-,]+$'
+          minLength: 1
+          maxLength: 100
+        movie_ratings:
+          description: Content ratings and advisory information
+          type: string
+          pattern: '^[A-Za-z0-9 _\-,]+$'
+          minLength: 1
+          maxLength: 20
+        series_name:
+          description: Name of the series this video belongs to (for TV shows)
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+        episode_title:
+          description: Title of the specific episode (for TV shows)
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        season:
+          description: Season identifier (for TV shows)
+          type: string
+          pattern: '^[A-Za-z0-9 _\-]+$'
+          minLength: 1
+          maxLength: 10
+        release_year:
+          description: Year the video was released
+          type: integer
+        release_date:
+          description: Official release date of the video
+          type: string
+          format: date
+        added_at:
+          description: When this video was added to your library from the original source
+          type: string
+          format: date-time
+        last_played_at:
+          description: When you last watched this video
+          type: string
+          format: date-time
+        last_position_mins:
+          description: Your current viewing position in minutes
+          type: integer
+          minimum: 0
+        user_rating:
+          description: Your personal rating of this video (0.0 to 10.0)
+          type: number
+          format: float
+          minimum: 0
+          maximum: 10
+        created_at:
+          description: When this record was first created in the system
+          type: string
+          format: date-time
+        updated_at:
+          description: When this record was last updated in the system
+          type: string
+          format: date-time
+
+    VideoUpdate:
+      description: Data for updating an existing video in your library
+      type: object
+      properties:
+        media_type:
+          description: The type of content (movie or tv)
+          type: string
+          enum: [movie, tv]
+        tmdb_id:
+          description: The Movie Database identifier
+          type: string
+          pattern: '^[0-9]+$'
+          minLength: 1
+          maxLength: 10
+        imdb_id:
+          description: Internet Movie Database identifier
+          type: string
+          pattern: '^tt[0-9]+$'
+          minLength: 9
+          maxLength: 10
+        title:
+          description: The title of the video
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        movie_ratings:
+          description: Content ratings and advisory information
+          type: string
+          pattern: '^[A-Za-z0-9 _\-,]+$'
+          minLength: 1
+          maxLength: 20
+        series_name:
+          description: Name of the series this video belongs to (for TV shows)
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 60
+        episode_title:
+          description: Title of the specific episode (for TV shows)
+          type: string
+          pattern: '^[A-Za-z0-9 _\-.,]+$'
+          minLength: 1
+          maxLength: 100
+        season:
+          description: Season identifier (for TV shows)
+          type: string
+          pattern: '^[A-Za-z0-9 _\-]+$'
+          minLength: 1
+          maxLength: 10
+        release_year:
+          description: Year the video was released
+          type: integer
+        release_date:
+          description: Official release date of the video
+          type: string
+          format: date

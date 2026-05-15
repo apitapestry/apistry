@@ -1,0 +1,1169 @@
+[
+  {
+    "planetId": "2cb54440-0dde-484a-b975-f1354079824d",
+    "name": "Tatooine",
+    "diameter": "10465",
+    "rotationalPeriod": "23",
+    "orbitalPeriod": "304",
+    "gravity": "1 standard",
+    "population": "200000",
+    "climate": "arid",
+    "terrain": "desert",
+    "surfaceWater": "1",
+    "characterIds": [
+      "465dfa1b-6aa4-423c-988a-5fdf207bc07d",
+      "1caec1bd-a654-4723-a1b0-461269f4dc77",
+      "dd5771fd-50e6-4415-889c-5c11a4bea8e3",
+      "bb264147-3c0d-4a45-8e9b-6ea0e3e84b80",
+      "4f780268-4bd1-4d5f-a894-8cf157ef9cb5",
+      "b1b06058-978a-4759-8162-5fc7bb580564",
+      "4acb83e1-3e93-4523-87fb-44f5a4d70c7c",
+      "3b21592a-e4d4-479c-95fb-cfbd9d3e7a27",
+      "cf89ffdc-0e49-4f30-b4bb-1f6317e4a55e",
+      "6ed2a4d3-4336-464b-afd9-ea9c01529a0e"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "createdDateTime": "2014-12-09T13:50:49.641000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.411000Z"
+  },
+  {
+    "planetId": "3c742194-314a-46ed-ab2c-dfb5aa9d0f65",
+    "name": "Alderaan",
+    "diameter": "12500",
+    "rotationalPeriod": "24",
+    "orbitalPeriod": "364",
+    "gravity": "1 standard",
+    "population": "2000000000",
+    "climate": "temperate",
+    "terrain": "grasslands, mountains",
+    "surfaceWater": "40",
+    "characterIds": [
+      "28d9b48c-bcb6-4248-af9c-12c0ebf331c5",
+      "24244fa5-b637-4031-b07c-8e3ce44f393d",
+      "6eb04e3d-efad-4940-8f79-658b59f89034"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "createdDateTime": "2014-12-10T11:35:48.479000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.420000Z"
+  },
+  {
+    "planetId": "a603330d-7530-4db1-a3b4-27c04d153a3d",
+    "name": "Yavin IV",
+    "diameter": "10200",
+    "rotationalPeriod": "24",
+    "orbitalPeriod": "4818",
+    "gravity": "1 standard",
+    "population": "1000",
+    "climate": "temperate, tropical",
+    "terrain": "jungle, rainforests",
+    "surfaceWater": "8",
+    "characterIds": [],
+    "filmIds": [
+      "e841bfd9-b5c5-43f6-854f-a4b78b373c54"
+    ],
+    "createdDateTime": "2014-12-10T11:37:19.144000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.421000Z"
+  },
+  {
+    "planetId": "0290c7fa-7197-48ed-8cb2-cdb2f4ad300e",
+    "name": "Hoth",
+    "diameter": "7200",
+    "rotationalPeriod": "23",
+    "orbitalPeriod": "549",
+    "gravity": "1.1 standard",
+    "population": "unknown",
+    "climate": "frozen",
+    "terrain": "tundra, ice caves, mountain ranges",
+    "surfaceWater": "100",
+    "characterIds": [],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "createdDateTime": "2014-12-10T11:39:13.934000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.423000Z"
+  },
+  {
+    "planetId": "97b673ad-ec8b-4eb3-bf0c-da01040ed2ba",
+    "name": "Dagobah",
+    "diameter": "8900",
+    "rotationalPeriod": "23",
+    "orbitalPeriod": "341",
+    "gravity": "N/A",
+    "population": "unknown",
+    "climate": "murky",
+    "terrain": "swamp, jungles",
+    "surfaceWater": "8",
+    "characterIds": [],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "createdDateTime": "2014-12-10T11:42:22.590000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.425000Z"
+  },
+  {
+    "planetId": "f9a3a13c-d3fc-424b-992d-132c8b995bc3",
+    "name": "Bespin",
+    "diameter": "118000",
+    "rotationalPeriod": "12",
+    "orbitalPeriod": "5110",
+    "gravity": "1.5 (surface), 1 standard (Cloud City)",
+    "population": "6000000",
+    "climate": "temperate",
+    "terrain": "gas giant",
+    "surfaceWater": "0",
+    "characterIds": [
+      "27fdf628-d4b0-4aee-9284-9645668a097b"
+    ],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "createdDateTime": "2014-12-10T11:43:55.240000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.427000Z"
+  },
+  {
+    "planetId": "3cf9072f-f88c-4d7a-b8a0-5c69654b3d71",
+    "name": "Endor",
+    "diameter": "4900",
+    "rotationalPeriod": "18",
+    "orbitalPeriod": "402",
+    "gravity": "0.85 standard",
+    "population": "30000000",
+    "climate": "temperate",
+    "terrain": "forests, mountains, lakes",
+    "surfaceWater": "8",
+    "characterIds": [
+      "7fee2b3e-0058-4134-8f7b-b30e9398cbc4"
+    ],
+    "filmIds": [
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70"
+    ],
+    "createdDateTime": "2014-12-10T11:50:29.349000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.429000Z"
+  },
+  {
+    "planetId": "46f05fca-f843-4c21-a25b-d89b4a54ede7",
+    "name": "Naboo",
+    "diameter": "12120",
+    "rotationalPeriod": "26",
+    "orbitalPeriod": "312",
+    "gravity": "1 standard",
+    "population": "4500000000",
+    "climate": "temperate",
+    "terrain": "grassy hills, swamps, forests, mountains",
+    "surfaceWater": "12",
+    "characterIds": [
+      "96ab86c9-288a-4bb4-87c1-ac1dad6f38ed",
+      "d0aab938-a121-4474-a4da-78ee87e8a711",
+      "909c997c-1094-4762-9c8a-5c64c30d28b2",
+      "fc63ab5c-83da-493b-80ea-845cc135759d",
+      "989f1132-0e82-47c8-824c-f7c8f660e14d",
+      "e3aebed8-0828-4aee-a054-e729594e80cc",
+      "d4a416d7-77d2-4483-8480-2e7a0012a8da",
+      "c3b0b8ea-8bb0-4f9a-a08e-6bfaaac531e0",
+      "808f879f-43bf-4222-841f-30d2868c55c7",
+      "b2fe26c7-c7db-4908-9ce5-9e9af40c3a07",
+      "9c5c7c24-95c8-44d5-9c6d-8807668cc870"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "createdDateTime": "2014-12-10T11:52:31.066000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.430000Z"
+  },
+  {
+    "planetId": "c657b22c-f05d-4ad4-915d-aa7e5f252ae7",
+    "name": "Coruscant",
+    "diameter": "12240",
+    "rotationalPeriod": "24",
+    "orbitalPeriod": "368",
+    "gravity": "1 standard",
+    "population": "1000000000000",
+    "climate": "temperate",
+    "terrain": "cityscape, mountains",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "44eb57c1-658e-4936-8a22-bf4bc5801724",
+      "957a60e1-1b40-4ccd-ac8e-e2aae61a880f",
+      "4f8821a7-a15e-4b10-930d-0a7f8a763f81"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070",
+      "4d3a7e0b-67b9-4bfe-9849-c0dbd4173d70",
+      "db6c956c-f5aa-49ec-8d03-42a71ba9d373",
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "createdDateTime": "2014-12-10T11:54:13.921000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.432000Z"
+  },
+  {
+    "planetId": "31ece572-eac9-4d90-9da3-06a696e4702d",
+    "name": "Kamino",
+    "diameter": "19720",
+    "rotationalPeriod": "27",
+    "orbitalPeriod": "463",
+    "gravity": "1 standard",
+    "population": "1000000000",
+    "climate": "temperate",
+    "terrain": "ocean",
+    "surfaceWater": "100",
+    "characterIds": [
+      "8f0e40cd-c0d6-4cec-a275-9d9e0d76bc58",
+      "2c9e0fd4-3004-4521-a288-4c00e28a6824",
+      "187cf0c5-d4cd-4cd8-a4f5-406c22a30a15"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "createdDateTime": "2014-12-10T12:45:06.577000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.434000Z"
+  },
+  {
+    "planetId": "56f53ff1-f7f3-4aae-b38f-dfd42fb6ca44",
+    "name": "Geonosis",
+    "diameter": "11370",
+    "rotationalPeriod": "30",
+    "orbitalPeriod": "256",
+    "gravity": "0.9 standard",
+    "population": "100000000000",
+    "climate": "temperate, arid",
+    "terrain": "rock, desert, mountain, barren",
+    "surfaceWater": "5",
+    "characterIds": [
+      "0b571a07-df98-468d-9842-24fdabafd4f9"
+    ],
+    "filmIds": [
+      "0cbeea96-2744-47e3-af8f-f218fe964195"
+    ],
+    "createdDateTime": "2014-12-10T12:47:22.350000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.437000Z"
+  },
+  {
+    "planetId": "428d8b00-d821-4991-a216-9529e77d767c",
+    "name": "Utapau",
+    "diameter": "12900",
+    "rotationalPeriod": "27",
+    "orbitalPeriod": "351",
+    "gravity": "1 standard",
+    "population": "95000000",
+    "climate": "temperate, arid, windy",
+    "terrain": "scrublands, savanna, canyons, sinkholes",
+    "surfaceWater": "0.9",
+    "characterIds": [
+      "57af7237-adf3-4be0-996a-817c323e54d7"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T12:49:01.491000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.439000Z"
+  },
+  {
+    "planetId": "95b15fc6-7ae5-476f-8d84-03d7f91bad05",
+    "name": "Mustafar",
+    "diameter": "4200",
+    "rotationalPeriod": "36",
+    "orbitalPeriod": "412",
+    "gravity": "1 standard",
+    "population": "20000",
+    "climate": "hot",
+    "terrain": "volcanoes, lava rivers, mountains, caves",
+    "surfaceWater": "0",
+    "characterIds": [],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T12:50:16.526000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.440000Z"
+  },
+  {
+    "planetId": "72e4a6f5-39c9-4f1a-87f2-f63573f0177d",
+    "name": "Kashyyyk",
+    "diameter": "12765",
+    "rotationalPeriod": "26",
+    "orbitalPeriod": "381",
+    "gravity": "1 standard",
+    "population": "45000000",
+    "climate": "tropical",
+    "terrain": "jungle, forests, lakes, rivers",
+    "surfaceWater": "60",
+    "characterIds": [
+      "b9cdb713-fe68-4155-b70f-1fce5b497a51",
+      "ae193957-3240-4bfe-8f60-117dbdd947a9"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T13:32:00.124000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.442000Z"
+  },
+  {
+    "planetId": "9c7ff1da-965e-4d09-b2d4-4f4e68d0af41",
+    "name": "Polis Massa",
+    "diameter": "0",
+    "rotationalPeriod": "24",
+    "orbitalPeriod": "590",
+    "gravity": "0.56 standard",
+    "population": "1000000",
+    "climate": "artificial temperate ",
+    "terrain": "airless asteroid",
+    "surfaceWater": "0",
+    "characterIds": [],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T13:33:46.405000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.444000Z"
+  },
+  {
+    "planetId": "802bf816-019f-4941-afef-ea18fb11844c",
+    "name": "Mygeeto",
+    "diameter": "10088",
+    "rotationalPeriod": "12",
+    "orbitalPeriod": "167",
+    "gravity": "1 standard",
+    "population": "19000000",
+    "climate": "frigid",
+    "terrain": "glaciers, mountains, ice canyons",
+    "surfaceWater": "unknown",
+    "characterIds": [],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T13:43:39.139000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.446000Z"
+  },
+  {
+    "planetId": "af1a56a5-1342-4432-b999-015ae3e7213d",
+    "name": "Felucia",
+    "diameter": "9100",
+    "rotationalPeriod": "34",
+    "orbitalPeriod": "231",
+    "gravity": "0.75 standard",
+    "population": "8500000",
+    "climate": "hot, humid",
+    "terrain": "fungus forests",
+    "surfaceWater": "unknown",
+    "characterIds": [],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T13:44:50.397000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.447000Z"
+  },
+  {
+    "planetId": "78a90c3b-604a-44df-986a-04523fc3ee0d",
+    "name": "Cato Neimoidia",
+    "diameter": "0",
+    "rotationalPeriod": "25",
+    "orbitalPeriod": "278",
+    "gravity": "1 standard",
+    "population": "10000000",
+    "climate": "temperate, moist",
+    "terrain": "mountains, fields, forests, rock arches",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "dc7d1c67-4b58-4a0b-9449-f231b359cde4"
+    ],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T13:46:28.704000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.449000Z"
+  },
+  {
+    "planetId": "f2c7981b-aeff-4d91-adf5-0b6505865e5d",
+    "name": "Saleucami",
+    "diameter": "14920",
+    "rotationalPeriod": "26",
+    "orbitalPeriod": "392",
+    "gravity": "unknown",
+    "population": "1400000000",
+    "climate": "hot",
+    "terrain": "caves, desert, mountains, volcanoes",
+    "surfaceWater": "unknown",
+    "characterIds": [],
+    "filmIds": [
+      "f788594a-dfc1-4135-b854-1a0b51169070"
+    ],
+    "createdDateTime": "2014-12-10T13:47:46.874000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.450000Z"
+  },
+  {
+    "planetId": "a1f83625-450e-426b-8541-d1e46c452294",
+    "name": "Stewjon",
+    "diameter": "0",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "1 standard",
+    "population": "unknown",
+    "climate": "temperate",
+    "terrain": "grass",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "d69dda19-45c2-457a-8638-d72f94fa6d44"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-10T16:16:26.566000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.452000Z"
+  },
+  {
+    "planetId": "cea92c97-d6b7-4d6f-ad8c-fad10b6523a7",
+    "name": "Eriadu",
+    "diameter": "13490",
+    "rotationalPeriod": "24",
+    "orbitalPeriod": "360",
+    "gravity": "1 standard",
+    "population": "22000000000",
+    "climate": "polluted",
+    "terrain": "cityscape",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "ec8f7083-08f7-48fb-b731-afd7a65fced6"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-10T16:26:54.384000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.454000Z"
+  },
+  {
+    "planetId": "a4723a9f-fc62-4230-a2aa-c80aeaba848f",
+    "name": "Corellia",
+    "diameter": "11000",
+    "rotationalPeriod": "25",
+    "orbitalPeriod": "329",
+    "gravity": "1 standard",
+    "population": "3000000000",
+    "climate": "temperate",
+    "terrain": "plains, urban, hills, forests",
+    "surfaceWater": "70",
+    "characterIds": [
+      "0f325acb-4232-4faa-b2e9-fa93dcb8e0b9",
+      "8697f65b-7573-4943-a6b0-f7bfebe8bd04"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-10T16:49:12.453000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.456000Z"
+  },
+  {
+    "planetId": "147b5c6d-378c-4a9e-8a58-0fa8bd92325d",
+    "name": "Rodia",
+    "diameter": "7549",
+    "rotationalPeriod": "29",
+    "orbitalPeriod": "305",
+    "gravity": "1 standard",
+    "population": "1300000000",
+    "climate": "hot",
+    "terrain": "jungles, oceans, urban, swamps",
+    "surfaceWater": "60",
+    "characterIds": [
+      "42e808fe-a49e-4547-9815-0b6c46843a09"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-10T17:03:28.110000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.458000Z"
+  },
+  {
+    "planetId": "15a09956-cab8-4e07-9b01-cff34431132d",
+    "name": "Nal Hutta",
+    "diameter": "12150",
+    "rotationalPeriod": "87",
+    "orbitalPeriod": "413",
+    "gravity": "1 standard",
+    "population": "7000000000",
+    "climate": "temperate",
+    "terrain": "urban, oceans, swamps, bogs",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "fd125d06-fb30-45aa-8e8e-1cdff8a5a04b"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-10T17:11:29.452000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.460000Z"
+  },
+  {
+    "planetId": "ba2048b2-04a7-40f2-a4c3-766c0503545c",
+    "name": "Dantooine",
+    "diameter": "9830",
+    "rotationalPeriod": "25",
+    "orbitalPeriod": "378",
+    "gravity": "1 standard",
+    "population": "1000",
+    "climate": "temperate",
+    "terrain": "oceans, savannas, mountains, grasslands",
+    "surfaceWater": "unknown",
+    "characterIds": [],
+    "filmIds": [],
+    "createdDateTime": "2014-12-10T17:23:29.896000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.461000Z"
+  },
+  {
+    "planetId": "0ffe49a1-95e7-4348-b49a-baaae36ad413",
+    "name": "Bestine IV",
+    "diameter": "6400",
+    "rotationalPeriod": "26",
+    "orbitalPeriod": "680",
+    "gravity": "unknown",
+    "population": "62000000",
+    "climate": "temperate",
+    "terrain": "rocky islands, oceans",
+    "surfaceWater": "98",
+    "characterIds": [
+      "d122823a-4012-496e-91c2-a95e12099624"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-12T11:16:55.078000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.463000Z"
+  },
+  {
+    "planetId": "1f916166-ad5e-4731-9668-530f3b8d453e",
+    "name": "Ord Mantell",
+    "diameter": "14050",
+    "rotationalPeriod": "26",
+    "orbitalPeriod": "334",
+    "gravity": "1 standard",
+    "population": "4000000000",
+    "climate": "temperate",
+    "terrain": "plains, seas, mesas",
+    "surfaceWater": "10",
+    "characterIds": [],
+    "filmIds": [
+      "7b45ec66-a978-4dfa-b628-a1229f08c5ad"
+    ],
+    "createdDateTime": "2014-12-15T12:23:41.661000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.464000Z"
+  },
+  {
+    "planetId": "40779d77-2835-460f-bfc0-36b98ebe5484",
+    "name": "unknown",
+    "diameter": "0",
+    "rotationalPeriod": "0",
+    "orbitalPeriod": "0",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "unknown",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "a00aa467-3e19-4b69-a2a6-4d9fec0b4b13",
+      "4d6b7580-54d3-4feb-8aef-0ff51309b2d5",
+      "582887c1-bbc7-4616-9b3f-3c6ff6afe42e",
+      "7c06b4ec-ff3a-47a1-817e-b0a91d142626",
+      "cedf9747-a5ec-425e-8071-6679d88427c9",
+      "24ec2b1b-cadc-459f-9f15-f08ba5d07aae",
+      "3bf6f6e4-0332-44a8-9fa2-66a2988289dd",
+      "385cfd9c-ec54-4669-86ea-24887ef68cc9",
+      "233ce9ec-17e2-45ad-93e3-4bb11f685ed6",
+      "af94bae0-9106-4043-acde-90af09ef9678"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-15T12:25:59.569000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.466000Z"
+  },
+  {
+    "planetId": "6c72612a-99c9-4152-88de-a032993c9ff4",
+    "name": "Trandosha",
+    "diameter": "0",
+    "rotationalPeriod": "25",
+    "orbitalPeriod": "371",
+    "gravity": "0.62 standard",
+    "population": "42000000",
+    "climate": "arid",
+    "terrain": "mountains, seas, grasslands, deserts",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "48d22447-a2cd-48fc-b806-c019265b0b40"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-15T12:53:47.695000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.468000Z"
+  },
+  {
+    "planetId": "8605008d-2fdd-46b8-a713-c8977f2a89ac",
+    "name": "Socorro",
+    "diameter": "0",
+    "rotationalPeriod": "20",
+    "orbitalPeriod": "326",
+    "gravity": "1 standard",
+    "population": "300000000",
+    "climate": "arid",
+    "terrain": "deserts, mountains",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "262ed871-bde9-4552-ae93-be761cebc8f5"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-15T12:56:31.121000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.469000Z"
+  },
+  {
+    "planetId": "e0926153-f12f-4e08-baa1-ac508b27e066",
+    "name": "Mon Cala",
+    "diameter": "11030",
+    "rotationalPeriod": "21",
+    "orbitalPeriod": "398",
+    "gravity": "1",
+    "population": "27000000000",
+    "climate": "temperate",
+    "terrain": "oceans, reefs, islands",
+    "surfaceWater": "100",
+    "characterIds": [
+      "b9b1f5df-ba4c-4a0c-8b8b-18ab09094f75"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-18T11:07:01.792000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.471000Z"
+  },
+  {
+    "planetId": "d855167d-3866-44a1-be8c-e9310a67c9c1",
+    "name": "Chandrila",
+    "diameter": "13500",
+    "rotationalPeriod": "20",
+    "orbitalPeriod": "368",
+    "gravity": "1",
+    "population": "1200000000",
+    "climate": "temperate",
+    "terrain": "plains, forests",
+    "surfaceWater": "40",
+    "characterIds": [
+      "15549d55-56ce-4ad8-bfbb-4acb4c0589f6"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-18T11:11:51.872000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.472000Z"
+  },
+  {
+    "planetId": "7c83af7a-1410-4a03-ba97-825b288b8fca",
+    "name": "Sullust",
+    "diameter": "12780",
+    "rotationalPeriod": "20",
+    "orbitalPeriod": "263",
+    "gravity": "1",
+    "population": "18500000000",
+    "climate": "superheated",
+    "terrain": "mountains, volcanoes, rocky deserts",
+    "surfaceWater": "5",
+    "characterIds": [
+      "038bbf89-1f47-43fb-bef8-23fafdfb1e1e"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-18T11:25:40.243000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.474000Z"
+  },
+  {
+    "planetId": "e066303f-10f8-474b-a505-1695e4284be2",
+    "name": "Toydaria",
+    "diameter": "7900",
+    "rotationalPeriod": "21",
+    "orbitalPeriod": "184",
+    "gravity": "1",
+    "population": "11000000",
+    "climate": "temperate",
+    "terrain": "swamps, lakes",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "3843c2b5-3abb-48a1-b2cf-1e2b61a112f1"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-19T17:47:54.403000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.476000Z"
+  },
+  {
+    "planetId": "2934bf4a-029a-4141-86ee-9fd130d2a1b5",
+    "name": "Malastare",
+    "diameter": "18880",
+    "rotationalPeriod": "26",
+    "orbitalPeriod": "201",
+    "gravity": "1.56",
+    "population": "2000000000",
+    "climate": "arid, temperate, tropical",
+    "terrain": "swamps, deserts, jungles, mountains",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "f015a458-8b1b-436a-beaa-68837c5d7c8e"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-19T17:52:13.106000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.478000Z"
+  },
+  {
+    "planetId": "b217b2ba-1bce-4506-bf0d-9ceb38ff546c",
+    "name": "Dathomir",
+    "diameter": "10480",
+    "rotationalPeriod": "24",
+    "orbitalPeriod": "491",
+    "gravity": "0.9",
+    "population": "5200",
+    "climate": "temperate",
+    "terrain": "forests, deserts, savannas",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "0ae1a9f4-5683-4d0f-b63e-558e3453ffb3"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-19T18:00:40.142000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.480000Z"
+  },
+  {
+    "planetId": "a1ffb800-b25c-4dd0-b311-8d446fbdb2d4",
+    "name": "Ryloth",
+    "diameter": "10600",
+    "rotationalPeriod": "30",
+    "orbitalPeriod": "305",
+    "gravity": "1",
+    "population": "1500000000",
+    "climate": "temperate, arid, subartic",
+    "terrain": "mountains, valleys, deserts, tundra",
+    "surfaceWater": "5",
+    "characterIds": [
+      "86360a47-10ff-47ef-964e-2e4af6d03483",
+      "b328456e-42c4-4884-b684-8bc62fc09554"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T09:46:25.740000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.481000Z"
+  },
+  {
+    "planetId": "35237c06-669a-49bd-9ead-142320b0f3d0",
+    "name": "Aleen Minor",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "unknown",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "24d5b29b-1ce6-4560-8bec-adef78773b6b"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T09:52:23.452000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.483000Z"
+  },
+  {
+    "planetId": "5ec98ab1-d983-4eb9-b5ad-0f8c3e177068",
+    "name": "Vulpter",
+    "diameter": "14900",
+    "rotationalPeriod": "22",
+    "orbitalPeriod": "391",
+    "gravity": "1",
+    "population": "421000000",
+    "climate": "temperate, artic",
+    "terrain": "urban, barren",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "75c02e46-61b0-4d7d-94aa-02e067562043"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T09:56:58.874000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.485000Z"
+  },
+  {
+    "planetId": "e73035c5-9e9e-4e65-9f0f-332b78e9462c",
+    "name": "Troiken",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "desert, tundra, rainforests, mountains",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "8bfa8571-d413-438a-9c18-e20d1ecb43b8"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:01:37.395000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.487000Z"
+  },
+  {
+    "planetId": "fb733a36-6b3a-4974-ad47-adaced094f3f",
+    "name": "Tund",
+    "diameter": "12190",
+    "rotationalPeriod": "48",
+    "orbitalPeriod": "1770",
+    "gravity": "unknown",
+    "population": "0",
+    "climate": "unknown",
+    "terrain": "barren, ash",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "092456f9-f3ed-4dd8-ba8b-33e023bc41f5"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:07:29.578000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.489000Z"
+  },
+  {
+    "planetId": "66caaca9-ec19-452c-b03f-82e851ded489",
+    "name": "Haruun Kal",
+    "diameter": "10120",
+    "rotationalPeriod": "25",
+    "orbitalPeriod": "383",
+    "gravity": "0.98",
+    "population": "705300",
+    "climate": "temperate",
+    "terrain": "toxic cloudsea, plateaus, volcanoes",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "adffcbf9-8584-4d6d-8b09-37b43e25fddb"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:12:28.980000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.491000Z"
+  },
+  {
+    "planetId": "73271a24-535b-49c9-882c-26a1b53d0cad",
+    "name": "Cerea",
+    "diameter": "unknown",
+    "rotationalPeriod": "27",
+    "orbitalPeriod": "386",
+    "gravity": "1",
+    "population": "450000000",
+    "climate": "temperate",
+    "terrain": "verdant",
+    "surfaceWater": "20",
+    "characterIds": [
+      "adbb8614-748b-433c-b1c7-c08eddeb586d"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:14:48.178000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.493000Z"
+  },
+  {
+    "planetId": "9331898f-03f0-4c23-be80-cd6906401aee",
+    "name": "Glee Anselm",
+    "diameter": "15600",
+    "rotationalPeriod": "33",
+    "orbitalPeriod": "206",
+    "gravity": "1",
+    "population": "500000000",
+    "climate": "tropical, temperate",
+    "terrain": "lakes, islands, swamps, seas",
+    "surfaceWater": "80",
+    "characterIds": [
+      "6f442720-7304-4dd2-a4b1-2810d145a2b5"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:18:26.110000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.495000Z"
+  },
+  {
+    "planetId": "2f609383-f072-468f-be3a-be24bde47db9",
+    "name": "Iridonia",
+    "diameter": "unknown",
+    "rotationalPeriod": "29",
+    "orbitalPeriod": "413",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "rocky canyons, acid pools",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "0d68a3f5-0db3-4a69-945e-85b525e5b1a9"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:26:05.788000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.497000Z"
+  },
+  {
+    "planetId": "011978bf-d2f0-48b0-9c0c-2d0d6d4680cf",
+    "name": "Tholoth",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "unknown",
+    "surfaceWater": "unknown",
+    "characterIds": [],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:28:31.117000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.498000Z"
+  },
+  {
+    "planetId": "6c02ba74-2eeb-49ef-b79d-c8db91fb5bd7",
+    "name": "Iktotch",
+    "diameter": "unknown",
+    "rotationalPeriod": "22",
+    "orbitalPeriod": "481",
+    "gravity": "1",
+    "population": "unknown",
+    "climate": "arid, rocky, windy",
+    "terrain": "rocky",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "d439432f-3a5f-4ddf-aef7-d524e017a91c"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:31:32.413000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.500000Z"
+  },
+  {
+    "planetId": "d88b0255-02b0-4f73-b7e9-6752c7fa7244",
+    "name": "Quermia",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "unknown",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "4d1374ef-3d76-4b61-b863-8331fb06f544"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:34:08.249000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.502000Z"
+  },
+  {
+    "planetId": "a622e6b0-3c41-4e41-b909-0334f2baad81",
+    "name": "Dorin",
+    "diameter": "13400",
+    "rotationalPeriod": "22",
+    "orbitalPeriod": "409",
+    "gravity": "1",
+    "population": "unknown",
+    "climate": "temperate",
+    "terrain": "unknown",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "f5737245-340d-4e32-aa29-f74d41a878f2"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:48:36.141000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.504000Z"
+  },
+  {
+    "planetId": "8cb8d7f7-852d-49e5-b012-a5df45d301c1",
+    "name": "Champala",
+    "diameter": "unknown",
+    "rotationalPeriod": "27",
+    "orbitalPeriod": "318",
+    "gravity": "1",
+    "population": "3500000000",
+    "climate": "temperate",
+    "terrain": "oceans, rainforests, plateaus",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "902294fe-da05-454f-a7b6-ec214e3500ab"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T10:52:51.524000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.506000Z"
+  },
+  {
+    "planetId": "b1ddd481-3499-497f-a90a-6367f323f376",
+    "name": "Mirial",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "deserts",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "82150f1e-c598-44e4-8b41-4ec7644d854b",
+      "607c14f8-d02e-4001-8aa4-02dcd8ea84d4"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T16:44:46.318000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.508000Z"
+  },
+  {
+    "planetId": "1fdececf-aa7a-42c1-a954-e5a7e1245962",
+    "name": "Serenno",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "rainforests, rivers, mountains",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "34e33f86-8222-4c12-b13a-bfbac4243e5c"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T16:52:13.357000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.510000Z"
+  },
+  {
+    "planetId": "c6076fad-da7c-4223-a017-c9d185535f7a",
+    "name": "Concord Dawn",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "jungles, forests, deserts",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "07e84693-d768-4b48-8144-f319d1124a0b"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T16:54:39.909000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.512000Z"
+  },
+  {
+    "planetId": "8766f0e1-6fcc-4776-ab50-950166f80213",
+    "name": "Zolan",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "unknown",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "6dcaa3a9-1b89-49b0-8acc-a4d8ed9863f0"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T16:56:37.250000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.514000Z"
+  },
+  {
+    "planetId": "684ee5bb-fe2d-4005-990b-8cda012ffa54",
+    "name": "Ojom",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "500000000",
+    "climate": "frigid",
+    "terrain": "oceans, glaciers",
+    "surfaceWater": "100",
+    "characterIds": [
+      "50fef24c-bb91-404e-a5fc-542732a87f35"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T17:27:41.286000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.516000Z"
+  },
+  {
+    "planetId": "701dbf2d-eb5c-4e3c-9035-93d997364828",
+    "name": "Skako",
+    "diameter": "unknown",
+    "rotationalPeriod": "27",
+    "orbitalPeriod": "384",
+    "gravity": "1",
+    "population": "500000000000",
+    "climate": "temperate",
+    "terrain": "urban, vines",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "5053ec48-7036-44d3-9e89-1160c8d3374a"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T17:50:47.864000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.517000Z"
+  },
+  {
+    "planetId": "a7d54262-72f2-40d6-9402-c4dab6d4ada7",
+    "name": "Muunilinst",
+    "diameter": "13800",
+    "rotationalPeriod": "28",
+    "orbitalPeriod": "412",
+    "gravity": "1",
+    "population": "5000000000",
+    "climate": "temperate",
+    "terrain": "plains, forests, hills, mountains",
+    "surfaceWater": "25",
+    "characterIds": [
+      "21d43d63-1ed1-4bf2-a98a-6d3be73b2815"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T17:57:47.420000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.519000Z"
+  },
+  {
+    "planetId": "981bd173-5b58-4bec-bd1b-6fc9cc592128",
+    "name": "Shili",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "1",
+    "population": "unknown",
+    "climate": "temperate",
+    "terrain": "cities, savannahs, seas, plains",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "298469f5-dea6-4a7c-b170-38774fa46402"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T18:43:14.049000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.521000Z"
+  },
+  {
+    "planetId": "53210c39-ca51-4a2e-bc5f-dcde98e1b02d",
+    "name": "Kalee",
+    "diameter": "13850",
+    "rotationalPeriod": "23",
+    "orbitalPeriod": "378",
+    "gravity": "1",
+    "population": "4000000000",
+    "climate": "arid, temperate, tropical",
+    "terrain": "rainforests, cliffs, canyons, seas",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "259c4cd3-917b-4344-9700-e8deafc491fe"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T19:43:51.278000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.523000Z"
+  },
+  {
+    "planetId": "a54764ac-4e6b-4fb9-98c3-8a6a4c35d4e6",
+    "name": "Umbara",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "unknown",
+    "surfaceWater": "unknown",
+    "characterIds": [
+      "4a5a68a7-1267-4aa7-ba2f-884070b16172"
+    ],
+    "filmIds": [],
+    "createdDateTime": "2014-12-20T20:18:36.256000Z",
+    "updatedDateTime": "2014-12-20T20:58:18.525000Z"
+  },
+  {
+    "planetId": "169b75f2-daab-482a-acdf-94da771fccd7",
+    "name": "Jakku",
+    "diameter": "unknown",
+    "rotationalPeriod": "unknown",
+    "orbitalPeriod": "unknown",
+    "gravity": "unknown",
+    "population": "unknown",
+    "climate": "unknown",
+    "terrain": "deserts",
+    "surfaceWater": "unknown",
+    "characterIds": [],
+    "filmIds": [
+      "bd053c10-1047-4dfa-a00e-d40f10c53f4f"
+    ],
+    "createdDateTime": "2015-04-17T06:55:57.556495Z",
+    "updatedDateTime": "2015-04-17T06:55:57.556551Z"
+  }
+]

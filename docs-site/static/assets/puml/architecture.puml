@@ -1,0 +1,34 @@
+@startuml
+title Separation After Persistence
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #666666
+
+skinparam rectangle {
+  BorderColor #333333
+  FontColor #222222
+  RoundCorner 8
+}
+
+skinparam cloud {
+  BorderColor #333333
+  FontColor #222222
+}
+
+top to bottom direction
+
+rectangle #EAF4EA "CaaS API Runtime\n\n- Contract validation\n- Deterministic persistence" as Api
+
+rectangle #D6EAD6 "Persistence Layer\n(MongoDB)" as Db
+
+cloud #F0F0F0 "MongoDB Change Stream\n(Durable Facts)" as Events
+
+rectangle #E9F0F8 "Business Event Services\n(Event-driven domain workflows)\n\n- Domain workflows & policies\n- Side effects & notifications\n- Cross-system integrations\n- Enrichment & projections" as Biz
+
+Api --> Db
+Db --> Events
+Events --> Biz
+
+@enduml

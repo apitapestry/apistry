@@ -1,0 +1,1517 @@
+openapi: 3.0.3
+info:
+  title: Harry Potter
+  version: v1
+  description: Harry Potter API, providing information about books, characters, movies, potions and spells of the Harry Potter universe.
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developer.acme.com/terms/
+servers:
+  - url: https://api.potterdb.com
+    description: Production server
+paths:
+  /v1/magic-books:
+    get:
+      summary: Retrieves a list of books
+      tags:
+        - books
+      x-collection: harry-potter-books-v1
+      description: Retrieves a list of books
+      operationId: getBooks
+      parameters:
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/HpV1TitleQueryOptional'
+        - $ref: '#/components/parameters/HpV1SummaryQueryOptional'
+        - $ref: '#/components/parameters/HpV1AuthorQueryOptional'
+        - $ref: '#/components/parameters/HpV1ReleaseDateQueryOptional'
+        - $ref: '#/components/parameters/HpV1DedicationQueryOptional'
+        - $ref: '#/components/parameters/HpV1PagesQueryOptional'
+        - $ref: '#/components/parameters/HpV1CoverQueryOptional'
+        - $ref: '#/components/parameters/HpV1WikiQueryOptional'
+        - $ref: '#/components/parameters/HpV1ChaptersQueryOptional'
+      responses:
+        '200':
+          description: A list of books
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/MagicBook'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/magic-books/{magicBookId}:
+    get:
+      summary: Retrieves a book
+      tags:
+        - books
+      x-collection: harry-potter-books-v1
+      description: Retrieves a specific book by id
+      operationId: getBook
+      parameters:
+        - $ref: '#/components/parameters/MagicBookId'
+      responses:
+        '200':
+          description: A single book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MagicBook'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/chapters:
+    get:
+      summary: Retrieves a list of chapters
+      tags:
+        - chapters
+      x-collection: harry-potter-chapters-v1
+      description: Retrieves a list of chapters
+      operationId: getChapters
+      parameters:
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/HpV1TitleQueryOptional'
+        - $ref: '#/components/parameters/HpV1SummaryQueryOptional'
+        - $ref: '#/components/parameters/HpV1OrderQueryOptional'
+      responses:
+        '200':
+          description: A list of chapters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Chapter'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/chapters/{chapterId}:
+    get:
+      summary: Retrieves a character
+      tags:
+        - chapters
+      x-collection: harry-potter-chapters-v1
+      description: Retrieves a specific chapter
+      operationId: getChapter
+      parameters:
+        - $ref: '#/components/parameters/ChapterId'
+      responses:
+        '200':
+          description: A single character
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chapter'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/characters:
+    get:
+      summary: Retrieves a list of characters
+      tags:
+        - characters
+      x-collection: harry-potter-characters-v1
+      description: Retrieves a list of characters
+      operationId: getCharacters
+      parameters:
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/HpV1NameQueryOptional'
+        - $ref: '#/components/parameters/HpV1BornQueryOptional'
+        - $ref: '#/components/parameters/HpV1DiedQueryOptional'
+        - $ref: '#/components/parameters/HpV1GenderQueryOptional'
+        - $ref: '#/components/parameters/HpV1SpeciesQueryOptional'
+        - $ref: '#/components/parameters/HpV1HeightQueryOptional'
+        - $ref: '#/components/parameters/HpV1WeightQueryOptional'
+        - $ref: '#/components/parameters/HpV1HairColorQueryOptional'
+        - $ref: '#/components/parameters/HpV1EyeColorQueryOptional'
+        - $ref: '#/components/parameters/HpV1SkinColorQueryOptional'
+        - $ref: '#/components/parameters/HpV1BloodStatusQueryOptional'
+        - $ref: '#/components/parameters/HpV1MaritalStatusQueryOptional'
+        - $ref: '#/components/parameters/HpV1NationalityQueryOptional'
+        - $ref: '#/components/parameters/HpV1AnimagusQueryOptional'
+        - $ref: '#/components/parameters/HpV1BoggartQueryOptional'
+        - $ref: '#/components/parameters/HpV1HouseQueryOptional'
+        - $ref: '#/components/parameters/HpV1PatronusQueryOptional'
+        - $ref: '#/components/parameters/HpV1AliasNamesQueryOptional'
+        - $ref: '#/components/parameters/HpV1FamilyMembersQueryOptional'
+        - $ref: '#/components/parameters/HpV1JobsQueryOptional'
+        - $ref: '#/components/parameters/HpV1RomancesQueryOptional'
+        - $ref: '#/components/parameters/HpV1TitlesQueryOptional'
+        - $ref: '#/components/parameters/HpV1WandsQueryOptional'
+        - $ref: '#/components/parameters/HpV1ImageQueryOptional'
+        - $ref: '#/components/parameters/HpV1WikiQueryOptional'
+      responses:
+        '200':
+          description: A list of characters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Character'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/characters/{characterId}:
+    get:
+      summary: Retrieves a character
+      tags:
+        - characters
+      x-collection: harry-potter-characters-v1
+      description: Retrieves a specific character by id
+      operationId: getCharacter
+      parameters:
+        - $ref: '#/components/parameters/HPCharacterId'
+      responses:
+        '200':
+          description: A single character
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Character'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/movies:
+    get:
+      summary: Retrieves a list of movies
+      tags:
+        - movies
+      x-collection: harry-potter-movies-v1
+      description: Retrieves a list of movies
+      operationId: getMovies
+      parameters:
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/HpV1TitleQueryOptional'
+        - $ref: '#/components/parameters/HpV1SummaryQueryOptional'
+        - $ref: '#/components/parameters/HpV1DirectorQueryOptional'
+        - $ref: '#/components/parameters/HpV1ScreenwritersQueryOptional'
+        - $ref: '#/components/parameters/HpV1ProducersQueryOptional'
+        - $ref: '#/components/parameters/HpV1CinematographersQueryOptional'
+        - $ref: '#/components/parameters/HpV1EditorsQueryOptional'
+        - $ref: '#/components/parameters/HpV1DistributorsQueryOptional'
+        - $ref: '#/components/parameters/HpV1MusicComposersQueryOptional'
+        - $ref: '#/components/parameters/HpV1ReleaseDateQueryOptional'
+        - $ref: '#/components/parameters/HpV1RunningTimeQueryOptional'
+        - $ref: '#/components/parameters/HpV1BudgetQueryOptional'
+        - $ref: '#/components/parameters/HpV1BoxOfficeQueryOptional'
+        - $ref: '#/components/parameters/HpV1RatingQueryOptional'
+        - $ref: '#/components/parameters/HpV1TrailerQueryOptional'
+        - $ref: '#/components/parameters/HpV1ImageQueryOptional'
+        - $ref: '#/components/parameters/HpV1WikiQueryOptional'
+      responses:
+        '200':
+          description: A list of movies
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Movie'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/movies/{movieId}:
+    get:
+      summary: Retrieves a movie
+      tags:
+        - movies
+      x-collection: harry-potter-movies-v1
+      description: Retrieves a specific movie by id
+      operationId: getMovie
+      parameters:
+        - $ref: '#/components/parameters/HPMovieId'
+      responses:
+        '200':
+          description: A single movie
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movie'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/potions:
+    get:
+      summary: Retrieves a list of potions
+      tags:
+        - potions
+      x-collection: harry-potter-potions-v1
+      description: Retrieves a list of potions
+      operationId: getPotions
+      parameters:
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/HpV1NameQueryOptional'
+        - $ref: '#/components/parameters/HpV1EffectQueryOptional'
+        - $ref: '#/components/parameters/HpV1SideEffectsQueryOptional'
+        - $ref: '#/components/parameters/HpV1CharacteristicsQueryOptional'
+        - $ref: '#/components/parameters/HpV1TimeQueryOptional'
+        - $ref: '#/components/parameters/HpV1DifficultyQueryOptional'
+        - $ref: '#/components/parameters/HpV1IngredientsQueryOptional'
+        - $ref: '#/components/parameters/HpV1InventorsQueryOptional'
+        - $ref: '#/components/parameters/HpV1ManufacturersQueryOptional'
+        - $ref: '#/components/parameters/HpV1ImageQueryOptional'
+        - $ref: '#/components/parameters/HpV1WikiQueryOptional'
+      responses:
+        '200':
+          description: A list of potions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Potion'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/potions/{potionId}:
+    get:
+      summary: Retrieves a potion
+      tags:
+        - potions
+      x-collection: harry-potter-potions-v1
+      description: Retrieves a specific potion by id
+      operationId: getPotion
+      parameters:
+        - $ref: '#/components/parameters/PotionId'
+      responses:
+        '200':
+          description: A single potion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Potion'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/spells:
+    get:
+      summary: Retrieves a list of spells
+      tags:
+        - spells
+      x-collection: harry-potter-spells-v1
+      description: Retrieves a list of spells
+      operationId: getSpells
+      parameters:
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/HpV1NameQueryOptional'
+        - $ref: '#/components/parameters/HpV1IncantationQueryOptional'
+        - $ref: '#/components/parameters/HpV1CategoryQueryOptional'
+        - $ref: '#/components/parameters/HpV1EffectQueryOptional'
+        - $ref: '#/components/parameters/HpV1LightQueryOptional'
+        - $ref: '#/components/parameters/HpV1HandQueryOptional'
+        - $ref: '#/components/parameters/HpV1CreatorQueryOptional'
+        - $ref: '#/components/parameters/HpV1ImageQueryOptional'
+        - $ref: '#/components/parameters/HpV1WikiQueryOptional'
+      responses:
+        '200':
+          description: A list of spells
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Spell'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/spells/{spellId}:
+    get:
+      summary: Retrieves a spell
+      tags:
+        - spells
+      x-collection: harry-potter-sspells-v1
+      description: Retrieves a specific spell by id
+      operationId: getSpell
+      parameters:
+        - $ref: '#/components/parameters/SpellId'
+      responses:
+        '200':
+          description: A single spell
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Spell'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  parameters:
+    MagicBookId:
+      name: magicBookId
+      in: path
+      description: The identifier of the book.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+    ChapterId:
+      name: chapterId
+      in: path
+      description: The identifier of the chapter.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+    HPCharacterId:
+      name: characterId
+      in: path
+      description: The identifier of the character.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+    HPMovieId:
+      name: movieId
+      in: path
+      description: The identifier of the movie.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+    PotionId:
+      name: potionId
+      in: path
+      description: The identifier of the potion.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+    SpellId:
+      name: spellId
+      in: path
+      description: The identifier of the spell.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+    LimitQueryOptional:
+      description: Specifies the number(limit) of results to provide in a single response.
+      in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+        default: 20
+        x-ignore-merge: true
+    OffsetQueryOptional:
+      description: Specify the page offset this request is to provide.
+      in: query
+      name: offset
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+        x-ignore-merge: true
+    OrderQueryOptional:
+      name: order
+      in: query
+      description: Sort order for the results (e.g., order=price.asc or order=year.desc)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9_]+\.(asc|desc)$
+        x-ignore-merge: true
+      example: price.asc
+    HpV1TitleQueryOptional:
+      name: title
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1SummaryQueryOptional:
+      name: summary
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1AuthorQueryOptional:
+      name: author
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1ReleaseDateQueryOptional:
+      name: releaseDate
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1DedicationQueryOptional:
+      name: dedication
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1PagesQueryOptional:
+      name: pages
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1CoverQueryOptional:
+      name: cover
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1WikiQueryOptional:
+      name: wiki
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1ChaptersQueryOptional:
+      name: chapters
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1OrderQueryOptional:
+      name: order
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1NameQueryOptional:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1BornQueryOptional:
+      name: born
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1DiedQueryOptional:
+      name: died
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1GenderQueryOptional:
+      name: gender
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1SpeciesQueryOptional:
+      name: species
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1HeightQueryOptional:
+      name: height
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1WeightQueryOptional:
+      name: weight
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1HairColorQueryOptional:
+      name: hairColor
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1EyeColorQueryOptional:
+      name: eyeColor
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1SkinColorQueryOptional:
+      name: skinColor
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1BloodStatusQueryOptional:
+      name: bloodStatus
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1MaritalStatusQueryOptional:
+      name: maritalStatus
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1NationalityQueryOptional:
+      name: nationality
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1AnimagusQueryOptional:
+      name: animagus
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1BoggartQueryOptional:
+      name: boggart
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1HouseQueryOptional:
+      name: house
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1PatronusQueryOptional:
+      name: patronus
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1AliasNamesQueryOptional:
+      name: aliasNames
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1FamilyMembersQueryOptional:
+      name: familyMembers
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1JobsQueryOptional:
+      name: jobs
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1RomancesQueryOptional:
+      name: romances
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1TitlesQueryOptional:
+      name: titles
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1WandsQueryOptional:
+      name: wands
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1ImageQueryOptional:
+      name: image
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1DirectorQueryOptional:
+      name: director
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1ScreenwritersQueryOptional:
+      name: screenwriters
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1ProducersQueryOptional:
+      name: producers
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1CinematographersQueryOptional:
+      name: cinematographers
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1EditorsQueryOptional:
+      name: editors
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1DistributorsQueryOptional:
+      name: distributors
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1MusicComposersQueryOptional:
+      name: musicComposers
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1RunningTimeQueryOptional:
+      name: runningTime
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1BudgetQueryOptional:
+      name: budget
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1BoxOfficeQueryOptional:
+      name: boxOffice
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1RatingQueryOptional:
+      name: rating
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1TrailerQueryOptional:
+      name: trailer
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1EffectQueryOptional:
+      name: effect
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1SideEffectsQueryOptional:
+      name: side_effects
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1CharacteristicsQueryOptional:
+      name: characteristics
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1TimeQueryOptional:
+      name: time
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1DifficultyQueryOptional:
+      name: difficulty
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1IngredientsQueryOptional:
+      name: ingredients
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1InventorsQueryOptional:
+      name: inventors
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1ManufacturersQueryOptional:
+      name: manufacturers
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1IncantationQueryOptional:
+      name: incantation
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1CategoryQueryOptional:
+      name: category
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1LightQueryOptional:
+      name: light
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1HandQueryOptional:
+      name: hand
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    HpV1CreatorQueryOptional:
+      name: creator
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+  schemas:
+    Chapter:
+      description: Representation of a chapter.
+      type: object
+      properties:
+        chapterId:
+          description: The unique identifier of the chapter
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: id
+        magicBookId:
+          description: The unique identifier of the magic book
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: relationships.book.data.id
+        title:
+          type: string
+          example: The Boy Who Lived
+          x-etl-transforms:
+            - source: attributes.title
+        summary:
+          type: string
+          x-etl-transforms:
+            - source: attributes.summary
+        order:
+          type: integer
+          x-etl-transforms:
+            - source: attributes.order
+      additionalProperties: false
+    Character:
+      description: Representation of a character.
+      type: object
+      properties:
+        characterId:
+          description: The unique identifier of the character
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: id
+        name:
+          type: string
+          example: Harry James Potter
+          x-etl-transforms:
+            - source: attributes.name
+        born:
+          type: string
+          x-etl-transforms:
+            - source: attributes.born
+        died:
+          type: string
+          x-etl-transforms:
+            - source: attributes.died
+        gender:
+          type: string
+          x-etl-transforms:
+            - source: attributes.gender
+        species:
+          type: string
+          x-etl-transforms:
+            - source: attributes.species
+        height:
+          type: string
+          x-etl-transforms:
+            - source: attributes.height
+        weight:
+          type: string
+          x-etl-transforms:
+            - source: attributes.weight
+        hairColor:
+          type: string
+          x-etl-transforms:
+            - source: attributes.hair_color
+        eyeColor:
+          type: string
+          x-etl-transforms:
+            - source: attributes.eye_color
+        skinColor:
+          type: string
+          x-etl-transforms:
+            - source: attributes.skin_color
+        bloodStatus:
+          type: string
+          x-etl-transforms:
+            - source: attributes.blood_status
+        maritalStatus:
+          type: string
+          x-etl-transforms:
+            - source: attributes.marital_status
+        nationality:
+          type: string
+          x-etl-transforms:
+            - source: attributes.nationality
+        animagus:
+          type: string
+          x-etl-transforms:
+            - source: attributes.animagus
+        boggart:
+          type: string
+          x-etl-transforms:
+            - source: attributes.boggart
+        house:
+          type: string
+          x-etl-transforms:
+            - source: attributes.house
+        patronus:
+          type: string
+          x-etl-transforms:
+            - source: attributes.patronus
+        aliasNames:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.alias_names
+        familyMembers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.family_members
+        jobs:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.jobs
+        romances:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.romances
+        titles:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.titles
+        wands:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.wands
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.image
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.wiki
+      additionalProperties: false
+    ContentRange:
+      description: The range of items returned and total count
+      type: string
+      x-format: items {start}-{end}/{total}
+      example: items 0-24/100
+      x-ignore-merge: true
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message from service
+      additionalProperties: false
+    ErrorItem:
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        property:
+          description: Name of the property in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+        message:
+          type: string
+          description: Error message from service
+      additionalProperties: false
+    MagicBook:
+      description: Representation of a book.
+      type: object
+      properties:
+        magicBookId:
+          description: The unique identifier of the book.
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: id
+        title:
+          type: string
+          example: Harry Potter and the Philosopher's Stone
+          x-etl-transforms:
+            - source: attributes.title
+        summary:
+          type: string
+          x-etl-transforms:
+            - source: attributes.summary
+        author:
+          type: string
+          x-etl-transforms:
+            - source: attributes.author
+        releaseDate:
+          type: string
+          format: date
+          x-etl-transforms:
+            - source: attributes.release_date
+        dedication:
+          type: string
+          x-etl-transforms:
+            - source: attributes.dedication
+        pages:
+          type: integer
+          x-etl-transforms:
+            - source: attributes.pages
+        cover:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.cover
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.wiki
+        chapters:
+          type: array
+          items:
+            description: The unique identifier of the chapter.
+            type: string
+            format: uuid
+          uniqueItems: true
+      additionalProperties: false
+    Movie:
+      description: Representation of a movie.
+      type: object
+      properties:
+        movieId:
+          description: The unique identifier of the movie
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: id
+        title:
+          type: string
+          example: Harry Potter and the Philosopher's Stone
+          x-etl-transforms:
+            - source: attributes.title
+        summary:
+          type: string
+          x-etl-transforms:
+            - source: attributes.summary
+        director:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.director
+        screenwriters:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.screenwriters
+        producers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.producers
+        cinematographers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.cinematographers
+        editors:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.editors
+        distributors:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.distributors
+        musicComposers:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - source: attributes.music_composers
+        releaseDate:
+          type: string
+          x-etl-transforms:
+            - source: attributes.release_date
+        runningTime:
+          type: string
+          x-etl-transforms:
+            - source: attributes.running_time
+        budget:
+          type: string
+          x-etl-transforms:
+            - source: attributes.budget
+        boxOffice:
+          type: string
+          x-etl-transforms:
+            - source: attributes.box_office
+        rating:
+          type: string
+          x-etl-transforms:
+            - source: attributes.rating
+        trailer:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.trailer
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.image
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.wiki
+      additionalProperties: false
+    Potion:
+      description: Representation of a potion.
+      type: object
+      properties:
+        potionId:
+          description: The unique identifier of the potion
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: id
+        name:
+          type: string
+          example: Ageing Potion
+          x-etl-transforms:
+            - source: attributes.name
+        effect:
+          type: string
+          x-etl-transforms:
+            - source: attributes.effect
+        side_effects:
+          type: string
+          x-etl-transforms:
+            - source: attributes.side_effects
+        characteristics:
+          type: string
+          x-etl-transforms:
+            - source: attributes.characteristics
+        time:
+          type: string
+          x-etl-transforms:
+            - source: attributes.time
+        difficulty:
+          type: string
+          x-etl-transforms:
+            - source: attributes.difficulty
+        ingredients:
+          type: string
+          x-etl-transforms:
+            - source: attributes.ingredients
+        inventors:
+          type: string
+          x-etl-transforms:
+            - source: attributes.inventors
+        manufacturers:
+          type: string
+          x-etl-transforms:
+            - source: attributes.manufacturers
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.image
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.wiki
+      additionalProperties: false
+    Spell:
+      description: Representation of a spells.
+      type: object
+      properties:
+        spellId:
+          description: The unique identifier of the spells
+          type: string
+          format: uuid
+          example: c1637a49-3cc8-4285-93a1-28e6579f1f20
+          x-etl-transforms:
+            - source: id
+        name:
+          type: string
+          example: Age Line
+          x-etl-transforms:
+            - source: attributes.name
+        incantation:
+          type: string
+          x-etl-transforms:
+            - source: attributes.incantation
+        category:
+          type: string
+          x-etl-transforms:
+            - source: attributes.category
+        effect:
+          type: string
+          x-etl-transforms:
+            - source: attributes.effect
+        light:
+          type: string
+          x-etl-transforms:
+            - source: attributes.light
+        hand:
+          type: string
+          x-etl-transforms:
+            - source: attributes.hand
+        creator:
+          type: string
+          x-etl-transforms:
+            - source: attributes.creator
+        image:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.image
+        wiki:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - source: attributes.wiki
+      additionalProperties: false
+  responses:
+    NotFound:
+      description: Resource Not Found
+      x-ignore-merge: true
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: apiKey
+      x-ignore-merge: true
+    bearerAuth:
+      type: http
+      scheme: bearer
+      x-ignore-merge: true
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com

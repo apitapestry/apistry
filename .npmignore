@@ -1,0 +1,12 @@
+# Exclude everything except files listed in package.json `files` when publishing
+*.local
+*.log
+.env
+.github/
+.vscode/
+contracts/
+coverage/
+dev/
+docs/
+node_modules/
+tests/

@@ -1,0 +1,1542 @@
+openapi: 3.0.3
+info:
+  description: The Star Wars API
+  title: SWAPI (The Star Wars API)
+  version: v1
+  contact:
+    email: API-Gov-Team@gmail.com
+    name: acme API Gov Team
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developer.acme.com/terms/
+servers:
+  - url: https://localhost
+paths:
+  /v1/people:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-people-v1
+      summary: List people
+      operationId: getPersons
+      parameters:
+        - $ref: '#/components/parameters/IdQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1IdQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1NameQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1BirthYearQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1EyeColorQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1GenderQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1HairColorQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1SkinColorQueryOptional'
+      responses:
+        '200':
+          description: A list of People
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  count:
+                    type: integer
+                    x-format: '{total}'
+                  next:
+                    type: string
+                    format: uri
+                    x-format: /people?{nextQuerystring}
+                  previous:
+                    type: string
+                    format: uri
+                    x-format: /people?{previousQuerystring}
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiPersonV1'
+                    minItems: 0
+                    maxItems: 10
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/people/{id}:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-people-v1
+      summary: Get a person
+      operationId: getPerson
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A person
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiPersonV1'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/films:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-films-v1
+      summary: List films
+      operationId: listFilms
+      parameters:
+        - $ref: '#/components/parameters/IdQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1TitleQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1OpeningCrawlQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1DirectorQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1ProducerQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1ReleaseDateQueryOptional'
+      responses:
+        '200':
+          description: A list of Films
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  count:
+                    type: integer
+                    x-format: '{total}'
+                  next:
+                    type: string
+                    format: uri
+                    x-format: /people?{nextQuerystring}
+                  previous:
+                    type: string
+                    format: uri
+                    x-format: /people?{previousQuerystring}
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiFilmV1'
+                    minItems: 0
+                    maxItems: 10
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/films/{id}:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-films-v1
+      summary: Get a film
+      operationId: getFilm
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A film
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiFilmV1'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/starships:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-starships-v1
+      summary: List starships
+      operationId: listStarships
+      parameters:
+        - $ref: '#/components/parameters/IdQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1SSNameQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1ModelQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1StarshipClassQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1ManufacturerQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1CostInCreditsQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1LengthQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1CrewQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1PassengersQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1MaxAtmospheringSpeedQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1HyperdriveRatingQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1MGLTQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1CargoCapacityQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1ConsumablesQueryOptional'
+      responses:
+        '200':
+          description: A list of Starships
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  count:
+                    type: integer
+                    x-format: '{total}'
+                  next:
+                    type: string
+                    format: uri
+                    x-format: /people?{nextQuerystring}
+                  previous:
+                    type: string
+                    format: uri
+                    x-format: /people?{previousQuerystring}
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiStarshipV1'
+                    minItems: 0
+                    maxItems: 10
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/starships/{id}:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-starships-v1
+      summary: Get a starship
+      operationId: getStarship
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A starship
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiStarshipV1'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/vehicles:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-vehicles-v1
+      summary: List vehicles
+      operationId: listVehicles
+      parameters:
+        - $ref: '#/components/parameters/IdQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VNameQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VModelQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VVehicleClassQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VManufacturerQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VLengthQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VCostInCreditsQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VCrewQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VPassengersQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VMaxAtmospheringSpeedQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VCargoCapacityQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1VConsumablesQueryOptional'
+      responses:
+        '200':
+          description: A list of Vehicles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  count:
+                    type: integer
+                    x-format: '{total}'
+                  next:
+                    type: string
+                    format: uri
+                    x-format: /people?{nextQuerystring}
+                  previous:
+                    type: string
+                    format: uri
+                    x-format: /people?{previousQuerystring}
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiVehicleV1'
+                    minItems: 0
+                    maxItems: 10
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/vehicles/{id}:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-vehicles-v1
+      summary: Get a vehicle
+      operationId: getVehicle
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A vehicle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiVehicleV1'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/species:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-species-v1
+      summary: List species
+      operationId: listSpecies
+      parameters:
+        - $ref: '#/components/parameters/IdQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1SNameQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1ClassificationQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1DesignationQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1AverageHeightQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1AverageLifespanQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1EyeColorsQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1HairColorsQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1SkinColorsQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1LanguageQueryOptional'
+      responses:
+        '200':
+          description: A list of Species
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  count:
+                    type: integer
+                    x-format: '{total}'
+                  next:
+                    type: string
+                    format: uri
+                    x-format: /people?{nextQuerystring}
+                  previous:
+                    type: string
+                    format: uri
+                    x-format: /people?{previousQuerystring}
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiSpeciesV1'
+                    minItems: 0
+                    maxItems: 10
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/species/{id}:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-species-v1
+      summary: Get a species
+      operationId: getSpecies
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A species
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiSpeciesV1'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/planets:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-planets-v1
+      summary: List planets
+      operationId: listPlanets
+      parameters:
+        - $ref: '#/components/parameters/IdQueryOptional'
+        - $ref: '#/components/parameters/LimitQueryOptional'
+        - $ref: '#/components/parameters/OffsetQueryOptional'
+        - $ref: '#/components/parameters/OrderQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1PNameQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1DiameterQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1RotationPeriodQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1OrbitalPeriodQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1GravityQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1PopulationQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1ClimateQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1TerrainQueryOptional'
+        - $ref: '#/components/parameters/SwapiV1SurfaceWaterQueryOptional'
+      responses:
+        '200':
+          description: A list of Planets
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contentRange:
+                    description: The range of items returned and total count
+                    type: string
+                    x-format: items {start}-{end}/{total}
+                    example: items 0-24/100
+                    x-ignore-merge: true
+                  count:
+                    type: integer
+                    x-format: '{total}'
+                  next:
+                    type: string
+                    format: uri
+                    x-format: /people?{nextQuerystring}
+                  previous:
+                    type: string
+                    format: uri
+                    x-format: /people?{previousQuerystring}
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SwapiPlanetV1'
+                    minItems: 0
+                    maxItems: 10
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /v1/planets/{id}:
+    get:
+      tags:
+        - SWAPI v1
+      x-collection: swapi-planets-v1
+      summary: Get a planet
+      operationId: getPlanet
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A planet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SwapiPlanetV1'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Unauthorized search request.
+        '403':
+          description: Forbidden - The request is understood but access is not permitted.
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          description: Too Many Requests
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: ^\d+$
+    IdQueryOptional:
+      name: id
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    LimitQueryOptional:
+      description: Specifies the number(limit) of results to provide in a single response.
+      in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+        default: 20
+        x-ignore-merge: true
+    OffsetQueryOptional:
+      description: Specify the page offset this request is to provide.
+      in: query
+      name: offset
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+        x-ignore-merge: true
+    OrderQueryOptional:
+      name: order
+      in: query
+      description: Sort order for the results (e.g., order=price.asc or order=year.desc)
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9_]+\.(asc|desc)$
+        x-ignore-merge: true
+      example: price.asc
+    SwapiV1IdQueryOptional:
+      name: id
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: Person Identifier
+    SwapiV1NameQueryOptional:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1BirthYearQueryOptional:
+      name: birth_year
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1EyeColorQueryOptional:
+      name: eye_color
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1GenderQueryOptional:
+      name: gender
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1HairColorQueryOptional:
+      name: hair_color
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1SkinColorQueryOptional:
+      name: skin_color
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1TitleQueryOptional:
+      name: title
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1OpeningCrawlQueryOptional:
+      name: opening_crawl
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1DirectorQueryOptional:
+      name: director
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1ProducerQueryOptional:
+      name: producer
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1ReleaseDateQueryOptional:
+      name: release_date
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1SSNameQueryOptional:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1ModelQueryOptional:
+      name: model
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1StarshipClassQueryOptional:
+      name: starship_class
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1ManufacturerQueryOptional:
+      name: manufacturer
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1CostInCreditsQueryOptional:
+      name: cost_in_credits
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1LengthQueryOptional:
+      name: length
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1CrewQueryOptional:
+      name: crew
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1PassengersQueryOptional:
+      name: passengers
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1MaxAtmospheringSpeedQueryOptional:
+      name: max_atmosphering_speed
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1HyperdriveRatingQueryOptional:
+      name: hyperdrive_rating
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1MGLTQueryOptional:
+      name: MGLT
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1CargoCapacityQueryOptional:
+      name: cargo_capacity
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1ConsumablesQueryOptional:
+      name: consumables
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+      description: Maximum time before resupply (e.g., '2 months').
+    SwapiV1VNameQueryOptional:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VModelQueryOptional:
+      name: model
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VVehicleClassQueryOptional:
+      name: vehicle_class
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VManufacturerQueryOptional:
+      name: manufacturer
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VLengthQueryOptional:
+      name: length
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VCostInCreditsQueryOptional:
+      name: cost_in_credits
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VCrewQueryOptional:
+      name: crew
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VPassengersQueryOptional:
+      name: passengers
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VMaxAtmospheringSpeedQueryOptional:
+      name: max_atmosphering_speed
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VCargoCapacityQueryOptional:
+      name: cargo_capacity
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1VConsumablesQueryOptional:
+      name: consumables
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1SNameQueryOptional:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1ClassificationQueryOptional:
+      name: classification
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1DesignationQueryOptional:
+      name: designation
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1AverageHeightQueryOptional:
+      name: average_height
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1AverageLifespanQueryOptional:
+      name: average_lifespan
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1EyeColorsQueryOptional:
+      name: eye_colors
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1HairColorsQueryOptional:
+      name: hair_colors
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1SkinColorsQueryOptional:
+      name: skin_colors
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1LanguageQueryOptional:
+      name: language
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1PNameQueryOptional:
+      name: name
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1DiameterQueryOptional:
+      name: diameter
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1RotationPeriodQueryOptional:
+      name: rotation_period
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1OrbitalPeriodQueryOptional:
+      name: orbital_period
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1GravityQueryOptional:
+      name: gravity
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1PopulationQueryOptional:
+      name: population
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1ClimateQueryOptional:
+      name: climate
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1TerrainQueryOptional:
+      name: terrain
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+    SwapiV1SurfaceWaterQueryOptional:
+      name: surface_water
+      in: query
+      required: false
+      schema:
+        type: string
+        pattern: ^[A-Za-z0-9._,+:'|&@\s()#!?*-]+$
+  responses:
+    NotFound:
+      description: Resource not found
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    UnprocessableEntity:
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ErrorItem'
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    ContentRange:
+      description: The range of items returned and total count
+      type: string
+      x-format: items {start}-{end}/{total}
+      example: items 0-24/100
+      x-ignore-merge: true
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message from service
+      additionalProperties: false
+    ErrorItem:
+      type: object
+      properties:
+        objectName:
+          description: Name of the object containing the field that is in error
+          type: string
+        property:
+          description: Name of the property in error
+          type: string
+        rejectedValue:
+          description: Value that caused the error
+          type: string
+        message:
+          type: string
+          description: Error message from service
+      additionalProperties: false
+    Pagination:
+      type: object
+      properties:
+        contentRange:
+          $ref: '#/components/schemas/ContentRange'
+        count:
+          type: integer
+          x-format: '{total}'
+        next:
+          type: string
+          format: uri
+          x-format: /people?{nextQuerystring}
+        previous:
+          type: string
+          format: uri
+          x-format: /people?{previousQuerystring}
+      additionalProperties: false
+    SwapiFilmV1:
+      type: object
+      required:
+        - title
+        - episode_id
+        - url
+        - created
+        - edited
+      properties:
+        filmId:
+          description: Unique identifier for the film
+          type: string
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+          x-etl-transforms:
+            - source: url
+            - apply-pattern: ^.*/films/(\d+)/?$
+        title:
+          type: string
+        episode_id:
+          type: integer
+        opening_crawl:
+          type: string
+        director:
+          type: string
+        producer:
+          type: string
+        release_date:
+          type: string
+          format: date
+        species:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        starships:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        vehicles:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        characters:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        planets:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        url:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+            - apply-template: /films/{}
+        created:
+          type: string
+          format: date-time
+        edited:
+          type: string
+          format: date-time
+      additionalProperties: false
+    SwapiPersonV1:
+      type: object
+      required:
+        - name
+        - url
+        - created
+        - edited
+      properties:
+        personId:
+          description: Unique identifier for the person
+          type: string
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+          x-insert: uuid
+        id:
+          description: Person Identifier
+          type: string
+          readOnly: true
+          example: 1
+          x-etl-transforms:
+            - source: url
+            - apply-pattern: ^.*/people/(\d+)/?$
+        name:
+          type: string
+        birth_year:
+          type: string
+        eye_color:
+          type: string
+        gender:
+          type: string
+        hair_color:
+          type: string
+        height:
+          type: string
+        mass:
+          type: string
+        skin_color:
+          type: string
+        homeworld:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+        films:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        species:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        starships:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        vehicles:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        url:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+            - apply-template: /people/{}
+        created:
+          type: string
+          format: date-time
+        edited:
+          type: string
+          format: date-time
+      additionalProperties: false
+    SwapiPlanetV1:
+      type: object
+      required:
+        - name
+        - url
+        - created
+        - edited
+      properties:
+        planetId:
+          description: Unique identifier for the planet
+          type: string
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+          x-etl-transforms:
+            - source: url
+            - apply-pattern: ^.*/planets/(\d+)/?$
+        name:
+          type: string
+        diameter:
+          type: string
+        rotation_period:
+          type: string
+        orbital_period:
+          type: string
+        gravity:
+          type: string
+        population:
+          type: string
+        climate:
+          type: string
+        terrain:
+          type: string
+        surface_water:
+          type: string
+        residents:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        films:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        url:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+            - apply-template: /planets/{}
+        created:
+          type: string
+          format: date-time
+        edited:
+          type: string
+          format: date-time
+      additionalProperties: false
+    SwapiSpeciesV1:
+      type: object
+      required:
+        - name
+        - url
+        - created
+        - edited
+      properties:
+        speciesId:
+          description: Unique identifier for the species
+          type: string
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+          x-etl-transforms:
+            - source: url
+            - apply-pattern: ^.*/species/(\d+)/?$
+        name:
+          type: string
+        classification:
+          type: string
+        designation:
+          type: string
+        average_height:
+          type: string
+        average_lifespan:
+          type: string
+        eye_colors:
+          type: string
+        hair_colors:
+          type: string
+        skin_colors:
+          type: string
+        language:
+          type: string
+        homeworld:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+        people:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        films:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        url:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+            - apply-template: /species/{}
+        created:
+          type: string
+          format: date-time
+        edited:
+          type: string
+          format: date-time
+      additionalProperties: false
+    SwapiStarshipV1:
+      type: object
+      required:
+        - name
+        - model
+        - url
+        - created
+        - edited
+      properties:
+        starshipId:
+          description: Unique identifier for the starship
+          type: string
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+          x-etl-transforms:
+            - source: url
+            - apply-pattern: ^.*/starships/(\d+)/?$
+        name:
+          type: string
+        model:
+          type: string
+        starship_class:
+          type: string
+        manufacturer:
+          type: string
+        cost_in_credits:
+          type: string
+        length:
+          type: string
+        crew:
+          type: string
+        passengers:
+          type: string
+        max_atmosphering_speed:
+          type: string
+        hyperdrive_rating:
+          type: string
+        MGLT:
+          type: string
+        cargo_capacity:
+          type: string
+        consumables:
+          type: string
+          description: Maximum time before resupply (e.g., '2 months').
+        films:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        pilots:
+          type: array
+          items:
+            type: string
+            format: uri
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        url:
+          type: string
+          format: uri
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+            - apply-template: /starships/{}
+        created:
+          type: string
+          format: date-time
+        edited:
+          type: string
+          format: date-time
+      additionalProperties: false
+    SwapiVehicleV1:
+      type: object
+      required:
+        - name
+        - model
+        - url
+        - created
+        - edited
+      properties:
+        vehicleId:
+          description: Unique identifier for the vehicle
+          type: string
+          format: uuid
+          readOnly: true
+          example: a3bb189e-8bf9-3888-9912-ace4e6543002
+          x-insert: uuid
+        id:
+          type: string
+          readOnly: true
+          example: 1
+          x-etl-transforms:
+            - source: url
+            - apply-pattern: ^.*/vehicles/(\d+)/?$
+        name:
+          type: string
+        model:
+          type: string
+        vehicle_class:
+          type: string
+        manufacturer:
+          type: string
+        length:
+          type: string
+        cost_in_credits:
+          type: string
+        crew:
+          type: string
+        passengers:
+          type: string
+        max_atmosphering_speed:
+          type: string
+        cargo_capacity:
+          type: string
+        consumables:
+          type: string
+        films:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        pilots:
+          type: array
+          items:
+            type: string
+          x-etl-transforms:
+            - map-pattern: ^.*/(\d+)/?$
+        url:
+          type: string
+          x-etl-transforms:
+            - apply-pattern: ^.*/(\d+)/?$
+            - apply-template: /vehicles/{}
+        created:
+          type: string
+          format: date-time
+        edited:
+          type: string
+          format: date-time
+      additionalProperties: false
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: apiKey
+      x-ignore-merge: true
+    bearerAuth:
+      type: http
+      scheme: bearer
+      x-ignore-merge: true
+externalDocs:
+  description: Find out more about acme API Products
+  url: https://developer.acme.com
