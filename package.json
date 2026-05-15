@@ -26,9 +26,10 @@
     "LICENSE"
   ],
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist && rm -rf dist-lambda",
     "build": "npm run clean && node scripts/build.mjs",
-    "buil d:lambda": "npm run build && node scripts/package-lambda.mjs",
+    "prepare": "npm run build",
+    "build:lambda": "npm run build && node scripts/package-lambda.mjs",
     "test": "vitest run --config tests/vitest.config.js",
     "lint": "eslint . --ext .mjs,.js"
   },

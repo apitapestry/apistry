@@ -1,4 +1,3 @@
-import Database from "better-sqlite3";
 import fs from "fs";
 import path from "path";
 import { InternalServerError } from "../../utils/errors.js";
@@ -11,6 +10,7 @@ import { getSubResource, saveSubResource } from "./subResources.js";
 
 let sqliteDb = null;
 let dbFilePath = null;
+let Database = null;
 const SQLITE_IN_MEMORY = "sqlite://IN-MEMORY-DB";
 const SQLITE_LEGACY_IN_MEMORY = "sqllite://IN-MEMORY-DB";
 // language=SQLite
@@ -54,6 +54,8 @@ export async function connect(dbConnection) {
     const { isInMemory, filePath } = parseConnectionString(dbConnection);
 
     try {
+        Database ??= await loadSqliteDriver();
+
         if (!isInMemory) {
             const dir = path.dirname(filePath);
             if (!fs.existsSync(dir)) {
@@ -74,6 +76,25 @@ export async function connect(dbConnection) {
             { path: filePath },
             { message: err.message }
         );
+    }
+}
+
+async function loadSqliteDriver() {
+    try {
+        const module = await import("better-sqlite3");
+        return module.default ?? module;
+    } catch (err) {
+        if (err?.code === "ERR_MODULE_NOT_FOUND" || err?.code === "MODULE_NOT_FOUND") {
+            throw new InternalServerError(
+                "sqlite_dependency_missing",
+                {},
+                {
+                    message: "SQLite support requires the optional dependency 'better-sqlite3'. Install it or use a mongo/postgres database connection."
+                }
+            );
+        }
+
+        throw err;
     }
 }
 

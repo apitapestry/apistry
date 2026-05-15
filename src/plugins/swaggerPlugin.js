@@ -1,3 +1,11 @@
+import { existsSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const runtimeDir = dirname(fileURLToPath(import.meta.url));
+const packagedSwaggerUiStaticDir = join(runtimeDir, 'swagger-ui-static');
+
 export async function swaggerPlugin(app, api) {
     const fastifySwagger = (await import('@fastify/swagger')).default;
     const fastifySwaggerUi = (await import('@fastify/swagger-ui')).default;
@@ -30,7 +38,22 @@ export async function swaggerPlugin(app, api) {
                 },
                 tryItOutEnabled: true
             },
-            staticCSP: false
+            staticCSP: false,
+            ...await getPackagedSwaggerUiOptions()
         });
     });
+}
+
+async function getPackagedSwaggerUiOptions() {
+    if (!existsSync(packagedSwaggerUiStaticDir)) {
+        return {};
+    }
+
+    return {
+        baseDir: packagedSwaggerUiStaticDir,
+        logo: {
+            type: 'image/svg+xml',
+            content: await readFile(join(packagedSwaggerUiStaticDir, 'logo.svg'))
+        }
+    };
 }
