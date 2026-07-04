@@ -186,8 +186,14 @@ function buildPredicateFromRule(rule) {
         }
 
         default:
-            return v => v == compVal;
+            return v => valuesMatch(v, compVal);
     }
+}
+
+function valuesMatch(actual, expected) {
+    if (actual === expected) return true;
+    if (actual == null || expected == null) return false;
+    return String(actual) === String(expected);
 }
 
 /**

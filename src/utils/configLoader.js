@@ -54,20 +54,19 @@ export function loadConfigFile(configPath, substitute = true) {
         );
     }
 
+    const isJson = absPath.endsWith('.json');
+    const isYaml = absPath.endsWith('.yml') || absPath.endsWith('.yaml');
+
+    if (!isJson && !isYaml) {
+        throw new ConfigurationError(
+            { path: absPath },
+            { message: `Unsupported config file type. Must be .json, .yml, or .yaml` }
+        );
+    }
+
     try {
         const raw = fs.readFileSync(absPath, 'utf8');
-        let parsed;
-
-        if (absPath.endsWith('.json')) {
-            parsed = JSON.parse(raw);
-        } else if (absPath.endsWith('.yml') || absPath.endsWith('.yaml')) {
-            parsed = yaml.load(raw);
-        } else {
-            throw new ConfigurationError(
-                { path: absPath },
-                { message: `Unsupported config file type. Must be .json, .yml, or .yaml` }
-            );
-        }
+        const parsed = isJson ? JSON.parse(raw) : yaml.load(raw);
 
         if (substitute) {
             return substituteEnvVars(parsed);
@@ -116,7 +115,7 @@ export function substituteEnvVars(obj) {
     if (typeof obj === 'string') {
         // Support both $VAR and ${VAR} syntax
         return obj
-            .replace(/\$\{([^}]+)\}/g, (match, varName) => process.env[varName] || '')
+            .replace(/\$\{([^}]+)}/g, (match, varName) => process.env[varName] || '')
             .replace(/\$([A-Z_][A-Z0-9_]*)/g, (match, varName) => process.env[varName] || '');
     } else if (Array.isArray(obj)) {
         return obj.map(substituteEnvVars);
