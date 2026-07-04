@@ -186,8 +186,14 @@ function buildPredicateFromRule(rule) {
         }
 
         default:
-            return v => v == compVal;
+            return v => valuesMatch(v, compVal);
     }
+}
+
+function valuesMatch(actual, expected) {
+    if (actual === expected) return true;
+    if (actual == null || expected == null) return false;
+    return String(actual) === String(expected);
 }
 
 /**
@@ -310,7 +316,7 @@ export function getParentSchema(req, collection) {
         });
     }
 
-    return schema;
+    return resolveSchemaRefs(schema, openapiSpec.components.schemas);
 }
 
 export function getChildSchemaItems(parentSchema, subResource) {
@@ -319,4 +325,42 @@ export function getChildSchemaItems(parentSchema, subResource) {
 
 export function getChildSchema(parentSchema, subResource) {
     return parentSchema.properties?.[subResource];
+}
+
+function resolveSchemaRefs(schema, schemas, seen = new Set()) {
+    if (!schema || typeof schema !== "object") return schema;
+
+    if (schema.$ref) {
+        const schemaName = schema.$ref.match(/^#\/components\/schemas\/(.+)$/)?.[1];
+        if (!schemaName || !schemas?.[schemaName]) return schema;
+        if (seen.has(schemaName)) return schemas[schemaName];
+        return resolveSchemaRefs(schemas[schemaName], schemas, new Set([...seen, schemaName]));
+    }
+
+    if (Array.isArray(schema)) {
+        return schema.map(item => resolveSchemaRefs(item, schemas, seen));
+    }
+
+    const resolved = { ...schema };
+
+    for (const key of ["oneOf", "anyOf", "allOf"]) {
+        if (Array.isArray(resolved[key])) {
+            resolved[key] = resolved[key].map(item => resolveSchemaRefs(item, schemas, seen));
+        }
+    }
+
+    if (resolved.properties && typeof resolved.properties === "object") {
+        resolved.properties = Object.fromEntries(
+            Object.entries(resolved.properties).map(([key, value]) => [
+                key,
+                resolveSchemaRefs(value, schemas, seen)
+            ])
+        );
+    }
+
+    if (resolved.items) {
+        resolved.items = resolveSchemaRefs(resolved.items, schemas, seen);
+    }
+
+    return resolved;
 }
