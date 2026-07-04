@@ -4,7 +4,7 @@ import fs from 'fs';
 import load from './etl/etlLoad.js';
 import normalize from './etl/etlNormalize.js';
 import path from 'path';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { ConfigurationError } from '../utils/errors.js';
 import { getCliLogger } from '../plugins/configPlugin.js';
 
